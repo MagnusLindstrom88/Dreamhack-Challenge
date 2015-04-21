@@ -1,0 +1,30 @@
+body {background-color: #242424;}
+
+header {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#navbar {margin-bottom: 0px;}
+
+#ourgames {
+    color:#f7f7f7;
+    background-color: #303030;
+    border-bottom: 1px solid #676461;
+}
+
+.jumbotron {
+    background-image: url(Jumbotron.png);
+    background-size: cover;
+    height: 500px;
+    color:#f7f7f7;
+    margin-bottom: 0px;
+}
+.jumbotron h1 {
+    font-weight: bold;
+}
+.jumbotron a {
+    color: #00b0ff;
+    font-size: 20px;
+    font-weight: bold;
+}
