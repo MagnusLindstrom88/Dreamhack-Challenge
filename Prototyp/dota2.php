@@ -103,30 +103,27 @@
                 
                 <h2 style="margin-top: 30px;">Bracket</h2>
                 <p>Proin dictum, tortor at porta malesuada, enim nulla maximus felis, ornare eleifend mauris tellus et dui.</p>
-                <div class="row">
-                <div class="col-md-4">
-                    <p>Kvarts</p>
-                    <button class="btn btn-lg btn-success btn-block">Kvarts-match</button>
-                    <button class="btn btn-lg btn-success btn-block">Kvarts-match</button>
-                    <button class="btn btn-lg btn-success btn-block">Kvarts-match</button>
-                    <button class="btn btn-lg btn-success btn-block">Kvarts-match</button>
-                    
+                <div class="row" style="margin-bottom: 30px;">
+                    <div class="col-md-4">
+                        <p>Quarter</p>
+                        <button class="btn btn-lg btn-success btn-block">Kvarts-match</button>
+                        <button class="btn btn-lg btn-success btn-block">Kvarts-match</button>
+                        <button class="btn btn-lg btn-success btn-block">Kvarts-match</button>
+                        <button class="btn btn-lg btn-success btn-block">Kvarts-match</button>
+                        
+                    </div>
+                    <div class="col-md-4">
+                        <p>Semi</p>
+                        
+                        <button class="btn btn-lg btn-warning btn-block">Semi-match</button>
+                        <button class="btn btn-lg btn-warning btn-block">Semi-match</button>
+                       
+                    </div>
+                    <div class="col-md-4">
+                        <p>Final</p>
+                        <button class="btn btn-lg btn-danger btn-block">Final-match</button>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <p>Semi</p>
-                    
-                    <button class="btn btn-lg btn-warning btn-block">Semi-match</button>
-                    <button class="btn btn-lg btn-warning btn-block">Semi-match</button>
-                   
-                    
-                    
-                </div>
-                <div class="col-md-4">
-                    <p>Final</p>
-                    <button class="btn btn-lg btn-danger btn-block">Final-match</button>
-                    
-                </div>
-            </div>
         
         <?php require_once 'template/footer.php'; ?>
     </div>
