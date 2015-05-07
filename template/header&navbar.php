@@ -61,12 +61,12 @@ function checkActive($s) {
 </nav>
 
 <!--Login Modal-->
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="loginHeading" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Login</h4>
+        <h4 id="loginHeading" class="modal-title">Login</h4>
       </div>
       <div class="modal-body">
         <form id="login-form" role="form" method="post" action="scripts/login.php">
@@ -93,12 +93,12 @@ function checkActive($s) {
 </div>
 
 <!--Register Modal-->
-<div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="registrationHeading" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Register</h4>
+        <h4 id="registrationHeading" class="modal-title">Register</h4>
       </div>
       <div class="modal-body">
         <form id="registration-form" role="form" method="post">
