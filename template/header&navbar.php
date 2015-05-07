@@ -71,12 +71,12 @@ function checkActive($s) {
       <div class="modal-body">
         <form id="login-form" role="form" method="post" action="scripts/login.php">
             <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" class="form-control">
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" name="email" class="form-control">
             </div>
             <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" class="form-control">
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="password" class="form-control">
             </div>
             <div class="checkbox">
             <label><input type="checkbox"> Remember me</label>
@@ -107,12 +107,12 @@ function checkActive($s) {
                 <input type="text" id="username" name="username" class="form-control">
             </div>
             <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" class="form-control">
+                <label for="registration-email">Email:</label>
+                <input type="email" id="registration-email" name="email" class="form-control">
             </div>
             <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" class="form-control">
+                <label for="registration-password">Password:</label>
+                <input type="password" id="registration-password" name="password" class="form-control">
             </div>
             <div class="form-group">
                 <label for="confirm-password">Confirm Password:</label>
