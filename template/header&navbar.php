@@ -1,6 +1,6 @@
 <?php require_once 'scripts/init.php'; ?>
 
-<!--Code to help highlight the right field in the navbar.-->
+<!--Code to help highlight the correct field in the navbar.-->
 <?php
 $pageName = explode('/', $_SERVER['SCRIPT_NAME'])[2];
 function checkActive($s) {
@@ -66,7 +66,7 @@ function checkActive($s) {
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Login</h4>
+        <h4 class="modal-title">Login</h4>
       </div>
       <div class="modal-body">
         <form id="login-form" role="form" method="post" action="scripts/login.php">
@@ -98,7 +98,7 @@ function checkActive($s) {
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Register</h4>
+        <h4 class="modal-title">Register</h4>
       </div>
       <div class="modal-body">
         <form id="registration-form" role="form" method="post">
@@ -146,7 +146,7 @@ function checkActive($s) {
 <!-- Contains a function for validating the registration form before it's sent to the server -->
 <script src="scripts/registration_validation.js"></script>
 
-<!-- Creates a new user with the registration data. Only run the data passed the validation. -->
+<!-- Creates a new user with the registration data. Only run if the data passed the validation. -->
 <?php
 if(isset($_POST['username'])) {
     $username = $_POST['username'];
