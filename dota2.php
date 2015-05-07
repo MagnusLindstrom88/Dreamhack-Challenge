@@ -14,7 +14,7 @@
         <?php require_once 'template/header&navbar.php'; ?>
         
         <div id="section-image-container">
-            <img id="section-image" src="images/dota2logo.png" />
+            <img id="section-image" src="images/dota2logo.png" alt="Dota 2 logotype."/>
         </div>
         
         <!--Content columns.-->
@@ -55,9 +55,9 @@
                                 <p>Mayam Gaming (MayaM) VS Evil Geniuses (EG)</p>
                             </div>
                             <div class="match-logos">
-                                <img src="images/teamlogos/teammayam.png"/>
-                                <img src="images/vs.png"/>
-                                <img src="images/teamlogos/teamevilgeniuses.png"/>
+                                <img src="images/teamlogos/teammayam.png" alt="Mayam Gaming's logotype."/>
+                                <img src="images/vs.png" alt="Versus."/>
+                                <img src="images/teamlogos/teamevilgeniuses.png" alt="Evil Geniuses's logotype."/>
                             </div>
                             <button class="btn btn-primary" style="margin-right: 5px;">Bet MayaM</button>
                             <button class="btn btn-primary" style="margin-left: 5px;">Bet EG</button>
@@ -72,9 +72,9 @@
                                 <p>Mayam Gaming (MayaM) VS Evil Geniuses (EG)</p>
                             </div>
                             <div class="match-logos">
-                                <img src="images/teamlogos/teammayam.png"/>
-                                <img src="images/vs.png"/>
-                                <img src="images/teamlogos/teamevilgeniuses.png"/>
+                                <img src="images/teamlogos/teammayam.png" alt="Mayam Gaming's logotype."/>
+                                <img src="images/vs.png" alt="Versus."/>
+                                <img src="images/teamlogos/teamevilgeniuses.png" alt="Evil Geniuses's logotype."/>
                             </div>
                             <button class="btn btn-primary" style="margin-right: 5px;">Bet MayaM</button>
                             <button class="btn btn-primary" style="margin-left: 5px;">Bet EG</button>
@@ -89,9 +89,9 @@
                                 <p>Mayam Gaming (MayaM) VS Evil Geniuses (EG)</p>
                             </div>
                             <div class="match-logos">
-                                <img src="images/teamlogos/teammayam.png"/>
-                                <img src="images/vs.png"/>
-                                <img src="images/teamlogos/teamevilgeniuses.png"/>
+                                <img src="images/teamlogos/teammayam.png" alt="Mayam Gaming's logotype."/>
+                                <img src="images/vs.png" alt="Versus."/>
+                                <img src="images/teamlogos/teamevilgeniuses.png" alt="Evil Geniuses's logotype."/>
                             </div>
                             <button class="btn btn-primary" style="margin-right: 5px;">Bet MayaM</button>
                             <button class="btn btn-primary" style="margin-left: 5px;">Bet EG</button>

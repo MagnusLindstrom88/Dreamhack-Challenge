@@ -40,13 +40,13 @@
                 <p>Fusce consequat mauris sed nisi dignissim, eu sagittis odio pellentesque.</p>
                 <div class="row">
                     <div class="col-md-4">
-                        <a href="csgo.php"><div class="thumbnail"><img src="images/csgothumbnail.jpg"/></div></a>
+                        <a href="csgo.php"><div class="thumbnail"><img src="images/csgothumbnail.jpg" alt="Counter Strike: Global Offensive thumbnail."/></div></a>
                     </div>
                     <div class="col-md-4">
-                        <a href="dota2.php"><div class="thumbnail"><img src="images/dota2thumbnail.jpg"/></div></a>
+                        <a href="dota2.php"><div class="thumbnail"><img src="images/dota2thumbnail.jpg" alt="Dota 2 thumbnail."/></div></a>
                     </div>
                     <div class="col-md-4">
-                        <div class="thumbnail"><img src="images/starcraft2thumbnail.jpg"/></div>
+                        <div class="thumbnail"><img src="images/starcraft2thumbnail.jpg" alt="Starcraft 2 thumbnail."/></div>
                     </div>
                 </div>
             </div>

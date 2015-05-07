@@ -82,7 +82,7 @@ function checkActive($s) {
             <label><input type="checkbox"> Remember me</label>
             </div>
         </form>
-        <p><b>Or</b> <a href="#"><img src="images/loginfacebook.png"></a></p>
+        <p><b>Or</b> <a href="#"><img src="images/loginfacebook.png" alt="Facebook login button."></a></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" onclick="login()">Login</button>
