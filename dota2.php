@@ -22,7 +22,7 @@
             <nav id="navbar" class="navbar navbar-default">
                 <div class="container">
                     <!--The toggle button for collapsed menu.-->
-                    <button class="navbar-toggle" data-toggle="collapse" data-target="#menuFields">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target="#gameMenuFields">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -33,7 +33,7 @@
                     </div>
         
                     <!--The menu fields. Will be collapsed on small screens.-->
-                    <div class="collapse navbar-collapse" id="menuFields">
+                    <div class="collapse navbar-collapse" id="gameMenuFields">
                         <!--Fields on the left.-->
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="#">Matches</a></li>

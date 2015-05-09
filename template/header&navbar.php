@@ -1,14 +1,5 @@
 <?php require_once 'scripts/init.php'; ?>
 
-<!--Code to help highlight the correct field in the navbar.-->
-<?php
-$pageName = explode('/', $_SERVER['SCRIPT_NAME'])[2];
-function checkActive($s) {
-    global $pageName;
-    if($s === $pageName) echo 'active';
-}
-?>
-
 <!--Header-->
 <div id="header-wrapper">
     <header class="container">
@@ -17,7 +8,7 @@ function checkActive($s) {
 </div>
 
 <!--Navigation bar-->
-<nav id="navbar" class="navbar navbar-default">
+<nav class="navbar navbar-default" id="navbar">
     <div class="container">
         <!--The toggle button for collapsed menu.-->
         <button class="navbar-toggle" data-toggle="collapse" data-target="#menuFields">
@@ -33,18 +24,18 @@ function checkActive($s) {
         <!--The menu fields. Will be collapsed on small screens.-->
         <div class="collapse navbar-collapse" id="menuFields">
             <!--Fields on the left.-->
-            <ul class="nav navbar-nav">
-                <li class="<?php checkActive('index.php'); ?>"><a href="index.php">Home</a></li>
+            <ul class="nav navbar-nav" id="left-fields">
+                <li><a href="index.php">Home</a></li>
                 <li class="dropdown" id="game-list">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Games<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li class="<?php checkActive('csgo.php'); ?>"><a href="csgo.php">Counter-Strike: Global Offensive</a></li>
-                        <li class="<?php checkActive('dota2.php'); ?>"><a href="dota2.php">Dota 2</a></li>
-                        <li class="<?php checkActive('starcraft2.php'); ?>"><a href="starcraft2.php">Starcraft II</a></li>
+                        <li><a href="csgo.php">Counter-Strike: Global Offensive</a></li>
+                        <li><a href="dota2.php">Dota 2</a></li>
+                        <li><a href="starcraft2.php">Starcraft II</a></li>
                     </ul>
                 </li>
-                <li class="<?php checkActive('faq.php'); ?>"><a href="faq.php">FAQ</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="faq.php">FAQ</a></li>
+                <li><a href="about.php">About Us</a></li>
             </ul>
             <!--Fields on the right. Changes depending on if the user is logged in.-->
             <?php
@@ -131,17 +122,27 @@ function checkActive($s) {
   </div>
 </div>
 
-<!-- Makes the dropdown menu field highlighted if any of its children are highlighted. -->
+<!-- Code to handle menu highlighting and login form submission. -->
 <script>
+    //Get name of the current page and compare it to the href attributes of the left menu fields. Highlights the field that matches.
+    var pageName = document.URL.split("/");
+    pageName = pageName[pageName.length-1];
+    var links = $("#left-fields a");
+    links.each(function() {
+        var href = this.href.split("/");
+        href = href[href.length-1];
+        if(pageName === href) this.parentNode.className = "active";
+    });
+    
+    //Makes the dropdown menu field highlighted if any of its children are highlighted.
     var gameList = document.getElementById("game-list");
     var active = document.getElementsByClassName("active")[0];
     if($.contains(gameList, active))
         gameList.className += " active";
+    
+    //Called when the login button is clicked. Simply submits the login form.
+    function login() {document.getElementById("login-form").submit();}
 </script>
-
-<!-- Called when the login button is clicked. Simply submits the login form. -->
-<script>function login() {document.getElementById("login-form").submit();}</script>
-
 
 <!-- Contains a function for validating the registration form before it's sent to the server -->
 <script src="scripts/registration_validation.js"></script>
