@@ -186,8 +186,9 @@
                 tosCheckbox.parentNode.innerHTML += " <span class='error-message' style='color:red'><strong>You have to accept the terms.</strong></span>";
         
         if($("#registration-form .error-message").size() == 0) {
-            document.getElementById("registration-form").submit();
             alert("Registration successful.");
+            sleep(500);
+            document.getElementById("registration-form").submit();
         }
         else removeErrorsOnFocus();
     }
@@ -228,6 +229,16 @@
         $(".form-group .glyphicon").remove();
         $(".form-group").each(function() {this.className = "form-group";})
         $("#tos-checkbox")[0].checked = false;
+    }
+    
+    //Simulates sleeping the current thread.
+    function sleep(milliseconds) {
+        var start = new Date().getTime();
+        for (var i = 0; i < 1e7; i++) {
+          if ((new Date().getTime() - start) > milliseconds){
+            break;
+          }
+        }
     }
 </script>
 
