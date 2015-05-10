@@ -185,8 +185,10 @@
             if (tosCheckbox.parentNode.getElementsByClassName("error-message")[0] === undefined)
                 tosCheckbox.parentNode.innerHTML += " <span class='error-message' style='color:red'><strong>You have to accept the terms.</strong></span>";
         
-        
-        if($("#registration-form .error-message").size() == 0) document.getElementById("registration-form").submit();
+        if($("#registration-form .error-message").size() == 0) {
+            document.getElementById("registration-form").submit();
+            alert("Registration successful.");
+        }
         else removeErrorsOnFocus();
     }
     
