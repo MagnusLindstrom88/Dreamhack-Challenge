@@ -8,7 +8,6 @@
             background-image: url(images/jumbotron.jpg);
             background-size: cover;
             height: 400px;
-            color:#f7f7f7;
             border-bottom: 1px solid #676461;
             margin-bottom: 0px;
         }
