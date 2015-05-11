@@ -41,14 +41,32 @@
             <div class="container">
 				<div id="content">
 				<div class="container">
-				<h2>Streaming</h2>
+				<h2>Match Streaming</h2>
 						<div class="row">
 									<div class="col-md-8">
 										 <ul id="stream-list" class="list-group">
 											<li class="list-group-item">
 										<p class="list-group-item-text">
 										
-										<div class="col-md-8" id="twitch_embed_player"></div>
+										<div class="col-md-8">
+										<object bgcolor="#000000" 
+												data="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" 
+												height="400" 
+												type="application/x-shockwave-flash" 
+												width="650" 
+												> 
+										  <param name="allowFullScreen" 
+												  value="true" />
+										  <param name="allowNetworking" 
+												  value="all" />
+										  <param name="allowScriptAccess" 
+												  value="always" />
+										  <param name="movie" 
+												  value="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" />
+										  <param name="flashvars" 
+												  value="channel=imaqtpie&auto_play=true&start_volume=25" />
+										</object>
+										</div>
 										
 										</p>
 									</li>
