@@ -68,8 +68,8 @@
 <div class="container">
   <div class="container">
     <div class="footer-images">
-     <img src="images/csgologo.jpg">
-      <img src="images/dota2.jpg">
+     <img src="images/csgobackground.jpg">
+      <img src="images/dota2background.jpg">
       <img src="images/starcraft2thumbnail.jpg">
       <div class="container">
         <div class="copyright">
