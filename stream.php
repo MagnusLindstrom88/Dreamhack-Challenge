@@ -48,7 +48,7 @@
 										 <ul id="stream-list" class="list-group">
 											<li class="list-group-item">
 										<p class="list-group-item-text">
-										<iframe src="http://www.twitch.tv/imaqtpie/embed" frameborder="0" scrolling="no" height="378" width="620"></iframe>
+										<iframe src="http://www.twitch.tv/imaqtpie/embed" frameborder="0" scrolling="no" height="auto" width="auto"></iframe>
 										<div class="col-md-8">
 										<object bgcolor="#000000" 
 												data="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" 
