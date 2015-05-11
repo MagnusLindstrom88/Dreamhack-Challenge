@@ -11,27 +11,7 @@
     </style>
 	<script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>
-      $(function () {
-        window.onPlayerEvent = function (data) {
-          data.forEach(function(event) {
-            if (event.event == "playerInit") {
-              var player = $("#twitch_embed_player")[0];
-              player.playVideo();
-              player.mute();
-            }
-          });
-        }
 
-        swfobject.embedSWF("//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf", "twitch_embed_player", "640", "400", "11", null,
-          { "eventsCallback":"onPlayerEvent",
-            "embed":1,
-            "channel":"imaqtpie",
-            "auto_play":"true"},
-          { "allowScriptAccess":"always",
-            "allowFullScreen":"true"});
-      });
-	  </script
 </head>
 <body>
     <div id="wrapper">
@@ -43,41 +23,35 @@
 				<div class="container">
 				<h2>Match Streaming</h2>
 						<div class="row">
-
-									<div class="col-md-8">
-										 <ul id="stream-list" class="list-group">
-											<li class="list-group-item">
+							<div class="col-md-8">				
+								<ul id="stream-list" class="list-group">
+									<li class="list-group-item">
 										<p class="list-group-item-text">
-										<iframe src="http://www.twitch.tv/imaqtpie/embed" frameborder="0" scrolling="no" height="auto" width="auto"></iframe>
-										<div class="col-md-8">
-										<object bgcolor="#000000" 
-												data="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" 
-												height="400" 
-												type="application/x-shockwave-flash" 
-												width="650" 
-												> 
-										  <param name="allowFullScreen" 
-												  value="true" />
-										  <param name="allowNetworking" 
-												  value="all" />
-										  <param name="allowScriptAccess" 
-												  value="always" />
-										  <param name="movie" 
-												  value="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" />
-										  <param name="flashvars" 
-												  value="channel=imaqtpie&auto_play=true&start_volume=25" />
-										</object>
-										</div>
-										
+												<object bgcolor="#242424" 
+													data="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" 
+													height="450" 
+													type="application/x-shockwave-flash" 
+													width="720"> 
+												<param name="allowFullScreen" 
+													value="true" />
+												<param name="allowNetworking" 
+													value="all" />
+												<param name="allowScriptAccess" 
+													value="always" />
+												<param name="movie" 
+													value="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" />
+												<param name="flashvars" 
+													value="channel=imaqtpie&auto_play=true&start_volume=25" />
+												</object>
 										</p>
 									</li>
-								</li>
-							</ul>
+								</ul>
 							</div>
 							<div class="col-md-4">
 							<ul id="stream-list" class="list-group">
 								<li class="list-group-item">
-									<p class="list-group-item-text">						
+									<p class="list-group-item-text">
+									Chattrutan									
 									</p>
 									</li>
 								</li>
@@ -87,7 +61,7 @@
 							<ul id="stream-list" class="list-group">
 								<li class="list-group-item">
 									<p class="list-group-item-text">
-									
+									Matchinforuta
 									</p>
 									</li>
 								</li>
