@@ -76,8 +76,7 @@
 							<div class="col-md-4">
 							<ul id="stream-list" class="list-group">
 								<li class="list-group-item">
-									<p class="list-group-item-text">
-																
+									<p class="list-group-item-text">						
 									</p>
 									</li>
 								</li>
