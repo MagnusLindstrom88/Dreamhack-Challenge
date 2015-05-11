@@ -10,21 +10,21 @@
         }
 		
 		
-	.video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 35px;
-    height: 0;
-    overflow: hidden;
-	}
-	
-	.video-container iframe {
-    position: absolute;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-	}
+		.video-container {
+		position: relative;
+		padding-bottom: 56.25%;
+		padding-top: 35px;
+		height: 0;
+		overflow: hidden;
+		}
+		
+		.video-container-iframe {
+		position: absolute;
+		top:0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		}
 	
     </style>
 	<script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
@@ -46,7 +46,13 @@
 									<li class="list-group-item">
 										<p class="list-group-item-text">
 											<div class="video-container">
-												<iframe class="video-container iframe" height="378" width="620" frameborder="0" scrolling="no" src="http://www.twitch.tv/imaqtpie/embed"></iframe>
+												<object class="video-container-iframe" 
+														type="application/x-shockwave-flash" 
+														height="660" 
+														width="1150" 
+														id="live_embed_player_flash" 
+														data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=imagtpie">
+												</object>
 											</div>
 										</p>
 									</li>
