@@ -11,7 +11,7 @@ header {
 #header-wrapper {background-color: #242424;}
 
 #navbar {margin-bottom: 0px;}
-#login-modal, #register-modal {color: black;}
+#login-modal, #registration-modal {color: black;}
 
 #content {
     height: 100%;
@@ -24,16 +24,15 @@ footer {
     left:0;
     width: 100%;
     height:60px;
-    line-height: 40px;  /* Centers the text vertically. */
+    line-height: 40px;
     text-align: center;
     background-color: #242424;
-    color: #f7f7f7;
     border-top: 1px solid #676461;
 }
 
 #wrapper {
-	min-height:100%;
-	position:relative;
+    min-height:100%;
+    position:relative;
 }
 
 
