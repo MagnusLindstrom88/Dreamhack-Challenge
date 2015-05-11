@@ -8,6 +8,24 @@
             background-color: #242424;
             border:1px solid #676461;
         }
+		
+		
+	.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+	}
+	
+	.video-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	}
+	
     </style>
 	<script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -27,23 +45,8 @@
 								<ul id="stream-list" class="list-group">
 									<li class="list-group-item">
 										<p class="list-group-item-text">
-											<div class="videoWrapper">
-												<object bgcolor="#242424" 
-													data="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" 
-													height="450" 
-													type="application/x-shockwave-flash" 
-													width="720"> 
-												<param name="allowFullScreen" 
-													value="true" />
-												<param name="allowNetworking" 
-													value="all" />
-												<param name="allowScriptAccess" 
-													value="always" />
-												<param name="movie" 
-													value="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" />
-												<param name="flashvars" 
-													value="channel=imaqtpie&auto_play=true&start_volume=25" />
-												</object>
+											<div class="video-container">
+												<iframe class="video-container iframe" height="378" width="620" frameborder="0" scrolling="no" src="http://www.twitch.tv/imaqtpie/embed"></iframe>
 											</div>
 										</p>
 									</li>
