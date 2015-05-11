@@ -45,8 +45,8 @@
 						<div class="row">
 
 									<div class="col-md-8" height="650">				
-										 <ul id="stream-list" class="list-group">
-											<li class="list-group-item">
+										<ul id="stream-list" class="list-group">
+										<li class="list-group-item">
 										<p class="list-group-item-text">
 										<div class="col-md-8">
 										<object bgcolor="#000000" 
@@ -69,7 +69,8 @@
 										</div>
 										
 										</p>
-									</li>
+										</li>
+									</div>
 								</li>
 							</ul>
 							</div>
