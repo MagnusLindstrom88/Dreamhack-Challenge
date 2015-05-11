@@ -164,3 +164,29 @@ footer {
 	background ##c8c5b7;
 	cursor: pointer;
 }	
+
+.footer-images {
+    margin: auto;
+    display: block;
+    position: absolute;
+    bottom: 0;
+}
+.footer-images .copyright {
+    text-align: center;
+}
+
+.jumbotron {
+    background-image: url();
+    background-size: cover;
+    height: 500px;
+    color:#f7f7f7;
+    margin-bottom: 30px;
+}
+.jumbotron h1 {
+    font-weight: bold;
+}
+.jumbotron a {
+    color: #00b0ff;
+    font-size: 20px;
+    font-weight: bold;
+}
