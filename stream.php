@@ -16,12 +16,9 @@
         
         <div id="content">
             <div class="container">
-                <h1 id="stream-heading">Streaming</h1>
-                
 				<div id="content">
-			
 				<div class="container">
-					
+				<h2>Streaming</h2>
 						<div class="row">
 									<div class="col-md-8">
 										 <ul id="stream-list" class="list-group">
