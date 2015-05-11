@@ -43,36 +43,29 @@
 				<div class="container">
 				<h2>Match Streaming</h2>
 						<div class="row">
-
-									<div class="col-md-8" height="650">				
-										<ul id="stream-list" class="list-group">
-										<li class="list-group-item">
+							<div class="col-md-8">				
+								<ul id="stream-list" class="list-group">
+									<li class="list-group-item">
 										<p class="list-group-item-text">
-										<div class="col-md-8">
-										<object bgcolor="#000000" 
-												data="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" 
-												height="400" 
-												type="application/x-shockwave-flash" 
-												width="650" 
-												> 
-										  <param name="allowFullScreen" 
-												  value="true" />
-										  <param name="allowNetworking" 
-												  value="all" />
-										  <param name="allowScriptAccess" 
-												  value="always" />
-										  <param name="movie" 
-												  value="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" />
-										  <param name="flashvars" 
-												  value="channel=imaqtpie&auto_play=true&start_volume=25" />
-										</object>
-										</div>
-										
+												<object bgcolor="#000000" 
+													data="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" 
+													height="400" 
+													type="application/x-shockwave-flash" 
+													width="650"> 
+												<param name="allowFullScreen" 
+													value="true" />
+												<param name="allowNetworking" 
+													value="all" />
+												<param name="allowScriptAccess" 
+													value="always" />
+												<param name="movie" 
+													value="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" />
+												<param name="flashvars" 
+													value="channel=imaqtpie&auto_play=true&start_volume=25" />
+												</object>
 										</p>
-										</li>
-									</div>
-								</li>
-							</ul>
+									</li>
+								</ul>
 							</div>
 							<div class="col-md-4">
 							<ul id="stream-list" class="list-group">
