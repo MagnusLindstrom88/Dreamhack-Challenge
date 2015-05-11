@@ -7,11 +7,12 @@
         #stream-list li {
             background-color: #242424;
             border:1px solid #676461;
+			margin-top: 0px;
+			margin-bottom: 0px;
+			margin-right: 0px;
+			margin-left: 0px;
         }
     </style>
-	<script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
 </head>
 <body>
     <div id="wrapper">
