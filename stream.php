@@ -27,6 +27,7 @@
 								<ul id="stream-list" class="list-group">
 									<li class="list-group-item">
 										<p class="list-group-item-text">
+											<div class="videoWrapper">
 												<object bgcolor="#242424" 
 													data="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" 
 													height="450" 
@@ -43,6 +44,7 @@
 												<param name="flashvars" 
 													value="channel=imaqtpie&auto_play=true&start_volume=25" />
 												</object>
+											</div>
 										</p>
 									</li>
 								</ul>
