@@ -49,9 +49,9 @@
 										<p class="list-group-item-text">
 												<object bgcolor="#000000" 
 													data="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" 
-													height="400" 
+													height="450" 
 													type="application/x-shockwave-flash" 
-													width="650"> 
+													width="700"> 
 												<param name="allowFullScreen" 
 													value="true" />
 												<param name="allowNetworking" 
