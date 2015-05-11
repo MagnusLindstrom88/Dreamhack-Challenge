@@ -26,7 +26,7 @@
         swfobject.embedSWF("//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf", "twitch_embed_player", "640", "400", "11", null,
           { "eventsCallback":"onPlayerEvent",
             "embed":1,
-            "channel":"day9tv",
+            "channel":"imaqtpie",
             "auto_play":"true"},
           { "allowScriptAccess":"always",
             "allowFullScreen":"true"});
@@ -43,13 +43,13 @@
 				<div class="container">
 				<h2>Streaming</h2>
 						<div class="row">
-									<div class="col-md-8" id="twitch_embed_player">
+									<div class="col-md-8">
 										 <ul id="stream-list" class="list-group">
 											<li class="list-group-item">
 										<p class="list-group-item-text">
 										
-										<iframe src="http://www.twitch.tv/asiagodtonegg3be0/embed" frameborder="0" scrolling="no" height="400" width="620"></iframe>
-
+										<div id="twitch_embed_player"></div>
+										
 										</p>
 									</li>
 								</li>
@@ -59,9 +59,7 @@
 							<ul id="stream-list" class="list-group">
 								<li class="list-group-item">
 									<p class="list-group-item-text">
-									
-									<iframe src="http://www.twitch.tv/asiagodtonegg3be0/chat?popout=" frameborder="0" scrolling="no" height="400" width="350"></iframe>
-									
+																
 									</p>
 									</li>
 								</li>
