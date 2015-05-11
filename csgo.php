@@ -37,7 +37,7 @@
                         <!--Fields on the left.-->
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="#">Matches</a></li>
-                            <li><a href="#">Stream</a></li>
+                            <li><a href="stream.php">Stream</a></li>
                             <li><a href="#">Something</a></li>
                         </ul>
                     </div>

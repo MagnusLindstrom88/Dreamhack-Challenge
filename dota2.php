@@ -29,7 +29,7 @@
                     </button>
                     <!--The brand on the leftmost side.-->
                     <div class="navbar-header">
-                        <a class="navbar-brand">CS:GO</a>
+                        <a class="navbar-brand">DOTA2</a>
                     </div>
         
                     <!--The menu fields. Will be collapsed on small screens.-->
@@ -37,7 +37,7 @@
                         <!--Fields on the left.-->
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="#">Matches</a></li>
-                            <li><a href="#">Stream</a></li>
+                            <li><a href="stream.php">Stream</a></li>
                             <li><a href="#">Something</a></li>
                         </ul>
                     </div>
