@@ -44,11 +44,7 @@
 				<h2>Match Streaming</h2>
 						<div class="row">
 
-									<div class="col-md-8">
-									<?php if (true) { ?> 
-									<iframe src="http://www.twitch.tv/imaqtpie/hls" frameborder="0" scrolling="no" height="378" width="620"></iframe>
-									
-										
+									<div class="col-md-8" height="650">				
 										 <ul id="stream-list" class="list-group">
 											<li class="list-group-item">
 										<p class="list-group-item-text">
@@ -73,7 +69,6 @@
 										</div>
 										
 										</p>
-									<? } ?>
 									</li>
 								</li>
 							</ul>
@@ -81,7 +76,8 @@
 							<div class="col-md-4">
 							<ul id="stream-list" class="list-group">
 								<li class="list-group-item">
-									<p class="list-group-item-text">						
+									<p class="list-group-item-text">
+									Chattrutan									
 									</p>
 									</li>
 								</li>
@@ -91,7 +87,7 @@
 							<ul id="stream-list" class="list-group">
 								<li class="list-group-item">
 									<p class="list-group-item-text">
-									
+									Matchinforuta
 									</p>
 									</li>
 								</li>
