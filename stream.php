@@ -55,7 +55,7 @@
 								</li>
 							</ul>
 							</div>
-							<div class="col-md-4" id="twitch_embed_player">
+							<div class="col-md-4">
 							<ul id="stream-list" class="list-group">
 								<li class="list-group-item">
 									<p class="list-group-item-text">
