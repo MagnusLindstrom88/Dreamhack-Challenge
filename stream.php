@@ -44,11 +44,11 @@
 				<h2>Match Streaming</h2>
 						<div class="row">
 
-									<iframe class="col-md-8" src="http://www.twitch.tv/imaqtpie/embed" frameborder="0" scrolling="no" height="378" width="620">
+									<div class="col-md-8">
 										 <ul id="stream-list" class="list-group">
 											<li class="list-group-item">
 										<p class="list-group-item-text">
-										
+										<iframe src="http://www.twitch.tv/imaqtpie/embed" frameborder="0" scrolling="no" height="378" width="620"></iframe>
 										<div class="col-md-8">
 										<object bgcolor="#000000" 
 												data="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" 
@@ -67,7 +67,7 @@
 										  <param name="flashvars" 
 												  value="channel=imaqtpie&auto_play=true&start_volume=25" />
 										</object>
-										</iframe>
+										</div>
 										
 										</p>
 									</li>
