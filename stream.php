@@ -48,7 +48,7 @@
 											<li class="list-group-item">
 										<p class="list-group-item-text">
 										
-										<div id="twitch_embed_player"></div>
+										<div class="col-md-8" id="twitch_embed_player"></div>
 										
 										</p>
 									</li>
