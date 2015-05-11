@@ -11,27 +11,7 @@
     </style>
 	<script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>
-      $(function () {
-        window.onPlayerEvent = function (data) {
-          data.forEach(function(event) {
-            if (event.event == "playerInit") {
-              var player = $("#twitch_embed_player")[0];
-              player.playVideo();
-              player.mute();
-            }
-          });
-        }
 
-        swfobject.embedSWF("//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf", "twitch_embed_player", "640", "400", "11", null,
-          { "eventsCallback":"onPlayerEvent",
-            "embed":1,
-            "channel":"imaqtpie",
-            "auto_play":"true"},
-          { "allowScriptAccess":"always",
-            "allowFullScreen":"true"});
-      });
-	  </script
 </head>
 <body>
     <div id="wrapper">
@@ -47,7 +27,7 @@
 								<ul id="stream-list" class="list-group">
 									<li class="list-group-item">
 										<p class="list-group-item-text">
-												<object bgcolor="#000000" 
+												<object bgcolor="#242424" 
 													data="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" 
 													height="450" 
 													type="application/x-shockwave-flash" 
