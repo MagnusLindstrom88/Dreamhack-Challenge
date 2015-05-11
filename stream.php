@@ -29,9 +29,9 @@
 										<p class="list-group-item-text">
 												<object bgcolor="#242424" 
 													data="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" 
-													height="450" 
+													height="auto" 
 													type="application/x-shockwave-flash" 
-													width="700"> 
+													width="auto"> 
 												<param name="allowFullScreen" 
 													value="true" />
 												<param name="allowNetworking" 
@@ -51,7 +51,13 @@
 							<ul id="stream-list" class="list-group">
 								<li class="list-group-item">
 									<p class="list-group-item-text">
-									Chattrutan									
+										<object bgcolor="#242424" 
+											data=" 
+											height="650" 
+											type="" 
+											width="auto"> 
+			
+										</object>									
 									</p>
 									</li>
 								</li>
