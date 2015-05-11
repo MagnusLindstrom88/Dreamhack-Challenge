@@ -19,26 +19,31 @@
                 <h1 id="stream-heading">Streaming</h1>
                 
 				<div id="content">
+			
 				<div class="container">
 					
 						<div class="row">
-							<div class="col-md-8">
-								STREAM RUTAN HÄR
+									<div class="col-md-8">
+										 <ul id="stream-list" class="list-group">
+											<li class="list-group-item">
+										<p class="list-group-item-text">Stream här</p>
+									</li>
+								</li>
+							</ul>
 							</div>
 							<div class="col-md-4">
-								CHATT RUTAN HÄR
+							<ul id="stream-list" class="list-group">
+								<li class="list-group-item">
+									<p class="list-group-item-text">Chatten</p>
+									</li>
+								</li>
+							</ul>
 							</div>
 						</div>
 					</div>
 				</div>
 				
-                <ul id="stream-list" class="list-group">
-                    <li class="list-group-item">
-                           <li class="list-group-item">
-                        	<p class="list-group-item-text">Stream Text</p>
-						</li>
-                    </li>
-                </ul>
+               
             </div>
         </div>
     
