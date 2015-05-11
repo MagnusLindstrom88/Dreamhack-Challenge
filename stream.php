@@ -31,6 +31,7 @@
           { "allowScriptAccess":"always",
             "allowFullScreen":"true"});
       });
+	  </script
 </head>
 <body>
     <div id="wrapper">
