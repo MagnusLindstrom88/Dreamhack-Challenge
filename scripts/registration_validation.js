@@ -8,6 +8,7 @@ function validateRegistration() {
     var password = document.getElementById("registration-password");
     var confirmPassword = document.getElementById("confirm-password");
     var tosCheckbox = document.getElementById("tos-checkbox");
+    var captcha = grecaptcha.getResponse();
     var textFields = new Array(username, email, password, confirmPassword);  //Put data into an array to enable iteration.
     
     //Check for empty text fields.
@@ -40,22 +41,31 @@ function validateRegistration() {
         if (tosCheckbox.parentNode.getElementsByClassName("error-message")[0] === undefined)
             tosCheckbox.parentNode.innerHTML += " <span class='error-message' style='color:red'><strong>You have to accept the terms.</strong></span>";
     
+    //Check if the captcha was passed.
+    if ($(".captcha-error").size() != 0) $(".captcha-error").remove();
+    if(captcha.length === 0 && $(".captcha-error").size() === 0) {
+        var error = document.createElement("strong");
+        error.className = "error-message captcha-error";
+        error.style.color = "red";
+        error.appendChild(document.createTextNode("This box has to be checked."));
+        document.getElementById("registration-form").insertBefore(error, document.getElementsByClassName("g-recaptcha")[0]);
+    }
+    
     //Check if the validation was passed.
     if($("#registration-form .error-message").size() == 0) {
         //Use AJAX to handle the registration server-side without reloading the page.
-        xmlHttp = new XMLHttpRequest();
+        var xmlHttp = new XMLHttpRequest();
         xmlHttp.onload = function() {
             cleanRegistrationForm();
             alert(xmlHttp.responseText);
         }
         xmlHttp.open("POST", "scripts/registration_handling.php");
         xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-        xmlHttp.send("username="+username.value+"&email="+email.value+"&password="+password.value+"&confirm-password="+confirmPassword.value);
+        xmlHttp.send("username="+username.value+"&email="+email.value+"&password="+password.value+"&confirm-password="+confirmPassword.value+"&g-recaptcha-response="+grecaptcha.getResponse());
         
     }
     else removeErrorsOnFocus();
 }
-
 //Inserts the specified error message into the specified input element's label.
 function createErrorMessage(inputElement, message) {
     var parent = inputElement.parentNode;
