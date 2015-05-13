@@ -41,10 +41,11 @@
             //Fields on the right. Changes depending on if the user is logged in.
             echo '<ul class="nav navbar-nav navbar-right">';
             if(isset($_SESSION['username'])) echo
-            '<li><a href="scripts/logout.php"> Welcome, '.$_SESSION['username'].' (log out)</a></li>';
+            '<li><a href="scripts/logout.php"> Welcome, '.$_SESSION['username'].' (log out)</a></li>
+            <li><a href="mypages"><span class="glyphicon glyphicon-user"></span> My Pages</a></li>';
             else echo 
             '<li><a href="#" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            <li><a href="#" data-toggle="modal" data-target="#registration-modal" onclick="cleanRegistrationForm()"><span class="glyphicon glyphicon-user"></span> Register</a></li>';
+            <li><a href="#" data-toggle="modal" data-target="#registration-modal" onclick="cleanRegistrationForm()"><span class="glyphicon glyphicon-pencil"></span> Register</a></li>';
             echo '</ul>';
             ?>
         </div>
