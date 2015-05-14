@@ -1,6 +1,3 @@
-/*This file contains code for validating registrations on the client-side. Passes the data on to the server for a double-check
- *if the validation is passed. Handles the creation and removal of error messages in the form.*/
-
 function validateRegistration() {
     //Get the registration input elements.
     var username = document.getElementById("username");
@@ -27,6 +24,18 @@ function validateRegistration() {
     var illegalChars= /[\(\)\<\>\,\;\:\\\"\[\]]/;
     if(email.value.length > 0 && (!emailFilter.test(email.value) || email.value.match(illegalChars)))
         createErrorMessage(email, "invalid email address.");
+        
+    //Check if username or email is already taken. Needs to communicate with a PHP-script to check this.
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onload = function() {
+        if (xmlHttp.responseText.search("username taken") != -1)
+            createErrorMessage(username, "already taken.");
+        if (xmlHttp.responseText.search("email taken") != -1)
+            createErrorMessage(email, "already registered.");
+    }
+    xmlHttp.open("POST", "scripts/registration/check_credentials.php");
+    xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xmlHttp.send("username="+username.value+"&email="+email.value);
     
     //Check password length.
     if (password.value.length < 6 && password.value.length > 0)
@@ -54,18 +63,18 @@ function validateRegistration() {
     //Check if the validation was passed.
     if($("#registration-form .error-message").size() == 0) {
         //Use AJAX to handle the registration server-side without reloading the page.
-        var xmlHttp = new XMLHttpRequest();
         xmlHttp.onload = function() {
             cleanRegistrationForm();
             alert(xmlHttp.responseText);
         }
-        xmlHttp.open("POST", "scripts/registration_handling.php");
+        xmlHttp.open("POST", "scripts/registration/registration_handling.php");
         xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
         xmlHttp.send("username="+username.value+"&email="+email.value+"&password="+password.value+"&confirm-password="+confirmPassword.value+"&g-recaptcha-response="+grecaptcha.getResponse());
         
     }
     else removeErrorsOnFocus();
 }
+
 //Inserts the specified error message into the specified input element's label.
 function createErrorMessage(inputElement, message) {
     var parent = inputElement.parentNode;

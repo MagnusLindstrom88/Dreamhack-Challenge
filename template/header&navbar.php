@@ -147,4 +147,4 @@
 </script>
 
 <!-- Contains code related to validation of the registration form. Passes the data on to the server if the validation is passed. -->
-<script src="scripts/registration_validation.js"></script>
+<script src="scripts/registration/registration_validation.js"></script>

@@ -1,6 +1,6 @@
 <?php
-require_once 'init.php';
-if(isset($_POST['username'])) {
+require_once '../init.php';
+if(isset($_POST['email'])) {
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
