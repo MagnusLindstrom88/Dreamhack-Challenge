@@ -9,7 +9,7 @@ if(isset($_POST['email'])) {
     
     //Verify the captcha by sending a POST-request to Google's server.
     $url = 'https://www.google.com/recaptcha/api/siteverify';
-    $data = array('secret' => '6LfzwQYTAAAAAAkbkImDqmDj6l27DDwdXIGqtVv5', 'response' => $captcha);
+    $data = array('secret' => '6Lc66AYTAAAAAMfbW8Bxl3skUlctQAKIYJpjWm6A', 'response' => $captcha);
     $options = array(
         'http' => array(
             'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
