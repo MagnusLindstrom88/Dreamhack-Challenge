@@ -1,5 +1,6 @@
+alert("Första hej");
 function validateRegistration() {
-    alert("Hej igen Jimmy");
+    alert("Andra hej");
     //Get the registration input elements.
     var username = document.getElementById("username");
     var email = document.getElementById("registration-email");
