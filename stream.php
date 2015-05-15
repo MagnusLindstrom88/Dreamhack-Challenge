@@ -12,6 +12,22 @@
 			margin-right: 0px;
 			margin-left: 0px;
         }
+		.embed-container {
+		position: relative;
+		padding-bottom: 56.25%; /* 16/9 ratio */
+		padding-top: 30px; /* IE6 workaround*/
+		height: 0;
+		overflow: hidden;
+		}
+		.embed-container iframe,
+		.embed-container object,
+		.embed-container embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		}
     </style>
 </head>
 <body>
@@ -28,8 +44,9 @@
 								<ul id="stream-list" class="list-group">
 									<li class="list-group-item">
 										<p class="list-group-item-text">
-
+											<div class="embed-container">
 												<iframe src="http://www.twitch.tv/imaqtpie/embed" frameborder="0" scrolling="no" height="378" width="620"></iframe>
+											</div>
 										</p>
 									
 									</li>
