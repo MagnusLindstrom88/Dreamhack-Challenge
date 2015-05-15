@@ -33,7 +33,7 @@ function validateRegistration() {
         if (xmlHttp.responseText.search("email taken") != -1)
             createErrorMessage(email, "already registered.");
     }
-    xmlHttp.open("POST", "scripts/registration/check_credentials.php");
+    xmlHttp.open("POST", "scripts/registration/check_credentials.php", false);
     xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xmlHttp.send("username="+username.value+"&email="+email.value);
     
@@ -69,7 +69,7 @@ function validateRegistration() {
         }
         xmlHttp.open("POST", "scripts/registration/registration_handling.php");
         xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-        xmlHttp.send("username="+username.value+"&email="+email.value+"&password="+password.value+"&confirm-password="+confirmPassword.value+"&g-recaptcha-response="+grecaptcha.getResponse());
+        xmlHttp.send("username="+username.value+"&email="+email.value+"&password="+password.value+"&confirm-password="+confirmPassword.value+"&g-recaptcha-response="+captcha);
         
     }
     else removeErrorsOnFocus();
