@@ -11,7 +11,7 @@
             <div class="container">
                 <h1>My Account</h1>
                 <!--Main Form-->
-                	<form class="form-horizontal" role="form">
+        <form class="form-horizontal" role="form">
 		<div class="form-group">
 			<label class="control-label col-sm-2" for="username">Username: </label>
 			<div class="col-sm-10">
