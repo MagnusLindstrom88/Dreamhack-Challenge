@@ -113,7 +113,7 @@
             <div class="checkbox">
                 <label><input type="checkbox" id="tos-checkbox"> I accept the <a href="#">terms of service</a>.</label>
             </div>
-            <!--<div class="g-recaptcha" data-sitekey="6LfzwQYTAAAAAGRb0kllCxB2qV3Jh-qPRcsU806x"></div>-->
+            <div class="g-recaptcha" data-sitekey="6LfzwQYTAAAAAGRb0kllCxB2qV3Jh-qPRcsU806x"></div>
         </form>
       </div>
       <div class="modal-footer">
