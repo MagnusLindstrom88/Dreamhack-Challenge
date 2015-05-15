@@ -44,7 +44,9 @@
 												<param name="flashvars" 
 													value="channel=imaqtpie&auto_play=true&start_volume=25" />
 												</object>
+												<iframe src="http://www.twitch.tv/imaqtpie/embed" frameborder="0" scrolling="no" height="378" width="620"></iframe>
 										</p>
+									
 									</li>
 								</ul>
 							</div>
