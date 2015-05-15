@@ -1,3 +1,4 @@
+alert("Hej Jimmy");
 function validateRegistration() {
     //Get the registration input elements.
     var username = document.getElementById("username");
