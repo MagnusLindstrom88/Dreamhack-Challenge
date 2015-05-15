@@ -1,5 +1,4 @@
 function validateRegistration() {
-    alert("Hejsan");
     //Get the registration input elements.
     var username = document.getElementById("username");
     var email = document.getElementById("registration-email");
