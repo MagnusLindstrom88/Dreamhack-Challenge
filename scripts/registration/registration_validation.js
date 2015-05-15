@@ -1,13 +1,11 @@
-alert("Första hej");
 function validateRegistration() {
-    alert("Andra hej");
     //Get the registration input elements.
     var username = document.getElementById("username");
     var email = document.getElementById("registration-email");
     var password = document.getElementById("registration-password");
     var confirmPassword = document.getElementById("confirm-password");
     var tosCheckbox = document.getElementById("tos-checkbox");
-    //var captcha = grecaptcha.getResponse();
+    var captcha = grecaptcha.getResponse();
     var textFields = new Array(username, email, password, confirmPassword);  //Put data into an array to enable iteration.
     
     //Check for empty text fields.
@@ -71,7 +69,7 @@ function validateRegistration() {
         }
         xmlHttp.open("POST", "scripts/registration/registration_handling.php");
         xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-        xmlHttp.send("username="+username.value+"&email="+email.value+"&password="+password.value+"&confirm-password="+confirmPassword.value);
+        xmlHttp.send("username="+username.value+"&email="+email.value+"&password="+password.value+"&confirm-password="+confirmPassword.value+"&g-recaptcha-response="+captcha);
         
     }
     else removeErrorsOnFocus();
