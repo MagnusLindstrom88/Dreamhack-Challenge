@@ -5,7 +5,7 @@ if(isset($_POST['email'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confirmPassword = $_POST['confirm-password'];
-    /*$captcha = $_POST['g-recaptcha-response'];
+    $captcha = $_POST['g-recaptcha-response'];
     
     //Verify the captcha by sending a POST-request to Google's server.
     $url = 'https://www.google.com/recaptcha/api/siteverify';
@@ -22,11 +22,11 @@ if(isset($_POST['email'])) {
     $result = json_decode($result, true);
     
     //If the verification of the captcha was successful.
-    if($result['success']) {*/
+    if($result['success']) {
         //Insert into database with a prepared statement in order eliminate any risk of SQL injection.
         $ps = $db->prepare('INSERT INTO users(username, email, password) VALUES (?, ?, ?)');
         $ps->execute(array($username, $email, password_hash($password, PASSWORD_DEFAULT)));
         echo "Registration successful.";
-    //}
-    //else echo "Registration failed.";
+    }
+    else echo "Registration failed.";
 }
