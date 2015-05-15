@@ -28,6 +28,7 @@
 		width: 100%;
 		height: 100%;
 		}
+		
     </style>
 </head>
 <body>
@@ -46,17 +47,6 @@
 										<p class="list-group-item-text">
 											<div class="embed-container">
 												<iframe src="http://www.twitch.tv/imaqtpie/embed" frameborder="0" scrolling="no" height="378" width="620"></iframe>
-											</div>
-										</p>
-									
-									</li>
-								</ul>
-							</div>
-							<div class="col-md-4">
-							<ul id="stream-list" class="list-group">
-								<li class="list-group-item">
-									<p class="list-group-item-text">
-									Chattrutan	
 												<object bgcolor="#242424" 
 													data="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" 
 													height="450" 
@@ -72,7 +62,19 @@
 													value="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" />
 												<param name="flashvars" 
 													value="channel=imaqtpie&auto_play=true&start_volume=25" />
-												</object>									
+												</object>	
+											</div>
+										</p>
+									
+									</li>
+								</ul>
+							</div>
+							<div class="col-md-4">
+							<ul id="stream-list" class="list-group">
+								<li class="list-group-item">
+									<p class="list-group-item-text">
+									Chattrutan	
+								
 									</p>
 									</li>
 								</li>
