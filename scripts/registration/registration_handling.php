@@ -29,7 +29,7 @@ if(isset($_POST['email'])) {
     if($result['success']) {*/
         //Insert into database with a prepared statement in order eliminate any risk of SQL injection.
         $ps = $db->prepare('INSERT INTO users(username, email, password) VALUES (?, ?, ?)');
-        $ps->execute(array($username, $email, password_hash($password, PASSWORD_DEFAULT)));
+        $ps->execute(array($username, $email, $password));
         echo "Registration successful.";
     //}
     //else echo "Registration failed.";
