@@ -1,6 +1,4 @@
-alert("Beginning script");
 function validateRegistration() {
-    alert("Beginning function");
     //Get the registration input elements.
     var username = document.getElementById("username");
     var email = document.getElementById("registration-email");
