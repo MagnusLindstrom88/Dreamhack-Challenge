@@ -63,6 +63,8 @@
 												<param name="flashvars" 
 													value="channel=imaqtpie&auto_play=true&start_volume=25" />
 												</object>	
+												<a class="embedly-card" href="http://www.twitch.tv/imaqtpie/embed">imaqtpie</a>
+												<script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 											</div>
 										</p>
 									
