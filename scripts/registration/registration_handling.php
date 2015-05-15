@@ -1,10 +1,14 @@
 <?php
+echo "before require.<br>";
 require_once '../init.php';
+echo "after require, before function.<br>";
 if(isset($_POST['email'])) {
+    echo "start of function.<br>";
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confirmPassword = $_POST['confirm-password'];
+    echo "after saving POST data<br>";
     /*$captcha = $_POST['g-recaptcha-response'];
     
     //Verify the captcha by sending a POST-request to Google's server.
