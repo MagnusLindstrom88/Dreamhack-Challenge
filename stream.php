@@ -80,7 +80,7 @@
 								<li class="list-group-item">
 									<p class="list-group-item-text">
 									<div class="embed-container">
-									<iframe src="chat.php" width="450" height="450" frameborder="0" scrolling="yes"></iframe>
+									<iframe src="chat.php" height="450" frameborder="0" scrolling="yes"></iframe>
 									</div>
 									</p>
 									</li>
