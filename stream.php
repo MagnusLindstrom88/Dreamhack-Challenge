@@ -79,7 +79,7 @@
 							<ul id="stream-list" class="list-group">
 								<li class="list-group-item">
 									<p class="list-group-item-text">
-									Chattrutan	
+									<iframe src="chat.php" width="450" height="450" frameborder="0" scrolling="yes"></iframe>
 								
 									</p>
 									</li>
