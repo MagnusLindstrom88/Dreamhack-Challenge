@@ -25,8 +25,20 @@ if(isset($_POST['email'])) {
     if($result['success']) {
         //Insert into database with a prepared statement in order eliminate any risk of SQL injection.
         $ps = $db->prepare('INSERT INTO users(username, email, password) VALUES (?, ?, ?)');
-        $ps->execute(array($username, $email, $password));
+        //The default hashing algorithm uses a 2-character salt. There's a better alternative to crypt() but the server is running an old version of PHP that dosn't support it.
+        $ps->execute(array($username, $email, crypt($password, generateSalt(2))));
         echo "Registration successful.";
     }
     else echo "Registration failed.";
+}
+
+function generateSalt($max = 15) {
+        $characterList = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*?";
+        $i = 0;
+        $salt = "";
+        while ($i < $max) {
+            $salt .= $characterList{mt_rand(0, (strlen($characterList) - 1))};
+            $i++;
+        }
+        return $salt;
 }
