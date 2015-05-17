@@ -9,5 +9,5 @@ $ps->execute(array($email));
 $data = $ps->fetchAll(PDO::FETCH_ASSOC);
 
 //Check if the cleartext password matches the hashed one in the database.
-if(hash_equals($data[0]['password'], crypt($password, $data[0]['password'])))
+if($data[0]['password'] === crypt($password, $data[0]['password']))
     $_SESSION['username'] = $data[0]['username'];
