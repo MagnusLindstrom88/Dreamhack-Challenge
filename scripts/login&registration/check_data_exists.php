@@ -13,7 +13,7 @@ if($ps->rowCount() > 0) {
     if($_POST['from'] === "login") {
     $password = $_POST['password'];
     $hashed_password = $ps->fetchAll(PDO::FETCH_ASSOC)[0]['password'];
-    if(hash_equals($hashed_password, crypt($password, $hashed_password))) echo "password found";
+    if($hashed_password === crypt($password, $hashed_password)) echo "password found";
     }
 }
 
