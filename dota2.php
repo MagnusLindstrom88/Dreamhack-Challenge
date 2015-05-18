@@ -59,8 +59,10 @@
                                 <img src="images/vs.png" alt="Versus."/>
                                 <img src="images/teamlogos/teamevilgeniuses.png" alt="Evil Geniuses's logotype."/>
                             </div>
-                            <button class="btn btn-primary" style="margin-right: 5px;">Bet MayaM</button>
-                            <button class="btn btn-primary" style="margin-left: 5px;">Bet EG</button>
+                            <div class="btn-group" id="1">
+                            <button class="btn btn-primary" id="button1" style="margin-right: 5px" onclick="makeBet(this);">Bet Alliance</button>
+                            <button class="btn btn-primary" id="button2" style="margin-left: 5px" onclick="makeBet(this);">Bet Navi</button>
+                            </div>
                             <p style="margin-top: 10px;">16:30 CET, Time left: 4:23:43</p>
                         </div>
                     </div>
