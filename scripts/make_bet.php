@@ -23,8 +23,7 @@ catch(PDOException $e)
 		
 	if($ps->rowCount() != 0) {
 		
-	$ps2 = $dbh->prepare("SELECT * FROM bets WHERE username=? AND M
-						 matchID=? AND bettedTeam=?");
+	$ps2 = $dbh->prepare("SELECT * FROM bets WHERE username=? AND matchID=? AND bettedTeam=?");
     $ps2->execute(array($member, $matchen, $team));
 		
 		if($ps2->rowCount() != 0) {
