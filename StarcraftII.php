@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Prototyp</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-        
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    
-    <link rel="stylesheet" href="CSS.css">
-        <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
-    
-    <style></style>
+    <?php require_once 'template/head.php'; ?>
+    <style>
+        #section-image-container {
+            background-image: url(images/starcraftII.jpg);
+            background-size: cover;
+        }
+    </style>
 </head>
 
 <body>
-    <!--Header-->
-    <header class="container">
-        <a href="index.html"><img src="Logo.png" alt="Logo" style="width:300px"/></a>
-    </header>
+   <div id="wrapper">
+        <?php require_once 'template/header&navbar.php'; ?>
+        
+        <div id="section-image-container">
+            <img id="section-image" src="images/starcraftII.png" alt="Starcraft logotype"/>
+        </div>
     
     <!--Navigation bar-->
     <nav id="navbar" class="navbar navbar-default">
@@ -44,7 +42,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="csgo.html">Counter-Strike: Global Offensive</a></li>
                             <li><a href="dota2.html">Dota 2</a></li>
-                            <li class="active"><a href="#">Starcraft II</a></li>
+                            <li class="active"><a href="StarcraftII.html">Starcraft II</a></li>
                         </ul>
                     </li>
                     <li><a href="#">About</a></li>
@@ -59,7 +57,7 @@
     </nav>
     
     <!--Main image-->
-	 <div class="starcraftIIJumbo" style="background-image: url('SCIIJumbo2.jpg'); height: 350px;"></div>
+	 <div class="starcraftIIJumbo" style="background-image: url('images/SCIIJumbo2.jpg'); height: 350px;"></div>
     
 
         <nav id="navbar" class="navbar navbar-default">
@@ -81,7 +79,7 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Matches</a></li>
                     <li><a href="#">Ranking</a></li>
-                    <li><a href="#">Stream</a></li>
+                    <li><a href="stream.php">Stream</a></li>
                 </ul>
             </div>
         </div>
@@ -96,23 +94,23 @@
             <div class="row" style="margin-top:40px;padding-bottom:40px;border-bottom: 1px solid #676461;">
                 <div class="col-sm-4" style="display: block;margin: auto;">
                     <div class="teamversus">
-                        <img src="teammayam.png" style="width:100px;"/>
-                        <img src="vs.png" style="width:50px;"/>
-                        <img src="teamevilgeniuses.png" style="width:100px;"/>
+                        <img src="images/teammayam.png" style="width:100px;"/>
+                        <img src="images/vs.png" style="width:50px;"/>
+                        <img src="images/teamevilgeniuses.png" style="width:100px;"/>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="teamversus">
-                        <img src="teammayam.png" style="width:100px;"/>
-                        <img src="vs.png" style="width:50px;"/>
-                        <img src="teamevilgeniuses.png" style="width:100px;"/>
+                        <img src="images/teammayam.png" style="width:100px;"/>
+                        <img src="images/vs.png" style="width:50px;"/>
+                        <img src="images/teamevilgeniuses.png" style="width:100px;"/>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="teamversus">
-                        <img src="teammayam.png" style="width:100px;"/>
-                        <img src="vs.png" style="width:50px;"/>
-                        <img src="teamevilgeniuses.png" style="width:100px;"/>
+                        <img src="images/teammayam.png" style="width:100px;"/>
+                        <img src="images/vs.png" style="width:50px;"/>
+                        <img src="images/teamevilgeniuses.png" style="width:100px;"/>
                     </div>
                 </div>
             </div>
@@ -148,10 +146,8 @@
 	</div>
 		
 </nav>
-<script>
-$("#brackets").click(function() {
-	$("p:first").fadeToggle( "slow", "linear" );
-});
-</script>
+    </div>
+        <?php require_once 'template/footer.php'; ?>
+    </div>
 </body>
 </html>

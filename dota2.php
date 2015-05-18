@@ -14,7 +14,7 @@
         <?php require_once 'template/header&navbar.php'; ?>
         
         <div id="section-image-container">
-            <img id="section-image" src="images/dota2logo.png" />
+            <img id="section-image" src="images/dota2logo.png" alt="Dota 2 logotype."/>
         </div>
         
         <!--Content columns.-->
@@ -22,22 +22,22 @@
             <nav id="navbar" class="navbar navbar-default">
                 <div class="container">
                     <!--The toggle button for collapsed menu.-->
-                    <button class="navbar-toggle" data-toggle="collapse" data-target="#menuFields">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target="#gameMenuFields">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
                     <!--The brand on the leftmost side.-->
                     <div class="navbar-header">
-                        <a class="navbar-brand">CS:GO</a>
+                        <a class="navbar-brand">DOTA 2</a>
                     </div>
         
                     <!--The menu fields. Will be collapsed on small screens.-->
-                    <div class="collapse navbar-collapse" id="menuFields">
+                    <div class="collapse navbar-collapse" id="gameMenuFields">
                         <!--Fields on the left.-->
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="#">Matches</a></li>
-                            <li><a href="#">Stream</a></li>
+                            <li><a href="stream.php">Stream</a></li>
                             <li><a href="#">Something</a></li>
                         </ul>
                     </div>
@@ -55,9 +55,28 @@
                                 <p>Mayam Gaming (MayaM) VS Evil Geniuses (EG)</p>
                             </div>
                             <div class="match-logos">
-                                <img src="images/teamlogos/teammayam.png"/>
-                                <img src="images/vs.png"/>
-                                <img src="images/teamlogos/teamevilgeniuses.png"/>
+                                <img src="images/teamlogos/teammayam.png" alt="Mayam Gaming's logotype."/>
+                                <img src="images/vs.png" alt="Versus."/>
+                                <img src="images/teamlogos/teamevilgeniuses.png" alt="Evil Geniuses's logotype."/>
+                            </div>
+                            <div class="btn-group" id="1">
+                            <button class="btn btn-primary" id="button1" value="0" style="margin-right: 5px" onclick="makeBet(this);">Bet Alliance</button>
+                            <button class="btn btn-primary" id="button2" value="1" style="margin-left: 5px" onclick="makeBet(this);">Bet Navi</button>
+                            </div>
+                            <p style="margin-top: 10px;">16:30 CET, Time left: 4:23:43</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="match-block">
+                            <div class="match-header">
+                                <h4>Quarter-Finals</h4>
+                                <p>Mayam Gaming (MayaM) VS Evil Geniuses (EG)</p>
+                            </div>
+                            <div class="match-logos">
+                                <img src="images/teamlogos/teammayam.png" alt="Mayam Gaming's logotype."/>
+                                <img src="images/vs.png" alt="Versus."/>
+                                <img src="images/teamlogos/teamevilgeniuses.png" alt="Evil Geniuses's logotype."/>
                             </div>
                             <button class="btn btn-primary" style="margin-right: 5px;">Bet MayaM</button>
                             <button class="btn btn-primary" style="margin-left: 5px;">Bet EG</button>
@@ -72,26 +91,9 @@
                                 <p>Mayam Gaming (MayaM) VS Evil Geniuses (EG)</p>
                             </div>
                             <div class="match-logos">
-                                <img src="images/teamlogos/teammayam.png"/>
-                                <img src="images/vs.png"/>
-                                <img src="images/teamlogos/teamevilgeniuses.png"/>
-                            </div>
-                            <button class="btn btn-primary" style="margin-right: 5px;">Bet MayaM</button>
-                            <button class="btn btn-primary" style="margin-left: 5px;">Bet EG</button>
-                            <p style="margin-top: 10px;">16:30 CET, Time left: 4:23:43</p>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4">
-                        <div class="match-block">
-                            <div class="match-header">
-                                <h4>Quarter-Finals</h4>
-                                <p>Mayam Gaming (MayaM) VS Evil Geniuses (EG)</p>
-                            </div>
-                            <div class="match-logos">
-                                <img src="images/teamlogos/teammayam.png"/>
-                                <img src="images/vs.png"/>
-                                <img src="images/teamlogos/teamevilgeniuses.png"/>
+                                <img src="images/teamlogos/teammayam.png" alt="Mayam Gaming's logotype."/>
+                                <img src="images/vs.png" alt="Versus."/>
+                                <img src="images/teamlogos/teamevilgeniuses.png" alt="Evil Geniuses's logotype."/>
                             </div>
                             <button class="btn btn-primary" style="margin-right: 5px;">Bet MayaM</button>
                             <button class="btn btn-primary" style="margin-left: 5px;">Bet EG</button>

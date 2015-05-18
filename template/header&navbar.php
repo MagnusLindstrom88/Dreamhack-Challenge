@@ -1,14 +1,5 @@
 <?php require_once 'scripts/init.php'; ?>
 
-<!--Code to help highlight the right field in the navbar.-->
-<?php
-$pageName = explode('/', $_SERVER['SCRIPT_NAME'])[2];
-function checkActive($s) {
-    global $pageName;
-    if($s === $pageName) echo 'active';
-}
-?>
-
 <!--Header-->
 <div id="header-wrapper">
     <header class="container">
@@ -17,7 +8,7 @@ function checkActive($s) {
 </div>
 
 <!--Navigation bar-->
-<nav id="navbar" class="navbar navbar-default">
+<nav class="navbar navbar-default" id="navbar">
     <div class="container">
         <!--The toggle button for collapsed menu.-->
         <button class="navbar-toggle" data-toggle="collapse" data-target="#menuFields">
@@ -33,27 +24,28 @@ function checkActive($s) {
         <!--The menu fields. Will be collapsed on small screens.-->
         <div class="collapse navbar-collapse" id="menuFields">
             <!--Fields on the left.-->
-            <ul class="nav navbar-nav">
-                <li class="<?php checkActive('index.php'); ?>"><a href="index.php">Home</a></li>
+            <ul class="nav navbar-nav" id="left-fields">
+                <li><a href="index.php">Home</a></li>
                 <li class="dropdown" id="game-list">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Games<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li class="<?php checkActive('csgo.php'); ?>"><a href="csgo.php">Counter-Strike: Global Offensive</a></li>
-                        <li class="<?php checkActive('dota2.php'); ?>"><a href="dota2.php">Dota 2</a></li>
-                        <li class="<?php checkActive('starcraft2.php'); ?>"><a href="starcraft2.php">Starcraft II</a></li>
+                        <li><a href="csgo.php">Counter-Strike: Global Offensive</a></li>
+                        <li><a href="dota2.php">Dota 2</a></li>
+                        <li><a href="starcraft2.php">Starcraft II</a></li>
                     </ul>
                 </li>
-                <li class="<?php checkActive('faq.php'); ?>"><a href="faq.php">FAQ</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="faq.php">FAQ</a></li>
+                <li><a href="about.php">About Us</a></li>
             </ul>
-            <!--Fields on the right. Changes depending on if the user is logged in.-->
             <?php
+            //Fields on the right. Changes depending on if the user is logged in.
             echo '<ul class="nav navbar-nav navbar-right">';
             if(isset($_SESSION['username'])) echo
-            '<li><a href="scripts/logout.php"> Welcome, '.$_SESSION['username'].' (log out)</a></li>';
+            '<li><a href="scripts/login&registration/logout.php"> Welcome, '.$_SESSION['username'].' (log out)</a></li>
+            <li><a href="mypages.php"><span class="glyphicon glyphicon-user"></span> My Pages</a></li>';
             else echo 
-            '<li><a href="#" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            <li><a href="#" data-toggle="modal" data-target="#register-modal"><span class="glyphicon glyphicon-user"></span> Register</a></li>';
+            '<li><a href="#" data-toggle="modal" data-target="#login-modal" onclick="cleanForms()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#registration-modal" onclick="cleanForms()"><span class="glyphicon glyphicon-pencil"></span> Register</a></li>';
             echo '</ul>';
             ?>
         </div>
@@ -61,66 +53,67 @@ function checkActive($s) {
 </nav>
 
 <!--Login Modal-->
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="loginHeading" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Login</h4>
+        <h4 id="loginHeading" class="modal-title">Login</h4>
       </div>
       <div class="modal-body">
         <form id="login-form" role="form" method="post" action="scripts/login.php">
             <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" class="form-control">
+                <label for="login-email">Email or Username:</label>
+                <input type="email" id="login-email" name="email" class="form-control">
             </div>
             <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" class="form-control">
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="password" class="form-control">
             </div>
             <div class="checkbox">
             <label><input type="checkbox"> Remember me</label>
             </div>
         </form>
-        <p><b>Or</b> <a href="#"><img src="images/loginfacebook.png"></a></p>
+        <p><b>Or</b> <a href="#"><img src="images/loginfacebook.png" alt="Facebook login button."></a></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" onclick="login()">Login</button>
+        <button type="button" class="btn btn-primary" onclick="validateLogin()">Login</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
       </div>
     </div>
   </div>
 </div>
 
-<!--Register Modal-->
-<div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!--Registration Modal-->
+<div class="modal fade" id="registration-modal" tabindex="-1" role="dialog" aria-labelledby="registrationHeading" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Register</h4>
+        <h4 id="registrationHeading" class="modal-title">Register</h4>
       </div>
       <div class="modal-body">
         <form id="registration-form" role="form" method="post">
             <div class="form-group">
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username" class="form-control">
+                <input type="text" id="username" name="username" class="form-control" maxlength="20">
             </div>
             <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" class="form-control">
+                <label for="registration-email">Email:</label>
+                <input type="email" id="registration-email" name="email" class="form-control" maxlength="254">
             </div>
             <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" class="form-control">
+                <label for="registration-password">Password:</label>
+                <input type="password" id="registration-password" name="password" class="form-control" maxlength="255">
             </div>
             <div class="form-group">
                 <label for="confirm-password">Confirm Password:</label>
-                <input type="password" id="confirm-password" name="confirm-password" class="form-control">
+                <input type="password" id="confirm-password" name="confirm-password" class="form-control" maxlength="255">
             </div>
             <div class="checkbox">
-                <label><input type="checkbox"> I accept the <a href="#">terms of service</a>.</label>
+                <label><input type="checkbox" id="tos-checkbox"> I accept the <a href="#">terms of service</a>.</label>
             </div>
+            <div class="g-recaptcha" data-sitekey="6LfzwQYTAAAAAGRb0kllCxB2qV3Jh-qPRcsU806x"></div>
         </form>
       </div>
       <div class="modal-footer">
@@ -131,32 +124,33 @@ function checkActive($s) {
   </div>
 </div>
 
-<!-- Makes the dropdown menu field highlighted if any of its children are highlighted. -->
+<!-- Code to handle menu highlighting. -->
 <script>
+    //Get name of the current page and compare it to the href attributes of the left menu fields. Highlights the field that matches.
+    var pageName = document.URL.split("/");
+    pageName = pageName[pageName.length-1];
+    var links = $("#left-fields a");
+    links.each(function() {
+        var href = this.href.split("/");
+        href = href[href.length-1];
+        if(pageName === href) this.parentNode.className = "active";
+    });
+    
+    //Makes the dropdown menu field highlighted if any of its children are highlighted.
     var gameList = document.getElementById("game-list");
     var active = document.getElementsByClassName("active")[0];
     if($.contains(gameList, active))
         gameList.className += " active";
 </script>
 
-<!-- Called when the login button is clicked. Simply submits the login form. -->
-<script>function login() {document.getElementById("login-form").submit();}</script>
+<!-- Contains some functions related to the creation and removal of error messages. Used by both the login- and registration validation scripts. -->
+<script src="scripts/login&registration/error_functions.js"></script>
 
+<!-- Contains code to validate data sent with the login form. Passes the data on to the server if the validation is passed. -->
+<script src="scripts/login&registration/login_validation.js"></script>
 
-<!-- Contains a function for validating the registration form before it's sent to the server -->
-<script src="scripts/registration_validation.js"></script>
+<!-- Contains code to validate data sent with the registration form. Passes the data on to the server if the validation is passed. -->
+<script src="scripts/login&registration/registration_validation.js"></script>
 
-<!-- Creates a new user with the registration data. Only run the data passed the validation. -->
-<?php
-if(isset($_POST['username'])) {
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $confirmPassword = $_POST['confirm-password'];
-    
-    //Insert into database with a prepared statement in order eliminate any risk of SQL injection.
-    $ps = $db->prepare('INSERT INTO users(username, email, password) VALUES (?, ?, ?)');
-    $ps->execute(array($username, $email, $password));
-}
-?>
-
+<!-- sdasd -->
+<script src="scripts/bet_functions.js"></script>

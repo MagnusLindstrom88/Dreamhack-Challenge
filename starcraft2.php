@@ -4,7 +4,7 @@
     <?php require_once 'template/head.php'; ?>
     <style>
         #section-image-container {
-            background-image: url(images/csgobackground.jpg);
+            background-color: #000000;
             background-size: cover;
         }
     </style>
@@ -14,7 +14,7 @@
         <?php require_once 'template/header&navbar.php'; ?>
         
         <div id="section-image-container">
-            <img id="section-image" src="images/csgologo.png" alt="Counter Strike: Global Offensive logotype."/>
+            <img id="section-image" src="images/Starcraft2-logo.jpg" alt="Starcraft 2 logotype."/>
         </div>
         
         <!--Content columns.-->
@@ -29,7 +29,7 @@
                     </button>
                     <!--The brand on the leftmost side.-->
                     <div class="navbar-header">
-                        <a class="navbar-brand">CS:GO</a>
+                        <a class="navbar-brand">DOTA 2</a>
                     </div>
         
                     <!--The menu fields. Will be collapsed on small screens.-->
@@ -48,7 +48,6 @@
                 <h2>Upcoming Matches</h2>
                 <p>These matches are currently open for betting.</p>
                 <div class="row match-row">
-                    
                     <div class="col-md-4">
                         <div class="match-block">
                             <div class="match-header">
@@ -124,8 +123,6 @@
                         <button class="btn btn-lg btn-danger btn-block">Final-match</button>
                     </div>
                 </div>
-            </div>
-        </div>
         
         <?php require_once 'template/footer.php'; ?>
     </div>
