@@ -47,28 +47,11 @@
 									<li class="list-group-item">
 										<p class="list-group-item-text">
 											<div class="embed-container">
-											
 													<script>
 														if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-													 document.getElementById('embed-container').innerHTML = '<iframe src="http://www.twitch.tv/imaqtpie/embed" frameborder="0" scrolling="no"></iframe> ';
-														}
-														else {
-													 document.getElementById('embed-container').innerHTML = '<object bgcolor="#242424" 
-													 data="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" 
-													 height="450" 
-													 type="application/x-shockwave-flash" 
-													 width="720"> 
-													<param name="allowFullScreen" 
-													 value="true" />
-													<param name="allowNetworking" 
-													 value="all" />
-													<param name="allowScriptAccess" 
-													 value="always" />
-													<param name="movie" 
-													 value="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" />
-													<param name="flashvars" 
-													 value="channel=imaqtpie&auto_play=true&start_volume=25" />
-													</object>'; 
+															document.getElementById('embed-container').innerHTML = '<iframe src="http://www.twitch.tv/imaqtpie/embed" frameborder="0" scrolling="no"></iframe> ';
+														} else {
+															document.getElementById('embed-container').innerHTML = '<object bgcolor="#242424" data="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" height="450" type="application/x-shockwave-flash" width="720"> <param name="allowFullScreen" value="true" /> <param name="allowNetworking" value="all" /> <param name="allowScriptAccess" value="always" /> <param name="movie" value="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" /> <param name="flashvars" value="channel=imaqtpie&auto_play=true&start_volume=25" /> </object>'; 
 														}
 													</script>
 											</div>
