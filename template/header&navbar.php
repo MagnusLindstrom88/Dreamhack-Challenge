@@ -151,3 +151,6 @@
 
 <!-- Contains code to validate data sent with the registration form. Passes the data on to the server if the validation is passed. -->
 <script src="scripts/login&registration/registration_validation.js"></script>
+
+<!-- sdasd -->
+<script src="scripts/bet_functions.js"></script>
