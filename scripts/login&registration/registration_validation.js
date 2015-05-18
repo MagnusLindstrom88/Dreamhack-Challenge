@@ -61,11 +61,11 @@ function validateRegistration() {
     xmlHttp.send("username="+username.value+"&email="+email.value+"&from=registration");
     
     //Check if the validation was passed.
-    if($("#registration-form .error-message").size() == 0) {
+    if($("#registration-form .error-message").size() === 0) {
         //Use AJAX to handle the registration server-side without reloading the page.
         xmlHttp.onload = function() {
-            cleanForms();
             alert(xmlHttp.responseText);
+            if(xmlHttp.responseText.search("successful") !== -1) {location.reload();}
         }
         xmlHttp.open("POST", "scripts/login&registration/register.php");
         xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
