@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
     <?php require_once 'template/head.php'; ?>
     <style>
         #stream-heading {margin-bottom: 20px;}
