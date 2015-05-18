@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
     <?php require_once 'template/head.php'; ?>
     <style>
         #stream-heading {margin-bottom: 20px;}
@@ -31,6 +30,35 @@
 		}
 		
     </style>
+	
+    <script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+
+    <script>
+        $(function () {
+            window.onPlayerEvent = function (data) {
+                data.forEach(function (event) {
+                    console.log("EVENT: %s", event.event);
+                    console.log("DATA:", event.data);
+                    if(event.event == "playerInit") {
+                        var player = $("#twitch_embed_player")[0];
+                        player.playVideo();
+                        player.mute();
+                    }
+                });
+            }
+
+            swfobject.embedSWF("http://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf", "twitch_embed_player", "640", "400", "11", null, {
+                "eventsCallback": "onPlayerEvent",
+                "embed": 1,
+                "channel": "imaqtpie",
+                "auto_play": "true"
+            }, {
+                "allowScriptAccess": "always",
+                "allowFullScreen": "true"
+            });
+        });
+    </script>
+	
 </head>
 <body>
     <div id="wrapper">
@@ -48,28 +76,7 @@
 									<li class="list-group-item">
 										<p class="list-group-item-text">
 											<div class="embed-container">
-											    <script>
-												  $(function () {
-													window.onPlayerEvent = function (data) {
-													  data.forEach(function(event) {
-														if (event.event == "playerInit") {
-														  var player = $("#twitch_embed_player")[0];
-														  player.playVideo();
-														  player.mute();
-														}
-													  });
-													}
-
-													swfobject.embedSWF("//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf", "twitch_embed_player", "720", "450", "11", null,
-													  { "eventsCallback":"onPlayerEvent",
-														"embed":1,
-														"channel":"imaqtpie",
-														"auto_play":"true"},
-													  { "allowScriptAccess":"always",
-														"allowFullScreen":"true"});
-												  });
-												</script>
-
+												<div id="twitch_embed_player"></div>
 											</div>
 										</p>
 									
