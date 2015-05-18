@@ -46,7 +46,7 @@
 								<ul id="stream-list" class="list-group">
 									<li class="list-group-item">
 										<p class="list-group-item-text">
-											<div class="embed-container">
+											<div class="embed-container" id="embed-container">
 													<script>
 														if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 															document.getElementById('embed-container').innerHTML = '<iframe src="http://www.twitch.tv/imaqtpie/embed" frameborder="0" scrolling="no"></iframe> ';
