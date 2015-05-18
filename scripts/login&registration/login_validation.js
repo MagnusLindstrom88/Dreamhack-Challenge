@@ -25,7 +25,7 @@ function validateLogin() {
         //Use AJAX to handle the login server-side without reloading the page.
         xmlHttp.onload = function() {
             cleanForms();
-            window.location = "index.php";
+            location.reload();
         }
         xmlHttp.open("POST", "scripts/login&registration/login.php");
         xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
