@@ -2,7 +2,7 @@
       function makeBet(btn){
       
      var jax = new XMLHttpRequest();
-     var url = "betting.PHP";
+     var url = "../betting.PHP";
      var team = btn.value;
      var matchen = $(btn).closest("div").attr("id");
      var data = "team="+team+"&matchen="+matchen;
