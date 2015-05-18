@@ -40,7 +40,7 @@
 				<div id="content">
 				<div class="container">
 				<h2>Match Streaming</h2>
-				<?php echo $useragent; ?>
+				<?php echo $_SERVER['HTTP_USER_AGENT']; ?>
 						<div class="row">
 							<div class="col-md-8">				
 								<ul id="stream-list" class="list-group">
