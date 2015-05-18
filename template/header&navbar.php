@@ -63,7 +63,7 @@
       <div class="modal-body">
         <form id="login-form" role="form" method="post" action="scripts/login.php">
             <div class="form-group">
-                <label for="login-email">Email:</label>
+                <label for="login-email">Email or Username:</label>
                 <input type="email" id="login-email" name="email" class="form-control">
             </div>
             <div class="form-group">
