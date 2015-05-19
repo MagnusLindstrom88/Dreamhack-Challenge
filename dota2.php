@@ -95,8 +95,8 @@
                                 <img src="images/vs.png" alt="Versus."/>
                                 <img src="images/teamlogos/dotaVirtusPro .png" alt="Virtus.Pro Polar's logotype."/>
                             </div>
-                            <button class="btn btn-primary" style="margin-right: 5px;">Bet MayaM</button>
-                            <button class="btn btn-primary" style="margin-left: 5px;">Bet EG</button>
+                            <button class="btn btn-primary" style="margin-right: 5px;">Bet Cloud9</button>
+                            <button class="btn btn-primary" style="margin-left: 5px;">Bet Virtus.Pro Polar</button>
                             <p style="margin-top: 10px;">16:30 CET, Time left: 4:23:43</p>
                         </div>
                     </div>
