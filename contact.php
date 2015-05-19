@@ -78,7 +78,7 @@
         $to = 'simon_palmqvist@hotmail.com';
         $subject = 'Message from contact form';
 
-        $body ="From: $name\n E-Mail: $email\n Message:\n $Message";
+        $body ="From: $name\n E-Mail: $email\n Message:\n $message";
 
         if(!$_POST['name']){
           $nameError = 'Please enter your name';        
