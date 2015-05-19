@@ -7,10 +7,7 @@
             background-image: url(images/csgobackground.jpg);
             background-size: cover;
         }
-        .container{
-    zoom: 0.5;
-    -moz-transform: scale(0.5);
-}
+      
     </style>
 </head>
 <body>
