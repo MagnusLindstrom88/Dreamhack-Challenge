@@ -34,17 +34,17 @@
                         <form>
                           <div class="form-group">
                             <label for="name" class="control-label">Your name:</label>
-                            <input type="text" class="form-control" id="name">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Your name" value="<?php echo htmlspecialchars($_POST['name']); ?>">
                             <?php echo "<p class='text-danger'>$nameError</p>";?>
                           </div>
                           <div class="form-group">
                             <label for="email" class="control-label">Your email:</label>
-                            <input type="email" class="form-control" id="email">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" value="<?php echo htmlspecialchars($_POST['email']); ?>">
                             <?php echo "<p class='text-danger'>$emailError</p>";?>
                           </div>
                           <div class="form-group">
                             <label for="message-text" class="control-label">Message:</label>
-                            <textarea class="form-control" id="message-text"></textarea>
+                            <textarea class="form-control" id="message-text" name="message"><?php echo htmlspecialchars($_POST['message']);?></textarea>
                             <?php echo "<p class='text-danger'>$messageError</p>";?>
                           </div>
                         </form>
@@ -56,7 +56,6 @@
                      </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        
                         <input type="submit" id="submit" name="submit" value="Send message" class="btn btn-primary">
                        </div>                       
                    </div>
@@ -98,7 +97,7 @@
             $result = '<div class="alert alert-success">Thank you! Your message has been received.</div>';
           }
           else{
-            $result = '<div class="alert alert-success">There was an error sending your message. Please try again later.</div>';
+            $result = '<div class="alert alert-danger">There was an error sending your message. Please try again later.</div>';
           }
 
         }
