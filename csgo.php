@@ -7,10 +7,6 @@
             background-image: url(images/csgobackground.jpg);
             background-size: cover;
         }
-        .match-logos{
-            height: auto;
-            width: 100%;
-        }
       
     </style>
 </head>
@@ -61,9 +57,9 @@
                                 <p>Hellraisers VS Ninjas In Pyjamas</p>
                             </div>
                             <div class="match-logos">
-                                <img src="images/teamlogos/csHellraisers.png" alt="Hellraisers's logotype."/>
-                                <img src="images/vs.png" alt="Versus."/>
-                                <img src="images/teamlogos/csNIP.png" alt="Ninjas In Pyjamas's logotype."/>
+                                <img id="section-image" src="images/teamlogos/csHellraisers.png" alt="Hellraisers's logotype."/>
+                                <img id="section-image" src="images/vs.png" alt="Versus."/>
+                                <img id="section-image" src="images/teamlogos/csNIP.png" alt="Ninjas In Pyjamas's logotype."/>
                             </div>
                             <button class="btn btn-primary" style="margin-right: 5px;">Bet Hellraisers</button>
                             <button class="btn btn-primary" style="margin-left: 5px;">Bet NIP</button>
@@ -78,9 +74,9 @@
                                 <p>Virtus.Pro VS PENTA Spor</p>
                             </div>
                             <div class="match-logos">
-                                <img src="images/teamlogos/csVirtusPro.png" alt="Virtus.Pro's logotype."/>
-                                <img src="images/vs.png" alt="Versus."/>
-                                <img src="images/teamlogos/teamevilgeniuses.png" alt="PENTA Spor's logotype."/>
+                                <img id="section-image" src="images/teamlogos/csVirtusPro.png" alt="Virtus.Pro's logotype."/>
+                                <img id="section-image" src="images/vs.png" alt="Versus."/>
+                                <img id="section-image" src="images/teamlogos/teamevilgeniuses.png" alt="PENTA Spor's logotype."/>
                             </div>
                             <button class="btn btn-primary" style="margin-right: 5px;">Bet Virtus.Pro</button>
                             <button class="btn btn-primary" style="margin-left: 5px;">Bet PENTA Spor</button>
@@ -95,9 +91,9 @@
                                 <p>LDLC VS Fnatic</p>
                             </div>
                             <div class="match-logos">
-                                <img src="images/teamlogos/teammayam.png" alt="LDLC's logotype."/>
-                                <img src="images/vs.png" alt="Versus."/>
-                                <img src="images/teamlogos/csFnatic.png" alt="Fnatic's logotype."/>
+                                <img id="section-image" src="images/teamlogos/teammayam.png" alt="LDLC's logotype."/>
+                                <img id="section-image" src="images/vs.png" alt="Versus."/>
+                                <img id="section-image" src="images/teamlogos/csFnatic.png" alt="Fnatic's logotype."/>
                             </div>
                             <button class="btn btn-primary" style="margin-right: 5px;">Bet LDLC</button>
                             <button class="btn btn-primary" style="margin-left: 5px;">Bet Fnatic</button>
@@ -112,9 +108,9 @@
                                 <p>Dignitas VS Natus Vincere</p>
                             </div>
                             <div class="match-logos">
-                                <img src="images/teamlogos/csDig.png" alt="Dignitas's logotype."/>
-                                <img src="images/vs.png" alt="Versus."/>
-                                <img src="images/teamlogos/csNavi.png" alt="Natus Vincere's logotype."/>
+                                <img id="section-image" src="images/teamlogos/csDig.png" alt="Dignitas's logotype."/>
+                                <img id="section-image" src="images/vs.png" alt="Versus."/>
+                                <img id="section-image" src="images/teamlogos/csNavi.png" alt="Natus Vincere's logotype."/>
                             </div>
                             <button class="btn btn-primary" style="margin-right: 5px;">Bet Dignitas</button>
                             <button class="btn btn-primary" style="margin-left: 5px;">Bet Natus Vincere</button>
