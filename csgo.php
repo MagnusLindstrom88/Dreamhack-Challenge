@@ -112,7 +112,7 @@
                                 <img src="images/teamlogos/csNavi.png" alt="Natus Vincere's logotype."/>
                             </div>
                             <button class="btn btn-primary" style="margin-right: 5px;">Bet Dignitas</button>
-                            <button class="btn btn-primary" style="margin-left: 5px;">Bet Natus Vincere<</button>
+                            <button class="btn btn-primary" style="margin-left: 5px;">Bet Natus Vincere</button>
                             <p style="margin-top: 10px;">16:30 CET, Time left: 4:23:43</p>
                         </div>
                     </div>
