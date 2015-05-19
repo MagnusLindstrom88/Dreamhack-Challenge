@@ -29,7 +29,7 @@
                     </button>
                     <!--The brand on the leftmost side.-->
                     <div class="navbar-header">
-                        <a class="navbar-brand">DOTA 2</a>
+                        <a class="navbar-brand">Starcraft II</a>
                     </div>
         
                     <!--The menu fields. Will be collapsed on small screens.-->
