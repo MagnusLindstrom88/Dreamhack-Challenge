@@ -9,13 +9,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     
-    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="CSS.css">
         <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
 </head>
 <body>
     <!--Header-->
     <header class="container">
-        <img src="Logo.png" alt="Logo" style="width:300px"/>
+        <img src="images/Logo.png" alt="Logo" style="width:300px"/>
     </header>
     
     <!--Navigation bar-->
@@ -59,31 +59,13 @@
         </div>
     </nav>
 </br>
-    <form action="/my-handling-form-page" method="post">
-    <div>
-        <h4 style="color: white;" ><b><i>Contact Us:</i></b></h4>
-        <label for="name" style="color: white;" ><b><i>Name:</b></i></label>
-        <input type="text" id="name" />
-    </div>
-    <div>
-        <label for="mail" style="color: white; " ><b><i>E-mail:</b></i></label>
-        <input type="email" id="mail" />
-    </div>
-    <div>
-        <label for="msg" style="color: white; " ><b><i>Message:</b></i></label>
-        <textarea id="msg"></textarea>
-    </div>
-    
-    <div class="button">
-        <button type="submit"><b><i>Send your message</b></i></button>
-    </div>
-</form>
+
 
 <div id="content">
             <div class="container">
                 <center>
                 
-        <img src="about.png" class="img-circle" alt="Cinque Terre" width="300" height="220" style="margin-top:-300px">
+        <img src="images/about.png" class="img-circle" alt="Cinque Terre" width="300" height="220" style="margin-top:-20px">
     </center>   
      </br>
 
@@ -91,7 +73,7 @@
 
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="thumbnail"><img src="dh.jpg" alt="Counter Strike: Global Offensive thumbnail."/></div></a>
+                        <div class="thumbnail"><img src="images/dh.jpg" alt="Counter Strike: Global Offensive thumbnail."/></div></a>
                         <h3 style="color: white; ">What is DreamhackChallenge?</h3>
 <p style="color: white; ">Dreamhackchallenge is a website where you and your friends can check out the livestream and bet on games for free to win great prizes.
 There are opportunities to watch various live stream on different games such as:
@@ -108,7 +90,7 @@ You have opportunities to:
 
                     </div>
                     <div class="col-md-4">
-                        <div class="thumbnail"><img src="sport.jpg" alt="Esport"/></div></a>
+                        <div class="thumbnail"><img src="images/sport.jpg" alt="Esport"/></div></a>
 
                         <h3 style="color: white; ">How does it work?</h3>
 <p style="color: white; "> With Dreamhackchallenge there are a few steps that has to de done, then you will be able to start betting and watch livestream.
@@ -123,11 +105,11 @@ Beneath each team there is a bet button which you can press on and your betting 
 
                     </div>
                     <div class="col-md-3">
-                       <div class="thumbnail"><img src="dh2.jpg" alt="#"/></div></a>
+                       <div class="thumbnail"><img src="images/dh2.jpg" alt="#"/></div></a>
 
 <h3 style="color: white; ">Company Info</h3>
-<p style="color: white; "> We were founed 2015 in Sweden Stockholm, created by students at Stockholm Universitet.
-Our main focus is about Dreamhack and E-sports events, we created a free betting and streaming site for you people to join to watch free livestream and free betting to win fine prices.
+<p style="color: white; "> We were founded 2015 in Sweden Stockholm, created by students at Stockholm Universitet.
+Our main focus is about Dreamhack and E-sports events, we created a free betting and streaming site for you people to join to watch free livestream and free betting to win fine prizes.
 
 <li style="color: white;"><b><i>Created February 2015</i></b></li>
 <li style="color: white;"><b><i>Lanchued Juny 2015<i></b></li>
