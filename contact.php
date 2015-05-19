@@ -76,11 +76,11 @@
 
         $from = 'Dreamhack challenge contact form';
         $to = 'simon_palmqvist@hotmail.com';
-        $subject = 'Message from contact form';
+        $subject = 'Message from ' . $from;
 
         $body ="From: $name\n E-Mail: $email\n Message:\n $message";
 
-        if(!$name){
+        if(!$_POST['name']){
           $nameError = 'Please enter your name';        
         }
 
