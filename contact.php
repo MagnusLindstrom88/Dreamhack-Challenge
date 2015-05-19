@@ -72,7 +72,7 @@
       if($_POST["submit"]){
         $name = $_POST['name'];
         $email = $_POST['email'];
-        $message = $_POST['email'];
+        $message = $_POST['message'];
 
         $from = 'Dreamhack challenge contact form';
         $to = 'simon_palmqvist@hotmail.com';
