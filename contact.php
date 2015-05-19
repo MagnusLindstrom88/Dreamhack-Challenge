@@ -6,6 +6,7 @@
     <style>
         #contact-heading {margin-bottom: 20px;}
         #message-text {resize: none;}
+        label {color: #000;}
     </style>
 </head>
 <body>
@@ -31,16 +32,19 @@
                       <div class="modal-body">
                         <form>
                           <div class="form-group">
-                            <label for="name" class="control-label">Your name:</label>
+                            <label for="name" class="col-sm-2 control-label">Your name:</label>
                             <input type="text" class="form-control" id="name">
+                            <?php echo "<p class='text-danger'>$nameError</p>";?>
                           </div>
                           <div class="form-group">
-                            <label for="email" class="control-label">Your email:</label>
+                            <label for="email" class="col-sm-2 control-label">Your email:</label>
                             <input type="email" class="form-control" id="email">
+                            <?php echo "<p class='text-danger'>$emailError</p>";?>
                           </div>
                           <div class="form-group">
-                            <label for="message-text" class="control-label">Message:</label>
+                            <label for="message-text" class="col-sm-2 control-label">Message:</label>
                             <textarea class="form-control" id="message-text"></textarea>
+                            <?php echo "<p class='text-danger'>$messageError</p>";?>
                           </div>
                         </form>
                       </div>
@@ -59,3 +63,41 @@
     </div>
 </body>
 </html>
+
+<?php
+      if($_POST["submit"]){
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $message = $_POST['email'];
+
+        $from = 'Dreamhack challenge contact form';
+        $to = 'simon_palmqvist@hotmail.com';
+        $subject = 'Message from contact form';
+
+        $body ="From: $name\n E-Mail: $email\n Message:\n $Message";
+
+        if(!$_POST['name']){
+          $nameError = 'Please enter your name';        
+        }
+
+        if(!$_POST['email'] || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+          $emailError = 'Please enter a valid email address';
+        }
+
+        if(!$_POST['message']){
+          $messageError = 'Please enter your message';
+        }
+
+        if(!$nameError && !$emailError && !$messageError){
+          if(mail ( $to, $subject, $body, $from)){
+            $result = '<div class="alert alert-success">Thank you! Your message has been received.</div>';
+          }
+          else{
+            $result = '<div class="alert alert-success">There was an error sending your message. Please try again later.</div>';
+          }
+
+        }
+
+      }
+
+?>
