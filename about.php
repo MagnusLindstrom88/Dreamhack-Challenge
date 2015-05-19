@@ -59,31 +59,13 @@
         </div>
     </nav>
 </br>
-    <form action="/my-handling-form-page" method="post">
-    <div>
-        <h4 style="color: white;" ><b><i>Contact Us:</i></b></h4>
-        <label for="name" style="color: white;" ><b><i>Name:</b></i></label>
-        <input type="text" id="name" />
-    </div>
-    <div>
-        <label for="mail" style="color: white; " ><b><i>E-mail:</b></i></label>
-        <input type="email" id="mail" />
-    </div>
-    <div>
-        <label for="msg" style="color: white; " ><b><i>Message:</b></i></label>
-        <textarea id="msg"></textarea>
-    </div>
-    
-    <div class="button">
-        <button type="submit"><b><i>Send your message</b></i></button>
-    </div>
-</form>
+
 
 <div id="content">
             <div class="container">
                 <center>
                 
-        <img src="about.png" class="img-circle" alt="Cinque Terre" width="300" height="220" style="margin-top:-300px">
+        <img src="about.png" class="img-circle" alt="Cinque Terre" width="300" height="220" style="margin-top:-20px">
     </center>   
      </br>
 
@@ -126,8 +108,8 @@ Beneath each team there is a bet button which you can press on and your betting 
                        <div class="thumbnail"><img src="dh2.jpg" alt="#"/></div></a>
 
 <h3 style="color: white; ">Company Info</h3>
-<p style="color: white; "> We were founed 2015 in Sweden Stockholm, created by students at Stockholm Universitet.
-Our main focus is about Dreamhack and E-sports events, we created a free betting and streaming site for you people to join to watch free livestream and free betting to win fine prices.
+<p style="color: white; "> We were founded 2015 in Sweden Stockholm, created by students at Stockholm Universitet.
+Our main focus is about Dreamhack and E-sports events, we created a free betting and streaming site for you people to join to watch free livestream and free betting to win fine prizes.
 
 <li style="color: white;"><b><i>Created February 2015</i></b></li>
 <li style="color: white;"><b><i>Lanchued Juny 2015<i></b></li>
