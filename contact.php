@@ -6,7 +6,8 @@
     <style>
         #contact-heading {margin-bottom: 20px;}
         #message-text {resize: none;}
-        label {color: #000;}
+        #formModalLabel {color: #000;}
+        label {color: #000;}   
     </style>
 </head>
 <body>
@@ -48,12 +49,16 @@
                           </div>
                         </form>
                       </div>
+                      <div class="form-group">
+                          <div class = "col-sm-10 col-sm-offset-2">
+                            <?php echo $result; ?>
+                        </div>
+                     </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Send message</button>
-                        <input id="submit" name="submit" value="Send" class="btn btn-primary">
-                       </div>
-                     </div>
+                        
+                        <input id="submit" name="submit" value="Send message" class="btn btn-primary">
+                       </div>                       
                    </div>
                  </div>
                  </form>          
