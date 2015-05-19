@@ -8,7 +8,7 @@
             background-size: cover;
         }
         div.match-logos>img{
-            object-fit: scale-down;
+            object-fit: fill;
         }
       
     </style>

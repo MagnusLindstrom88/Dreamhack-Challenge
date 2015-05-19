@@ -9,13 +9,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     
-    <link rel="stylesheet" href="CSS.css">
+    <link rel="stylesheet" href="about.css">
         <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
 </head>
 <body>
     <!--Header-->
     <header class="container">
-        <img src="images/logo.png" alt="Logo" style="width:300px"/>
+        <img src="Logo.png" alt="Logo" style="width:300px"/>
     </header>
     
     <!--Navigation bar-->
@@ -40,9 +40,10 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Games<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="csgo.php">Counter-Strike: Global Offensive</a></li>
-                            <li><a href="dota2.php">Dota 2</a></li>
-                            <li><a href="StarcraftII">Starcraft II</a></li>
+                            <li><a href="csgo.html"
+                                >Counter-Strike: Global Offensive</a></li>
+                            <li><a href="#">Dota 2</a></li>
+                            <li><a href="#">Starcraft II</a></li>
                         </ul>
                     </li>
                     
@@ -57,56 +58,114 @@
             </div>
         </div>
     </nav>
+</br>
+    <form action="/my-handling-form-page" method="post">
+    <div>
+        <h4 style="color: white;" ><b><i>Contact Us:</i></b></h4>
+        <label for="name" style="color: white;" ><b><i>Name:</b></i></label>
+        <input type="text" id="name" />
+    </div>
+    <div>
+        <label for="mail" style="color: white; " ><b><i>E-mail:</b></i></label>
+        <input type="email" id="mail" />
+    </div>
+    <div>
+        <label for="msg" style="color: white; " ><b><i>Message:</b></i></label>
+        <textarea id="msg"></textarea>
+    </div>
+    
+    <div class="button">
+        <button type="submit"><b><i>Send your message</b></i></button>
+    </div>
+</form>
+
+<div id="content">
+            <div class="container">
+                <center>
+                
+        <img src="about.png" class="img-circle" alt="Cinque Terre" width="300" height="220" style="margin-top:-300px">
+    </center>   
+     </br>
 
     </div>
 
-<div class="container">
-    <div class="row">
-    <div class="col-md-16"><h1 style="color: white; margin-bottom:20px;" class="text-center">About Us & Games</h1></div>
-  </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="thumbnail"><img src="dh.jpg" alt="Counter Strike: Global Offensive thumbnail."/></div></a>
+                        <h3 style="color: white; ">What is DreamhackChallenge?</h3>
+<p style="color: white; ">Dreamhackchallenge is a website where you and your friends can check out the livestream and bet on games for free to win great prizes.
+There are opportunities to watch various live stream on different games such as:
+<li style="color: white;"> CS:GO</li>
+<li style="color: white;"> DOTA2</li>
+<li style="color: white;"> Starcraft II</li>
+<p style="color: white; ">We have customized the website for all of you who like Dreamhack and e-sports event.
+You have opportunities to:
+<li style="color: white;"><b><i>Create profile</i></b></li>
+<li style="color: white;"><b><i>Connect with facebook</i></b></li>
 
-<div class="container">
-  <div class="container">
-    <div class="footer-images">
-     <img src="images/csgobackground.jpg">
-      <img src="images/dota2background.jpg">
-      <img src="images/starcraft2thumbnail.jpg">
-      <div class="container">
-        <div class="copyright">
+</p>
+</p>
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thumbnail"><img src="sport.jpg" alt="Esport"/></div></a>
+
+                        <h3 style="color: white; ">How does it work?</h3>
+<p style="color: white; "> With Dreamhackchallenge there are a few steps that has to de done, then you will be able to start betting and watch livestream.
+<li style="color: white;"><b><i>Create account</i></b></li>
+<li style="color: white;"><b><i>Create profile</i></b></li>
+
+</br>
+<p style="color: white; "> After this steps you will be able to choose which game you like to watch and bet on.
+You simply press on the button "Games" and choose the type of game you like to watch, and then you have several of teams you can bet on. 
+Beneath each team there is a bet button which you can press on and your betting will be applied. 
+</p>
+
+                    </div>
+                    <div class="col-md-3">
+                       <div class="thumbnail"><img src="dh2.jpg" alt="#"/></div></a>
+
+<h3 style="color: white; ">Company Info</h3>
+<p style="color: white; "> We were founed 2015 in Sweden Stockholm, created by students at Stockholm Universitet.
+Our main focus is about Dreamhack and E-sports events, we created a free betting and streaming site for you people to join to watch free livestream and free betting to win fine prices.
+
+<li style="color: white;"><b><i>Created February 2015</i></b></li>
+<li style="color: white;"><b><i>Lanchued Juny 2015<i></b></li>
+</br>
+<p style="color: white; "> We are constantly developing the website to make it more accessible, more functions for the users.
+</p>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
         </div>
-
-<div class="block">
- <div style ="text-align:center">
-        <div style="display: inline-block; margin-right: 5px;">
-<div class="promo-3s mr10"><img src="ppp.png" width="65" height="65" />
-<h3>Best Value Odds</h3>
-<p>We offer the best free online odds for free</p>
-</div>
-</div>
-<div style="display: inline-block">
-<div class="promo-3s mr10"><img src="www.png"
-    alt="promotions-winnerswelcome-icon.png" width="65" height="65" />
-
-<h3>Winners Are Welcome</h3>
-<p>You got nothing to lose, just start betting and win!</p>
-      </div>
-</div>
-
-<div style="display: inline-block">
-<div class="promo-3s"><img src="star.png"
- width="65" height="65" />
-<h3>We are Dreamhack Challenge Bettingsite, we offer livestreams, betting to win fine prices</h3>
-<p> Hopefully many of you will join our community to watch livestream, and also to have fun</p>
-<a href="" class="btn btn-primary">Learn More</a>
-</div>
-    </div>
-  </div>
+     </div>
+</body>
+</html>
 
 
-</div>
 
-<div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
-<div class="container">
-<div class="navbar-text-pull-left">
-<p> Dreamhack Challenge 2015 </p>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
