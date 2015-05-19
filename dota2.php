@@ -52,7 +52,7 @@
                         <div class="match-block">
                             <div class="match-header">
                                 <h4>Quarter-Finals</h4>
-                                <p>Mayam Gaming (MayaM) VS Evil Geniuses (EG)</p>
+                                <p>Cloud9 (C9) VS Virtus.Pro (VP)</p>
                             </div>
                             <div class="match-logos">
                                 <img src="images/teamlogos/teammayam.png" alt="Mayam Gaming's logotype."/>
