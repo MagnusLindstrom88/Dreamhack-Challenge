@@ -41,11 +41,11 @@
             //Fields on the right. Changes depending on if the user is logged in.
             echo '<ul class="nav navbar-nav navbar-right">';
             if(isset($_SESSION['username'])) echo
-            '<li><a href="scripts/logout.php"> Welcome, '.$_SESSION['username'].' (log out)</a></li>
+            '<li><a href="javascript:logout();"> Welcome, '.$_SESSION['username'].' (log out)</a></li>
             <li><a href="mypages.php"><span class="glyphicon glyphicon-user"></span> My Pages</a></li>';
             else echo 
-            '<li><a href="#" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            <li><a href="#" data-toggle="modal" data-target="#registration-modal" onclick="cleanRegistrationForm()"><span class="glyphicon glyphicon-pencil"></span> Register</a></li>';
+            '<li><a href="#" data-toggle="modal" data-target="#login-modal" onclick="cleanForms()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#registration-modal" onclick="cleanForms()"><span class="glyphicon glyphicon-pencil"></span> Register</a></li>';
             echo '</ul>';
             ?>
         </div>
@@ -63,7 +63,7 @@
       <div class="modal-body">
         <form id="login-form" role="form" method="post" action="scripts/login.php">
             <div class="form-group">
-                <label for="login-email">Email:</label>
+                <label for="login-email">Email or Username:</label>
                 <input type="email" id="login-email" name="email" class="form-control">
             </div>
             <div class="form-group">
@@ -77,7 +77,7 @@
         <p><b>Or</b> <a href="#"><img src="images/loginfacebook.png" alt="Facebook login button."></a></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" onclick="login()">Login</button>
+        <button type="button" class="btn btn-primary" onclick="validateLogin()">Login</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
       </div>
     </div>
@@ -124,7 +124,7 @@
   </div>
 </div>
 
-<!-- Code to handle menu highlighting and login form submission. -->
+<!-- Code to handle menu highlighting. -->
 <script>
     //Get name of the current page and compare it to the href attributes of the left menu fields. Highlights the field that matches.
     var pageName = document.URL.split("/");
@@ -141,10 +141,26 @@
     var active = document.getElementsByClassName("active")[0];
     if($.contains(gameList, active))
         gameList.className += " active";
-    
-    //Called when the login button is clicked. Simply submits the login form.
-    function login() {document.getElementById("login-form").submit();}
 </script>
 
-<!-- Contains code related to validation of the registration form. Passes the data on to the server if the validation is passed. -->
-<script src="scripts/registration_validation.js"></script>
+<!-- Handles clicks on the logout menu field. Makes an AJAX request to the logout script. -->
+<script>
+    function logout() {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.onload = function() {location.reload()}
+        xmlHttp.open("GET", "scripts/login&registration/logout.php");
+        xmlHttp.send();
+    }
+</script>
+
+<!-- Contains some functions related to the creation and removal of error messages. Used by both the login- and registration validation scripts. -->
+<script src="scripts/login&registration/error_functions.js"></script>
+
+<!-- Contains code to validate data sent with the login form. Passes the data on to the server if the validation is passed. -->
+<script src="scripts/login&registration/login_validation.js"></script>
+
+<!-- Contains code to validate data sent with the registration form. Passes the data on to the server if the validation is passed. -->
+<script src="scripts/login&registration/registration_validation.js"></script>
+
+<!-- sdasd -->
+<script src="scripts/bet_functions.js"></script>

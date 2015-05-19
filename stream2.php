@@ -30,6 +30,35 @@
 		}
 		
     </style>
+	
+    <script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+
+    <script>
+        $(function () {
+            window.onPlayerEvent = function (data) {
+                data.forEach(function (event) {
+                    console.log("EVENT: %s", event.event);
+                    console.log("DATA:", event.data);
+                    if(event.event == "playerInit") {
+                        var player = $("#twitch_embed_player")[0];
+                        player.playVideo();
+                        player.mute();
+                    }
+                });
+            }
+
+            swfobject.embedSWF("http://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf", "twitch_embed_player", "640", "400", "11", null, {
+                "eventsCallback": "onPlayerEvent",
+                "embed": 1,
+                "channel": "imaqtpie",
+                "auto_play": "true"
+            }, {
+                "allowScriptAccess": "always",
+                "allowFullScreen": "true"
+            });
+        });
+    </script>
+	
 </head>
 <body>
     <div id="wrapper">
@@ -40,19 +69,14 @@
 				<div id="content">
 				<div class="container">
 				<h2>Match Streaming</h2>
+				<?php echo $_SERVER['HTTP_USER_AGENT']; ?>
 						<div class="row">
 							<div class="col-md-8">				
 								<ul id="stream-list" class="list-group">
 									<li class="list-group-item">
 										<p class="list-group-item-text">
-											<div class="embed-container" id="embed-container">
-													<script>
-														if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-															document.getElementById('embed-container').innerHTML = '<iframe src="http://www.twitch.tv/imaqtpie/embed" frameborder="0" scrolling="no"></iframe> ';
-														} else {
-															document.getElementById('embed-container').innerHTML = '<object bgcolor="#242424" data="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" height="450" type="application/x-shockwave-flash" width="720"> <param name="allowFullScreen" value="true" /> <param name="allowNetworking" value="all" /> <param name="allowScriptAccess" value="always" /> <param name="movie" value="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" /> <param name="flashvars" value="channel=imaqtpie&auto_play=true&start_volume=25" /> </object>'; 
-														}
-													</script>
+											<div class="embed-container">
+												<div id="twitch_embed_player"></div>
 											</div>
 										</p>
 									
@@ -64,7 +88,7 @@
 								<li class="list-group-item">
 									<p class="list-group-item-text">
 									<div class="embed-container">
-									<iframe src="chat.php" height="450" frameborder="0" scrolling="yes"></iframe>
+									<iframe src="chat.php" height="450" widtframeborder="0" scrolling="yes"></iframe>
 									</div>
 									</p>
 									</li>
@@ -76,7 +100,6 @@
 								<li class="list-group-item">
 									<p class="list-group-item-text">
 									Matchinforuta
-									<iframe src="http://www.twitch.tv/imaqtpie/embed" frameborder="0" scrolling="no"></iframe>
 									</p>
 									</li>
 								</li>

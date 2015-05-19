@@ -4,7 +4,7 @@
     <?php require_once 'template/head.php'; ?>
     <style>
         #section-image-container {
-            background-image: url(images/dota2background.jpg);
+            background-color: #000000;
             background-size: cover;
         }
     </style>
@@ -14,7 +14,7 @@
         <?php require_once 'template/header&navbar.php'; ?>
         
         <div id="section-image-container">
-            <img id="section-image" src="images/dota2logo.png" alt="Dota 2 logotype."/>
+            <img id="section-image" src="images/Starcraft2-logo.jpg" alt="Starcraft 2 logotype."/>
         </div>
         
         <!--Content columns.-->
@@ -59,10 +59,8 @@
                                 <img src="images/vs.png" alt="Versus."/>
                                 <img src="images/teamlogos/teamevilgeniuses.png" alt="Evil Geniuses's logotype."/>
                             </div>
-                            <div class="btn-group" id="1">
-                            <button class="btn btn-primary" id="button1" value="0" style="margin-right: 5px" onclick="makeBet(this);">Bet Alliance</button>
-                            <button class="btn btn-primary" id="button2" value="1" style="margin-left: 5px" onclick="makeBet(this);">Bet Navi</button>
-                            </div>
+                            <button class="btn btn-primary" style="margin-right: 5px;">Bet MayaM</button>
+                            <button class="btn btn-primary" style="margin-left: 5px;">Bet EG</button>
                             <p style="margin-top: 10px;">16:30 CET, Time left: 4:23:43</p>
                         </div>
                     </div>

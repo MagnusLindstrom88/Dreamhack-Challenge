@@ -45,7 +45,7 @@
                         <a href="dota2.php"><div class="thumbnail"><img src="images/dota2thumbnail.jpg" alt="Dota 2 thumbnail."/></div></a>
                     </div>
                     <div class="col-md-4">
-                        <div class="thumbnail"><img src="images/starcraft2thumbnail.jpg" alt="Starcraft 2 thumbnail."/></div>
+                        <a href="starcraft2.php"><div class="thumbnail"><img src="images/starcraft2thumbnail.jpg" alt="Starcraft 2 thumbnail."/></div></a>
                     </div>
                 </div>
             </div>
