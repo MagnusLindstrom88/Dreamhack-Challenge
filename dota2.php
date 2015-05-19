@@ -55,9 +55,9 @@
                                 <p>Cloud9 (C9) VS Virtus.Pro (VP)</p>
                             </div>
                             <div class="match-logos">
-                                <img src="images/teamlogos/teammayam.png" alt="Mayam Gaming's logotype."/>
+                                <img src="images/teamlogos/dotaCloud9.png" alt="Cloud9 Gaming's logotype."/>
                                 <img src="images/vs.png" alt="Versus."/>
-                                <img src="images/teamlogos/teamevilgeniuses.png" alt="Evil Geniuses's logotype."/>
+                                <img src="images/teamlogos/dotaVirtusPro.png" alt="Evil Geniuses's logotype."/>
                             </div>
                             <div class="btn-group" id="1">
                             <button class="btn btn-primary" id="button1" value="0" style="margin-right: 5px" onclick="makeBet(this);">Bet Alliance</button>
