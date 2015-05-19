@@ -7,7 +7,7 @@
             background-image: url(images/csgobackground.jpg);
             background-size: cover;
         }
-        img.match-logos img{
+        div.match-logos>img{
             object-fit: scale-down;
         }
       
