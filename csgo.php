@@ -7,6 +7,10 @@
             background-image: url(images/csgobackground.jpg);
             background-size: cover;
         }
+        .match-logos{
+            width: auto;
+            height: auto;
+        }
       
     </style>
 </head>
