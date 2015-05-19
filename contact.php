@@ -76,7 +76,7 @@
 
         $from = 'Dreamhack challenge contact form';
         $to = 'simon_palmqvist@hotmail.com';
-        $subject = 'Message from ' . $from;
+        $subject = 'Message from ' . $name;
 
         $body ="From: $name\n E-Mail: $email\n Message:\n $message";
 
