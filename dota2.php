@@ -60,8 +60,8 @@
                                 <img src="images/teamlogos/dotaVirtusPro .png" alt="Evil Geniuses's logotype."/>
                             </div>
                             <div class="btn-group" id="1">
-                            <button class="btn btn-primary" id="button1" value="0" style="margin-right: 5px" onclick="makeBet(this);">Bet Alliance</button>
-                            <button class="btn btn-primary" id="button2" value="1" style="margin-left: 5px" onclick="makeBet(this);">Bet Navi</button>
+                            <button class="btn btn-primary" id="button1" value="0" style="margin-right: 5px" onclick="makeBet(this);">Bet Cloud9</button>
+                            <button class="btn btn-primary" id="button2" value="1" style="margin-left: 5px" onclick="makeBet(this);">Bet Virtus.Pro</button>
                             </div>
                             <p style="margin-top: 10px;">16:30 CET, Time left: 4:23:43</p>
                         </div>
@@ -71,15 +71,15 @@
                         <div class="match-block">
                             <div class="match-header">
                                 <h4>Quarter-Finals</h4>
-                                <p>Mayam Gaming (MayaM) VS Evil Geniuses (EG)</p>
+                                <p>Evil Geniuses (EG) VS Virtus.Pro Polar (VPP)</p>
                             </div>
                             <div class="match-logos">
-                                <img src="images/teamlogos/teammayam.png" alt="Mayam Gaming's logotype."/>
+                                <img src="images/teamlogos/dotaEG.png" alt="Evil Geniuses's logotype."/>
                                 <img src="images/vs.png" alt="Versus."/>
-                                <img src="images/teamlogos/teamevilgeniuses.png" alt="Evil Geniuses's logotype."/>
+                                <img src="images/teamlogos/dotaVirtusPro .png" alt="Virtus.Pro Polar's logotype."/>
                             </div>
-                            <button class="btn btn-primary" style="margin-right: 5px;">Bet MayaM</button>
-                            <button class="btn btn-primary" style="margin-left: 5px;">Bet EG</button>
+                            <button class="btn btn-primary" style="margin-right: 5px;">Bet Evil Geniuses</button>
+                            <button class="btn btn-primary" style="margin-left: 5px;">Bet Virtus Pro Polar</button>
                             <p style="margin-top: 10px;">16:30 CET, Time left: 4:23:43</p>
                         </div>
                     </div>
