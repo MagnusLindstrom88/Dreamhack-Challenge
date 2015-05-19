@@ -32,17 +32,17 @@
                       <div class="modal-body">
                         <form>
                           <div class="form-group">
-                            <label for="name" class="col-sm-2 control-label">Your name:</label>
+                            <label for="name" class="control-label">Your name:</label>
                             <input type="text" class="form-control" id="name">
                             <?php echo "<p class='text-danger'>$nameError</p>";?>
                           </div>
                           <div class="form-group">
-                            <label for="email" class="col-sm-2 control-label">Your email:</label>
+                            <label for="email" class="control-label">Your email:</label>
                             <input type="email" class="form-control" id="email">
                             <?php echo "<p class='text-danger'>$emailError</p>";?>
                           </div>
                           <div class="form-group">
-                            <label for="message-text" class="col-sm-2 control-label">Message:</label>
+                            <label for="message-text" class="control-label">Message:</label>
                             <textarea class="form-control" id="message-text"></textarea>
                             <?php echo "<p class='text-danger'>$messageError</p>";?>
                           </div>
@@ -51,7 +51,7 @@
                       <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         <button type="button" class="btn btn-primary">Send message</button>
-
+                        <input id="submit" name="submit" value="Send" class="btn btn-primary">
                        </div>
                      </div>
                    </div>
