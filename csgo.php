@@ -61,7 +61,7 @@
                                 <img src="images/teamlogos/csNIP.png" alt="Ninjas In Pyjamas's logotype."/>
                             </div>
                             <button class="btn btn-primary" style="margin-right: 5px;">Bet Hellraisers</button>
-                            <button class="btn btn-primary" style="margin-left: 5px;">Bet Ninjas In Pyjamas</button>
+                            <button class="btn btn-primary" style="margin-left: 5px;">Bet NIP</button>
                             <p style="margin-top: 10px;">16:30 CET, Time left: 4:23:43</p>
                         </div>
                     </div>
