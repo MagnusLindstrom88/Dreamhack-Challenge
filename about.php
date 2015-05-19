@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
     <title>aboutus</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
@@ -61,10 +62,13 @@
 
 
 <div id="content">
+=======
+  
+>>>>>>> 972937d891ee31295351b47f549c33730932b0fa
             <div class="container">
-                <center>
+               <center>
                 
-        <img src="images/about.png" class="img-circle" alt="Cinque Terre" width="300" height="220" style="margin-top:-20px">
+        <img src="about.png" class="img-circle" alt="Cinque Terre" width="300" height="220" style="margin-top:-20px">
     </center>   
      </br>
 
@@ -72,7 +76,7 @@
 
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="thumbnail"><img src="images/dh.jpg" alt="Counter Strike: Global Offensive thumbnail."/></div></a>
+                        <div class="thumbnail"><img src="dh.jpg" alt="Counter Strike: Global Offensive thumbnail."/></div></a>
                         <h3 style="color: white; ">What is DreamhackChallenge?</h3>
 <p style="color: white; ">Dreamhackchallenge is a website where you and your friends can check out the livestream and bet on games for free to win great prizes.
 There are opportunities to watch various live stream on different games such as:
@@ -89,7 +93,7 @@ You have opportunities to:
 
                     </div>
                     <div class="col-md-4">
-                        <div class="thumbnail"><img src="images/sport.jpg" alt="Esport"/></div></a>
+                        <div class="thumbnail"><img src="sport.jpg" alt="Esport"/></div></a>
 
                         <h3 style="color: white; ">How does it work?</h3>
 <p style="color: white; "> With Dreamhackchallenge there are a few steps that has to de done, then you will be able to start betting and watch livestream.
@@ -104,7 +108,7 @@ Beneath each team there is a bet button which you can press on and your betting 
 
                     </div>
                     <div class="col-md-3">
-                       <div class="thumbnail"><img src="images/dh2.jpg" alt="#"/></div></a>
+                       <div class="thumbnail"><img src="dh2.jpg" alt="#"/></div></a>
 
 <h3 style="color: white; ">Company Info</h3>
 <p style="color: white; "> We were founded 2015 in Sweden Stockholm, created by students at Stockholm Universitet.
@@ -115,38 +119,12 @@ Our main focus is about Dreamhack and E-sports events, we created a free betting
 </br>
 <p style="color: white; "> We are constantly developing the website to make it more accessible, more functions for the users.
 </p>
-
-
-
-
-
                     </div>
                 </div>
             </div>
         </div>
-     </div>
+    
+        <?php require_once 'template/footer.php'; ?>
+    </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
