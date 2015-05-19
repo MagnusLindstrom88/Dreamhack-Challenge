@@ -80,7 +80,7 @@
 
         $body ="From: $name\n E-Mail: $email\n Message:\n $message";
 
-        if(!$_POST['name']){
+        if(!$name){
           $nameError = 'Please enter your name';        
         }
 
