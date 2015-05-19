@@ -1,89 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Prototyp</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-        
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    
-    <link rel="stylesheet" href="about.css">
-        <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+    <?php require_once 'template/head.php'; ?>
+    <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+    <style>
+        .jumbotron {
+            background-image: url(images/jumbotron.jpg);
+            background-size: cover;
+            height: 400px;
+            border-bottom: 1px solid #676461;
+            margin-bottom: 0px;
+        }
+        .jumbotron h1 {font-weight: bold;}
+        .jumbotron a {
+            color: #00b0ff;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <!--Header-->
-    <header class="container">
-        <img src="Logo.png" alt="Logo" style="width:300px"/>
-    </header>
-    
-    <!--Navigation bar-->
-    <nav id="navbar" class="navbar navbar-default">
-        <div class="container">
-            <!--The toggle button for collapsed menu.-->
-            <button class="navbar-toggle" data-toggle="collapse" data-target="#menuFields">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <!--The brand on the leftmost side.-->
-            <div class="navbar-header">
-                <a class="navbar-brand">Navigation</a>
-            </div>
-
-            <!--The menu fields. Will be collapsed on small screens.-->
-            <div class="collapse navbar-collapse" id="menuFields">
-                <!--Fields on the left.-->
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Games<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="csgo.html"
-                                >Counter-Strike: Global Offensive</a></li>
-                            <li><a href="#">Dota 2</a></li>
-                            <li><a href="#">Starcraft II</a></li>
-                        </ul>
-                    </li>
-                    
-                    <li><a href="#">About</a></li>
-
-                </ul>
-                <!--Fields on the right.-->
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Register</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</br>
-    <form action="/my-handling-form-page" method="post">
-    <div>
-        <h4 style="color: white;" ><b><i>Contact Us:</i></b></h4>
-        <label for="name" style="color: white;" ><b><i>Name:</b></i></label>
-        <input type="text" id="name" />
-    </div>
-    <div>
-        <label for="mail" style="color: white; " ><b><i>E-mail:</b></i></label>
-        <input type="email" id="mail" />
-    </div>
-    <div>
-        <label for="msg" style="color: white; " ><b><i>Message:</b></i></label>
-        <textarea id="msg"></textarea>
-    </div>
-    
-    <div class="button">
-        <button type="submit"><b><i>Send your message</b></i></button>
-    </div>
-</form>
-
-<div id="content">
+    <div id="wrapper">
+        <?php require_once 'template/header&navbar.php'; ?>
+        
+        <!--Main image with text.-->
+        
+        <!--Content columns.-->
+        <div id="content">
             <div class="container">
-                <center>
+               <center>
                 
-        <img src="about.png" class="img-circle" alt="Cinque Terre" width="300" height="220" style="margin-top:-300px">
+        <img src="about.png" class="img-circle" alt="Cinque Terre" width="300" height="220" style="margin-top:-20px">
     </center>   
      </br>
 
@@ -126,46 +73,20 @@ Beneath each team there is a bet button which you can press on and your betting 
                        <div class="thumbnail"><img src="dh2.jpg" alt="#"/></div></a>
 
 <h3 style="color: white; ">Company Info</h3>
-<p style="color: white; "> We were founed 2015 in Sweden Stockholm, created by students at Stockholm Universitet.
-Our main focus is about Dreamhack and E-sports events, we created a free betting and streaming site for you people to join to watch free livestream and free betting to win fine prices.
+<p style="color: white; "> We were founded 2015 in Sweden Stockholm, created by students at Stockholm Universitet.
+Our main focus is about Dreamhack and E-sports events, we created a free betting and streaming site for you people to join to watch free livestream and free betting to win fine prizes.
 
 <li style="color: white;"><b><i>Created February 2015</i></b></li>
 <li style="color: white;"><b><i>Lanchued Juny 2015<i></b></li>
 </br>
 <p style="color: white; "> We are constantly developing the website to make it more accessible, more functions for the users.
 </p>
-
-
-
-
-
                     </div>
                 </div>
             </div>
         </div>
-     </div>
+    
+        <?php require_once 'template/footer.php'; ?>
+    </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
