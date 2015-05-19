@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Prototyp</title>
+    <title>aboutus</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -40,10 +40,9 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Games<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="csgo.html"
-                                >Counter-Strike: Global Offensive</a></li>
-                            <li><a href="#">Dota 2</a></li>
-                            <li><a href="#">Starcraft II</a></li>
+                            <li><a href="csgo.php">Counter-Strike: Global Offensive</a></li>
+                            <li><a href="dota2.php">Dota 2</a></li>
+                            <li><a href="starcraf2.php">Starcraft II</a></li>
                         </ul>
                     </li>
                     

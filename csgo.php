@@ -7,8 +7,9 @@
             background-image: url(images/csgobackground.jpg);
             background-size: cover;
         }
-        div.match-logos>img{
-            object-fit: fill;
+        .match-logos{
+            height: auto;
+            width: 100%;
         }
       
     </style>
