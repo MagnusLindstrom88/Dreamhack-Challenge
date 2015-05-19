@@ -52,7 +52,7 @@
                         <div class="match-block">
                             <div class="match-header">
                                 <h4>Quarter-Finals</h4>
-                                <p>Cloud9 (C9) VS Virtus.Pro (VP)</p>
+                                <p>Cloud9 VS Virtus.Pro </p>
                             </div>
                             <div class="match-logos">
                                 <img src="images/teamlogos/dotaCloud9.png" alt="Cloud9 Gaming's logotype."/>
@@ -71,7 +71,7 @@
                         <div class="match-block">
                             <div class="match-header">
                                 <h4>Quarter-Finals</h4>
-                                <p>Evil Geniuses (EG) VS Virtus.Pro Polar (VPP)</p>
+                                <p>Evil Geniuses VS Virtus.Pro Polar </p>
                             </div>
                             <div class="match-logos">
                                 <img src="images/teamlogos/dotaEG.png" alt="Evil Geniuses's logotype."/>
@@ -79,7 +79,7 @@
                                 <img src="images/teamlogos/dotaVirtusPro .png" alt="Virtus.Pro Polar's logotype."/>
                             </div>
                             <button class="btn btn-primary" style="margin-right: 5px;">Bet Evil Geniuses</button>
-                            <button class="btn btn-primary" style="margin-left: 5px;">Bet Virtus Pro Polar</button>
+                            <button class="btn btn-primary" style="margin-left: 5px;">Bet Virtus.Pro Polar</button>
                             <p style="margin-top: 10px;">16:30 CET, Time left: 4:23:43</p>
                         </div>
                     </div>
@@ -87,13 +87,13 @@
                     <div class="col-md-4">
                         <div class="match-block">
                             <div class="match-header">
-                                <h4>Quarter-Finals</h4>
-                                <p>Mayam Gaming (MayaM) VS Evil Geniuses (EG)</p>
+                                <h4>Losing Bracket</h4>
+                                <p>Cloud9 VS Virtus.Pro Polar </p>
                             </div>
                             <div class="match-logos">
-                                <img src="images/teamlogos/teammayam.png" alt="Mayam Gaming's logotype."/>
+                                <img src="images/teamlogos/dotaCloud9.png" alt="Cloud9's logotype."/>
                                 <img src="images/vs.png" alt="Versus."/>
-                                <img src="images/teamlogos/teamevilgeniuses.png" alt="Evil Geniuses's logotype."/>
+                                <img src="images/teamlogos/dotaVirtusPro .png" alt="Virtus.Pro Polar's logotype."/>
                             </div>
                             <button class="btn btn-primary" style="margin-right: 5px;">Bet MayaM</button>
                             <button class="btn btn-primary" style="margin-left: 5px;">Bet EG</button>
