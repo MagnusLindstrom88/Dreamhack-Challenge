@@ -8,8 +8,7 @@
             background-size: cover;
         }
         .match-logos{
-            width: auto;
-            height: auto;
+            object-fit: scale-down;
         }
       
     </style>
