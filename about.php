@@ -1,32 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require_once 'template/head.php'; ?>
-    <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
-    <style>
-        .jumbotron {
-            background-image: url(images/jumbotron.jpg);
-            background-size: cover;
-            height: 400px;
-            border-bottom: 1px solid #676461;
-            margin-bottom: 0px;
-        }
-        .jumbotron h1 {font-weight: bold;}
-        .jumbotron a {
-            color: #00b0ff;
-            font-size: 20px;
-            font-weight: bold;
-        }
-    </style>
+<<<<<<< HEAD
+    <title>aboutus</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="CSS.css">
+        <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
 </head>
 <body>
-    <div id="wrapper">
-        <?php require_once 'template/header&navbar.php'; ?>
-        
-        <!--Main image with text.-->
-        
-        <!--Content columns.-->
-        <div id="content">
+    <!--Header-->
+    <header class="container">
+        <img src="images/Logo.png" alt="Logo" style="width:300px"/>
+    </header>
+    
+    <!--Navigation bar-->
+    <nav id="navbar" class="navbar navbar-default">
+        <div class="container">
+            <!--The toggle button for collapsed menu.-->
+            <button class="navbar-toggle" data-toggle="collapse" data-target="#menuFields">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!--The brand on the leftmost side.-->
+            <div class="navbar-header">
+                <a class="navbar-brand">Navigation</a>
+            </div>
+
+            <!--The menu fields. Will be collapsed on small screens.-->
+            <div class="collapse navbar-collapse" id="menuFields">
+                <!--Fields on the left.-->
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Games<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="csgo.php">Counter-Strike: Global Offensive</a></li>
+                            <li><a href="dota2.php">Dota 2</a></li>
+                            <li><a href="starcraf2.php">Starcraft II</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="#">About</a></li>
+
+                </ul>
+                <!--Fields on the right.-->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</br>
+
+
+<div id="content">
+=======
+  
+>>>>>>> 972937d891ee31295351b47f549c33730932b0fa
             <div class="container">
                <center>
                 
