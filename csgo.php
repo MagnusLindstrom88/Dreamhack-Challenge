@@ -5,7 +5,7 @@
     <style>
         #section-image-container {
             background-image: url(images/csgobackground.jpg);
-            background-size: cover;
+            background-size: 100% 100%;
         }
       
     </style>
@@ -15,7 +15,7 @@
         <?php require_once 'template/header&navbar.php'; ?>
         
         <div id="section-image-container">
-            <img id="section-image" src="images/csgologo.png" alt="Counter Strike: Global Offensive logotype."/>
+            <img id="section-logo" src="images/csgologo.png" alt="Counter Strike: Global Offensive logotype."/>
         </div>
         
         <!--Content columns.-->
@@ -54,15 +54,15 @@
                         <div class="match-block">
                             <div class="match-header">
                                 <h4>Quarter-Finals</h4>
-                                <p>Hellraisers VS Ninjas In Pyjamas</p>
+                                <p>HellRaisers VS Ninjas In Pyjamas</p>
                             </div>
                             <div class="match-logos">
-                                <img id="section-image" src="images/teamlogos/csHellraisers.png" alt="Hellraisers's logotype."/>
-                                <img id="section-image" src="images/vs.png" alt="Versus."/>
-                                <img id="section-image" src="images/teamlogos/csNIP.png" alt="Ninjas In Pyjamas's logotype."/>
+                                <img class="team-logo" src="images/teamlogos/csHellraisers.png" alt="Hellraisers's logotype."/>
+                                <img class="versus" src="images/vs.png" alt="Versus."/>
+                                <img class="team-logo" src="images/teamlogos/csNIP.png" alt="Ninjas In Pyjamas's logotype."/>
                             </div>
-                            <button class="btn btn-primary" style="margin-right: 5px;">Bet Hellraisers</button>
-                            <button class="btn btn-primary" style="margin-left: 5px;">Bet NIP</button>
+                            <button class="btn btn-primary" style="margin-right: 5px;">Bet HR</button>
+                            <button class="btn btn-primary" style="margin-left: 5px;">Bet NiP</button>
                             <p style="margin-top: 10px;">16:30 CET, Time left: 4:23:43</p>
                         </div>
                     </div>
@@ -71,15 +71,15 @@
                         <div class="match-block">
                             <div class="match-header">
                                 <h4>Quarter-Finals</h4>
-                                <p>Virtus.Pro VS PENTA Spor</p>
+                                <p>Virtus.Pro VS Evil Geniuses</p>
                             </div>
                             <div class="match-logos">
-                                <img id="section-image" src="images/teamlogos/csVirtusPro.png" alt="Virtus.Pro's logotype."/>
-                                <img id="section-image" src="images/vs.png" alt="Versus."/>
-                                <img id="section-image" src="images/teamlogos/teamevilgeniuses.png" alt="PENTA Spor's logotype."/>
+                                <img class="team-logo" src="images/teamlogos/csVirtusPro.png" alt="Virtus.Pro's logotype."/>
+                                <img class="versus" src="images/vs.png" alt="Versus."/>
+                                <img class="team-logo" src="images/teamlogos/teamevilgeniuses.png" alt="PENTA Sport's logotype."/>
                             </div>
-                            <button class="btn btn-primary" style="margin-right: 5px;">Bet Virtus.Pro</button>
-                            <button class="btn btn-primary" style="margin-left: 5px;">Bet PENTA Spor</button>
+                            <button class="btn btn-primary" style="margin-right: 5px;">Bet VP</button>
+                            <button class="btn btn-primary" style="margin-left: 5px;">Bet EG</button>
                             <p style="margin-top: 10px;">16:30 CET, Time left: 4:23:43</p>
                         </div>
                     </div>
@@ -88,14 +88,14 @@
                         <div class="match-block">
                             <div class="match-header">
                                 <h4>Quarter-Finals</h4>
-                                <p>LDLC VS Fnatic</p>
+                                <p>MayaM Gaming VS Fnatic</p>
                             </div>
                             <div class="match-logos">
-                                <img id="section-image" src="images/teamlogos/teammayam.png" alt="LDLC's logotype."/>
-                                <img id="section-image" src="images/vs.png" alt="Versus."/>
-                                <img id="section-image" src="images/teamlogos/csFnatic.png" alt="Fnatic's logotype."/>
+                                <img class="team-logo" src="images/teamlogos/teammayam.png" alt="LDLC's logotype."/>
+                                <img class="versus" src="images/vs.png" alt="Versus."/>
+                                <img class="team-logo" src="images/teamlogos/csFnatic.png" alt="Fnatic's logotype."/>
                             </div>
-                            <button class="btn btn-primary" style="margin-right: 5px;">Bet LDLC</button>
+                            <button class="btn btn-primary" style="margin-right: 5px;">Bet MayaM</button>
                             <button class="btn btn-primary" style="margin-left: 5px;">Bet Fnatic</button>
                             <p style="margin-top: 10px;">16:30 CET, Time left: 4:23:43</p>
                         </div>
@@ -105,20 +105,20 @@
                         <div class="match-block">
                             <div class="match-header">
                                 <h4>Quarter-Finals</h4>
-                                <p>Dignitas VS Natus Vincere</p>
+                                <p>Team Dignitas VS Natus Vincere</p>
                             </div>
                             <div class="match-logos">
-                                <img id="section-image" src="images/teamlogos/csDig.png" alt="Dignitas's logotype."/>
-                                <img id="section-image" src="images/vs.png" alt="Versus."/>
-                                <img id="section-image" src="images/teamlogos/csNavi.png" alt="Natus Vincere's logotype."/>
+                                <img class="team-logo" src="images/teamlogos/csDig.png" alt="Dignitas's logotype."/>
+                                <img class="versus" src="images/vs.png" alt="Versus."/>
+                                <img class="team-logo" src="images/teamlogos/csNavi.png" alt="Natus Vincere's logotype."/>
                             </div>
-                            <button class="btn btn-primary" style="margin-right: 5px;">Bet Dignitas</button>
-                            <button class="btn btn-primary" style="margin-left: 5px;">Bet Natus Vincere</button>
+                            <button class="btn btn-primary" style="margin-right: 5px;">Bet Dig</button>
+                            <button class="btn btn-primary" style="margin-left: 5px;">Bet Na'Vi</button>
                             <p style="margin-top: 10px;">16:30 CET, Time left: 4:23:43</p>
                         </div>
                     </div>
+                    
                 </div>
-                
                 <h2 style="margin-top: 30px;">Bracket</h2>
                 <p>Proin dictum, tortor at porta malesuada, enim nulla maximus felis, ornare eleifend mauris tellus et dui.</p>
                 <div class="row" style="margin-bottom: 30px;">

@@ -37,7 +37,7 @@ footer {
 
 
 /*--FOR GAME SECTIONS--*/
-#section-image {
+#section-logo {
     display:block;
     padding: 20px 0;
     margin: 0 auto;
@@ -50,6 +50,7 @@ footer {
     border-bottom: 1px solid #676461;
 }
 .match-block {
+
     margin-bottom: 10px;
     background-color: #242424;
     border-radius: 10px;
@@ -62,25 +63,16 @@ footer {
     line-height: 20px;
 }
 .match-logos {
+    height: 110px;
     padding: 10px 0;
     margin-bottom: 10px;
     border-bottom: 1px solid #676461;
 }
+.team-logo {width: 80px;}
+.versus {width:30px;}
 
 
-/* For starcraft page */ 
-.starcraftIIJumbo{ 
- 	background-repeat:no-repeat;
-	-webkit-background-size:cover;
-	-moz-background-size:cover;
-	-o-background-size:cover;
-	background-size:cover;
-	background-position:center;
-/*	height: 1200dp; */
-}
-
-
-/* For account page */
+/*--FOR ACCOUNT PAGE--*/
 .form-style-1 {
     position: relative;
     top: 0px;
@@ -161,7 +153,7 @@ footer {
 	overflow: auto;
 }
 .account-style li:hover {
-	background ##c8c5b7;
+	background: #c8c5b7;
 	cursor: pointer;
 }	
 

@@ -5,7 +5,7 @@
     <style>
         #section-image-container {
             background-color: #000000;
-            background-size: cover;
+            background-size: 100% 100%;
         }
     </style>
 </head>
@@ -14,7 +14,7 @@
         <?php require_once 'template/header&navbar.php'; ?>
         
         <div id="section-image-container">
-            <img id="section-image" src="images/Starcraft2-logo.jpg" alt="Starcraft 2 logotype."/>
+            <img id="section-logo" src="images/Starcraft2-logo.jpg" alt="Starcraft 2 logotype."/>
         </div>
         
         <!--Content columns.-->
@@ -48,58 +48,76 @@
                 <h2>Upcoming Matches</h2>
                 <p>These matches are currently open for betting.</p>
                 <div class="row match-row">
-                    <div class="col-md-4">
+                    
+                    <div class="col-md-3">
                         <div class="match-block">
                             <div class="match-header">
                                 <h4>Quarter-Finals</h4>
-                                <p>Mayam Gaming (MayaM) VS Evil Geniuses (EG)</p>
+                                <p>HellRaisers VS Ninjas In Pyjamas</p>
                             </div>
                             <div class="match-logos">
-                                <img src="images/teamlogos/teammayam.png" alt="Mayam Gaming's logotype."/>
-                                <img src="images/vs.png" alt="Versus."/>
-                                <img src="images/teamlogos/teamevilgeniuses.png" alt="Evil Geniuses's logotype."/>
+                                <img class="team-logo" src="images/teamlogos/csHellraisers.png" alt="Hellraisers's logotype."/>
+                                <img class="versus" src="images/vs.png" alt="Versus."/>
+                                <img class="team-logo" src="images/teamlogos/csNIP.png" alt="Ninjas In Pyjamas's logotype."/>
                             </div>
-                            <button class="btn btn-primary" style="margin-right: 5px;">Bet MayaM</button>
+                            <button class="btn btn-primary" style="margin-right: 5px;">Bet HR</button>
+                            <button class="btn btn-primary" style="margin-left: 5px;">Bet NiP</button>
+                            <p style="margin-top: 10px;">16:30 CET, Time left: 4:23:43</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3">
+                        <div class="match-block">
+                            <div class="match-header">
+                                <h4>Quarter-Finals</h4>
+                                <p>Virtus.Pro VS Evil Geniuses</p>
+                            </div>
+                            <div class="match-logos">
+                                <img class="team-logo" src="images/teamlogos/csVirtusPro.png" alt="Virtus.Pro's logotype."/>
+                                <img class="versus" src="images/vs.png" alt="Versus."/>
+                                <img class="team-logo" src="images/teamlogos/teamevilgeniuses.png" alt="PENTA Sport's logotype."/>
+                            </div>
+                            <button class="btn btn-primary" style="margin-right: 5px;">Bet VP</button>
                             <button class="btn btn-primary" style="margin-left: 5px;">Bet EG</button>
                             <p style="margin-top: 10px;">16:30 CET, Time left: 4:23:43</p>
                         </div>
                     </div>
                     
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="match-block">
                             <div class="match-header">
                                 <h4>Quarter-Finals</h4>
-                                <p>Mayam Gaming (MayaM) VS Evil Geniuses (EG)</p>
+                                <p>MayaM Gaming VS Fnatic</p>
                             </div>
                             <div class="match-logos">
-                                <img src="images/teamlogos/teammayam.png" alt="Mayam Gaming's logotype."/>
-                                <img src="images/vs.png" alt="Versus."/>
-                                <img src="images/teamlogos/teamevilgeniuses.png" alt="Evil Geniuses's logotype."/>
+                                <img class="team-logo" src="images/teamlogos/teammayam.png" alt="LDLC's logotype."/>
+                                <img class="versus" src="images/vs.png" alt="Versus."/>
+                                <img class="team-logo" src="images/teamlogos/csFnatic.png" alt="Fnatic's logotype."/>
                             </div>
                             <button class="btn btn-primary" style="margin-right: 5px;">Bet MayaM</button>
-                            <button class="btn btn-primary" style="margin-left: 5px;">Bet EG</button>
+                            <button class="btn btn-primary" style="margin-left: 5px;">Bet Fnatic</button>
                             <p style="margin-top: 10px;">16:30 CET, Time left: 4:23:43</p>
                         </div>
                     </div>
                     
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="match-block">
                             <div class="match-header">
                                 <h4>Quarter-Finals</h4>
-                                <p>Mayam Gaming (MayaM) VS Evil Geniuses (EG)</p>
+                                <p>Team Dignitas VS Natus Vincere</p>
                             </div>
                             <div class="match-logos">
-                                <img src="images/teamlogos/teammayam.png" alt="Mayam Gaming's logotype."/>
-                                <img src="images/vs.png" alt="Versus."/>
-                                <img src="images/teamlogos/teamevilgeniuses.png" alt="Evil Geniuses's logotype."/>
+                                <img class="team-logo" src="images/teamlogos/csDig.png" alt="Dignitas's logotype."/>
+                                <img class="versus" src="images/vs.png" alt="Versus."/>
+                                <img class="team-logo" src="images/teamlogos/csNavi.png" alt="Natus Vincere's logotype."/>
                             </div>
-                            <button class="btn btn-primary" style="margin-right: 5px;">Bet MayaM</button>
-                            <button class="btn btn-primary" style="margin-left: 5px;">Bet EG</button>
+                            <button class="btn btn-primary" style="margin-right: 5px;">Bet Dig</button>
+                            <button class="btn btn-primary" style="margin-left: 5px;">Bet Na'Vi</button>
                             <p style="margin-top: 10px;">16:30 CET, Time left: 4:23:43</p>
                         </div>
                     </div>
+                    
                 </div>
-                
                 <h2 style="margin-top: 30px;">Bracket</h2>
                 <p>Proin dictum, tortor at porta malesuada, enim nulla maximus felis, ornare eleifend mauris tellus et dui.</p>
                 <div class="row" style="margin-bottom: 30px;">
