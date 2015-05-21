@@ -1,5 +1,3 @@
-<?php require_once 'scripts/init.php'; ?>
-
 <!--Header-->
 <div id="header-wrapper">
     <header class="container">
@@ -74,7 +72,7 @@
             <label><input type="checkbox"> Remember me</label>
             </div>
         </form>
-        <p><b>Or</b> <a href="#"><img src="images/loginfacebook.png" alt="Facebook login button."></a></p>
+        <p><b>Or</b> <a href="scripts/login&registration/loginfacebook.php"><img src="images/loginfacebook.png" alt="Facebook login button."></a></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" onclick="validateLogin()">Login</button>
