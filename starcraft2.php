@@ -5,7 +5,6 @@
     <style>
         #section-image-container {
             background-color: #000000;
-            background-size: 100% 100%;
         }
     </style>
 </head>

@@ -5,7 +5,6 @@
     <style>
         #section-image-container {
             background-image: url(images/dota2background.jpg);
-            background-size: 100% 100%;
         }
     </style>
 </head>

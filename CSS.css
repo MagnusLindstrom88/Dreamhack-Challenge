@@ -37,6 +37,7 @@ footer {
 
 
 /*--FOR GAME SECTIONS--*/
+#section-image-container {background-size: 100% 100%;}
 #section-logo {
     display:block;
     padding: 20px 0;
