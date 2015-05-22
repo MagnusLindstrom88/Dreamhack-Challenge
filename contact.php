@@ -59,7 +59,7 @@
                 
                 <form role="form" method="post" action="contact.php">
 
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formModal" data-whatever="">Send us a message</button>
+                <button type="button" class="btn btn-primary" data-backdrop="static" data-toggle="modal" data-target="#formModal" data-whatever="">Send us a message</button>
                 
                 <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
@@ -73,17 +73,17 @@
                           <div class="form-group">
                             <label for="name" class="control-label">Your name:</label>
                             <input type="text" class="form-control" id="name" name="name" placeholder="Your name" value="<?php echo htmlspecialchars($_POST['name']); ?>">
-                            <span class="error">* <?php echo "<p class='text-danger'>$nameError</p>";?> </span>
+                            <?php echo "<p class='text-danger'>$nameError</p>";?>
                           </div>
                           <div class="form-group">
                             <label for="email" class="control-label">Your email:</label>
                             <input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" value="<?php echo htmlspecialchars($_POST['email']); ?>">
-                            <span class="error">* <?php echo "<p class='text-danger'>$emailError</p>";?></span>
+                            <?php echo "<p class='text-danger'>$emailError</p>";?>
                           </div>
                           <div class="form-group">
                             <label for="message-text" class="control-label">Message:</label>
                             <textarea class="form-control" id="message-text" name="message"><?php echo htmlspecialchars($_POST['message']);?></textarea>
-                            <span class="error">* <?php echo "<p class='text-danger'>$messageError</p>";?></span>
+                            <?php echo "<p class='text-danger'>$messageError</p>";?>
                           </div>
                         </form>
                       </div>
