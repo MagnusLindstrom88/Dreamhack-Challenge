@@ -8,18 +8,12 @@ $dbname = "sewa2700";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
-
-if (isset($_POST['comment']))
-{
-	if(mysql_query("INSERT INTO comments VALUES ($_SESSION['id']), $_POST['comment']))"))
-        {
-
-        }
-        else echo "Error, in mysql query";  
-}
-
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
+}
+if (isset($_POST['comment'])) {
+		$sql_insert = "INSERT INTO comments VALUES ($_SESSION['id']), $_POST['comment']))";
+		$conn->query($sql_insert);
 }
 
 		$sql = "SELECT comment, username, userid, users.id
