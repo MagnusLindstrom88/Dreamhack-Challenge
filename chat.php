@@ -1,5 +1,4 @@
 <?php
-
 $servername = "mysql.dsv.su.se";
 $username = "sewa2700";
 $password = "eequishusaiz";
@@ -11,27 +10,26 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+//If comment is posted
 if (isset($_POST['comment'])) {
 		$sql_insert = "INSERT INTO comments VALUES ($_SESSION['id']), $_POST['comment']))";
 		$conn->query($sql_insert);
 }
 
+// SQL för att visa kommentarer
 		$sql = "SELECT comment, username, userid, users.id
 				FROM comments, users
 				WHERE userid = users.id";
 	
-	
-$result = $conn->query($sql);
+		$result = $conn->query($sql);
 		
-echo '<form action="" method="post">
-      <textarea name="comment"></textarea>
-      <input type="submit" />
-      </form>';
+//Form för att posta nya kommentarer
+//echo '<form action="" method="post">      <textarea name="comment"></textarea>      <input type="submit" />      </form>';
 	  
 if ($result->num_rows > 0) {
-    // output data of each row
-	
 	echo '<table width="100%" border="1" cellpadding="0" cellspacing="0">';
+	
+	// output data of each row
     while($row = $result->fetch_assoc()) {
 	
 		echo '<tr>
@@ -39,12 +37,9 @@ if ($result->num_rows > 0) {
 			<th width="66%" align="left" height="20" scope="col">'. $row["comment"] .'</th>		
 			</tr>';
 	}
+	
 	echo '</table>';	
-} else {
-    echo "0 results";
 }
 $conn->close();
-
-
 ?> 
 
