@@ -1,3 +1,41 @@
+<?php
+      if($_POST["submit"]){
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $message = $_POST['message'];
+
+        $from = 'Dreamhack challenge contact form';
+        $to = 'simon_palmqvist@hotmail.com';
+        $subject = 'Message from ' . $name;
+
+        $body ="From: $name\n E-Mail: $email\n Message:\n $message";
+
+        if(empty($name)){
+          $nameError = 'Please enter your name';        
+        }
+
+        if(empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)){
+          $emailError = 'Please enter a valid email address';
+        }
+
+        if(empty($message)){
+          $messageError = 'Please enter your message';
+        }
+
+        if(!$nameError && !$emailError && !$messageError){
+          if(mail ( $to, $subject, $body, $from)){
+            $result = '<div class="alert alert-success">Thank you! Your message has been received.</div>';
+          }
+          else{
+            $result = '<div class="alert alert-danger">There was an error sending your message. Please try again later.</div>';
+          }
+
+        }
+
+      }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,40 +106,3 @@
 </body>
 </html>
 
-<?php
-      if($_POST["submit"]){
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $message = $_POST['message'];
-
-        $from = 'Dreamhack challenge contact form';
-        $to = 'simon_palmqvist@hotmail.com';
-        $subject = 'Message from ' . $name;
-
-        $body ="From: $name\n E-Mail: $email\n Message:\n $message";
-
-        if(empty($name)){
-          $nameError = 'Please enter your name';        
-        }
-
-        if(empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)){
-          $emailError = 'Please enter a valid email address';
-        }
-
-        if(empty($message)){
-          $messageError = 'Please enter your message';
-        }
-
-        if(!$nameError && !$emailError && !$messageError){
-          if(mail ( $to, $subject, $body, $from)){
-            $result = '<div class="alert alert-success">Thank you! Your message has been received.</div>';
-          }
-          else{
-            $result = '<div class="alert alert-danger">There was an error sending your message. Please try again later.</div>';
-          }
-
-        }
-
-      }
-
-?>
