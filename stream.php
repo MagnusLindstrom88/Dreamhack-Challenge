@@ -22,7 +22,7 @@
 		.embed-container iframe,
 		.embed-container object,
 		.embed-container embed {
-		position: default;
+		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
