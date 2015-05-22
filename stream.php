@@ -76,7 +76,6 @@
 								<li class="list-group-item">
 									<p class="list-group-item-text">
 									Matchinforuta
-									<iframe src="http://www.twitch.tv/imaqtpie/embed" frameborder="0" scrolling="no"></iframe>
 									</p>
 									</li>
 								</li>
