@@ -50,10 +50,12 @@ if ($result->num_rows > 0) {
     echo "0 results";
 }
 $conn->close();
-?> 
-
+echo '
 <form action="" method="post">
-    <input type="hidden" name="username" value="<?php $echo $_SESSION['username']; ?>" />
+    <input type="hidden" name="username" value="'. $echo $_SESSION['username']; .'" />
     <textarea name="comment"></textarea>
     <input type="submit" />
 </form>
+';
+?> 
+
