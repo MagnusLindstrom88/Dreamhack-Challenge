@@ -35,6 +35,12 @@
 
         }
         
+        if($error == 1){
+          <script type="text/javascript"> $('#formModal').modal('show');</script>
+        }
+        else{
+          $error = 1;
+        }
 
 
       }
