@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $servername = "mysql.dsv.su.se";
 $username = "sewa2700";
 $password = "eequishusaiz";
@@ -24,13 +26,14 @@ if (isset($_POST['comment'])) {
 		$result = $conn->query($sql);
 		
 //Form för att posta nya kommentarer
+
 if (isset($_SESSION['id'])) {
-echo '<form action="" method="post">
-      <textarea name="comment"></textarea>
-      <input type="submit" />
-      </form>';
+	echo '<form action="" method="post">
+		  <textarea name="comment"></textarea>
+		  <input type="submit" />
+		  </form>';
 } else  { 
-echo "Log in to chat.";
+	echo "Log in to chat.";
 }
 
 
