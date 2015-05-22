@@ -1,8 +1,9 @@
 <?php
       
-      $error = 0;
-
+      
       if($_POST["submit"]){
+        $error = 0;
+
         $name = $_POST['name'];
         $email = $_POST['email'];
         $message = $_POST['message'];
@@ -15,14 +16,17 @@
 
         if(empty($name)){
           $nameError = 'Please enter your name';        
+          $error = 1;
         }
 
         if(empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)){
           $emailError = 'Please enter a valid email address';
+          $error = 1;
         }
 
         if(empty($message)){
           $messageError = 'Please enter your message';
+          $error = 1;
         }
 
         if(!$nameError && !$emailError && !$messageError){
@@ -34,17 +38,14 @@
           }
 
         }
-        
-        if($error == 1){
+               
+
+      }
+
+      if($error == 1){
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
           <script type="text/javascript"> $('#formModal').modal('show');</script>
         }
-        else{
-          $error = 1;
-        }
-
-
-      }
 
 ?>
 
