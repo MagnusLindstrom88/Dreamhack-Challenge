@@ -12,9 +12,9 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-		$sql = "SELECT users.id, users.username, users.profilepic, comments.userid, comments.comment
-				FROM users, comments 
-				WHERE users.id = comments.userid";
+		$sql = "SELECT comment, username, userid, users.id
+				FROM comments, users
+				WHERE userid = users.id";
 	
 	
 $result = $conn->query($sql);
@@ -27,8 +27,8 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
 	
 		echo '<tr>
-			<th width="33%" align="left" height="20" scope="col"><a href="#">'. $row["users.username"] .'</a></th>	
-			<th width="66%" align="left" height="20" scope="col">'. $row["comments.comment"] .'</th>		
+			<th width="33%" align="left" height="20" scope="col"><a href="#">'. $row["username"] .'</a></th>	
+			<th width="66%" align="left" height="20" scope="col">'. $row["comment"] .'</th>		
 			</tr>';
 	}
 	echo '</table>';	
