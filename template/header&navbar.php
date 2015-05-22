@@ -72,7 +72,7 @@
             <label><input type="checkbox"> Remember me</label>
             </div>
         </form>
-        <p><b>Or</b> <a href="scripts/login&registration/loginfacebook.php"><img src="images/loginfacebook.png" alt="Facebook login button."></a></p>
+        <p><a href="scripts/login&registration/loginfacebook.php"><img src="images/loginfacebook.png" alt="Facebook login button."></a></p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" onclick="validateLogin()">Login</button>

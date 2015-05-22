@@ -13,21 +13,21 @@ catch(PDOException $e)
     echo $e->getMessage();
     }
 	
-	$member = $_SESSION['username'];
+	$member = $_SESSION['id'];
 	$matchen = $_POST["matchen"];
 	$team = $_POST["team"];
 	
 	
-	$ps = $dbh->prepare("SELECT * FROM bets WHERE username=? AND matchID=?");
+	$ps = $dbh->prepare("SELECT * FROM bets WHERE user_id=? AND match_id=?");
     $ps->execute(array($member, $matchen));
 		
 	if($ps->rowCount() != 0) {
 		
-	$ps2 = $dbh->prepare("SELECT * FROM bets WHERE username=? AND matchID=? AND bettedTeam=?");
+	$ps2 = $dbh->prepare("SELECT * FROM bets WHERE user_id=? AND match_id=? AND team=?");
     $ps2->execute(array($member, $matchen, $team));
 		
 		if($ps2->rowCount() != 0) {
-			$sql = "DELETE FROM bets WHERE bettedTeam=? AND username=? AND matchID=? ";
+			$sql = "DELETE FROM bets WHERE team=? AND user_id=? AND match_id=? ";
 		$query = $dbh->prepare($sql);
 		$query->execute(array($team,$member,$matchen));
 		echo ("a");
@@ -36,7 +36,7 @@ catch(PDOException $e)
 	}
 	
 	 else  {
-	$sql = "INSERT INTO bets (bettedTeam, username, matchID) Values (:team, :member, :matchen)";
+	$sql = "INSERT INTO bets (team, user_id, match_id) Values (:team, :member, :matchen)";
     $query = $dbh->prepare($sql);
 	$query->execute(array(
 			":team" =>$team,
