@@ -12,11 +12,10 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-//$sql = "SELECT users.id, users.username, users.profilepic, comments.userid, comments.text
-//		FROM users, comments 
-//	WHERE users.id = comments.userid";
+		$sql = "SELECT users.id, users.username, users.profilepic, comments.userid, comments.text
+				FROM users, comments 
+				WHERE users.id = comments.userid";
 
-		$sql = "SELECT * FROM users, comments"; 
 	
 	
 	
