@@ -80,15 +80,15 @@
 
         $body ="From: $name\n E-Mail: $email\n Message:\n $message";
 
-        if(!$name){
+        if(empty($name)){
           $nameError = 'Please enter your name';        
         }
 
-        if(!$email || !filter_var($email, FILTER_VALIDATE_EMAIL)){
+        if(empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)){
           $emailError = 'Please enter a valid email address';
         }
 
-        if(!$message){
+        if(empty($message)){
           $messageError = 'Please enter your message';
         }
 
