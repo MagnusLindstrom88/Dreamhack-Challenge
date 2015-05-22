@@ -35,17 +35,17 @@
                           <div class="form-group">
                             <label for="name" class="control-label">Your name:</label>
                             <input type="text" class="form-control" id="name" name="name" placeholder="Your name" value="<?php echo htmlspecialchars($_POST['name']); ?>">
-                            <?php echo "<p class='text-danger'>$nameError</p>";?>
+                            <span class="error">* <?php echo "<p class='text-danger'>$nameError</p>";?> </span>
                           </div>
                           <div class="form-group">
                             <label for="email" class="control-label">Your email:</label>
                             <input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" value="<?php echo htmlspecialchars($_POST['email']); ?>">
-                            <?php echo "<p class='text-danger'>$emailError</p>";?>
+                           <span class="error">* <?php echo "<p class='text-danger'>$emailError</p>";?></span>
                           </div>
                           <div class="form-group">
                             <label for="message-text" class="control-label">Message:</label>
                             <textarea class="form-control" id="message-text" name="message"><?php echo htmlspecialchars($_POST['message']);?></textarea>
-                            <?php echo "<p class='text-danger'>$messageError</p>";?>
+                            <span class="error">* <?php echo "<p class='text-danger'>$messageError</p>";?></span>
                           </div>
                         </form>
                       </div>
