@@ -40,7 +40,7 @@
                           <div class="form-group">
                             <label for="email" class="control-label">Your email:</label>
                             <input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" value="<?php echo htmlspecialchars($_POST['email']); ?>">
-                           <span class="error">* <?php echo "<p class='text-danger'>$emailError</p>";?></span>
+                            <span class="error">* <?php echo "<p class='text-danger'>$emailError</p>";?></span>
                           </div>
                           <div class="form-group">
                             <label for="message-text" class="control-label">Message:</label>
@@ -53,15 +53,15 @@
                           <div class = "col-sm-10 col-sm-offset-2">
                             <?php echo $result; ?>
                         </div>
-                     </div>
+                      </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         <input type="submit" id="submit" name="submit" value="Send message" class="btn btn-primary">
                        </div>                       
-                   </div>
-                 </div>
-                 </form>          
-              </div>
+                      </div>
+                  </div>                          
+                </div>
+                </form>
     
     <?php require_once 'template/footer.php'; ?>
     </div>
