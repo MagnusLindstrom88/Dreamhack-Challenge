@@ -1,4 +1,7 @@
 <?php
+      
+      $error = 0;
+
       if($_POST["submit"]){
         $name = $_POST['name'];
         $email = $_POST['email'];
@@ -31,6 +34,14 @@
           }
 
         }
+        
+        if($error == 1){
+          <script> $('#formModal').modal('show');</script>
+        }
+        else{
+          $error = 1;
+        }
+
 
       }
 
@@ -59,7 +70,7 @@
                 
                 <form role="form" method="post" action="contact.php">
 
-                <a href="#" onclick="$('#formModal').modal({'backdrop': 'static'});" class="btn btn-primary">Send us a message</a>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formModal" data-whatever="">Send us a message</button>
                 
                 <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
