@@ -8,6 +8,20 @@ $dbname = "sewa2700";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
+
+if (isset($_POST['username']) && if(isset($_POST['comment']))
+{
+	if(mysql_query("INSERT INTO comments VALUES ($_POST['username']), $_POST['comment']))"))
+        {
+            ?>
+            <script type="text/javascript">
+                window.location="/chat.php";
+            </script>
+            <?php
+        }
+        else echo "Error, in mysql query";  
+}
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -37,3 +51,9 @@ if ($result->num_rows > 0) {
 }
 $conn->close();
 ?> 
+
+<form action="" method="post">
+    <input type="hidden" name="username" value="<?php $echo $_SESSION['username']; ?>" />
+    <textarea name="comment"></textarea>
+    <input type="submit" />
+</form>
