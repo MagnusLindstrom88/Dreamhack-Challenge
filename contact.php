@@ -59,7 +59,7 @@
                 
                 <form role="form" method="post" action="contact.php">
 
-                <button type="button" class="btn btn-primary" data-backdrop="static" data-toggle="modal" data-target="#formModal" data-whatever="">Send us a message</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formModal" onclick="$('#formModal').modal({'backdrop': 'static'});" data-whatever="">Send us a message</button>
                 
                 <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
