@@ -24,7 +24,16 @@ if (isset($_POST['comment'])) {
 		$result = $conn->query($sql);
 		
 //Form för att posta nya kommentarer
-echo '<form action="" method="post">      <textarea name="comment"></textarea>      <input type="submit" />      </form>';
+if (isset($_SESSION['id'])) {
+echo '<form action="" method="post">
+      <textarea name="comment"></textarea>
+      <input type="submit" />
+      </form>';
+} else  { 
+echo "Log in to chat.";
+}
+
+
 	  
 if ($result->num_rows > 0) {
 	echo '<table width="100%" border="1" cellpadding="0" cellspacing="0">';
