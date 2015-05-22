@@ -33,7 +33,12 @@ if ($conn->connect_error) {
 	
 $result = $conn->query($sql);
 		
-echo $result->num_rows;
+echo '<form action="" method="post">
+      <input type="hidden" name="username" value="'. $echo $_SESSION['username']; .'" />
+      <textarea name="comment"></textarea>
+      <input type="submit" />
+      </form>';
+	  
 if ($result->num_rows > 0) {
     // output data of each row
 	
@@ -50,12 +55,7 @@ if ($result->num_rows > 0) {
     echo "0 results";
 }
 $conn->close();
-echo '
-<form action="" method="post">
-    <input type="hidden" name="username" value="'. $echo $_SESSION['username']; .'" />
-    <textarea name="comment"></textarea>
-    <input type="submit" />
-</form>
-';
+
+
 ?> 
 
