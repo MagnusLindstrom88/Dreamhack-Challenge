@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 }
 //If comment is posted
 if (isset($_POST['comment'])) {
-		$sql_insert = "INSERT INTO comments VALUES ($_SESSION['id']), $_POST['comment']))";
+		$sql_insert = "INSERT INTO comments VALUES ".($_SESSION['id'].",". $_POST['comment']).")";
 		$conn->query($sql_insert);
 }
 
@@ -24,7 +24,7 @@ if (isset($_POST['comment'])) {
 		$result = $conn->query($sql);
 		
 //Form för att posta nya kommentarer
-//echo '<form action="" method="post">      <textarea name="comment"></textarea>      <input type="submit" />      </form>';
+echo '<form action="" method="post">      <textarea name="comment"></textarea>      <input type="submit" />      </form>';
 	  
 if ($result->num_rows > 0) {
 	echo '<table width="100%" border="1" cellpadding="0" cellspacing="0">';
