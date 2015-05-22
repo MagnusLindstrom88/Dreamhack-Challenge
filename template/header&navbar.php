@@ -20,9 +20,9 @@
         </div>
 
         <!--The menu fields. Will be collapsed on small screens.-->
-        <div class="collapse navbar-collapse" id="menuFields">
+        <div class="collapse navbar-collapse" id="menu-fields">
             <!--Fields on the left.-->
-            <ul class="nav navbar-nav" id="left-fields">
+            <ul class="nav navbar-nav">
                 <li><a href="index.php">Home</a></li>
                 <li class="dropdown" id="game-list">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Games<span class="caret"></span></a>
@@ -115,7 +115,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" onclick="validateRegistration()">Register</button>
+        <button type="button" class="btn btn-primary" onclick="validateRegistration();">Register</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
       </div>
     </div>
@@ -127,7 +127,7 @@
     //Get name of the current page and compare it to the href attributes of the left menu fields. Highlights the field that matches.
     var pageName = document.URL.split("/");
     pageName = pageName[pageName.length-1];
-    var links = $("#left-fields a");
+    var links = $("#menu-fields a");
     links.each(function() {
         var href = this.href.split("/");
         href = href[href.length-1];

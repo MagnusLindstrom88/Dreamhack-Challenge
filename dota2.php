@@ -47,75 +47,32 @@
                 <h2>Upcoming Matches</h2>
                 <p>These matches are currently open for betting.</p>
                 <div class="row match-row">
-                    
-                    <div class="col-md-3">
-                        <div class="match-block">
-                            <div class="match-header">
-                                <h4>Quarter-Finals</h4>
-                                <p>HellRaisers VS Ninjas In Pyjamas</p>
+                    <?php
+                    //Generate a box for each upcoming match for this game in the database.
+                    $matches = $db->query("SELECT * FROM matches WHERE winner='undecided' AND game='Dota2'");
+                    foreach($matches as $row) {
+                        $teams = $db->query("SELECT * FROM teams WHERE id={$row['team0']} OR id={$row['team1']}")->fetchAll(PDO::FETCH_ASSOC);
+                        echo
+                        "
+                        <div class='col-md-3'>
+                            <div class='match-block' id='{$row['id']}'>
+                                <div class='match-header'>
+                                    <h4>Quarter-Finals</h4>
+                                    <p>{$teams[0]['name']} VS {$teams[1]['name']}</p>
+                                </div>
+                                <div class='match-logos'>
+                                    <img class='team-logo' src='images/teamlogos/{$teams[0]['abbreviation']}.png' alt=\"{$teams[0]['name']}'s logotype.\"/>
+                                    <img class='versus' src='images/vs.png' alt='Versus.'/>
+                                    <img class='team-logo' src='images/teamlogos/{$teams[1]['abbreviation']}.png' alt=\"{$teams[1]['name']}'s logotype.\"/>
+                                </div>
+                                <button class='btn btn-primary' style='margin-right: 5px;'>Bet {$teams[0]['abbreviation']}</button>
+                                <button class='btn btn-primary' style='margin-left: 5px;'>Bet {$teams[1]['abbreviation']}</button>
+                                <p style='margin-top: 10px;'>16:30 CET, Time left: 4:23:43</p>
                             </div>
-                            <div class="match-logos">
-                                <img class="team-logo" src="images/teamlogos/csHellraisers.png" alt="Hellraisers's logotype."/>
-                                <img class="versus" src="images/vs.png" alt="Versus."/>
-                                <img class="team-logo" src="images/teamlogos/csNIP.png" alt="Ninjas In Pyjamas's logotype."/>
-                            </div>
-                            <button class="btn btn-primary" style="margin-right: 5px;">Bet HR</button>
-                            <button class="btn btn-primary" style="margin-left: 5px;">Bet NiP</button>
-                            <p style="margin-top: 10px;">16:30 CET, Time left: 4:23:43</p>
                         </div>
-                    </div>
-                    
-                    <div class="col-md-3">
-                        <div class="match-block">
-                            <div class="match-header">
-                                <h4>Quarter-Finals</h4>
-                                <p>Virtus.Pro VS Evil Geniuses</p>
-                            </div>
-                            <div class="match-logos">
-                                <img class="team-logo" src="images/teamlogos/csVirtusPro.png" alt="Virtus.Pro's logotype."/>
-                                <img class="versus" src="images/vs.png" alt="Versus."/>
-                                <img class="team-logo" src="images/teamlogos/teamevilgeniuses.png" alt="PENTA Sport's logotype."/>
-                            </div>
-                            <button class="btn btn-primary" style="margin-right: 5px;">Bet VP</button>
-                            <button class="btn btn-primary" style="margin-left: 5px;">Bet EG</button>
-                            <p style="margin-top: 10px;">16:30 CET, Time left: 4:23:43</p>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-3">
-                        <div class="match-block">
-                            <div class="match-header">
-                                <h4>Quarter-Finals</h4>
-                                <p>MayaM Gaming VS Fnatic</p>
-                            </div>
-                            <div class="match-logos">
-                                <img class="team-logo" src="images/teamlogos/teammayam.png" alt="LDLC's logotype."/>
-                                <img class="versus" src="images/vs.png" alt="Versus."/>
-                                <img class="team-logo" src="images/teamlogos/csFnatic.png" alt="Fnatic's logotype."/>
-                            </div>
-                            <button class="btn btn-primary" style="margin-right: 5px;">Bet MayaM</button>
-                            <button class="btn btn-primary" style="margin-left: 5px;">Bet Fnatic</button>
-                            <p style="margin-top: 10px;">16:30 CET, Time left: 4:23:43</p>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-3">
-                        <div class="match-block">
-                            <div class="match-header">
-                                <h4>Quarter-Finals</h4>
-                                <p>Team Dignitas VS Natus Vincere</p>
-                            </div>
-                            <div class="match-logos">
-                                <img class="team-logo" src="images/teamlogos/csDig.png" alt="Dignitas's logotype."/>
-                                <img class="versus" src="images/vs.png" alt="Versus."/>
-                                <img class="team-logo" src="images/teamlogos/csNavi.png" alt="Natus Vincere's logotype."/>
-                            </div>
-                            <button class="btn btn-primary" style="margin-right: 5px;">Bet Dig</button>
-                            <button class="btn btn-primary" style="margin-left: 5px;">Bet Na'Vi</button>
-                            <p style="margin-top: 10px;">16:30 CET, Time left: 4:23:43</p>
-                        </div>
-                    </div>
-                    
+                        ";
+                    }
+                    ?>
                 </div>
                 <h2 style="margin-top: 30px;">Bracket</h2>
                 <p>Proin dictum, tortor at porta malesuada, enim nulla maximus felis, ornare eleifend mauris tellus et dui.</p>
