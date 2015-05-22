@@ -35,12 +35,6 @@
 
         }
         
-        if($error == 1){
-          <script> $('#formModal').modal('show');</script>
-        }
-        else{
-          $error = 1;
-        }
 
 
       }
