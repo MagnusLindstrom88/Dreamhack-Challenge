@@ -1,5 +1,8 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <?php require_once 'template/head.php' ?>
+    <?php require_once 'template/head.php'; ?>
+    <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
     <style>
         .videoWrapper {
             position: relative;
@@ -16,17 +19,24 @@
         }
     </style>
 </head>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-8">
-            <div class="videoWrapper">
-                <iframe src="http://www.twitch.tv/imaqtpie/embed" frameborder="0" scrolling="no"></iframe>
+<body>
+    <div id="wrapper">
+        <?php require_once 'template/header&navbar.php'; ?>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="videoWrapper">
+                        <iframe src="http://www.twitch.tv/imaqtpie/embed" frameborder="0" scrolling="no"></iframe>
+                    </div>
+                </div>
+                <div class="col-md-4" style="height:300px;background-color:white;">
+                    
+                </div>
             </div>
         </div>
-        <div class="col-md-4" style="height:300px;background-color:white;">
-            
-        </div>
+    
+        <?php require_once 'template/footer.php'; ?>
     </div>
-
-</div>
+</body>
+</html>
