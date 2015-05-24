@@ -3,7 +3,19 @@
 <head>
     <?php require_once 'template/head.php'; ?>
     <style>
-	
+	.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
     </style>
 </head>
 <body>
@@ -14,7 +26,10 @@
 		<h2>Match Streaming</h2>
 		<div class="row">
 		    <div class="col-md-8" id="hej" style="border: 3px solid red;">
-		    	<iframe src="https://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf?channel=imaqtpie" frameborder="0" scrolling="no"></iframe>				
+		    	<div class="videoWrapper">
+		    		<iframe src="https://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf?channel=imaqtpie" frameborder="0" scrolling="no"></iframe>	
+		    	</div>
+		    				
 <!--
 			    <object width="16" height="10" type="application/x-shockwave-flash" id="live_embed_player_flash" data="https://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf?channel=imaqtpie" bgcolor="#000000">
 				<param name="allowFullScreen" value="true" />
