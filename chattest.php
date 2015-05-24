@@ -8,9 +8,11 @@
 <body>
 
 
-                        <iframe src="http://www.twitch.tv/imaqtpie/embed" frameborder="0" scrolling="no"></iframe>
+                 <div id="hej"></div>
 
-    
+    <script>
+        document.getElementById('hej').innerHTML = '<iframe src="http://www.twitch.tv/imaqtpie/embed" frameborder="0" scrolling="no"></iframe> ';
+    </script>
         <?php require_once 'template/footer.php'; ?>
     </div>
 </body>
