@@ -71,9 +71,11 @@
     </div>
     
     <script>
-    	if (/iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+    	if (/iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
+    		alert("I am mobile");
     		$("iframe")[0].src = "http://www.twitch.tv/imaqtpie/embed";
     	}
+    	else alert("I am stationary");
     </script>
 </body>
 </html>
