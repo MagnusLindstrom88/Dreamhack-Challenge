@@ -13,8 +13,9 @@
             <div class="container">
 		<h2>Match Streaming</h2>
 		<div class="row">
-		    <div class="col-md-8" id="hej" style="border: 3px solid red;">				
-
+		    <div class="col-md-8" id="hej" style="border: 3px solid red;">
+		    	<object bgcolor="#242424" data="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" height="450" type="application/x-shockwave-flash" width="720"> <param name="allowFullScreen" value="true" /> <param name="allowNetworking" value="all" /> <param name="allowScriptAccess" value="always" /> <param name="movie" value="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" /> <param name="flashvars" value="channel=imaqtpie&auto_play=true&start_volume=25" /> </object>				
+<!--
 			    <object width="16" height="10" type="application/x-shockwave-flash" id="live_embed_player_flash" data="https://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf?channel=imaqtpie" bgcolor="#000000">
 				<param name="allowFullScreen" value="true" />
 				<param name="allowScriptAccess" value="always" />
@@ -22,7 +23,7 @@
 				<param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" />
 				<param name="flashvars" value="hostname=www.twitch.tv&channel=imaqtpie&auto_play=true&start_volume=25" />
 			    </object>
-
+-->
 		    </div>
 		    <div class="col-md-4">
 			<ul id="stream-list" class="list-group">
@@ -54,6 +55,7 @@
     </div>
     
     <script>
+    /*
 	// Find all YouTube videos
 	var $allVideos = $("object"),
 	
@@ -88,7 +90,7 @@
 	  });
 	
 	// Kick off one resize to fix all videos on page load
-	}).resize();
+	}).resize();*/
     </script>
 </body>
 </html>
