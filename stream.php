@@ -3,7 +3,19 @@
 <head>
     <?php require_once 'template/head.php'; ?>
     <style>
-
+	.videoWrapper {
+		position: relative;
+		padding-bottom: 56.25%; /* 16:9 */
+		padding-top: 25px;
+		height: 0;
+	}
+	.videoWrapper iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
     </style>
 </head>
 <body>
@@ -14,8 +26,9 @@
 		<h2>Match Streaming</h2>
 		<div class="row">
 		    <div class="col-md-8" id="hej" style="border: 3px solid red;">
-
+		    	<div class="videoWrapper">
 		    		<iframe src="http://www.twitch.tv/imaqtpie/embed" frameborder="0" scrolling="no"></iframe>	
+		    	</div>
 
 		    				
 <!--
