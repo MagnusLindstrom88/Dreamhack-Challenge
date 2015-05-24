@@ -27,7 +27,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="videoWrapper">
-                        <iframe src="http://www.twitch.tv/imaqtpie/embed" frameborder="0" scrolling="no"></iframe>
+                        <iframe src="https://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf?channel=imaqtpie" frameborder="0" scrolling="no"></iframe>
                     </div>
                 </div>
                 <div class="col-md-4" style="height:300px;background-color:white;">

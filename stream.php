@@ -30,7 +30,7 @@
 			    <li class="list-group-item">
 				<p class="list-group-item-text">
 				<div class="videoWrapper">
-				    <iframe src="http://www.twitch.tv/imaqtpie/embed" frameborder="0" scrolling="no"></iframe>
+				    <iframe src="https://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf?channel=imaqtpie" frameborder="0" scrolling="no"></iframe>
 				</div>
 				</p>
 			    </li>
