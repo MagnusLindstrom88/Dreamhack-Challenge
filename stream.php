@@ -27,7 +27,7 @@
 		<div class="row">
 		    <div class="col-md-8" id="hej" style="border: 3px solid red;">
 		    	<div class="videoWrapper">
-		    		<iframe src="https://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf?channel=imaqtpie" frameborder="0" scrolling="no"></iframe>	
+		    		<iframe src="http://www.twitch.tv/imaqtpie/embed" frameborder="0" scrolling="no"></iframe>	
 		    	</div>
 
 		    				
@@ -71,11 +71,11 @@
     </div>
     
     <script>
-    	if (/iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
+    	/*if (/iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
     		alert("I am mobile");
     		$("iframe")[0].src = "http://www.twitch.tv/imaqtpie/embed";
     	}
-    	else alert("I am stationary");
+    	else alert("I am stationary");*/
     </script>
 </body>
 </html>
