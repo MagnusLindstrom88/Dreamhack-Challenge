@@ -3,7 +3,19 @@
 <head>
     <?php require_once 'template/head.php'; ?>
     <style>
-	
+        .videoWrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            padding-top: 25px;
+            height: 0;
+        }
+        .videoWrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }	
     </style>
 </head>
 <body>
@@ -18,7 +30,7 @@
 			    <li class="list-group-item">
 				<p class="list-group-item-text">
 				<div class="videoWrapper">
-				    <iframe src="http://www.twitch.tv/imaqtpie/embed" frameborder="0" scrolling="no"></iframe>
+				    <iframe src="https://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf?channel=imaqtpie" frameborder="0" scrolling="no"></iframe>
 				</div>
 				</p>
 			    </li>
