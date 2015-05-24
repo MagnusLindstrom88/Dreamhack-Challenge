@@ -27,10 +27,8 @@
 		<div class="row">
 		    <div class="col-md-8" id="hej" style="border: 3px solid red;">
 		    	<div class="videoWrapper">
-		    		<iframe src="http://www.twitch.tv/imaqtpie/embed" frameborder="0" scrolling="no"></iframe>	
+		    		<iframe src="https://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf?channel=imaqtpie" frameborder="0" scrolling="no"></iframe>	
 		    	</div>
-
-		    				
 <!--
 			    <object width="16" height="10" type="application/x-shockwave-flash" id="live_embed_player_flash" data="https://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf?channel=imaqtpie" bgcolor="#000000">
 				<param name="allowFullScreen" value="true" />
@@ -71,11 +69,8 @@
     </div>
     
     <script>
-    	/*if (/iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
-    		alert("I am mobile");
+    	if (/iPhone|iPad|iPod/i.test(navigator.userAgent) )
     		$("iframe")[0].src = "http://www.twitch.tv/imaqtpie/embed";
-    	}
-    	else alert("I am stationary");*/
     </script>
 </body>
 </html>
