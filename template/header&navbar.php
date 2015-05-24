@@ -9,7 +9,7 @@
 <nav class="navbar navbar-default" id="navbar">
     <div class="container">
         <!--The toggle button for collapsed menu.-->
-        <button class="navbar-toggle" data-toggle="collapse" data-target="#menuFields">
+        <button class="navbar-toggle" data-toggle="collapse" data-target="#menu-fields">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
