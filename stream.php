@@ -14,7 +14,7 @@
 		<h2>Match Streaming</h2>
 		<div class="row">
 		    <div class="col-md-8" id="hej" style="border: 3px solid red;">
-		    	<iframe src="http://www.twitch.tv/imaqtpie/embed" frameborder="0" scrolling="no"></iframe>				
+		    	<iframe src="https://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf?channel=imaqtpie" frameborder="0" scrolling="no"></iframe>				
 <!--
 			    <object width="16" height="10" type="application/x-shockwave-flash" id="live_embed_player_flash" data="https://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf?channel=imaqtpie" bgcolor="#000000">
 				<param name="allowFullScreen" value="true" />
