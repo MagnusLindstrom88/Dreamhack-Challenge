@@ -1,12 +1,7 @@
 // skickar data till för att registrera bets och ändrar färgen på knappen som trycktes.
-      session_start();
-      
+   
       function makeBet(btn){
       
-      if(!isset($_SESSION['id']) && !empty($_SESSION['id'])) {
-      echo ("Du måste logga in för att kunna lägga ett bet");
-      }
-
      var jax = new XMLHttpRequest();
      var url = "scripts/make_bet.php";
      var team = btn.value;
