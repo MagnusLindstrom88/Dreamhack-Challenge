@@ -1,7 +1,8 @@
 // skickar data till för att registrera bets och ändrar färgen på knappen som trycktes.
+      session_start();
+      
       function makeBet(btn){
       
-      session_start();
       if(!isset($_SESSION['id']) && !empty($_SESSION['id'])) {
       echo 'Du måste logga in för att kunna lägga ett bet');
       }
