@@ -4,7 +4,7 @@
       function makeBet(btn){
       
       if(!isset($_SESSION['id']) && !empty($_SESSION['id'])) {
-      echo 'Du måste logga in för att kunna lägga ett bet';
+      echo ("Du måste logga in för att kunna lägga ett bet");
       }
 
      var jax = new XMLHttpRequest();
