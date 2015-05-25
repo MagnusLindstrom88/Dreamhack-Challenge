@@ -12,11 +12,13 @@ catch(PDOException $e)
     {
     echo $e->getMessage();
     }
-	
 	$member = $_SESSION['id'];
 	$matchen = $_POST["matchen"];
 	$team = $_POST["team"];
 	
+	if(!isset($_SESSION['id'])){
+		echo ("x");
+		}
 	
 	$ps = $dbh->prepare("SELECT * FROM bets WHERE user_id=? AND match_id=?");
     $ps->execute(array($member, $matchen));
