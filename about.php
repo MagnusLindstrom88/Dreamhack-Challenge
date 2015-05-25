@@ -17,10 +17,9 @@
         <div id="content">
             <div class="container">
                 <h2>About us</h2>
-                <p>Fusce consequat mauris sed nisi dignissim, eu sagittis odio pellentesque.</p>
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="thumbnail"><img src="images/dh.jpg" alt="Counter Strike: Global Offensive thumbnail."/>
+                        <div class="thumbnail" id="faq-list"><img src="images/dh.jpg" alt="About Us"/>
 										<h3 style="color: black; ">What is Dreamhack Challenge?</h3>
 										<p style="color: black; ">Dreamhack Challenge is a website where you and your friends can check out the livestream and bet on games for free to win great prizes.
 										There are opportunities to watch various live stream on different games such as:
