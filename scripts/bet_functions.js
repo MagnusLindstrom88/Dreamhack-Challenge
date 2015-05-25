@@ -19,7 +19,7 @@
                     $(btn).removeClass().addClass("btn btn-primary");
                   }
                   if (return_data == "c") {
-                    $(btn).removeClass().addClass("btn btn-danger");
+                    $(btn).removeClass().addClass("btn btn-success");
                   }
                   
       }
