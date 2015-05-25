@@ -22,7 +22,6 @@
 									<img src="images/about.png" class="img-circle" alt="Cinque Terre" width="300" height="220" style="margin-top:-20px">
 									</center>   
 								</br>
-								</div>
 								 <div class="row">
 								  <div class="col-md-4">
 									<div class="thumbnail"><img src="images/dh.jpg" alt="Counter Strike: Global Offensive thumbnail."/></div></a>
