@@ -163,3 +163,6 @@
 
 <!-- sdasd -->
 <script src="scripts/bet_functions.js"></script>
+
+<!-- sdasd -->
+<script src="scripts/make_bet.php"></script>
