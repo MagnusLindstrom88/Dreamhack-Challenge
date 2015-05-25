@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $hostname = "mysql.dsv.su.se";
 $username = "sewa2700";
 $password = "eequishusaiz";
