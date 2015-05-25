@@ -25,7 +25,7 @@ if (isset($_POST['comment'])) {
 	
 		$result = $conn->query($sql);
 		
-//Form för att posta nya kommentarer
+//Form för att posta nya kommentarers
 
 if (isset($_SESSION['id'])) {
 	echo '<form action="" method="post">
