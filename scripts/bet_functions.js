@@ -1,6 +1,6 @@
 // skickar data till för att registrera bets och ändrar färgen på knappen som trycktes.
       function makeBet(btn){
-      
+      console.log($_SESSION['id']);
      var jax = new XMLHttpRequest();
      var url = "scripts/make_bet.php";
      var team = btn.value;
