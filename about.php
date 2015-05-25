@@ -16,11 +16,23 @@
         
         <div id="content">
             <div class="container">
-                <h2>Our Supported Games</h2>
+                <h2>About us</h2>
                 <p>Fusce consequat mauris sed nisi dignissim, eu sagittis odio pellentesque.</p>
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="thumbnail"><img src="images/dh.jpg" alt="Counter Strike: Global Offensive thumbnail."/></div>
+                        <div class="thumbnail"><img src="images/dh.jpg" alt="Counter Strike: Global Offensive thumbnail."/>
+										<h3 style="color: white; ">What is Dreamhack Challenge?</h3>
+										<p style="color: white; ">Dreamhack Challenge is a website where you and your friends can check out the livestream and bet on games for free to win great prizes.
+										There are opportunities to watch various live stream on different games such as:
+										<li style="color: white;"> CS:GO</li>
+										<li style="color: white;"> DOTA2</li>
+										<li style="color: white;"> Starcraft II</li>
+										<p style="color: white; ">We have customized the website for all of you who like Dreamhack and e-sports event.
+										You have opportunities to:
+										<li style="color: white;"><b><i>Create profile</i></b></li>
+										<li style="color: white;"><b><i>Connect with facebook</i></b></li>
+										</p>
+						</div>
                     </div>
                     <div class="col-md-4">
                         <div class="thumbnail"><img src="images/sport.jpg" alt="Dota 2 thumbnail."/></div>
