@@ -17,33 +17,44 @@
         <div id="content">
             <div class="container">
                 <h2>About us</h2>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="thumbnail" id="faq-list"><img src="images/dh.jpg" alt="About Us"/>
-						 <ul id="faq-list" class="list-group">
-										<li><h3>What is Dreamhack Challenge?</h3></li>
-										<li><p>Dreamhack Challenge is a website where you and your friends can check out the livestream and bet on games for free to win great prizes.
-										There are opportunities to watch various live stream on different games such as:
-										CS:GO
-										DOTA2
-										Starcraft II
-										We have customized the website for all of you who like Dreamhack and e-sports event.
-										You have opportunities to:
-										<b><i>Create profile</i></b>
-										<b><i>Connect with facebook</i></b>
-										</p>
+					<div class="row">
+						<div class="col-md-4">
+							 <ul id="faq-list" class="list-group">
+								<div class="thumbnail">
+									<li> 
+										<img src="images/dh.jpg" alt="About Us"/>
+									</li>
+									<li>
+										<h3>What is Dreamhack Challenge?</h3>
+									</li>
+									<li>
+										<p>Dreamhack Challenge is a website where you and your friends can check out the livestream and bet on games for free to win great prizes.
+													There are opportunities to watch various live stream on different games such as:
+													CS:GO
+													DOTA2
+													Starcraft II
+													We have customized the website for all of you who like Dreamhack and e-sports event.
+													You have opportunities to:
+													<b><i>Create profile</i></b>
+													<b><i>Connect with facebook</i></b>
+													</p>
+									</li>
+								</div>
 							</ul>
 						</div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="thumbnail"><img src="images/sport.jpg" alt="Dota 2 thumbnail."/></div>
-                    </div>
-                    <div class="col-md-4">
-                         <div class="thumbnail"><img src="images/dh2.jpg" alt="Starcraft 2 thumbnail."/></div>
-                    </div>
-                </div>
+					</div>
+					<div class="col-md-4">
+						<div class="thumbnail">
+							<img src="images/sport.jpg" alt="Dota 2 thumbnail."/>	
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="thumbnail">
+							<img src="images/dh2.jpg" alt="Starcraft 2 thumbnail."/>
+						</div>
+					</div>
+				</div>
             </div>
-        </div>
     
 		<?php require_once 'template/footer.php'; ?>
     </div>
