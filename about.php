@@ -19,7 +19,7 @@
                 <h2>About us</h2>
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="thumbnail" id="faq-list"><img src="images/dh.jpg" alt="About Us"/>
+                        <ul class="thumbnail" id="faq-list"><img src="images/dh.jpg" alt="About Us"/>
 										<li><h3>What is Dreamhack Challenge?</h3></li>
 										<li><p>Dreamhack Challenge is a website where you and your friends can check out the livestream and bet on games for free to win great prizes.
 										There are opportunities to watch various live stream on different games such as:
@@ -31,7 +31,7 @@
 										<b><i>Create profile</i></b>
 										<b><i>Connect with facebook</i></b>
 										</p>
-						</div>
+						</ul>
                     </div>
                     <div class="col-md-4">
                         <div class="thumbnail"><img src="images/sport.jpg" alt="Dota 2 thumbnail."/></div>
