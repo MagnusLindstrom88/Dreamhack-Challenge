@@ -16,8 +16,28 @@
         
         <div id="content">
             <div class="container">
-                <ul id="faq-list" class="list-group">
-                    <li class="list-group-item">
+                <h2>Our Supported Games</h2>
+                <p>Fusce consequat mauris sed nisi dignissim, eu sagittis odio pellentesque.</p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="thumbnail"><img src="images/dh.jpg" alt="Counter Strike: Global Offensive thumbnail."/></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thumbnail"><img src="images/sport.jpg" alt="Dota 2 thumbnail."/></div>
+                    </div>
+                    <div class="col-md-4">
+                         <div class="thumbnail"><img src="images/dh2.jpg" alt="Starcraft 2 thumbnail."/></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+		<?php require_once 'template/footer.php'; ?>
+    </div>
+</body>
+</html>
+
+<!--
 									<center>            
 									<img src="images/about.png" class="img-circle" alt="Cinque Terre" width="300" height="220" style="margin-top:-20px">
 									</center>   
@@ -67,12 +87,5 @@
 										</div>
 									</div>
 								</div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    
-    <?php require_once 'template/footer.php'; ?>
-    </div>
-</body>
-</html>
+								
+								!-->
