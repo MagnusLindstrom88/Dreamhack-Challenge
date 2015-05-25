@@ -71,6 +71,7 @@
                                 <button class='btn btn-primary' onclick="makeBet(this)" value="{$teams[1]["id"]}" style='margin-left: 5px;'>Bet {$teams[1]['abbreviation']}</button>
                                 <p style='margin-top: 10px;'>16:30 CET, Time left: 4:23:43</p>
                             </div>
+                            </div>
                         </div>
                         ";
                     }
