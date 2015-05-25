@@ -20,16 +20,16 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="thumbnail" id="faq-list"><img src="images/dh.jpg" alt="About Us"/>
-										<h3>What is Dreamhack Challenge?</h3>
-										<p>Dreamhack Challenge is a website where you and your friends can check out the livestream and bet on games for free to win great prizes.
+										<li><h3>What is Dreamhack Challenge?</h3></li>
+										<li><p>Dreamhack Challenge is a website where you and your friends can check out the livestream and bet on games for free to win great prizes.
 										There are opportunities to watch various live stream on different games such as:
-										<li> CS:GO</li>
-										<li> DOTA2</li>
-										<li> Starcraft II</li>
-										<p>We have customized the website for all of you who like Dreamhack and e-sports event.
+										CS:GO
+										DOTA2
+										Starcraft II
+										We have customized the website for all of you who like Dreamhack and e-sports event.
 										You have opportunities to:
-										<li><b><i>Create profile</i></b></li>
-										<li><b><i>Connect with facebook</i></b></li>
+										<b><i>Create profile</i></b>
+										<b><i>Connect with facebook</i></b>
 										</p>
 						</div>
                     </div>
