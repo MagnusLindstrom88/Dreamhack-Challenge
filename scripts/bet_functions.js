@@ -4,8 +4,11 @@
      var jax = new XMLHttpRequest();
      var url = "scripts/make_bet.php";
      var team = btn.value;
+      console.log(team);
      var matchen = $(btn).closest("div").attr("id");
+      console.log(matchen);
      var data = "team="+team+"&matchen="+matchen;
+      console.log(data);
        
     jax.open("POST",url,true)
     jax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
