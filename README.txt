@@ -1,1 +1,1 @@
-Detta är ett skolprojekt
+A school project.
