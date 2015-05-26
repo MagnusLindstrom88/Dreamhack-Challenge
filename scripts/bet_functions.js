@@ -40,7 +40,7 @@
     var button = buttons[i];
     
     var jax = new XMLHttpRequest();
-    var url = "scripts/checkbet.php";
+    var url = "scripts/checkbet.PHP";
     var matchen = $(button).closest("div").attr("id");
     console.log(matchen);
     var team = button.value;
