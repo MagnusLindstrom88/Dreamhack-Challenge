@@ -7,6 +7,7 @@
      var team = btn.value;
      var matchen = $(btn).closest("div").attr("id");
      var data = "team="+team+"&matchen="+matchen;
+     console.log(data);
      
     jax.open("POST",url,true)
     jax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
