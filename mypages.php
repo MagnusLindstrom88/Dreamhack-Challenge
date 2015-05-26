@@ -1,6 +1,8 @@
 <?php
-session_start();
+	session_start();
+?> 
 
+<?php
 $servername = "mysql.dsv.su.se";
 $username = "sewa2700";
 $password = "eequishusaiz";
@@ -16,7 +18,7 @@ if(isset($_POST['submit'])){
 		$con = mysqli_connect($servername,$username,$password,$dbname);
 		$q = mysqli_query($con,"UPDATE users SET profile_pic = '".$_FILES['file']['name']."' WHERE username = '".$_SESSION['username']."'");
 }
-
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -264,5 +266,4 @@ if(isset($_POST['submit'])){
 	};
 	</script>
 </html>
-$conn->close();
-?> 
+
