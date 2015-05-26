@@ -17,8 +17,6 @@ catch(PDOException $e)
 	$matchen = $_POST["matchen"];
 	$team = $_POST["team"];
 	
-	echo ($team, $matchen, $member);
-	
 	if(!isset($_SESSION['id'])){
 		exit("x");
 		}
