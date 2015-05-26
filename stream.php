@@ -76,7 +76,7 @@
     <script>
 	//Switch to a non-https embed for iOS devices since they apparently won't display it otherwise.
     	if (/iPhone|iPad|iPod/i.test(navigator.userAgent) )
-    		$("iframe")[0].src = "http://www.twitch.tv/imaqtpie/embed";
+    		$("iframe")[0].src = "http://www.twitch.tv/esl_csgo/embed";
 	
 	//Refreshes the chat log periodically.
 	setInterval(loadChatLog, 2000);
@@ -84,26 +84,23 @@
 	//Get the content of the chat log when the page loads. Used to avoid showing old messages.
 	var LOG_AT_START;
 	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.onload = function() {
-	    LOG_AT_START = xmlHttp.responseText;
-	}
+	xmlHttp.onload = function() {LOG_AT_START = xmlHttp.responseText;}
 	xmlHttp.open("POST", "chatlog.html");
 	xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xmlHttp.send();
 	
-	
 	//Puts the content of the chatlog.html file into the chat area.
 	function loadChatLog() {
-	    //var oldscrollHeight = $("#chat-message-area").prop("scrollHeight");
+	    var oldscrollHeight = $("#chat-message-area").prop("scrollHeight");
 	    var xmlHttp = new XMLHttpRequest();
 	    xmlHttp.onload = function() {
-		//var chatlog = xmlHttp.responseText;
-		//chatlog = chatlog.replace(LOG_AT_START, "");
-		document.getElementById("chat-message-area").innerHTML = xmlHttp.responseText;;
+		var chatlog = xmlHttp.responseText;
+		chatlog = chatlog.replace(LOG_AT_START, "");
+		document.getElementById("chat-message-area").innerHTML = chatlog;
 		//Auto-scrolls the chat area.
-		//var newscrollHeight = $("#chat-message-area").prop("scrollHeight"); //Scroll height after the request.
-		//if(newscrollHeight > oldscrollHeight)
-		//    $("#chat-message-area").animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div.
+		var newscrollHeight = $("#chat-message-area").prop("scrollHeight"); //Scroll height after the request.
+		if(newscrollHeight > oldscrollHeight)
+		    $("#chat-message-area").animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div.
 	    }
 	    xmlHttp.open("POST", "chatlog.html");
 	    xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
