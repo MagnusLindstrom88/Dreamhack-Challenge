@@ -50,7 +50,7 @@
     
     jax.open("POST",url,true)
     jax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    jax.onreadystatechange = function(matchen){
+    jax.onreadystatechange = function(){
       if (jax.readyState == 4 && jax.status == 200) {
                  var returnD = jax.responseText;
                  console.log(returnD);
