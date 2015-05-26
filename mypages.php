@@ -113,7 +113,7 @@
 	
 	
 	
-		 <?php require_once 'template/footer.php'; ?>
+		 
 		<br/>
 		<br/>
 		<br/>
@@ -122,6 +122,6 @@
 	 
 	</div>
    </body>
-
+	
 </html>
 
