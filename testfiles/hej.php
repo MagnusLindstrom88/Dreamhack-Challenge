@@ -1,5 +1,5 @@
 <?php
-$fh = fopen("log.html", 'a') or die('Could not open file');
+$fh = fopen("log.html", 'r') or die('Could not open file');
 fwrite($fh, "Hello");
 fclose($fh);
 ?>
