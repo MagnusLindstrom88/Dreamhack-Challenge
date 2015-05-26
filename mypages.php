@@ -12,9 +12,6 @@
 <body>
     <!--Header-->
     <?php require_once 'template/header&navbar.php'; ?>
-    <header class="container">
-        <a href="index.html"><img src="Logo.png" alt="Logo" style="width:300px"/></a>
-    </header>
     
     <!--Main image-->
 	</br>
