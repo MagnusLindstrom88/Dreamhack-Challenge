@@ -33,7 +33,7 @@
      }
   //  kollar vilka bets som har gjorts och ändrar färgen på de knappar som har bets registrerade- !EJ FÄRDIG!
      
-     function showbet(){
+     function showBet(){
       var buttons = document.getElementsByClassName("btn btn-info");
       for (var i = 0; i < buttons.length; i++) {
       var button = buttons[i];
