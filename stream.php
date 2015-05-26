@@ -94,9 +94,11 @@
 	
 	//Puts the content of the chatlog.html file into the chat area.
 	function loadChatLog() {
+		alert("beginning");
 	    var oldscrollHeight = $("#chat-message-area").prop("scrollHeight");
 	    var xmlHttp = new XMLHttpRequest();
 	    xmlHttp.onload = function() {
+	    	alert("inside onload");
 		var chatlog = xmlHttp.responseText;
 		chatlog = chatlog.replace(LOG_AT_START, "");
 		document.getElementById("chat-message-area").innerHTML = chatlog;
