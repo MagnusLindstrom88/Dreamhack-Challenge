@@ -38,7 +38,7 @@
     for (var i = 0; i < buttons.length; i++) {
     
     var button = buttons[i];
-    
+    console.log(buttons);
     var jax = new XMLHttpRequest();
     var url = "scripts/checkbet.php";
     var matchen = $(button).closest("div").attr("id");
