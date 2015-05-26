@@ -36,8 +36,13 @@
   //  kollar vilka bets som har gjorts och ändrar färgen på de knappar som har bets registrerade- !EJ FÄRDIG!
      
      function showBet(){
-      
   
+  var buttons = document.getElementsByTagName('button');
+    for (var i = 0; i < buttons.length; i++) {
+    var button = buttons[i];
+    
+    //var type = button.getAttribute('type') || 'submit';    
+    }
     var jax = new XMLHttpRequest();
     var url = "checkbet.PHP";
     var matchen = document.getElementById("Match1").value;
@@ -54,11 +59,11 @@
                  
                   if (returnD == "a") {
                   
-                    $("div[id=1] > button:last-child").removeClass().addClass("btn btn-danger");
+                    $("div[id=1] > button:last-child").removeClass().addClass("btn btn-success");
                     
                   }
                   if (returnD == "b") {
-                    $("div[id=1] > button:first-child").removeClass().addClass("btn btn-danger");
+                    $("div[id=1] > button:first-child").removeClass().addClass("btn btn-success");
                   }
                   if (returnD == "c") {
                     $("div[id=1] > button").removeClass().addClass("btn btn-primary");
