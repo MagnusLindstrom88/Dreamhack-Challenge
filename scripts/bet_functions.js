@@ -5,7 +5,7 @@
      var jax = new XMLHttpRequest();
      var url = "scripts/make_bet.php";
      var team = btn.value;
-     var matchen = $(btn).closest("div").attr("id");
+     var matchen = btn.parentNode.getAttribute("id");
      var data = "team="+team+"&matchen="+matchen;
      console.log(data);
      
@@ -33,7 +33,7 @@
      }
   //  kollar vilka bets som har gjorts och ändrar färgen på de knappar som har bets registrerade- !EJ FÄRDIG!
      
-     function showbet(){
+     function showBet(){
       var buttons = document.getElementsByClassName("btn btn-info");
       for (var i = 0; i < buttons.length; i++) {
       var button = buttons[i];
@@ -46,7 +46,7 @@
     var url = "scripts/checkbet.php";
     var team = button.value;
     console.log(team);
-    var matchen = $(button).closest("div").attr("id");
+    var matchen = button.parentNode.getAttribute("id");
     console.log(matchen);
     var data = "team="+team+"&matchen="+matchen;
     console.log(data);
