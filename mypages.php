@@ -16,6 +16,7 @@
 </head>
 
 <body>
+    <?php require_once 'template/header&navbar.php'; ?>
     <!--Header-->
     <header class="container">
         <a href="index.html"><img src="Logo.png" alt="Logo" style="width:300px"/></a>
