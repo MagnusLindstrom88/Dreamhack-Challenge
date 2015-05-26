@@ -56,15 +56,7 @@
 		    </div>
 		    <div class="col-md-4"  id="chat-container">
 			<div id="chatbox">
-			    <div id="chat-message-area"><?php
-if(file_exists("chatlog.html") && filesize("chatlog.html") > 0){
-    $handle = fopen("chatlog.html", "r");
-    $contents = fread($handle, filesize("chatlog.html"));
-    fclose($handle);
-     
-    echo $contents;
-}
-?></div>
+			    <div id="chat-message-area"></div>
 			    <textarea id="chat-input-field" rows="1"></textarea>
 			    <button class="btn btn-default pull-right" onclick="sendMessage()">Send</button>
 			</div>
@@ -102,16 +94,16 @@ if(file_exists("chatlog.html") && filesize("chatlog.html") > 0){
 	
 	//Puts the content of the chatlog.html file into the chat area.
 	function loadChatLog() {
-	    var oldscrollHeight = $("#chat-message-area").prop("scrollHeight");
+	    //var oldscrollHeight = $("#chat-message-area").prop("scrollHeight");
 	    var xmlHttp = new XMLHttpRequest();
 	    xmlHttp.onload = function() {
-		var chatlog = xmlHttp.responseText;
-		chatlog = chatlog.replace(LOG_AT_START, "");
-		document.getElementById("chat-message-area").innerHTML = chatlog;
+		//var chatlog = xmlHttp.responseText;
+		//chatlog = chatlog.replace(LOG_AT_START, "");
+		document.getElementById("chat-message-area").innerHTML = xmlHttp.responseText;;
 		//Auto-scrolls the chat area.
-		var newscrollHeight = $("#chat-message-area").prop("scrollHeight"); //Scroll height after the request.
-		if(newscrollHeight > oldscrollHeight)
-		    $("#chat-message-area").animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div.
+		//var newscrollHeight = $("#chat-message-area").prop("scrollHeight"); //Scroll height after the request.
+		//if(newscrollHeight > oldscrollHeight)
+		//    $("#chat-message-area").animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div.
 	    }
 	    xmlHttp.open("POST", "chatlog.html");
 	    xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
