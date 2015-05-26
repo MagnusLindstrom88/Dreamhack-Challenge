@@ -5,12 +5,9 @@
      var jax = new XMLHttpRequest();
      var url = "scripts/make_bet.php";
      var team = btn.value;
-      console.log(team);
      var matchen = $(btn).closest("div").attr("id");
-      console.log(matchen);
      var data = "team="+team+"&matchen="+matchen;
-      console.log(data);
-       
+     
     jax.open("POST",url,true)
     jax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
    
@@ -37,16 +34,19 @@
      
      function showBet(){
   
-  var buttons = document.getElementsByTagName('button');
+  var buttons = document.getElementsByClassName("btn btn-primary");
     for (var i = 0; i < buttons.length; i++) {
+    
     var button = buttons[i];
     
-    //var type = button.getAttribute('type') || 'submit';    
-    }
     var jax = new XMLHttpRequest();
-    var url = "checkbet.PHP";
-    var matchen = document.getElementById("Match1").value;
-    var data = "matchen="+matchen;
+    var url = "scripts/checkbet.php";
+    var matchen = $(button).closest("div").attr("id");
+    console.log(matchen);
+    var team = button.value;
+    console.log(team);
+    var data = "team="+team+"&matchen="+matchen;
+    console.log(data);
     
     
     jax.open("POST",url,true)
@@ -54,21 +54,22 @@
     jax.onreadystatechange = function(matchen){
       if (jax.readyState == 4 && jax.status == 200) {
                  var returnD = jax.responseText;
-              
+                 console.log(returnD);
             
                  
                   if (returnD == "a") {
-                  
-                    $("div[id=1] > button:last-child").removeClass().addClass("btn btn-success");
+                    $(button).removeClass().addClass("btn btn-success");
                     
                   }
                   if (returnD == "b") {
-                    $("div[id=1] > button:first-child").removeClass().addClass("btn btn-success");
+                    
                   }
-                  if (returnD == "c") {
-                    $("div[id=1] > button").removeClass().addClass("btn btn-primary");
+                  if (returnD == "x") {
+                    return;
+                    
                   }
       }
     }
     jax.send(data);
+     }
      }

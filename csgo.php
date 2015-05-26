@@ -9,7 +9,7 @@
       
     </style>
 </head>
-<body>
+<body onload="showBet()">
     <div id="wrapper">
         <?php require_once 'template/header&navbar.php'; ?>
         
@@ -82,10 +82,10 @@
                 <div class="row" style="margin-bottom: 30px;">
                     <div class="col-md-4">
                         <p>Quarter</p>
-                        <button class="btn btn-lg btn-success btn-block">Kvarts-match</button>
-                        <button class="btn btn-lg btn-success btn-block">Kvarts-match</button>
-                        <button class="btn btn-lg btn-success btn-block">Kvarts-match</button>
-                        <button class="btn btn-lg btn-success btn-block">Kvarts-match</button>
+                        <button class="btn btn-lg btn-info btn-block">Kvarts-match</button>
+                        <button class="btn btn-lg btn-info btn-block">Kvarts-match</button>
+                        <button class="btn btn-lg btn-info btn-block">Kvarts-match</button>
+                        <button class="btn btn-lg btn-info btn-block">Kvarts-match</button>
                         
                     </div>
                     <div class="col-md-4">
