@@ -32,12 +32,15 @@
      }
   //  kollar vilka bets som har gjorts och ändrar färgen på de knappar som har bets registrerade- !EJ FÄRDIG!
      
-     function showBet(){
+     function showbet(){
+      var buttons = document.getElementsByClassName("btn btn-info");
+      for (var i = 0; i < buttons.length; i++) {
+      var button = buttons[i];
+      Get(button);
+     }
+     
+     function Get(button){
   
-  var buttons = document.getElementsByClassName("btn btn-info");
-    for (var i = 0; i < buttons.length; i++) {
-    
-    var button = buttons[i];
     var jax = new XMLHttpRequest();
     var url = "scripts/checkbet.php";
     var team = button.value;
@@ -49,7 +52,7 @@
     
     jax.open("POST",url,true)
     jax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    jax.onreadystatechange = function(matchen){
+    jax.onreadystatechange = function(){
       if (jax.readyState == 4 && jax.status == 200) {
                  var returnD = jax.responseText;
                  console.log(returnD);
@@ -71,3 +74,4 @@
     jax.send(data);
      }
      }
+     
