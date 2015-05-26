@@ -9,8 +9,7 @@
       
     </style>
 </head>
-<body>
-    window.onload="showBet()"
+<body onload="showBet()">
     <div id="wrapper">
         <?php require_once 'template/header&navbar.php'; ?>
         
