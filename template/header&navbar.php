@@ -168,4 +168,4 @@
 <script src="scripts/make_bet.php"></script>
 
 <!-- sdasd -->
-<script src="scripts/checkbet.PHP"></script>
+<script src="scripts/checkbet.php"></script>
