@@ -3,11 +3,9 @@ session_start();
 $hostname = "mysql.dsv.su.se";
 $username = "sewa2700";
 $password = "eequishusaiz";
-
 try {
 $dbh = new PDO("mysql:host=$hostname;dbname=sewa2700", $username, $password);
  }
-	
 catch(PDOException $e)
     {
     echo $e->getMessage();
