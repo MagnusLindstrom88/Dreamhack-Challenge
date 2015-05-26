@@ -5,7 +5,7 @@
      var jax = new XMLHttpRequest();
      var url = "scripts/make_bet.php";
      var team = btn.value;
-     var matchen = btn.parentNode().getAttribute("id");
+     var matchen = btn.parentNode.getAttribute("id");
      var data = "team="+team+"&matchen="+matchen;
      console.log(data);
      
@@ -46,7 +46,7 @@
     var url = "scripts/checkbet.php";
     var team = button.value;
     console.log(team);
-    var matchen = button.parentNode().getAttribute("id");
+    var matchen = button.parentNode.getAttribute("id");
     console.log(matchen);
     var data = "team="+team+"&matchen="+matchen;
     console.log(data);
