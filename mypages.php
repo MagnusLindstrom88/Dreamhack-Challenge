@@ -108,7 +108,7 @@ if(isset($_POST['submit'])){
 							<div class='row'>
 							<div class='col-xs-6 col-sm-3'>
 								<a href='#' class='thumbnail'>
-									<img src="images/Cantona.jpg" alt='...'>
+									<img src="images/logo.png" alt='...'>
 								</a>
 							</div>
 							";
