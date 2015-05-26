@@ -66,7 +66,6 @@
                                     <img class='versus' src='images/vs.png' alt='Versus.'/>
                                     <img class='team-logo' src='images/teamlogos/{$teams[1]['abbreviation']}.png' alt=\"{$teams[1]['name']}'s logotype.\"/>
                                 </div>
-                                
                                 <button class='btn btn-info' onclick='makeBet(this)' value='{$teams[0]['id']}' style='margin-right: 5px;'>Bet {$teams[0]['abbreviation']}</button>
                                 <button class='btn btn-info' onclick='makeBet(this)' value='{$teams[1]['id']}' style='margin-left: 5px;'>Bet {$teams[1]['abbreviation']}</button>
                                 <p style='margin-top: 10px;'>16:30 CET, Time left: 4:23:43</p>
