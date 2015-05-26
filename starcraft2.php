@@ -1,3 +1,24 @@
+<?php
+session_start();
+
+$servername = "mysql.dsv.su.se";
+$username = "sewa2700";
+$password = "eequishusaiz";
+$dbname = "sewa2700";
+$conn_error = "Could not connect";
+
+
+if(isset($_POST['submit'])){
+		move_uploaded_file($_FILES['file']['tmp_name'],"profile_pic/".$_FILES['file']['name']);
+		function check_file_uploaded_name ($filename){
+		(bool) ((preg_match("`^[-0-9A-Z_\.]+$`i",$filename)) ? true : false);
+		}
+		$con = mysqli_connect($servername,$username,$password,$dbname);
+		$q = mysqli_query($con,"UPDATE users SET profile_pic = '".$_FILES['file']['name']."' WHERE username = '".$_SESSION['username']."'");
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,96 +30,192 @@
     </style>
 </head>
 <body>
-    <div id="wrapper">
-        <?php require_once 'template/header&navbar.php'; ?>
-        
-        <div id="section-image-container">
-            <img id="section-logo" src="images/Starcraft2-logo.jpg" alt="Starcraft 2 logotype."/>
-        </div>
-        
-        <!--Content columns.-->
-        <div id="content">
-            <nav id="navbar" class="navbar navbar-default">
-                <div class="container">
-                    <!--The toggle button for collapsed menu.-->
-                    <button class="navbar-toggle" data-toggle="collapse" data-target="#gameMenuFields">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <!--The brand on the leftmost side.-->
-                    <div class="navbar-header">
-                        <a class="navbar-brand">Starcraft II</a>
-                    </div>
-        
-                    <!--The menu fields. Will be collapsed on small screens.-->
-                    <div class="collapse navbar-collapse" id="gameMenuFields">
-                        <!--Fields on the left.-->
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Matches</a></li>
-                            <li><a href="stream.php">Stream</a></li>
-                            <li><a href="#">Something</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            
-            <div class="container">
-                <h2>Upcoming Matches</h2>
-                <p>These matches are currently open for betting.</p>
-                <div class="row match-row">
-                    <?php
-                    //Generate a box for each upcoming match for this game in the database.
-                    $matches = $db->query("SELECT * FROM matches WHERE winner='undecided' AND game='SC2'");
-                    foreach($matches as $row) {
-                        $teams = $db->query("SELECT * FROM teams WHERE id={$row['team0']} OR id={$row['team1']}")->fetchAll(PDO::FETCH_ASSOC);
-                        echo
-                        "
-                        <div class='col-md-3'>
-                            <div class='match-block' id='{$row['id']}'>
-                                <div class='match-header'>
-                                    <h4>Quarter-Finals</h4>
-                                    <p>{$teams[0]['name']} VS {$teams[1]['name']}</p>
-                                </div>
-                                <div class='match-logos'>
-                                    <img class='team-logo' src='images/teamlogos/{$teams[0]['abbreviation']}.png' alt=\"{$teams[0]['name']}'s logotype.\"/>
-                                    <img class='versus' src='images/vs.png' alt='Versus.'/>
-                                    <img class='team-logo' src='images/teamlogos/{$teams[1]['abbreviation']}.png' alt=\"{$teams[1]['name']}'s logotype.\"/>
-                                </div>
-                                <button class='btn btn-primary' style='margin-right: 5px;'>Bet {$teams[0]['abbreviation']}</button>
-                                <button class='btn btn-primary' style='margin-left: 5px;'>Bet {$teams[1]['abbreviation']}</button>
-                                <p style='margin-top: 10px;'>16:30 CET, Time left: 4:23:43</p>
-                            </div>
-                        </div>
+
+    <!--Main image-->
+	</br>
+	
+	<div>
+		<div class="container">
+		<header>
+		 <div class="col-sm-"> </div>
+			 <h1>  <font color="white"> Manage Account </font> </h1> 
+				<p><div class="col-sm-0"> </div> <font color="white"> On this page you can manage your personal user account information,
+				for example edit or update information about yourself. You can also see your previously betted games.  </font> <p/> 
+	 </div>
+		<header/>
+		
+	</div>
+	</br>
+	
+	
+	<body>
+	<?php require_once 'template/header&navbar.php'; ?>
+	<br/>
+	<?php
+		$conn = mysqli_connect($servername,$username,$password,$dbname);
+		$q = mysqli_query($conn,"SELECT * FROM users");
+		while($row = mysqli_fetch_assoc($q)){
+				if($row['profle_pic'] == ""){
+						echo "
+							<div class='container'>
+							<h3 id='profilepic'> <font color='white'> Profile Picture </h3>
+							<div class='row'>
+							<div class='col-xs-6 col-sm-3'>
+								<a href='#' class='thumbnail'>
+									<img src="images/Cantona.jpg" alt='...'>
+								</a>
+							</div>
+							";
+				} else {
+						echo 
+						"
+                        	<div class='container'>
+							<h3 id='profilepic'> <font color='white'> Profile Picture </h3>
+							<div class='row'>
+							<div class='col-xs-6 col-sm-3'>
+								<a href='#' class='thumbnail'>
+									<src='pictures/".$row['profile_pic']."' alt='Profile Pic'>
+								</a>
+						</div>
                         ";
-                    }
-                    ?>
-                </div>
-                <h2 style="margin-top: 30px;">Bracket</h2>
-                <p>Proin dictum, tortor at porta malesuada, enim nulla maximus felis, ornare eleifend mauris tellus et dui.</p>
-                <div class="row" style="margin-bottom: 30px;">
-                    <div class="col-md-4">
-                        <p>Quarter</p>
-                        <button class="btn btn-lg btn-success btn-block">Kvarts-match</button>
-                        <button class="btn btn-lg btn-success btn-block">Kvarts-match</button>
-                        <button class="btn btn-lg btn-success btn-block">Kvarts-match</button>
-                        <button class="btn btn-lg btn-success btn-block">Kvarts-match</button>
-                        
-                    </div>
-                    <div class="col-md-4">
-                        <p>Semi</p>
-                        
-                        <button class="btn btn-lg btn-warning btn-block">Semi-match</button>
-                        <button class="btn btn-lg btn-warning btn-block">Semi-match</button>
-                       
-                    </div>
-                    <div class="col-md-4">
-                        <p>Final</p>
-                        <button class="btn btn-lg btn-danger btn-block">Final-match</button>
-                    </div>
-                </div>
-        
-        <?php require_once 'template/footer.php'; ?>
-    </div>
-</body>
+				}
+				echo "<br>";
+		}
+    ?>
+	
+	</div class="container">
+			 
+			<button id= "take-picture" type="edit" class="btn btn-default">Take A New Profile Picture</button>
+			<br/>
+			<br/>
+			<form action="" method="post" enctype="multipart/form-data">
+                        <input type="file" name="file">
+                        <input type="submit" name="submit">
+            </form>
+		<br/>
+		 <br/>	
+  </div>
+	
+	
+	<div class="container">
+		<div class="row">
+		   <div class="col-md-7">  <h3> <font color="white"> User Information </h3>
+			  
+			  <br/>
+			  
+			  
+			  
+			  <button type="edit" class="btn btn-default">Edit</button>
+			  <p2> <font color="white"> Click the Edit button in order to make changes in your user profile. </p2>
+			  
+			  <br/>
+			  <br/>
+			  
+			  <form role="form"> <div class="col-sm-0"></div>
+			  
+			  <div class="col-sm-8">
+				
+				<div class="form-group">
+				  <label for="email">User Name:</label>
+				  <input type="email" class="form-control" id="email" placeholder="Enter a User Name">
+				</div>
+				
+				<div class="form-group">
+				  <label for="email">E-mail:</label>
+				  <input type="email" class="form-control" id="email" placeholder="Enter E-mail">
+				</div>
+				
+				<div class="form-group">
+				  <label for="pwd">Password:</label>
+				  <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+				</div>
+				
+				<div class="form-group">
+				  <label for="pwd">Confirm Password:</label>
+				  <input type="password" class="form-control" id="pwd" placeholder="Confrim Password">
+				</div>
+				 
+				 <div class="checkbox">
+						<label><input type="checkbox" id="tos-checkbox"> I accept the <a href="#">terms of service</a>.</label>
+					</div>
+				 <div class="g-recaptcha" data-sitekey="6LfzwQYTAAAAAGRb0kllCxB2qV3Jh-qPRcsU806x"></div>
+				<button type="submit" class="btn btn-default">Submit</button>
+			  </form>
+			  </div></div>
+			  
+				<br/>
+				
+		
+		  <div class="col-lg-5"> <h3> <font color="white"> Betting History </h3> <p> Previously betted games </p> </div>
+				<div class="col-md-4">
+					<ul class="list-group">
+						   <a href="#" class="list-group-item list-group-item-success"> Dapibus ac facilisis in</a> 
+						  <a href="#" class="list-group-item list-group-item-danger">Vestibulum at eros</a>
+						   <a href="#" class="list-group-item list-group-item-success">Dapibus ac facilisis in</a>
+						   <a href="#" class="list-group-item list-group-item-success">Dapibus ac facilisis in</a>
+						  <a href="#" class="list-group-item list-group-item-success">Dapibus ac facilisis in</a>
+						  <a href="#" class="list-group-item list-group-item-danger">Vestibulum at eros</a>
+						   <a href="#" class="list-group-item list-group-item-danger">Vestibulum at eros</a>
+								</ul>
+						   </div>
+								</div>
+	
+		
+		<br/>
+		<br/>
+		<br/>
+		
+		
+
+
+	</div>
+   </body>
+   	<script>
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		(function () {
+		var takePicture = document.querySelector("#take-picture"),
+			showPicture = document.querySelector("#profilepic");
+
+			if (takePicture && showPicture) {
+				takePicture.onchange = function (event) {
+					var files = event.target.files,
+						file;
+					if (files && files.length > 0) {
+						file = files[0];
+						try {
+							var URL = window.URL || window.webkitURL;
+							var imgURL = URL.createObjectURL(file);
+							showPicture.src = imgURL;
+							URL.revokeObjectURL(imgURL);
+						}
+						catch (e) {
+							try {
+								var fileReader = new FileReader();
+								fileReader.onload = function (event) {
+									showPicture.src = event.target.result;
+								};
+								fileReader.readAsDataURL(file);
+							}
+							catch (e) {
+								var error = document.querySelector("#error");
+								if (error) {
+									error.innerHTML = "Neither createObjectURL or FileReader are supported";
+								}
+							}
+						}
+					}
+				};
+			}
+		})();
+	}else{
+		$("#camera").webcam({
+		width: 320,
+		height: 240,
+		mode: "callback",
+		onCapture: function () {
+			webcam.save();
+			}
+		}) 
+	};
+	</script>
 </html>
