@@ -56,7 +56,15 @@
 		    </div>
 		    <div class="col-md-4"  id="chat-container">
 			<div id="chatbox">
-			    <div id="chat-message-area"></div>
+			    <div id="chat-message-area"><?php
+if(file_exists("chatlog.html") && filesize("chatlog.html") > 0){
+    $handle = fopen("chatlog.html", "r");
+    $contents = fread($handle, filesize("chatlog.html"));
+    fclose($handle);
+     
+    echo $contents;
+}
+?></div>
 			    <textarea id="chat-input-field" rows="1"></textarea>
 			    <button class="btn btn-default pull-right" onclick="sendMessage()">Send</button>
 			</div>
@@ -94,11 +102,9 @@
 	
 	//Puts the content of the chatlog.html file into the chat area.
 	function loadChatLog() {
-		alert("beginning");
 	    var oldscrollHeight = $("#chat-message-area").prop("scrollHeight");
 	    var xmlHttp = new XMLHttpRequest();
 	    xmlHttp.onload = function() {
-	    	alert("inside onload");
 		var chatlog = xmlHttp.responseText;
 		chatlog = chatlog.replace(LOG_AT_START, "");
 		document.getElementById("chat-message-area").innerHTML = chatlog;
