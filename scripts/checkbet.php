@@ -18,7 +18,7 @@ catch(PDOException $e)
 	$team = $_POST["team"];
 	
 	if(!isset($_SESSION['id'])){
-		exit("x");
+		echo("x");
 		}
 	
 	$ps = $dbh->prepare("SELECT * FROM bets WHERE user_id=? AND match_id=? AND team=?");
