@@ -6,5 +6,5 @@ $ps->execute(array($_GET['key']));
 ?>
 <script>
     alert("Verification successful.");
-    location = "index.php";
+    location = "../../index.php";
 </script>
