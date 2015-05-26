@@ -1,11 +1,10 @@
-<?php $fh = fopen("log.html", 'r') or die('Could not open file'); ?>
+<?php
+$fh = fopen("log.html", 'a');
+fwrite($fh, "Hello");
+fclose($fh);
+?>
 
 <script>
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("POST", "skript.php");
-    xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xmlHttp.send("test="+"hello ");
-    
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("POST", "log.html");
     xmlHttp.onload = function() {
