@@ -76,7 +76,7 @@
     <script>
 	//Switch to a non-https embed for iOS devices since they apparently won't display it otherwise.
     	if (/iPhone|iPad|iPod/i.test(navigator.userAgent) )
-    		$("iframe")[0].src = "http://www.twitch.tv/imaqtpie/embed";
+    		$("iframe")[0].src = "http://www.twitch.tv/esl_csgo/embed";
 	
 	//Refreshes the chat log periodically.
 	setInterval(loadChatLog, 2000);
@@ -84,13 +84,10 @@
 	//Get the content of the chat log when the page loads. Used to avoid showing old messages.
 	var LOG_AT_START;
 	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.onload = function() {
-	    LOG_AT_START = xmlHttp.responseText;
-	}
+	xmlHttp.onload = function() {LOG_AT_START = xmlHttp.responseText;}
 	xmlHttp.open("POST", "chatlog.html");
 	xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xmlHttp.send();
-	
 	
 	//Puts the content of the chatlog.html file into the chat area.
 	function loadChatLog() {
