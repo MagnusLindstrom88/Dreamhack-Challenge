@@ -1,4 +1,4 @@
-<?php $fh = fopen($path, 'r') or die('Could not open file'); ?>
+<?php $fh = fopen("log.html", 'r') or die('Could not open file'); ?>
 
 <script>
     var xmlHttp = new XMLHttpRequest();
