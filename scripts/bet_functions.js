@@ -17,7 +17,7 @@
                     
                     if (return_data == "a") {
                   
-                    $(btn).removeClass().addClass("btn btn-primary");
+                    $(btn).removeClass().addClass("btn btn-info");
                   }
                   if (return_data == "c") {
                     $(btn).removeClass().addClass("btn btn-success");
@@ -34,7 +34,7 @@
      
      function showBet(){
   
-  var buttons = document.getElementsByClassName("btn btn-primary");
+  var buttons = document.getElementsByClassName("btn btn-info");
     for (var i = 0; i < buttons.length; i++) {
     
     var button = buttons[i];
