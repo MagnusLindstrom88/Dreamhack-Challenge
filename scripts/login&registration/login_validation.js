@@ -17,7 +17,7 @@ function validateLogin() {
             createErrorMessage(password, "incorrect.");
         if(xmlHttp.responseText.search("not verified") != -1) {
             verified = false;
-            alert("You account is not verified, a confirmation message has been sent to your email.");
+            alert("You account is not verified, please check your email for the confirmation message that was sent upon your registration.");
         }
     }
     xmlHttp.open("POST", "scripts/login&registration/check_data_exists.php", false);

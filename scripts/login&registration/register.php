@@ -27,8 +27,7 @@ if(isset($_POST['email'])) {
         $verificationKey = generateSalt(10);
         $subject = "DreamHack Challenge - Email Confirmation";
         $message = "Hello," . "\n" . "\n" . "Please confirm your email by clicking on the link below: " . "\n"
-                    //. "https://pvt.dsv.su.se/Group10/verifyaccount.php?key=" . $verificationKey
-                    . "https://pvt.dsv.su.se/Group10/verifyaccount.php?key=3D". $verificationKey
+                    . "https://pvt.dsv.su.se/Group10/scripts/login&registration/verify_account.php?key=3D". $verificationKey
                     . "\n" . "\n" . "This is an automated message, please do not respond to it.";
         $headers = 'From: sebwar01@hotmail.com' . "\n" .
         'Reply-To: sebwar01@hotmail.com' . "\n" .
