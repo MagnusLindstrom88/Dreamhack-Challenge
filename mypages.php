@@ -16,7 +16,6 @@ if(isset($_POST['submit'])){
 		$con = mysqli_connect($servername,$username,$password,$dbname);
 		$q = mysqli_query($con,"UPDATE users SET profile_pic = '".$_FILES['file']['name']."' WHERE username = '".$_SESSION['username']."'");
 }
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -265,3 +264,5 @@ if(isset($_POST['submit'])){
 	};
 	</script>
 </html>
+$conn->close();
+?> 
