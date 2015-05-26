@@ -1,3 +1,5 @@
+<?php $fh = fopen($path, 'r') or die('Could not open file'); ?>
+
 <script>
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("POST", "skript.php");
