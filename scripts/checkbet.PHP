@@ -10,6 +10,9 @@ catch(PDOException $e)
     {
     echo $e->getMessage();
     }
+	
+	ini_set('display_errors', 1);
+	
 	$matchen = $_POST["matchen"];
 	$member = $_SESSION["id"];
 	$team = $_POST["team"];
