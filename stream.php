@@ -102,7 +102,7 @@
 		if(newscrollHeight > oldscrollHeight)
 		    $("#chat-message-area").animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div.
 	    }
-	    xmlHttp.open("GET", "scripts/get_chatlog.php");
+	    xmlHttp.open("GET", "scripts/get_chatlog.php?oldlog="+LOG_AT_START);
 	    xmlHttp.send();
 	}
 	
