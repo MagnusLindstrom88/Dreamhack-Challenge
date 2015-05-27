@@ -117,7 +117,7 @@
                             <textarea class="form-control" id="message-text" name="message"><?php echo htmlspecialchars($_POST['message']);?></textarea>
                             <?php echo "<p class='text-danger'>$messageError</p>";?>
                           </div>
-                          <div class="g-recaptcha" data-sitekey="6LfzwQYTAAAAAGRb0kllCxB2qV3Jh-qPRcsU806x"></div>
+                          
                         </form>
                       </div>
                       <div class="form-group">
