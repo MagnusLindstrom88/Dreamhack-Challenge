@@ -51,7 +51,8 @@
 		<div class="row">
 		    <div class="col-md-8">
 		    	<div id="video-wrapper">
-		    	    <iframe src="http://www.twitch.tv/imaqtpie/embed" frameborder="0" scrolling="no"></iframe>
+		    		<iframe src="https://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf?channel=esl_csgo" frameborder="0"></iframe>
+		    	   
 		    	</div>
 		    </div>
 		    <div class="col-md-4"  id="chat-container">
@@ -75,8 +76,8 @@
     
     <script>
 	//Switch to a non-https embed for iOS devices since they apparently won't display it otherwise.
-    	//if (/iPhone|iPad|iPod/i.test(navigator.userAgent) )
-    	//	$("iframe")[0].src = "http://www.twitch.tv/esl_csgo/embed";
+    	if (/iPhone|iPad|iPod/i.test(navigator.userAgent) )
+    		$("#video-wrapper")[0].innerHTML = " <iframe src='http://www.twitch.tv/imaqtpie/embed' frameborder='0' scrolling='no'></iframe>";
 	
 	//Refreshes the chat log periodically.
 	setInterval(loadChatLog, 2000);
