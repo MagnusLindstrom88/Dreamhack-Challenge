@@ -51,7 +51,7 @@
 		<div class="row">
 		    <div class="col-md-8">
 		    	<div id="videoWrapper">
-		    	    <iframe src="https://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf?channel=esl_csgo" style="border:medium double rgb(20,50,30)"></iframe>
+		    	    <iframe src="https://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf?channel=esl_csgo" style="border:large rgb(20,50,30)"></iframe>
 		    	</div>
 		    </div>
 		    <div class="col-md-4"  id="chat-container">
