@@ -88,7 +88,7 @@
 	xmlHttp.open("GET", "scripts/get_chatlog.php");
 	xmlHttp.send();
 	
-	//Puts the content of the chatlog.html file into the chat area.
+	//Puts the content of the chatlog.txt file into the chat area.
 	function loadChatLog() {
 	    var oldscrollHeight = $("#chat-message-area").prop("scrollHeight");
 	    var xmlHttp = new XMLHttpRequest();
@@ -102,8 +102,7 @@
 		if(newscrollHeight > oldscrollHeight)
 		    $("#chat-message-area").animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div.
 	    }
-	    xmlHttp.open("POST", "scripts/get_chatlog.php");
-	    xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	    xmlHttp.open("GET", "scripts/get_chatlog.php");
 	    xmlHttp.send();
 	}
 	
