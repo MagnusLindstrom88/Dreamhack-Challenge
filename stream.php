@@ -7,7 +7,6 @@
 	    background-color: #242424;
 	    border: 3px solid #676461;
 	    border-radius:10px;
-		margin-bottom:10px;
 	}
 	#chatbox {
 	    color:black;
@@ -50,9 +49,9 @@
             <div class="container">
 		<h2>CS:GO - Ninjas in Pyjamas VS HellRaisers</h2>
 		<div class="row">
-		    <div class="col-md-8" id="chat-container">
+		    <div class="col-md-8">
 		    	<div id="videoWrapper">
-		    	    <iframe src="https://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf?channel=esl_csgo" frameborder="0"></iframe>
+		    	    <iframe src="https://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf?channel=esl_csgo" frameborder="2px"></iframe>
 		    	</div>
 		    </div>
 		    <div class="col-md-4"  id="chat-container">
