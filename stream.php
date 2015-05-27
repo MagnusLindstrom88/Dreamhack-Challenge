@@ -51,7 +51,7 @@
 		<div class="row">
 		    <div class="col-md-8">
 		    	<div id="video-wrapper">
-		    	    <iframe src="https://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf?channel=esl_csgo" frameborder="0"></iframe>
+		    	    <iframe src="http://www.twitch.tv/imaqtpie/embed" frameborder="0" scrolling="no"></iframe>
 		    	</div>
 		    </div>
 		    <div class="col-md-4"  id="chat-container">
