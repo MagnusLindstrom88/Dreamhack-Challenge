@@ -7,7 +7,7 @@
 	    background-color: #242424;
 	    border: 3px solid #676461;
 	    border-radius:10px;
-		margin: 5px;
+		margin-bottom:10px;
 	}
 	#chatbox {
 	    color:black;
