@@ -55,7 +55,7 @@
                         $teams = $db->query("SELECT * FROM teams WHERE id={$row['team0']} OR id={$row['team1']}")->fetchAll(PDO::FETCH_ASSOC);
                         echo
                         "
-                        <div class='col-md-3'>
+                        <div class='col-md-3 col-sm-6'>
                             <div class='match-block' id='{$row['id']}'>
                                 <div class='match-header'>
                                     <h4>Quarter-Finals</h4>
@@ -70,8 +70,7 @@
                                 <button class='btn btn-info' onclick='makeBet(this)' value='{$teams[1]['id']}' style='margin-left: 5px;'>Bet {$teams[1]['abbreviation']}</button>
                                 <p style='margin-top: 10px;'>16:30 CET, Time left: 4:23:43</p>
                             </div>
-                            </div>
-                        
+                        </div>
                         ";
                     }
                     ?>
