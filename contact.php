@@ -104,7 +104,7 @@
                         <form>
                           <div class="form-group">
                             <label for="name" class="control-label">Your name:</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Your name" value="<?php if(!empty($name){ echo $name;}?>">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Your name" value="<?php echo htmlspecialchars($_POST['name']);?>">
                             <?php echo "<p class='text-danger'>$nameError</p>";?>
                           </div>
                           <div class="form-group">
