@@ -82,11 +82,13 @@
 	setInterval(loadChatLog, 2000);
 	
 	//Get the content of the chat log when the page loads. Used to avoid showing old messages.
-	var TO_REMOVE;
 	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.onload = function() {TO_REMOVE = xmlHttp.responseText.length-1;}
+	xmlHttp.onload = function() {
+	    var TO_REMOVE = xmlHttp.responseText.length-1;
+	}
 	xmlHttp.open("GET", "scripts/get_chatlog.php");
 	xmlHttp.send();
+	alert("outside"+TO_REMOVE);
 	
 	//Puts the content of the chatlog.txt file into the chat area.
 	function loadChatLog() {
@@ -101,7 +103,7 @@
 		if(newscrollHeight > oldscrollHeight)
 		    $("#chat-message-area").animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div.
 	    }
-	    xmlHttp.open("GET", "scripts/get_chatlog.php?oldlog="+LOG_AT_START);
+	    xmlHttp.open("GET", "scripts/get_chatlog.php?");
 	    xmlHttp.send();
 	}
 	
