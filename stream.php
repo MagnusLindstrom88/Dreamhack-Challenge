@@ -88,7 +88,6 @@
 	}
 	xmlHttp.open("GET", "scripts/get_chatlog.php");
 	xmlHttp.send();
-	alert("outside"+TO_REMOVE);
 	
 	//Puts the content of the chatlog.txt file into the chat area.
 	function loadChatLog() {
