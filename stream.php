@@ -85,8 +85,7 @@
 	var LOG_AT_START;
 	var xmlHttp = new XMLHttpRequest();
 	xmlHttp.onload = function() {LOG_AT_START = xmlHttp.responseText;}
-	xmlHttp.open("POST", "http://www.avetian.se/skola/chatlog.txt");
-	xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlHttp.open("GET", "scripts/get_chatlog.php");
 	xmlHttp.send();
 	
 	//Puts the content of the chatlog.html file into the chat area.
@@ -102,7 +101,7 @@
 		if(newscrollHeight > oldscrollHeight)
 		    $("#chat-message-area").animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div.
 	    }
-	    xmlHttp.open("POST", "http://www.avetian.se/skola/chatlog.txt");
+	    xmlHttp.open("POST", "scripts/get_chatlog.php");
 	    xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	    xmlHttp.send();
 	}
@@ -117,7 +116,7 @@
 	    xmlHttp.onload = function() {
 		if(xmlHttp.responseText === "failed") alert("You must be logged in to chat.");
 	    }
-	    xmlHttp.open("POST", "http://www.avetian.se/skola/chat.php");
+	    xmlHttp.open("POST", "scripts/chat.php");
 	    xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	    xmlHttp.send("message="+message);
 	}

@@ -3,10 +3,7 @@ session_start();
 
 if(isset($_SESSION['username'])) {
     $message = trim($_POST['message']);
-    if(strlen($message) > 0) {
-        $chatlog = fopen("../chatlog.html", "a");
-        fwrite($chatlog, "<div>{$_SESSION['username']}: {$message}</div>");
-        fclose($chatlog);
-    }
+    if(strlen($message) > 0)
+        header("location: http://www.avetian.se/skola/chat.php?username={$_SESSION['username']}&message={$message}");
 }
 else echo "failed";
