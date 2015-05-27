@@ -94,7 +94,6 @@
 	    var oldscrollHeight = $("#chat-message-area").prop("scrollHeight");
 	    var xmlHttp = new XMLHttpRequest();
 	    xmlHttp.onload = function() {
-		var chatlog = xmlHttp.responseText.slice(TO_REMOVE);
 		chatlog = chatlog.replace(/-/g, " ");
 		document.getElementById("chat-message-area").innerHTML = chatlog;
 		//Auto-scrolls the chat area.
