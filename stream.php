@@ -95,6 +95,7 @@
 	    xmlHttp.onload = function() {
 		var chatlog = xmlHttp.responseText;
 		chatlog = chatlog.replace(LOG_AT_START, "");
+		chatlog = chatlog.replace("-", " ");
 		document.getElementById("chat-message-area").innerHTML = chatlog;
 		//Auto-scrolls the chat area.
 		var newscrollHeight = $("#chat-message-area").prop("scrollHeight"); //Scroll height after the request.
