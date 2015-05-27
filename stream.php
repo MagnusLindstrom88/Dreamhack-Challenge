@@ -27,18 +27,18 @@
 	    margin:5px 0;
 	    resize: none;
 	}
-	#videoWrapper {
-		position: relative;
-		padding-bottom: 56.25%; /* 16:9 */
-		padding-top: 25px;
-		height: 0;
+	#video-wrapper {
+	    position: relative;
+	    padding-bottom: 56.25%; /* 16:9 */
+	    padding-top: 25px;
+	    height: 0;
 	}
-	#videoWrapper iframe {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
+	#video-wrapper iframe {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
 	}
     </style>
 </head>
@@ -50,8 +50,8 @@
 		<h2>CS:GO - Ninjas in Pyjamas VS HellRaisers</h2>
 		<div class="row">
 		    <div class="col-md-8">
-		    	<div id="videoWrapper">
-		    	    <iframe src="https://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf?channel=esl_csgo" frameborder="0"></iframe>
+		    	<div id="video-wrapper">
+		    	    
 		    	</div>
 		    </div>
 		    <div class="col-md-4"  id="chat-container">
@@ -76,7 +76,9 @@
     <script>
 	//Switch to a non-https embed for iOS devices since they apparently won't display it otherwise.
     	if (/iPhone|iPad|iPod/i.test(navigator.userAgent) )
-    		$("iframe")[0].src = "http://www.twitch.tv/esl_csgo/embed";
+	$("#video-wrapper")[0].innerHTML = "<iframe src='http://www.twitch.tv/esl_csgo/embed' frameborder='0'></iframe>";
+    		//$("iframe")[0].src = "http://www.twitch.tv/esl_csgo/embed";
+	else $("#video-wrapper")[0].innerHTML = "<iframe src='https://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf?channel=esl_csgo' frameborder='0'></iframe>";
 	
 	//Refreshes the chat log periodically.
 	setInterval(loadChatLog, 2000);
