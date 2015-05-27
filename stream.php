@@ -7,6 +7,7 @@
 	    background-color: #242424;
 	    border: 3px solid #676461;
 	    border-radius:10px;
+		margin: 5px;
 	}
 	#chatbox {
 	    color:black;
@@ -47,7 +48,7 @@
         <?php require_once 'template/header&navbar.php'; ?>
         <div id="content">
             <div class="container">
-		<h1>CS:GO - Ninjas in Pyjamas VS HellRaisers</h1>
+		<h2>CS:GO - Ninjas in Pyjamas VS HellRaisers</h2>
 		<div class="row">
 		    <div class="col-md-8" id="chat-container">
 		    	<div id="videoWrapper">
@@ -55,11 +56,11 @@
 		    	</div>
 		    </div>
 		    <div class="col-md-4"  id="chat-container">
-			<div id="chatbox">
-			    <div id="chat-message-area"></div>
-			    <textarea id="chat-input-field" rows="1"></textarea>
-			    <button class="btn btn-default pull-right" onclick="sendMessage()">Send</button>
-			</div>
+				<div id="chatbox">
+					<div id="chat-message-area"></div>
+					<textarea id="chat-input-field" rows="1"></textarea>
+					<button class="btn btn-default pull-right" onclick="sendMessage()">Send</button>
+				</div>
 		    </div>
 		</div>
 		<div class="row">
