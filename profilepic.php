@@ -47,8 +47,6 @@ if(isset($_POST['submit'])){
 	</div>
 	</br>
 	
-	
-	<body>
 	<?php require_once 'template/header&navbar.php'; ?>
 	<br/>
 	<?php
