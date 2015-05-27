@@ -6,7 +6,6 @@
         #section-image-container {
             background-image: url(images/csgobackground.jpg);
         }
-      
     </style>
 </head>
 <body onload="showBet()">
@@ -38,7 +37,6 @@
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="#">Matches</a></li>
                             <li><a href="stream.php">Stream</a></li>
-                            <li><a href="#">Something</a></li>
                         </ul>
                     </div>
                 </div>
