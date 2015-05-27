@@ -1,9 +1,10 @@
 <?php
-$oldlog = $_GET['oldlog'];
 $fh = fopen("http://www.avetian.se/skola/chatlog.txt?x=".generateString(3), 'r');
 $returnString = fread($fh, 102400);
 fclose($fh);
-str_replace($oldlog, "", $returnString);
+if(isset($_GET['oldlog']))
+    str_replace($_GET['oldlog'], "", $returnString);
+
 echo $returnString;
 
 function generateString($max = 15) {
