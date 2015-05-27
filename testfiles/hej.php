@@ -1,7 +1,7 @@
 <?php
-$fh = fopen("log.html", 'r') or die('Could not open file');
-fwrite($fh, "Hello");
-fclose($fh);
+$fh = fopen("log.html", 'a') or die('Could not open file');
+fwrite($fh, "Hello") or die('Could not open file');
+fclose($fh) or die('Could not open file');
 ?>
 
 <script>
