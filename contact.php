@@ -1,8 +1,8 @@
 <?php
       session_start();
 
-      if(isset($_SESSION['id'])
-        $name = $_SESSION['id'];
+      if(isset($_SESSION['username'])
+        $name = $_SESSION['username'];
 
       
       if($_POST["submit"]){
@@ -11,6 +11,7 @@
         $name = $_POST['name'];
         $email = $_POST['email'];
         $message = $_POST['message'];
+        $captcha = $_POST['g-recaptcha']
 
         $from = 'Dreamhack challenge contact form';
         $to = 'simon_palmqvist@hotmail.com';
@@ -33,7 +34,21 @@
           $error = 1;
         }
 
-        if(!$nameError && !$emailError && !$messageError){
+        //Verify the captcha by sending a POST-request to Google's server.
+        $url = 'https://www.google.com/recaptcha/api/siteverify';
+        $data = array('secret' => '6LfzwQYTAAAAAAkbkImDqmDj6l27DDwdXIGqtVv5', 'response' => $captcha);
+        $options = array(
+            'http' => array(
+                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                'method'  => 'POST',
+                'content' => http_build_query($data),
+            ),
+        );
+        $context  = stream_context_create($options);
+        $captchaResult = file_get_contents($url, false, $context);
+        $captchaResult = json_decode($result, true);
+
+        if(!$nameError && !$emailError && !$messageError && $captchaResult['success']){
           if(mail ( $to, $subject, $body, $from)){
             $result = '<div class="alert alert-success">Thank you! Your message has been received.</div>';
           }
@@ -102,6 +117,7 @@
                             <textarea class="form-control" id="message-text" name="message"><?php echo htmlspecialchars($_POST['message']);?></textarea>
                             <?php echo "<p class='text-danger'>$messageError</p>";?>
                           </div>
+                          <div class="g-recaptcha" data-sitekey="6LfzwQYTAAAAAGRb0kllCxB2qV3Jh-qPRcsU806x"></div>
                         </form>
                       </div>
                       <div class="form-group">
