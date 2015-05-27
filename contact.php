@@ -11,7 +11,7 @@
         $name = $_POST['name'];
         $email = $_POST['email'];
         $message = $_POST['message'];
-        $captcha = $_POST['g-recaptcha']
+        $captcha = $_POST['g-recaptcha'];
 
         $from = 'Dreamhack challenge contact form';
         $to = 'simon_palmqvist@hotmail.com';
@@ -104,7 +104,7 @@
                         <form>
                           <div class="form-group">
                             <label for="name" class="control-label">Your name:</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Your name" value="<?php echo htmlspecialchars($_POST['name']);?>">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Your name" value="<?php if($name) { echo $name; }?>">
                             <?php echo "<p class='text-danger'>$nameError</p>";?>
                           </div>
                           <div class="form-group">
