@@ -49,7 +49,7 @@
             <div class="container">
 		<h1>CS:GO - Ninjas in Pyjamas VS HellRaisers</h1>
 		<div class="row">
-		    <div class="col-md-8" style="">
+		    <div class="col-md-8" id="chat-container">
 		    	<div id="videoWrapper">
 		    	    <iframe src="https://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf?channel=esl_csgo" frameborder="0"></iframe>
 		    	</div>
