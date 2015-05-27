@@ -1,8 +1,8 @@
 <?php
-      session_start();
+      //session_start();
 
-      if(isset($_SESSION['username'])
-        $name = $_SESSION['username'];
+      //if(isset($_SESSION['username'])
+      //  $name = $_SESSION['username'];
 
       
       if($_POST["submit"]){
