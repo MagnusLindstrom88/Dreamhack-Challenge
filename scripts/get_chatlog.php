@@ -5,12 +5,12 @@ fclose($fh);
 echo $returnString;
 
 function generateString($max = 15) {
-        $characterList = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%*?";
-        $i = 0;
-        $s = "";
-        while ($i < $max) {
-            $s .= $characterList{mt_rand(0, (strlen($characterList) - 1))};
-            $i++;
-        }
-        return $s;
+    $characterList = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%*?";
+    $i = 0;
+    $s = "";
+    while ($i < $max) {
+        $s .= $characterList{mt_rand(0, (strlen($characterList) - 1))};
+        $i++;
+    }
+    return $s;
 }
