@@ -1,8 +1,8 @@
 <?php
-      //session_start();
+      session_start();
 
-      //if(isset($_SESSION['username'])
-      //  $name = $_SESSION['username'];
+      if(isset($_SESSION['username'])
+        $name = $_SESSION['username'];
 
       
       if($_POST["submit"]){
@@ -104,7 +104,7 @@
                         <form>
                           <div class="form-group">
                             <label for="name" class="control-label">Your name:</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Your name" value="<?php if(!empty($name){ echo $name}?>">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Your name" value="<?php if(!empty($name){ echo $name;}?>">
                             <?php echo "<p class='text-danger'>$nameError</p>";?>
                           </div>
                           <div class="form-group">
