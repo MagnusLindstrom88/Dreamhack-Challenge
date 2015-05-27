@@ -94,7 +94,6 @@
 	    var xmlHttp = new XMLHttpRequest();
 	    xmlHttp.onload = function() {
 		var chatlog = xmlHttp.responseText;
-		chatlog = chatlog.replace(LOG_AT_START, "");
 		chatlog = chatlog.replace(/-/g, " ");
 		document.getElementById("chat-message-area").innerHTML = chatlog;
 		//Auto-scrolls the chat area.
