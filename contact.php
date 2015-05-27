@@ -1,8 +1,11 @@
 <?php
       require_once 'scripts/init.php';
 
-      if(isset($_SESSION['username']))
+      if(isset($_SESSION['username'])){
         $name = $_SESSION['username'];
+        $email = $_SESSION['email'];
+      }
+        
 
       
       if($_POST["submit"]){
@@ -109,7 +112,7 @@
                           </div>
                           <div class="form-group">
                             <label for="email" class="control-label">Your email:</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" value="<?php echo htmlspecialchars($_POST['email']); ?>">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" value="<?php if($email) { echo $email; }?>">
                             <?php echo "<p class='text-danger'>$emailError</p>";?>
                           </div>
                           <div class="form-group">
