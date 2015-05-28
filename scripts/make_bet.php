@@ -9,17 +9,17 @@ if(isset($_SESSION['id'])) {
 	$ps->execute(array($member, $matchen));
 	
 	if($ps->rowCount() != 0) {
-		$ps2 = $db->prepare("SELECT * FROM bets WHERE user_id=? AND match_id=? AND team=?");
+		$ps2 = $db->prepare("SELECT * FROM bets WHERE user_id=? AND match_id=? AND team_id=?");
 		$ps2->execute(array($member, $matchen, $team));
 		if($ps2->rowCount() != 0) {
-			$sql = "DELETE FROM bets WHERE team=? AND user_id=? AND match_id=? ";
+			$sql = "DELETE FROM bets WHERE team_id=? AND user_id=? AND match_id=? ";
 			$query = $db->prepare($sql);
 			$query->execute(array($team,$member,$matchen));
 			echo ("a");
 		}
 	}
 	else {
-		$sql = "INSERT INTO bets (team, user_id, match_id) Values (:team, :member, :matchen)";
+		$sql = "INSERT INTO bets (team_id, user_id, match_id) Values (:team, :member, :matchen)";
 		$query = $db->prepare($sql);
 		$query->execute(array(
 			":team" =>$team,

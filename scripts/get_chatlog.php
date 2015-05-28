@@ -2,7 +2,8 @@
 require_once 'init.php';
 
 $datetime = $_GET['datetime'];
-$chatlog = $db->query("SELECT * FROM chatlog WHERE created_at > '{$datetime}'");
+$chatlog = $db->prepare("SELECT * FROM chatlog WHERE created_at > ?");
+$chatlog->execute(array($datetime));
 $returnString = "";
 
 if($chatlog->rowCount() > 0)
