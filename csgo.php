@@ -36,7 +36,7 @@
                         <!--Fields on the left.-->
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="#">Matches</a></li>
-                            <li><a href="stream.php">Stream</a></li>
+                            <li><a href="stream.php?game=csgo">Stream</a></li>
                         </ul>
                     </div>
                 </div>
