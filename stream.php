@@ -81,27 +81,22 @@
 	//Refreshes the chat log periodically.
 	setInterval(loadChatLog, 2000);
 	
-	//Get the content of the chat log when the page loads. Used to avoid showing old messages.
-	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.onload = function() {
-	    var TO_REMOVE = xmlHttp.responseText.length-1;
-	}
-	xmlHttp.open("GET", "scripts/get_chatlog.php");
-	xmlHttp.send();
+	//Get current date in time. Is used to make sure only recent chat messages gets displayed.
+	var datetime = getDateTime();
 	
 	//Puts the content of the chatlog.txt file into the chat area.
 	function loadChatLog() {
 	    var oldscrollHeight = $("#chat-message-area").prop("scrollHeight");
 	    var xmlHttp = new XMLHttpRequest();
 	    xmlHttp.onload = function() {
-		chatlog = chatlog.replace(/-/g, " ");
+		var chatlog = xmlHttp.responseText;
 		document.getElementById("chat-message-area").innerHTML = chatlog;
 		//Auto-scrolls the chat area.
 		var newscrollHeight = $("#chat-message-area").prop("scrollHeight"); //Scroll height after the request.
 		if(newscrollHeight > oldscrollHeight)
 		    $("#chat-message-area").animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div.
 	    }
-	    xmlHttp.open("GET", "scripts/get_chatlog.php?");
+	    xmlHttp.open("GET", "scripts/get_chatlog.php?datetime="+datetime);
 	    xmlHttp.send();
 	}
 	
@@ -127,6 +122,31 @@
 		sendMessage();
 	    }
         }
+	
+	//Gets the current date and time in the format MySQL uses.
+	function getDateTime() {
+	    var now     = new Date(); 
+	    var year    = now.getFullYear();
+	    var month   = now.getMonth()+1; 
+	    var day     = now.getDate();
+	    var hour    = now.getHours();
+	    var minute  = now.getMinutes();
+	    var second  = now.getSeconds();
+	    
+	    if(month.toString().length == 1)
+		var month = '0'+month;
+	    if(day.toString().length == 1)
+		var day = '0'+day;
+	    if(hour.toString().length == 1)
+		var hour = '0'+hour;
+	    if(minute.toString().length == 1)
+		var minute = '0'+minute;
+	    if(second.toString().length == 1)
+		var second = '0'+second;
+		
+	    var dateTime = year+'-'+month+'-'+day+' '+hour+':'+minute+':'+second;   
+	     return dateTime;
+	}
     </script>
 </body>
 </html>

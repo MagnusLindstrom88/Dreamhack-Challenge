@@ -1,13 +1,9 @@
 <?php
-session_start();
+require_once 'init.php';
 
 if(isset($_SESSION['username'])) {
     $message = trim($_POST['message']);
-    $message = str_replace(" ", "-", $message);
-    if(strlen($message) > 0) {
-        $fh = fopen("http://www.avetian.se/skola/chat.php?username={$_SESSION['username']}&message={$message}", 'r');
-        fclose($fh);
-    }
-        //header("location: http://www.avetian.se/skola/chat.php?username={$_SESSION['username']}&message={$message}");
+    if(strlen($message) > 0)
+        $db->exec("INSERT INTO chatlog(content) VALUES ('<div>{$_SESSION['username']}: {$message}</div>')");
 }
 else echo "failed";
