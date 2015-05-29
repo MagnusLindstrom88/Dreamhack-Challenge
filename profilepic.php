@@ -47,7 +47,7 @@ session_start();
 		}
 	}
 	
-	foreach(glob('./profile_pic/*_*') as $filename){
+	foreach(glob('profile_pic/*_*') as $filename){
 		echo $filename
 	}
 
