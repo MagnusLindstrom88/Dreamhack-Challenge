@@ -55,30 +55,18 @@ if(isset($_POST['submit'])){
 		$q = mysqli_query($conn,"SELECT * FROM users");
 		while($row = mysqli_fetch_assoc($q)){
 				if($row['username'] == $_SESSION['username']){
+				
 						echo "
-							<div class='container'>
+			                        	<div class='container'>
 							<h3 id='profilepic'> <font color='white'> Profile Picture </h3>
 							<div class='row'>
 							<div class='col-xs-6 col-sm-3'>
-								<a href='#' class='thumbnail'>
-									<img src='images/logo.jpg' alt='...'>
-								</a>
+							<a href='#' class='thumbnail'>
+							<img src='". $row['profile_pic'] != NULL ? $row['profile_pic'] : ."images/logo.jpg' alt='Profile Pic'>
+							</a>
 							</div>
-							";
-				} else {
-						echo 
-						"
-                        	<div class='container'>
-							<h3 id='profilepic'> <font color='white'> Profile Picture </h3>
-							<div class='row'>
-							<div class='col-xs-6 col-sm-3'>
-								<a href='#' class='thumbnail'>
-									<src='pictures/".$row['profile_pic']."' alt='Profile Pic'>
-								</a>
-						</div>
-                        ";
+						";
 				}
-				echo "<br>";
 		}
     ?>
 	
