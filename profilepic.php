@@ -1,9 +1,6 @@
 <?php
 session_start();
 	
-	if(img src='/profile_pic/". $_SESSION['id'] ."' == null){
-		
-	}
 
 	if(isset($_POST['submit'])){
 		$target_dir = "uploads/";
@@ -49,6 +46,7 @@ session_start();
     			}
 		}
 	}
+	
 	foreach(glob('./profile_pic/*_*') as $filename){
 		echo $filename
 	}
