@@ -44,7 +44,7 @@ $conn_error = "Could not connect";
 		echo "
 			<button id='take-picture' type='edit' class='btn btn-default'>Take A New Profile Picture</button>
 			<form action='' method='post' enctype='multipart/form-data'>
-                        <input type='file" name='file'>
+                        <input type='file' name='file'>
                         <input type='submit' name='submit'>
 			";
 	?>
