@@ -52,7 +52,7 @@
 		<div class="row">
 		    <div class="col-md-8">
 		    	<div id="video-wrapper">
-		    	    <iframe src="https://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf?channel=fragbitelive" frameborder="0"></iframe>
+		    	    <iframe src="https://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf?channel=<?php echo $stream; ?>" frameborder="0"></iframe>
 		    	</div>
 		    </div>
 		    <div class="col-md-4"  id="chat-container">
@@ -79,13 +79,14 @@
 <script>
     //Switch to a non-https embed for iOS devices since they apparently won't display it otherwise.
     if (/iPhone|iPad|iPod/i.test(navigator.userAgent) )
-	    $("#video-wrapper")[0].innerHTML = " <iframe src='http://www.twitch.tv/fragbitelive/embed' frameborder='0' scrolling='no'></iframe>";
+	    $("#video-wrapper")[0].innerHTML = " <iframe src='http://www.twitch.tv/<?php echo $stream; ?>/embed' frameborder='0' scrolling='no'></iframe>";
     
     //Refreshes the chat log periodically.
     setInterval(loadChatLog, 2000);
     
     //Get current date in time. Is used to make sure only recent chat messages gets displayed.
     var datetime = getDateTime();
+    var game = window.location.search.split("=")[1];
     
     //Puts the content of the chatlog.txt file into the chat area.
     function loadChatLog() {
@@ -99,7 +100,7 @@
 	    if(newscrollHeight > oldscrollHeight)
 		$("#chat-message-area").animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div.
 	}
-	xmlHttp.open("GET", "scripts/get_chatlog.php?datetime="+datetime);
+	xmlHttp.open("GET", "scripts/get_chatlog.php?game="+game+"&datetime="+datetime);
 	xmlHttp.send();
     }
     
@@ -115,7 +116,7 @@
 	}
 	xmlHttp.open("POST", "scripts/chat.php");
 	xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xmlHttp.send("message="+message);
+	xmlHttp.send("message="+message+"&game="+game);
     }
     
     //Makes chat messages get sent upon pressing enter.
@@ -163,12 +164,15 @@ function initialize() {
     switch($_GET['game']) {
 	case "CS:GO":
 	    $game = "CS:GO";
+	    $GLOBALS['stream'] = "fragbitelive";
 	    break;
 	case "Dota2":
 	    $game = "Dota 2";
+	    $GLOBALS['stream'] = "ti5yasha";
 	    break;
 	case "SC2":
 	    $game = "Starcraft II";
+	    $GLOBALS['stream'] = "wcs";
 	    break;
     }
     

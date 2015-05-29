@@ -5,7 +5,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script src='https://www.google.com/recaptcha/api.js'></script>
 <link rel="stylesheet" href="CSS.css">
-<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 

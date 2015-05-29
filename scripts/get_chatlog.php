@@ -1,9 +1,8 @@
 <?php
 require_once 'init.php';
 
-$datetime = $_GET['datetime'];
-$chatlog = $db->prepare("SELECT * FROM chatlog WHERE created_at > ?");
-$chatlog->execute(array($datetime));
+$chatlog = $db->prepare("SELECT * FROM chatlog WHERE created_at > ? AND game=?");
+$chatlog->execute(array($_GET['datetime'], $_GET['game']));
 $returnString = "";
 
 if($chatlog->rowCount() > 0)

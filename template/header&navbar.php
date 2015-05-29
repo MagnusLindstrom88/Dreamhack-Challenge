@@ -45,7 +45,7 @@
             <li><a href="javascript:logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>';
             else echo 
             '<li><a href="#" data-toggle="modal" data-target="#login-modal" onclick="cleanForms()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            <li><a href="#" data-toggle="modal" data-target="#registration-modal" onclick="cleanForms()"><span class="glyphicon glyphicon-pencil"></span> Register</a></li>';
+            <li><a href="#" id="registration-button" data-toggle="modal" data-target="#registration-modal" onclick="cleanForms()"><span class="glyphicon glyphicon-pencil"></span> Register</a></li>';
             echo '</ul>';
             ?>
         </div>
