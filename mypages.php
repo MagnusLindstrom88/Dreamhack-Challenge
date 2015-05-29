@@ -114,9 +114,7 @@
 			</div>
 	</div>
 </div>		 
-		<br/>
-		<br/>
-		<br/>
+		
 		
 		
 <?php require_once 'template/footer.php'; ?>
