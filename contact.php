@@ -9,10 +9,6 @@
         #message {resize: none;}
         #contactHeading {color: #000;}
         label {color: #000;} 
-        #contact-info {
-            background-color: #242424;
-            border:1px solid #676461; 
-          } 
     </style>
 </head>
 <body>
