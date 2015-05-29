@@ -51,7 +51,7 @@
 			  
 <div class="container">
 	 <?php require_once 'profilepic.php'; ?>
-	 
+	  
 	<div class="row">
 		  <div class="col-md-7">  <h3> <font color="white"> User Information </h3>
 		 <div <li><a href="#" data-toggle="modal" data-target="#registration-modal" onclick="cleanForms()"> <button type="edit" class="btn btn-default">Edit</button>
