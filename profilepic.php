@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 $servername = "mysql.dsv.su.se";
 $username = "sewa2700";
 $password = "eequishusaiz";
@@ -8,7 +6,6 @@ $dbname = "sewa2700";
 $conn_error = "Could not connect";
 
 
-<<<<<<< HEAD
 		if(isset($_POST['submit'])){
 				move_uploaded_file($_FILES['file']['tmp_name'],"profile_pic/".$_FILES['file']['name']);
 				function check_file_uploaded_name ($filename){
@@ -17,38 +14,9 @@ $conn_error = "Could not connect";
 				$con = mysqli_connect($servername,$username,$password,$dbname);
 				$q = mysqli_query($con,"UPDATE users SET profile_pic = '".$_FILES['file']['name']."' WHERE username = '".$_SESSION['username']."'");
 		}
-=======
-if(isset($_POST['submit'])){
-		$target_dir = "uploads/";
-		$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-		$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-		
-		move_uploaded_file($_FILES['file']['tmp_name'],$target_file);
-		/*function check_file_uploaded_name ($filename){
-		(bool) ((preg_match("`^[-0-9A-Z_\.]+$`i",$filename)) ? true : false);
-		}*/
-		$con = mysqli_connect($servername,$username,$password,$dbname);
-		$q = mysqli_query($con,"UPDATE users SET profile_pic = '".$_FILES['file']['name']."' WHERE username = '".$_SESSION['username']."'");
-}
-?>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <?php require_once 'template/head.php'; ?>
-    <style>
-        #section-image-container {
-            background-color: #000000;
-        }
-    </style>
-</head>
-<body>
->>>>>>> 2a40e6bba41d6c85dc8950a85e5864044a220d86
 
 		$conn = mysqli_connect($servername,$username,$password,$dbname);
 		$q = mysqli_query($conn,"SELECT * FROM users");
-<<<<<<< HEAD
 		while($row = mysqli_fetch_assoc($q)) {
 			if($row['username'] == $_SESSION['username']){
 				
@@ -56,35 +24,6 @@ if(isset($_POST['submit'])){
 					$image = $row['profile_pic'];
 				} else {
 					$image = "nopic.jpg";
-=======
-		while($row = mysqli_fetch_assoc($q)){
-				if($row['username'] == $_SESSION['username']){
-					var s;
-					if($row['profile_pic'] != NULL)
-						s = ;
-					else
-						echo "
-			                        	<div class='container'>
-							<h3 id='profilepic'> <font color='white'> Profile Picture </h3>
-							<div class='row'>
-							<div class='col-xs-6 col-sm-3'>
-							<a href='#' class='thumbnail'>
-							<img src='". s ."' alt='Profile Pic'>
-							</a>
-							</div>
-						";	
-					else
-						echo "
-			                        	<div class='container'>
-							<h3 id='profilepic'> <font color='white'> Profile Picture </h3>
-							<div class='row'>
-							<div class='col-xs-6 col-sm-3'>
-							<a href='#' class='thumbnail'>
-							<img src='".  ? $row['profile_pic'] : images/logo.jpg."' alt='Profile Pic'>
-							</a>
-							</div>
-						";
->>>>>>> 2a40e6bba41d6c85dc8950a85e5864044a220d86
 				}
 			
 				echo "
@@ -102,101 +41,12 @@ if(isset($_POST['submit'])){
 		
 		echo "
 			<button id= "take-picture" type="edit" class="btn btn-default">Take A New Profile Picture</button>
-<<<<<<< HEAD
-=======
-			<br/>
-			<br/>
-			
->>>>>>> 2a40e6bba41d6c85dc8950a85e5864044a220d86
 			<form action="" method="post" enctype="multipart/form-data">
-                        <input type="file" name="fileToUpload">
+                        <input type="file" name="file">
                         <input type="submit" name="submit">
-<<<<<<< HEAD
             </form>
 			";
 	?>
-=======
-        	 	</form>
-		<br/>
-		 <br/>	
-  	</div>
-	
-	
-	<div class="container">
-		<div class="row">
-		   <div class="col-md-7">  <h3> <font color="white"> User Information </h3>
-			  
-			  <br/>
-			  
-			  
-			  
-			  <button type="edit" class="btn btn-default">Edit</button>
-			  <p2> <font color="white"> Click the Edit button in order to make changes in your user profile. </p2>
-			  
-			  <br/>
-			  <br/>
-			  
-			  <form role="form"> <div class="col-sm-0"></div>
-			  
-			  <div class="col-sm-8">
-				
-				<div class="form-group">
-				  <label for="email">User Name:</label>
-				  <input type="email" class="form-control" id="email" placeholder="Enter a User Name">
-				</div>
-				
-				<div class="form-group">
-				  <label for="email">E-mail:</label>
-				  <input type="email" class="form-control" id="email" placeholder="Enter E-mail">
-				</div>
-				
-				
-				<div class="form-group">
-				  <label for="pwd">Password:</label>
-				  <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-				</div>
-				
-				<div class="form-group">
-				  <label for="pwd">Confirm Password:</label>
-				  <input type="password" class="form-control" id="pwd" placeholder="Confrim Password">
-				</div>
-				 
-				 <div class="checkbox">
-						<label><input type="checkbox" id="tos-checkbox"> I accept the <a href="#">terms of service</a>.</label>
-					</div>
-				 <div class="g-recaptcha" data-sitekey="6LfzwQYTAAAAAGRb0kllCxB2qV3Jh-qPRcsU806x"></div>
-				<button type="submit" class="btn btn-default">Submit</button>
-			  </form>
-			  </div></div>
-			  
-				<br/>
-				
-		
-		  <div class="col-lg-5"> <h3> <font color="white"> Betting History </h3> <p> Previously betted games </p> </div>
-				<div class="col-md-4">
-					<ul class="list-group">
-						   <a href="#" class="list-group-item list-group-item-success"> Dapibus ac facilisis in</a> 
-						  <a href="#" class="list-group-item list-group-item-danger">Vestibulum at eros</a>
-						   <a href="#" class="list-group-item list-group-item-success">Dapibus ac facilisis in</a>
-						   <a href="#" class="list-group-item list-group-item-success">Dapibus ac facilisis in</a>
-						  <a href="#" class="list-group-item list-group-item-success">Dapibus ac facilisis in</a>
-						  <a href="#" class="list-group-item list-group-item-danger">Vestibulum at eros</a>
-						   <a href="#" class="list-group-item list-group-item-danger">Vestibulum at eros</a>
-								</ul>
-						   </div>
-								</div>
-	
-		
-		<br/>
-		<br/>
-		<br/>
-		
-		
-
-
-	</div>
-   </body>
->>>>>>> 2a40e6bba41d6c85dc8950a85e5864044a220d86
    	<script>
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 		(function () {
