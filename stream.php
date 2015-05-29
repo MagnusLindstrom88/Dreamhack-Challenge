@@ -74,7 +74,6 @@
 	<?php require_once 'template/footer.php'; ?>
     </div>
 </body>
-</html>
 
 <script>
     //Switch to a non-https embed for iOS devices since they apparently won't display it otherwise.
@@ -152,6 +151,7 @@
 	 return dateTime;
     }
 </script>
+</html>
 
 <?php
 //Gets data that will be displayed on the page.

@@ -77,7 +77,6 @@
         <?php require_once 'template/footer.php'; ?>
     </div>
 </body>
-</html>
 
 <!-- Updates the time left every second. -->
 <script>
@@ -103,6 +102,7 @@
         xmlHttp.send();
     }
 </script>
+</html>
 
 <?php
 //Generate a box for each upcoming match for this game in the database.
