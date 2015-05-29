@@ -56,7 +56,7 @@ if(isset($_POST['submit'])){
 		while($row = mysqli_fetch_assoc($q)){
 				if($row['username'] == $_SESSION['username']){
 				
-						echo "
+						/*echo "
 			                        	<div class='container'>
 							<h3 id='profilepic'> <font color='white'> Profile Picture </h3>
 							<div class='row'>
@@ -65,7 +65,7 @@ if(isset($_POST['submit'])){
 							<img src='". $row['profile_pic'] != NULL ? $row['profile_pic'] : ."images/logo.jpg' alt='Profile Pic'>
 							</a>
 							</div>
-						";
+						";*/
 				}
 		}
     ?>
