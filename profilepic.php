@@ -1,45 +1,75 @@
 <?php
-$servername = "mysql.dsv.su.se";
-$username = "sewa2700";
-$password = "eequishusaiz";
-$dbname = "sewa2700";
-$conn_error = "Could not connect";
+session_start();
+	
+	if(img src='/profile_pic/". $_SESSION['id'] ."' == null){
+		
+	}
 
-
-
-
-		if(isset($_POST['submit'])){
-				move_uploaded_file($_FILES['file']['tmp_name'],"profile_pic/".$_FILES['file']['name']);
-				/*function check_file_uploaded_name (){
-				(bool) ((preg_match("`^[-0-9A-Z_\.]+$`i",$filename)) ? true : false);
-				}*/
-				$con = mysqli_connect($servername,$username,$password,$dbname);
-				$q = mysqli_query($con,"UPDATE users SET profile_pic = '".$_FILES['file']['name']."' WHERE username = '".$_SESSION['username']."'");
+	if(isset($_POST['submit'])){
+		$target_dir = "uploads/";
+		$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+		$uploadOk = 1;
+		$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+			// Check if image file is a actual image or fake image
+		if(isset($_POST["submit"])) {
+			  $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+		 if($check !== false) {
+        		echo "File is an image - " . $check["mime"] . ".";
+        		$uploadOk = 1;
+		 } else {
+			  echo "File is not an image.";
+        		$uploadOk = 0;
+		 	}
 		}
+		// Check if file already exists
+		if (file_exists($target_file)) {
+			 echo "Sorry, file already exists.";
+			 $uploadOk = 0;
+		}
+		// Check file size
+		if ($_FILES["fileToUpload"]["size"] > 500000) {
+			  echo "Sorry, your file is too large.";
+			 $uploadOk = 0;
+		}
+		// Allow certain file formats
+		if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+		&& $imageFileType != "gif" ) {
+			  echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+			 $uploadOk = 0;
+		}
+		// Check if $uploadOk is set to 0 by an error
+		if ($uploadOk == 0) {
+		  echo "Sorry, your file was not uploaded.";
+		// if everything is ok, try to upload file
+		} else {
+		 if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+			 echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+		 } else {
+			 echo "Sorry, there was an error uploading your file.";
+    			}
+		}
+	}
+	foreach(glob('./profile_pic/*_*') as $filename){
+		echo $filename
+	}
 
-		$conn = mysqli_connect($servername,$username,$password,$dbname);
-		$q = mysqli_query($conn,"SELECT * FROM users");
-		while($row = mysqli_fetch_assoc($q)) {
-			if($row['username'] == $_SESSION['username']){
-				
-				if ($row['profile_pic'] != NULL) {
-					$image = $row['profile_pic'];
-				} else {
-					$image = "nopic.jpg";
-				}
+	if $filename != NULL) {
+		$image = $row['profile_pic'];
+	} else {
+		$image = "nopic.jpg";
+	}
 			
-				echo "
-                			<div class='container'>
-					<h3 id='profilepic'> <font color='white'> Profile Picture </h3>
-					<div class='row'>
-					<div class='col-xs-6 col-sm-3'>
-					<a href='#' class='thumbnail'>
-					<img src='/profile_pic/". $image ."' alt='Profile Pic'>
-					</a>
-					</div>
-					";
-			}
-		}
+	
+		echo "
+                	<div class='container'>
+			<h3 id='profilepic'> <font color='white'> Profile Picture </h3>
+			<div class='row'>
+			<div class='col-xs-6 col-sm-3'>
+			<a href='#' class='thumbnail'>
+			<img src='$image' alt='Profile Pic'>
+			</a>
+			</div>
+		";
 		
 		echo "
 			<button id='take-picture' type='edit' class='btn btn-default'>Take A New Profile Picture</button>
