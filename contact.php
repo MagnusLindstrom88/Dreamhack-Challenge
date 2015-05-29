@@ -49,7 +49,7 @@
                     </div>
                     <div class="form-group">
                         <label for="message">Your message:</label>
-                        <textarea id="message" name="message" class="form-control">
+                        <textarea id="message" name="message" class="form-control"></textarea>
                     </div>
                     <div class="g-recaptcha" data-sitekey="6LfzwQYTAAAAAGRb0kllCxB2qV3Jh-qPRcsU806x"></div>
                 </form>
@@ -63,16 +63,11 @@
         </div>            
   </div>
 </div>
-
-
     
   <?php require_once 'template/footer.php'; ?>
 
 </body>
 </html>
-
-<!-- Contains some functions related to the creation and removal of error messages. Used by both the login- and registration validation scripts. -->
-<script src="scripts/login&registration/error_functions.js"></script>
 
 <!-- Contains code to validate data sent with the contact form. Passes the data on to the server if the validation is passed. -->
 <script src="scripts/form_validation.js"></script>
