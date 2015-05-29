@@ -9,10 +9,14 @@ $conn_error = "Could not connect";
 
 
 if(isset($_POST['submit'])){
-		move_uploaded_file($_FILES['file']['tmp_name'],"profile_pic/".$_FILES['file']['name']);
-		function check_file_uploaded_name ($filename){
+		$target_dir = "uploads/";
+		$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+		$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+		
+		move_uploaded_file($_FILES['file']['tmp_name'],$target_file);
+		/*function check_file_uploaded_name ($filename){
 		(bool) ((preg_match("`^[-0-9A-Z_\.]+$`i",$filename)) ? true : false);
-		}
+		}*/
 		$con = mysqli_connect($servername,$username,$password,$dbname);
 		$q = mysqli_query($con,"UPDATE users SET profile_pic = '".$_FILES['file']['name']."' WHERE username = '".$_SESSION['username']."'");
 }
@@ -55,17 +59,31 @@ if(isset($_POST['submit'])){
 		$q = mysqli_query($conn,"SELECT * FROM users");
 		while($row = mysqli_fetch_assoc($q)){
 				if($row['username'] == $_SESSION['username']){
-				
-						/*echo "
+					var s;
+					if($row['profile_pic'] != NULL)
+						s = ;
+					else
+						echo "
 			                        	<div class='container'>
 							<h3 id='profilepic'> <font color='white'> Profile Picture </h3>
 							<div class='row'>
 							<div class='col-xs-6 col-sm-3'>
 							<a href='#' class='thumbnail'>
-							<img src='". $row['profile_pic'] != NULL ? $row['profile_pic'] : ."images/logo.jpg' alt='Profile Pic'>
+							<img src='". s ."' alt='Profile Pic'>
 							</a>
 							</div>
-						";*/
+						";	
+					else
+						echo "
+			                        	<div class='container'>
+							<h3 id='profilepic'> <font color='white'> Profile Picture </h3>
+							<div class='row'>
+							<div class='col-xs-6 col-sm-3'>
+							<a href='#' class='thumbnail'>
+							<img src='".  ? $row['profile_pic'] : images/logo.jpg."' alt='Profile Pic'>
+							</a>
+							</div>
+						";
 				}
 		}
     ?>
@@ -75,13 +93,14 @@ if(isset($_POST['submit'])){
 			<button id= "take-picture" type="edit" class="btn btn-default">Take A New Profile Picture</button>
 			<br/>
 			<br/>
+			
 			<form action="" method="post" enctype="multipart/form-data">
-                        <input type="file" name="file">
+                        <input type="file" name="fileToUpload">
                         <input type="submit" name="submit">
-            </form>
+        	 	</form>
 		<br/>
 		 <br/>	
-  </div>
+  	</div>
 	
 	
 	<div class="container">
@@ -161,7 +180,7 @@ if(isset($_POST['submit'])){
    	<script>
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 		(function () {
-		var takePicture = document.querySelector("#take-picture"),
+		var takePicture = document.querySelector("#take-picture");
 			showPicture = document.querySelector("#profilepic");
 
 			if (takePicture && showPicture) {
