@@ -71,9 +71,11 @@ session_start();
 		
 		echo "
 			<button id='take-picture' type='edit' class='btn btn-default'>Take A New Profile Picture</button>
-			<form action='' method='post' enctype='multipart/form-data'>
-                        <input type='file' name='file'>
-                        <input type='submit' name='submit'>
+			<form action='upload.php' method='post' enctype='multipart/form-data'>
+    			Select image to upload:
+			<input type='file' name='fileToUpload' id='fileToUpload'>
+    			<input type='submit' value='Upload Image' name='submit'>
+			</form>
 			";
 ?>
 <script>
