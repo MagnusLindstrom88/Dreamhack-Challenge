@@ -6,11 +6,13 @@ $dbname = "sewa2700";
 $conn_error = "Could not connect";
 
 
+
+
 		if(isset($_POST['submit'])){
 				move_uploaded_file($_FILES['file']['tmp_name'],"profile_pic/".$_FILES['file']['name']);
-				function check_file_uploaded_name ($filename){
+				/*function check_file_uploaded_name (){
 				(bool) ((preg_match("`^[-0-9A-Z_\.]+$`i",$filename)) ? true : false);
-				}
+				}*/
 				$con = mysqli_connect($servername,$username,$password,$dbname);
 				$q = mysqli_query($con,"UPDATE users SET profile_pic = '".$_FILES['file']['name']."' WHERE username = '".$_SESSION['username']."'");
 		}
