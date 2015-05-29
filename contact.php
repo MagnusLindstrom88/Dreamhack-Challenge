@@ -6,8 +6,8 @@
 
     <style>
         #contact-heading {margin-bottom: 20px;}
-        #message-text {resize: none;}
-        #formModalLabel {color: #000;}
+        #message {resize: none;}
+        #contactHeading {color: #000;}
         label {color: #000;}  
     </style>
 </head>
@@ -51,7 +51,7 @@
                         <label for="message">Your message:</label>
                         <textarea id="message" name="message" class="form-control"></textarea>
                     </div>
-                    <div class="g-recaptcha" data-sitekey="6LfzwQYTAAAAAGRb0kllCxB2qV3Jh-qPRcsU806x"></div>
+                    <div class="g-recaptcha" data-sitekey="6LfHigcTAAAAAMAKM1JTTLxerOPi5uDtOglforQ5"></div>
                 </form>
               </div>
               <div class="modal-footer">
