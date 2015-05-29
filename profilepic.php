@@ -52,7 +52,7 @@ session_start();
 	}
 
 	if $filename != NULL) {
-		$image = $row['profile_pic'];
+		$image = "profile_pic";
 	} else {
 		$image = "nopic.jpg";
 	}
