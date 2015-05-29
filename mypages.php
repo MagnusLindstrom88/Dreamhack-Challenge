@@ -98,7 +98,7 @@
 </div>			
 <br/>
 				
-	<div
+	<div>
 		<ul class="list-group"> <div class="col-lg-10"> <h3> <font color="white"> Betting History </h3> <p> Previously betted games </p> </div>
 				<div class=  "col-md-4">
 				  <a href="#" class="list-group-item list-group-item-success"> Dapibus ac facilisis in</a> 
