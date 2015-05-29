@@ -50,7 +50,7 @@
 			  
 			  
 <div class="container">
-	 <?php require_once 'profilepic.php'; ?>
+	 <?php include 'profilepic.php'; ?>
 	  
 	<div class="row">
 		  <div class="col-md-7">  <h3> <font color="white"> User Information </h3>
