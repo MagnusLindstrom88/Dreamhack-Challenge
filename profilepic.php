@@ -53,7 +53,7 @@ $conn_error = "Could not connect";
 		(function () {
 		var takePicture = document.querySelector("#take-picture");
 			showPicture = document.querySelector("#profilepic");
-
+ 
 			if (takePicture && showPicture) {
 				takePicture.onchange = function (event) {
 					var files = event.target.files,
