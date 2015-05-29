@@ -5,7 +5,10 @@
     <?php require_once 'template/head.php'; ?>
 
     <style>
-        #contact-heading {margin-bottom: 20px;}   
+        #contact-heading {margin-bottom: 20px;}
+        #message-text {resize: none;}
+        #formModalLabel {color: #000;}
+        label {color: #000;}  
     </style>
 </head>
 <body>
