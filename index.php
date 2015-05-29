@@ -28,7 +28,7 @@
         <div class="jumbotron">
             <div class="container">
                  <h1>Welcome!</h1>
-                 <p>Welcome to Dreamhack Challenge. This is an interactive meeting place for gamers and e-sport enthusiasts. Follow the Dreamhack event from here, stream the matches live and place bets. Enjoy!</p>
+                 <p>Welcome to Dreamhack Challenge!. This is an interactive meeting place for gamers and e-sport enthusiasts. Follow the Dreamhack event from here, stream the matches live and place bets. Enjoy!</p>
                  <a href="#">Learn More</a>
             </div>
         </div>
