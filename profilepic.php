@@ -123,6 +123,7 @@ if(isset($_POST['submit'])){
 				  <input type="email" class="form-control" id="email" placeholder="Enter E-mail">
 				</div>
 				
+				
 				<div class="form-group">
 				  <label for="pwd">Password:</label>
 				  <input type="password" class="form-control" id="pwd" placeholder="Enter password">
