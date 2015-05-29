@@ -27,8 +27,8 @@
         <!--Main image with text.-->
         <div class="jumbotron">
             <div class="container">
-                 <h1>Curabitur</h1>
-                 <p>Maecenas vulputate massa ultrices, tristique ante mattis, cursus nisl.</p>
+                 <h1>Dreamhack Challenge</h1>
+                 <p>Welcome to Dreamhack Challenge. This is an interactive meeting place for gamers and e-sport enthusiasts. Follow the Dreamhack event from here, stream the matches live and place bets. Enjoy!</p>
                  <a href="#">Learn More</a>
             </div>
         </div>
