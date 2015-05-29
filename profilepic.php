@@ -29,7 +29,7 @@ $conn_error = "Could not connect";
 				}
 			
 				echo "
-                	<div class='container'>
+                			<div class='container'>
 					<h3 id='profilepic'> <font color='white'> Profile Picture </h3>
 					<div class='row'>
 					<div class='col-xs-6 col-sm-3'>
@@ -42,10 +42,11 @@ $conn_error = "Could not connect";
 		}
 		
 		echo "
-			<button id= "take-picture" type="edit" class="btn btn-default">Take A New Profile Picture</button>
-			<form action="" method="post" enctype="multipart/form-data">
-                        <input type="file" name="file">
-                        <input type="submit" name="submit">
+	    <form>
+			<button id='take-picture' type='edit' class='btn btn-default'>Take A New Profile Picture</button>
+			<form action='' method='post' enctype='multipart/form-data'>
+                        <input type='file" name='file'>
+                        <input type='submit' name='submit'>
             </form>
 			";
 	?>
