@@ -14,50 +14,16 @@
     <?php require_once 'template/header&navbar.php'; ?>
     
     <!--Main image-->
-	</br>
-	
-	<div>
-		<div class="container">
-		<header>
-		 <div class="col-sm-"> </div>
-			 <h1>  <font color="white"> Manage Account </font> </h1> 
-				<p><div class="col-sm-0"> </div> <font color="white"> On this page you can manage your personal user account information,
-				for example edit or update information about yourself. You can also see your previously betted games.  </font> <p/> 
-	 </div>
-		<header/>
-		
-	</div>
-	</br>
-	
-<div class="container">
-	<h3> <font color="white"> Profile Picture </h3>
-			<div class="row">
-				<div class="col-xs-6 col-sm-3">
-				<a href="#" class="thumbnail">
-						<img src="images/logo.png" alt="...">
-							</a>
-   				</div>
-
-			</div>
-			 
-			<button type="edit" class="btn btn-default">Edit Profile Picture</button>
-		<br/>
-		 <br/>	
-		 
-</div>
-	
-
-			  
-			  
-<div class="container">
-	 
+    
+	<div class="container">
+	<?php include 'profilepic.php'; ?>
 	<div class="row">
+		
 		  <div class="col-md-7">  <h3> <font color="white"> User Information </h3>
 		 <div <li><a href="#" data-toggle="modal" data-target="#registration-modal" onclick="cleanForms()"> <button type="edit" class="btn btn-default">Edit</button>
 			  <p2> <font color="white"> Click the Edit button in order to make changes in your user profile. </p2></a></li></ul>        </div>
     		</div>
-	<?php include 'profilepic.php'; ?>	
-			  
+
 			  <br/>
 				<!--Registration Modal-->
 				<div class="modal fade" id="registration-modal" tabindex="-1" role="dialog" aria-labelledby="registrationHeading" aria-hidden="true">
@@ -96,7 +62,7 @@
 					</div>
 				  </div>
 				</div>			
-				<br/>
+				<!--END of Registration Modal-->
 				
 	<div>
 		<ul class="list-group"> <div class="col-lg-10"> <h3> <font color="white"> Betting History </h3> <p> Previously betted games </p> </div>
