@@ -49,7 +49,7 @@
                     </div>
                     <div class="form-group">
                         <label for="message">Your message:</label>
-                        <input type="text" id="message" name="message" class="form-control" maxlength="255">
+                        <textarea id="message" name="message" class="form-control">
                     </div>
                     <div class="g-recaptcha" data-sitekey="6LfzwQYTAAAAAGRb0kllCxB2qV3Jh-qPRcsU806x"></div>
                 </form>
