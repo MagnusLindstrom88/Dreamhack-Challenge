@@ -50,14 +50,13 @@
 			  
 			  
 <div class="container">
-	 <?php include 'profilepic.php'; ?>
-	  
+	 
 	<div class="row">
 		  <div class="col-md-7">  <h3> <font color="white"> User Information </h3>
 		 <div <li><a href="#" data-toggle="modal" data-target="#registration-modal" onclick="cleanForms()"> <button type="edit" class="btn btn-default">Edit</button>
 			  <p2> <font color="white"> Click the Edit button in order to make changes in your user profile. </p2></a></li></ul>        </div>
     		</div>
-		
+	<?php include 'profilepic.php'; ?>	
 			  
 			  <br/>
 				<!--Registration Modal-->
