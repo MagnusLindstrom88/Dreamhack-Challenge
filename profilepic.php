@@ -8,160 +8,51 @@ $dbname = "sewa2700";
 $conn_error = "Could not connect";
 
 
-if(isset($_POST['submit'])){
-		move_uploaded_file($_FILES['file']['tmp_name'],"profile_pic/".$_FILES['file']['name']);
-		function check_file_uploaded_name ($filename){
-		(bool) ((preg_match("`^[-0-9A-Z_\.]+$`i",$filename)) ? true : false);
+		if(isset($_POST['submit'])){
+				move_uploaded_file($_FILES['file']['tmp_name'],"profile_pic/".$_FILES['file']['name']);
+				function check_file_uploaded_name ($filename){
+				(bool) ((preg_match("`^[-0-9A-Z_\.]+$`i",$filename)) ? true : false);
+				}
+				$con = mysqli_connect($servername,$username,$password,$dbname);
+				$q = mysqli_query($con,"UPDATE users SET profile_pic = '".$_FILES['file']['name']."' WHERE username = '".$_SESSION['username']."'");
 		}
-		$con = mysqli_connect($servername,$username,$password,$dbname);
-		$q = mysqli_query($con,"UPDATE users SET profile_pic = '".$_FILES['file']['name']."' WHERE username = '".$_SESSION['username']."'");
-}
-?>
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <?php require_once 'template/head.php'; ?>
-    <style>
-        #section-image-container {
-            background-color: #000000;
-        }
-    </style>
-</head>
-<body>
-
-
-    <!--Main image-->
-	</br>
-	
-	<div>
-		<div class="container">
-		<header>
-		 <div class="col-sm-"> </div>
-			 <h1>  <font color="white"> Manage Account </font> </h1> 
-				<p><div class="col-sm-0"> </div> <font color="white"> On this page you can manage your personal user account information,
-				for example edit or update information about yourself. You can also see your previously betted games.  </font> <p/> 
-	 </div>
-		<header/>
-		
-	</div>
-	</br>
-	
-	<?php require_once 'template/header&navbar.php'; ?>
-	<br/>
-	<?php
 		$conn = mysqli_connect($servername,$username,$password,$dbname);
 		$q = mysqli_query($conn,"SELECT * FROM users");
-		while($row = mysqli_fetch_assoc($q)){
-				if($row['username'] == $_SESSION['username']){
+		while($row = mysqli_fetch_assoc($q)) {
+			if($row['username'] == $_SESSION['username']){
 				
-						/*echo "
-			                        	<div class='container'>
-							<h3 id='profilepic'> <font color='white'> Profile Picture </h3>
-							<div class='row'>
-							<div class='col-xs-6 col-sm-3'>
-							<a href='#' class='thumbnail'>
-							<img src='". $row['profile_pic'] != NULL ? $row['profile_pic'] : ."images/logo.jpg' alt='Profile Pic'>
-							</a>
-							</div>
-						";*/
+				if ($row['profile_pic'] != NULL) {
+					$image = $row['profile_pic'];
+				} else {
+					$image = "nopic.jpg";
 				}
+			
+				echo "
+                	<div class='container'>
+					<h3 id='profilepic'> <font color='white'> Profile Picture </h3>
+					<div class='row'>
+					<div class='col-xs-6 col-sm-3'>
+					<a href='#' class='thumbnail'>
+					<img src='/profile_pic/". $image ."' alt='Profile Pic'>
+					</a>
+					</div>
+					";
+			}
 		}
-    ?>
-	
-	</div class="container">
-			 
+		
+		echo "
 			<button id= "take-picture" type="edit" class="btn btn-default">Take A New Profile Picture</button>
-			<br/>
-			<br/>
 			<form action="" method="post" enctype="multipart/form-data">
                         <input type="file" name="file">
                         <input type="submit" name="submit">
             </form>
-		<br/>
-		 <br/>	
-  </div>
-	
-	
-	<div class="container">
-		<div class="row">
-		   <div class="col-md-7">  <h3> <font color="white"> User Information </h3>
-			  
-			  <br/>
-			  
-			  
-			  
-			  <button type="edit" class="btn btn-default">Edit</button>
-			  <p2> <font color="white"> Click the Edit button in order to make changes in your user profile. </p2>
-			  
-			  <br/>
-			  <br/>
-			  
-			  <form role="form"> <div class="col-sm-0"></div>
-			  
-			  <div class="col-sm-8">
-				
-				<div class="form-group">
-				  <label for="email">User Name:</label>
-				  <input type="email" class="form-control" id="email" placeholder="Enter a User Name">
-				</div>
-				
-				<div class="form-group">
-				  <label for="email">E-mail:</label>
-				  <input type="email" class="form-control" id="email" placeholder="Enter E-mail">
-				</div>
-				
-				
-				<div class="form-group">
-				  <label for="pwd">Password:</label>
-				  <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-				</div>
-				
-				<div class="form-group">
-				  <label for="pwd">Confirm Password:</label>
-				  <input type="password" class="form-control" id="pwd" placeholder="Confrim Password">
-				</div>
-				 
-				 <div class="checkbox">
-						<label><input type="checkbox" id="tos-checkbox"> I accept the <a href="#">terms of service</a>.</label>
-					</div>
-				 <div class="g-recaptcha" data-sitekey="6LfzwQYTAAAAAGRb0kllCxB2qV3Jh-qPRcsU806x"></div>
-				<button type="submit" class="btn btn-default">Submit</button>
-			  </form>
-			  </div></div>
-			  
-				<br/>
-				
-		
-		  <div class="col-lg-5"> <h3> <font color="white"> Betting History </h3> <p> Previously betted games </p> </div>
-				<div class="col-md-4">
-					<ul class="list-group">
-						   <a href="#" class="list-group-item list-group-item-success"> Dapibus ac facilisis in</a> 
-						  <a href="#" class="list-group-item list-group-item-danger">Vestibulum at eros</a>
-						   <a href="#" class="list-group-item list-group-item-success">Dapibus ac facilisis in</a>
-						   <a href="#" class="list-group-item list-group-item-success">Dapibus ac facilisis in</a>
-						  <a href="#" class="list-group-item list-group-item-success">Dapibus ac facilisis in</a>
-						  <a href="#" class="list-group-item list-group-item-danger">Vestibulum at eros</a>
-						   <a href="#" class="list-group-item list-group-item-danger">Vestibulum at eros</a>
-								</ul>
-						   </div>
-								</div>
-	
-		
-		<br/>
-		<br/>
-		<br/>
-		
-		
-
-
-	</div>
-   </body>
+			";
+	?>
    	<script>
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 		(function () {
-		var takePicture = document.querySelector("#take-picture"),
+		var takePicture = document.querySelector("#take-picture");
 			showPicture = document.querySelector("#profilepic");
 
 			if (takePicture && showPicture) {
@@ -206,4 +97,4 @@ if(isset($_POST['submit'])){
 		}) 
 	};
 	</script>
-</html>
+
