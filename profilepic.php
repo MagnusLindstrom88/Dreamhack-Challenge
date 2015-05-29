@@ -53,7 +53,7 @@ if(isset($_POST['submit'])){
 		$conn = mysqli_connect($servername,$username,$password,$dbname);
 		$q = mysqli_query($conn,"SELECT * FROM users");
 		while($row = mysqli_fetch_assoc($q)){
-				if($row['profle_pic'] == ""){
+				if($row['username'] == ".$_SESSION['username']."){
 						echo "
 							<div class='container'>
 							<h3 id='profilepic'> <font color='white'> Profile Picture </h3>
