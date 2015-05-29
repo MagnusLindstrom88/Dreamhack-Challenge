@@ -75,44 +75,42 @@ session_start();
                         <input type='file' name='file'>
                         <input type='submit' name='submit'>
 			";
-	?>
-   	<script>
+?>
+<script>
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 		(function () {
 		var takePicture = document.querySelector("#take-picture");
-			showPicture = document.querySelector("#profilepic");
- 
-			if (takePicture && showPicture) {
-				takePicture.onchange = function (event) {
-					var files = event.target.files,
-						file;
-					if (files && files.length > 0) {
-						file = files[0];
-						try {
-							var URL = window.URL || window.webkitURL;
-							var imgURL = URL.createObjectURL(file);
-							showPicture.src = imgURL;
-							URL.revokeObjectURL(imgURL);
-						}
-						catch (e) {
-							try {
-								var fileReader = new FileReader();
-								fileReader.onload = function (event) {
-									showPicture.src = event.target.result;
-								};
-								fileReader.readAsDataURL(file);
-							}
-							catch (e) {
-								var error = document.querySelector("#error");
-								if (error) {
-									error.innerHTML = "Neither createObjectURL or FileReader are supported";
-								}
-							}
+		var showPicture = document.querySelector("#profilepic");
+		
+		if (takePicture && showPicture) {
+			takePicture.onchange = function (event) {
+			var files = event.target.files,				
+		            file;
+		if (files && files.length > 0) {
+			file = files[0];
+			try {
+				var URL = window.URL || window.webkitURL;
+				var imgURL = URL.createObjectURL(file);
+				showPicture.src = imgURL;
+				URL.revokeObjectURL(imgURL);
+			}catch (e) {
+					try {
+						var fileReader = new FileReader();
+						fileReader.onload = function (event) {
+						showPicture.src = event.target.result;
+						};
+					fileReader.readAsDataURL(file);
+					}catch (e) {
+						var error = document.querySelector("#error");
+						if (error) {
+							error.innerHTML = "Neither createObjectURL or FileReader are supported";
 						}
 					}
-				};
 			}
-		})();
+		}
+	};
+	}
+	})();
 	}else{
 		$("#camera").webcam({
 		width: 320,
@@ -123,5 +121,5 @@ session_start();
 			}
 		}) 
 	};
-	</script>
+</script>
 
