@@ -51,7 +51,7 @@
                         <label for="message">Your message:</label>
                         <textarea id="message" name="message" class="form-control"></textarea>
                     </div>
-                    <div class="g-recaptcha" data-sitekey="6LfHigcTAAAAAMAKM1JTTLxerOPi5uDtOglforQ5"></div>
+                    <div class="g-recaptcha" data-sitekey="6LfzwQYTAAAAAGRb0kllCxB2qV3Jh-qPRcsU806x"></div>
                 </form>
               </div>
               <div class="modal-footer">

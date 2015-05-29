@@ -1,5 +1,5 @@
 function validateForm() {
-    //Get the registration input elements.
+    //Get the contact input elements.
     var name = document.getElementById("name");
     var email = document.getElementById("contact-email");
     var message = document.getElementById("message");
@@ -27,6 +27,7 @@ function validateForm() {
         document.getElementById("contact-form").insertBefore(error, document.getElementsByClassName("g-recaptcha")[0]);
     }
     
+    var xmlHttp = new XMLHttpRequest();
     //Check if the validation was passed.
     if($("#contact-form .error-message").size() === 0) {
         //Use AJAX to handle the registration server-side without reloading the page.
