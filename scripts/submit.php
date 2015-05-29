@@ -30,7 +30,8 @@ if(isset($_POST['email'])) {
 
         mail($to, $subject, $body, $from)
 
-        echo "Thanks you! Your message has been received.";
+        echo "Thank you! Your message has been received.";
     }
-    else echo "Registration failed.";
+    else echo "Failed to submit, please try again.";
 }
+
