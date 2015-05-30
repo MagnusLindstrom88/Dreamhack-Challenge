@@ -26,7 +26,7 @@ if(isset($session)) {
     //Insert the user into the database if it's not already there.
     $user = $db->query("SELECT * FROM users WHERE id={$_SESSION['id']}");
     if($user->rowCount() === 0)
-        $db->query("INSERT INTO users (id, username) VALUES ({$_SESSION['id']}, {$_SESSION['username']})");
+        $db->query("INSERT INTO users (id, username) VALUES ({$_SESSION['id']}, '{$_SESSION['username']}')");
     
     header("Location: ../../index.php");
 }
