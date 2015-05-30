@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once '../init.php';
 require __DIR__ . '/facebooksdk/autoload.php';
 
 use Facebook\FacebookSession;
@@ -22,6 +22,12 @@ if(isset($session)) {
     $graphObject = $response->getGraphObject();
     $_SESSION['id'] = $graphObject->getProperty('id');  //Get Facebook ID.
     $_SESSION['username'] = $graphObject->getProperty('name');  //Get Facebook full name.
+    
+    //Insert the user into the database if it's not already there.
+    $user = $db->query("SELECT * FROM users WHERE id={$_SESSION['id']}");
+    if($user->rowCount() === 0)
+        $db->query("INSERT INTO users (id, username) VALUES ({$_SESSION['id']}, {$_SESSION['username']})");
+    
     header("Location: ../../index.php");
 }
 else {
