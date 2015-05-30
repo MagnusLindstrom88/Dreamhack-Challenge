@@ -9,21 +9,21 @@ use Facebook\FacebookRequest;
 FacebookSession::setDefaultApplication('396517753863526', 'f228fa0a27270bc885447de9431fc055');
 //FacebookSession::setDefaultApplication('397231723792129', '53512cfc5518e9ed45bb14921345a61a');  //Localhost
 
-$helper = new FacebookRedirectLoginHelper('https://pvt.dsv.su.se/Group10/scripts/login&registration/loginfacebook.php');
-//$helper = new FacebookRedirectLoginHelper('http://localhost/dreamhack-challenge/scripts/login&registration/loginfacebook.php');
+$helper = new FacebookRedirectLoginHelper('https://pvt.dsv.su.se/Group10/scripts/login&registration/login_facebook.php');
+//$helper = new FacebookRedirectLoginHelper('http://localhost/dreamhack-challenge/scripts/login&registration/login_facebook.php');
 try {$session = $helper->getSessionFromRedirect();}
 catch(FacebookRequestException $ex) {/*When Facebook returns an error*/}
 catch(Exception $ex) {/* When validation fails or other local issues*/}
 
 if(isset($session)) {
     //Graph api request for user data.
-    $request = new FacebookRequest( $session, 'GET', '/me' );
+    $request = new FacebookRequest($session, 'GET', '/me');
     $response = $request->execute();
     $graphObject = $response->getGraphObject();
     $_SESSION['id'] = $graphObject->getProperty('id');  //Get Facebook ID.
     $_SESSION['username'] = $graphObject->getProperty('name');  //Get Facebook full name.
     
-    //Insert the user into the database if it's not already there.
+    //Insert the user into the database if they're not already there.
     $user = $db->query("SELECT * FROM users WHERE id={$_SESSION['id']}");
     if($user->rowCount() === 0)
         $db->query("INSERT INTO users (id, username) VALUES ({$_SESSION['id']}, '{$_SESSION['username']}')");
