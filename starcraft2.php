@@ -13,7 +13,7 @@
         <?php require_once 'template/header&navbar.php'; ?>
         
         <div id="section-image-container">
-            <img id="section-logo" src="images/Starcraft2-logo.jpg" alt="Starcraft 2 logotype."/>
+            <img id="section-logo" src="images/HotsLogo.png" alt="Starcraft 2 logotype."/>
         </div>
         
         <!--Content columns.-->
