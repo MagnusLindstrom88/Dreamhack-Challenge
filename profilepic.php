@@ -50,7 +50,7 @@ session_start();
 		echo $filename;
 	}
 
-	if $filename != NULL) {
+	if ($filename != NULL) {
 		$image = 'profile_pic';
 	} else {
 		$image = 'nopic.jpg';
