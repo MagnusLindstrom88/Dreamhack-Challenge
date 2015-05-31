@@ -66,7 +66,7 @@
 		<div class="row">
 		    <div class="col-md-12" style="margin-top:15px;">
 			<h3>Information</h3>
-			<p><?php echo $information ?></p>
+			<p><?php echo $information; ?></p>
 		    </div>
 		</div>
             </div>
@@ -76,80 +76,85 @@
 </body>
 
 <script>
-    //Switch to a non-https embed for iOS devices since they apparently won't display it otherwise.
-    if (/iPhone|iPad|iPod/i.test(navigator.userAgent) )
-	    $("#video-wrapper")[0].innerHTML = " <iframe src='http://www.twitch.tv/<?php echo $stream; ?>/embed' frameborder='0' scrolling='no'></iframe>";
-    
-    //Refreshes the chat log periodically.
-    setInterval(loadChatLog, 2000);
-    
-    //Get current date in time. Is used to make sure only recent chat messages gets displayed.
-    var datetime = getDateTime();
-    var game = window.location.search.split("=")[1];
-    
-    //Puts the content of the chatlog.txt file into the chat area.
-    function loadChatLog() {
-	var oldscrollHeight = $("#chat-message-area").prop("scrollHeight");
-	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.onload = function() {
-	    var chatlog = xmlHttp.responseText;
-	    document.getElementById("chat-message-area").innerHTML = chatlog;
-	    //Auto-scrolls the chat area.
-	    var newscrollHeight = $("#chat-message-area").prop("scrollHeight"); //Scroll height after the request.
-	    if(newscrollHeight > oldscrollHeight)
-		$("#chat-message-area").animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div.
-	}
-	xmlHttp.open("GET", "scripts/get_chatlog.php?game="+game+"&datetime="+datetime);
-	xmlHttp.send();
+//Switch to a non-https embed for iOS devices since they apparently won't display it otherwise.
+if (/iPhone|iPad|iPod/i.test(navigator.userAgent) )
+	$("#video-wrapper")[0].innerHTML = " <iframe src='http://www.twitch.tv/<?php echo $stream; ?>/embed' frameborder='0' scrolling='no'></iframe>";
+
+//Get current date in time. Is used to make sure only recent chat messages gets displayed.
+var datetime = getDateTime();
+var game = window.location.search.split("=")[1];
+
+//Get the user's betted team, if any. Not relevant if there's not an ongoing match.
+var bettedTeam;
+var xmlHttp = new XMLHttpRequest();
+xmlHttp.onload = function() {bettedTeam = xmlHttp.responseText;}
+xmlHttp.open("GET", "scripts/get_betted_team.php?game="+game);
+xmlHttp.send();
+
+//Refreshes the chat log periodically.
+setInterval(loadChatLog, 2000);
+
+//Puts the content of the chatlog.txt file into the chat area.
+function loadChatLog() {
+    var oldscrollHeight = $("#chat-message-area").prop("scrollHeight");
+    xmlHttp.onload = function() {
+	var chatlog = xmlHttp.responseText;
+	document.getElementById("chat-message-area").innerHTML = chatlog;
+	//Auto-scrolls the chat area.
+	var newscrollHeight = $("#chat-message-area").prop("scrollHeight"); //Scroll height after the request.
+	if(newscrollHeight > oldscrollHeight)
+	    $("#chat-message-area").animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div.
     }
+    xmlHttp.open("GET", "scripts/get_chatlog.php?game="+game+"&datetime="+datetime);
+    xmlHttp.send();
+}
+
+//Called when the user sends a chat message.
+function sendMessage() {
+    var inputField = document.getElementById("chat-input-field");
+    var message = inputField.value;
+    inputField.value = "";
     
-    //Called when the user sends a chat message.
-    function sendMessage() {
-	var inputField = document.getElementById("chat-input-field");
-	var message = inputField.value;
-	inputField.value = "";
+    xmlHttp.onload = function() {
+	if(xmlHttp.responseText === "failed") alert("You must be logged in to chat.");
+    }
+    xmlHttp.open("POST", "scripts/chat.php");
+    xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlHttp.send("message="+message+"&game="+game+"&bettedteam="+bettedTeam);
+}
+
+//Makes chat messages get sent upon pressing enter.
+document.getElementById("chat-input-field").onkeydown = function(e){
+    if (e.keyCode === 13) {
+	e.preventDefault();
+	sendMessage();
+    }
+}
+
+//Gets the current date and time in the format MySQL uses.
+function getDateTime() {
+    var now     = new Date(); 
+    var year    = now.getFullYear();
+    var month   = now.getMonth()+1; 
+    var day     = now.getDate();
+    var hour    = now.getHours();
+    var minute  = now.getMinutes();
+    var second  = now.getSeconds();
+    
+    if(month.toString().length == 1)
+	var month = '0'+month;
+    if(day.toString().length == 1)
+	var day = '0'+day;
+    if(hour.toString().length == 1)
+	var hour = '0'+hour;
+    if(minute.toString().length == 1)
+	var minute = '0'+minute;
+    if(second.toString().length == 1)
+	var second = '0'+second;
 	
-	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.onload = function() {
-	    if(xmlHttp.responseText === "failed") alert("You must be logged in to chat.");
-	}
-	xmlHttp.open("POST", "scripts/chat.php");
-	xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xmlHttp.send("message="+message+"&game="+game);
-    }
-    
-    //Makes chat messages get sent upon pressing enter.
-    document.getElementById("chat-input-field").onkeydown = function(e){
-	if (e.keyCode === 13) {
-	    e.preventDefault();
-	    sendMessage();
-	}
-    }
-    
-    //Gets the current date and time in the format MySQL uses.
-    function getDateTime() {
-	var now     = new Date(); 
-	var year    = now.getFullYear();
-	var month   = now.getMonth()+1; 
-	var day     = now.getDate();
-	var hour    = now.getHours();
-	var minute  = now.getMinutes();
-	var second  = now.getSeconds();
-	
-	if(month.toString().length == 1)
-	    var month = '0'+month;
-	if(day.toString().length == 1)
-	    var day = '0'+day;
-	if(hour.toString().length == 1)
-	    var hour = '0'+hour;
-	if(minute.toString().length == 1)
-	    var minute = '0'+minute;
-	if(second.toString().length == 1)
-	    var second = '0'+second;
-	    
-	var dateTime = year+'-'+month+'-'+day+' '+hour+':'+minute+':'+second;   
-	 return dateTime;
-    }
+    var dateTime = year+'-'+month+'-'+day+' '+hour+':'+minute+':'+second;   
+     return dateTime;
+}
 </script>
 </html>
 
@@ -176,7 +181,8 @@ function initialize() {
 	    break;
     }
     
-    if(count($match) > 0) {
+    //Check if there's an ongoing match for this stream page.
+    if(count($match) === 1) {
 	$teams = $db->query("SELECT * FROM teams WHERE id={$match[0]['team0']} OR id={$match[0]['team1']}")->fetchAll(PDO::FETCH_ASSOC);
 	$GLOBALS['heading'] = "{$game} - {$teams[0]['name']} VS {$teams[1]['name']}";
 	$GLOBALS['information'] = "This is a very good match.";

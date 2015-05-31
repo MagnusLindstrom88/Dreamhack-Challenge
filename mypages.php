@@ -3,86 +3,79 @@
 <head>
     <?php require_once 'template/head.php'; ?>
     <style>
-        #section-image-container {
-            background-color: #000000;
-        }
+        #edit-account-modal {color: black;}
     </style>
 </head>
-
 <body>
-    <!--Header-->
     <?php require_once 'template/header&navbar.php'; ?>
     
-    <!--Main image-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+		<h3 id='profilepic'>Profile Picture</h3>
+		<a href='#' class='thumbnail' style="width:inherit;">
+                    <img src='images/profilepictures/default.png' alt='Profile Pic'>
+		</a>
+		<button id='take-picture' type='edit' class='btn btn-default'>Take A New Profile Picture</button>
+		<form action='upload.php' method='post' enctype='multipart/form-data'>
+                    Select image to upload:
+                    <input type='file' name='fileToUpload' id='fileToUpload'>
+                    <input type='submit' value='Upload Image' name='submit'>
+		</form>
+                <button class="btn btn-default" data-toggle="modal" data-target="#edit-account-modal" onclick="cleanForms()">Edit Account Information</button>
+            </div>
+            <div class="col-md-6">
+                <h3>Betting History</h3>
+                <ul class="list-group">
+                    <a href="#" class="list-group-item list-group-item-success">Dapibus ac facilisis in</a> 
+                    <a href="#" class="list-group-item list-group-item-danger">Vestibulum at eros</a>
+                    <a href="#" class="list-group-item list-group-item-success">Dapibus ac facilisis in</a>
+                    <a href="#" class="list-group-item list-group-item-success">Dapibus ac facilisis in</a>
+                    <a href="#" class="list-group-item list-group-item-success">Dapibus ac facilisis in</a>
+                    <a href="#" class="list-group-item list-group-item-danger">Vestibulum at eros</a>
+                    <a href="#" class="list-group-item list-group-item-danger">Vestibulum at eros</a>
+                </ul>
+            </div>
+        </div>
+    </div>
     
-	<div class="container">
-	<?php include 'profilepic.php'; ?>
-	<div class="row">
-		
-		  <div class="col-md-7">  <h3> <font color="white"> User Information </h3>
-		 <div <li><a href="#" data-toggle="modal" data-target="#registration-modal" onclick="cleanForms()"> <button type="edit" class="btn btn-default">Edit</button>
-			  <p2> <font color="white"> Click the Edit button in order to make changes in your user profile. </p2></a></li></ul>        </div>
-    		</div>
+    <?php require_once 'template/footer.php'; ?>
 
-			  <br/>
-				<!--Registration Modal-->
-				<div class="modal fade" id="registration-modal" tabindex="-1" role="dialog" aria-labelledby="registrationHeading" aria-hidden="true">
-				  <div class="modal-dialog">
-					<div class="modal-content">
-					  <div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 id="registrationHeading" class="modal-title"> <font color="black"> User Information</h4>
-					  </div>
-					  <div class="modal-body">
-						<form id="registration-form" role="form" method="post">
-							<div class="form-group">
-								<label for="username">Username:</label>
-								<input type="text" id="username" name="username" class="form-control" maxlength="20">
-							</div>
-							<div class="form-group">
-								<label for="registration-email">Email:</label>
-								<input type="email" id="registration-email" name="email" class="form-control" maxlength="254">
-							</div>
-							<div class="form-group">
-								<label for="registration-password">Password:</label>
-								<input type="password" id="registration-password" name="password" class="form-control" maxlength="255">
-							</div>
-							<div class="form-group">
-								<label for="confirm-password">Confirm Password:</label>
-								<input type="password" id="confirm-password" name="confirm-password" class="form-control" maxlength="255">
-							</div>
-						   
-						</form>
-					  </div>
-					  <div class="modal-footer">
-						<button type="button" class="btn btn-primary" onclick="validateRegistration();">Confirm</button>
-						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-					</div>
-					
-					</div>
-				  </div>
-				</div>			
-				<!--END of Registration Modal-->
-				
-	<div>
-		<ul class="list-group"> <div class="col-lg-10"> <h3> <font color="white"> Betting History </h3> <p> Previously betted games </p> </div>
-				<div class=  "col-md-4">
-				  <a href="#" class="list-group-item list-group-item-success"> Dapibus ac facilisis in</a> 
-			          <a href="#" class="list-group-item list-group-item-danger">Vestibulum at eros</a>
-			          <a href="#" class="list-group-item list-group-item-success">Dapibus ac facilisis in</a>
-			          <a href="#" class="list-group-item list-group-item-success">Dapibus ac facilisis in</a>
-			          <a href="#" class="list-group-item list-group-item-success">Dapibus ac facilisis in</a>
-			          <a href="#" class="list-group-item list-group-item-danger">Vestibulum at eros</a>
-			          <a href="#" class="list-group-item list-group-item-danger">Vestibulum at eros</a>
-					</ul>
-				 </div>
-								
-			</div>
-	</div>
-</div>		 
-	<br/>	
-	<br/>	
-   </body>
-   
+    <!--Edit Account Modal-->
+    <div class="modal fade" id="edit-account-modal" tabindex="-1" role="dialog" aria-labelledby="editAccountHeading" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 id="registrationHeading" class="modal-title">Edit Account Information</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="edit-account-form" role="form" method="post">
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" name="username" class="form-control" maxlength="20">
+                        </div>
+                        <div class="form-group">
+                            <label for="registration-email">Email:</label>
+                            <input type="email" id="registration-email" name="email" class="form-control" maxlength="254">
+                        </div>
+                        <div class="form-group">
+                            <label for="registration-password">Password:</label>
+                            <input type="password" id="registration-password" name="password" class="form-control" maxlength="255">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm Password:</label>
+                            <input type="password" id="confirm-password" name="confirm-password" class="form-control" maxlength="255">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="validateRegistration();">Confirm</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>	
+</body>
 </html>
  
