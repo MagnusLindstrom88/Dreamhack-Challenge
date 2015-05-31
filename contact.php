@@ -2,34 +2,28 @@
 <html lang="en">
 <head>
     <?php require_once 'template/contact_head.php'; ?>
-    <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
     <style>
+        #contact-modal {color: black;}
         #contact-heading {margin-bottom: 20px;}
         #message {resize: none;}
-        #contactHeading {color: #000;}
-        label {color: #000;} 
     </style>
-
-<script>
-  var recaptcha1;
-  var recaptcha2;
-  var multipleCaptcha = function() {
-    //Render the recaptcha1 on the element with ID "recaptcha1"
-    recaptcha1 = grecaptcha.render('recaptcha1', {
-      'sitekey' : '6LfzwQYTAAAAAGRb0kllCxB2qV3Jh-qPRcsU806x', 
-      'theme' : 'light'
-    });
-    
-    //Render the recaptcha2 on the element with ID "recaptcha2"
-    recaptcha2 = grecaptcha.render('recaptcha2', {
-      'sitekey' : '6LfzwQYTAAAAAGRb0kllCxB2qV3Jh-qPRcsU806x', 
-      'theme' : 'light'
-    });
-  };
-</script>
-<!-- Contains code to validate data sent with the contact form. Passes the data on to the server if the validation is passed. -->
-<script src="scripts/contact_form_validation.js"></script>
-
+    <script>
+      var recaptcha1;
+      var recaptcha2;
+      var multipleCaptcha = function() {
+        //Render the recaptcha1 on the element with ID "recaptcha1"
+        recaptcha1 = grecaptcha.render('recaptcha1', {
+          'sitekey' : '6LfzwQYTAAAAAGRb0kllCxB2qV3Jh-qPRcsU806x', 
+          'theme' : 'light'
+        });
+        
+        //Render the recaptcha2 on the element with ID "recaptcha2"
+        recaptcha2 = grecaptcha.render('recaptcha2', {
+          'sitekey' : '6LfzwQYTAAAAAGRb0kllCxB2qV3Jh-qPRcsU806x', 
+          'theme' : 'light'
+        });
+      };
+    </script>
 </head>
 <body>
     <div id="wrapper">
@@ -84,10 +78,8 @@
     </div>
 </body>
 
-
-
-
-
+<!-- Contains code to validate data sent with the contact form. Passes the data on to the server if the validation is passed. -->
+<script src="scripts/contact_form_validation.js"></script>
 </html>
 
 
