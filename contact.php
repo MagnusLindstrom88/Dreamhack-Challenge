@@ -12,7 +12,7 @@
 </head>
 <body>
     <div id="wrapper">
-        <?php require_once 'template/header&navbar.php'; ?>
+        <?php require_once 'template/contact_header&navbar.php'; ?>
         <div class="container">
             
             <h1 id="contact-heading">Contact information</h1>
@@ -48,7 +48,7 @@
                                     <label for="message">Message:</label>
                                     <textarea id="message" name="message" class="form-control"></textarea>
                                 </div>
-                                <div class="g-recaptcha" data-sitekey="6LfzwQYTAAAAAGRb0kllCxB2qV3Jh-qPRcsU806x"></div>
+                                <div id="recaptcha2"></div>
                             </form>
                         </div>
                         <div class="modal-footer">
@@ -63,6 +63,25 @@
     </div>
 </body>
 </html>
+
+<script src="https://www.google.com/recaptcha/api.js?onload=multipleCaptcha&render=explicit" async defer></script>
+<script>
+  var recaptcha1;
+  var recaptcha2;
+  var multipleCaptcha = function() {
+    //Render the recaptcha1 on the element with ID "recaptcha1"
+    recaptcha1 = grecaptcha.render('recaptcha1', {
+      'sitekey' : '6LfzwQYTAAAAAGRb0kllCxB2qV3Jh-qPRcsU806x', 
+      'theme' : 'light'
+    });
+    
+    //Render the recaptcha2 on the element with ID "recaptcha2"
+    recaptcha2 = grecaptcha.render('recaptcha2', {
+      'sitekey' : '6LfzwQYTAAAAAGRb0kllCxB2qV3Jh-qPRcsU806x', 
+      'theme' : 'light'
+    });
+  };
+</script>
 
 <!-- Contains code to validate data sent with the contact form. Passes the data on to the server if the validation is passed. -->
 <script src="scripts/form_validation.js"></script>
