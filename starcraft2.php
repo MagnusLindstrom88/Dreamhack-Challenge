@@ -4,7 +4,7 @@
     <?php require_once 'template/head.php'; ?>
     <style>
         #section-image-container {
-            background-image: url(images/sc2Background.png);
+            background-image: url(images/sc2Background2.jpg);
         }
     </style>
 </head>
