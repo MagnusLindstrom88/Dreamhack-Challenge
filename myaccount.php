@@ -14,15 +14,16 @@
             <div class="col-md-6">
 		<h3 id='profilepic'>Profile Picture</h3>
 		<a href='#' class='thumbnail' style="width:inherit;">
-                    <img src='images/profilepictures/default.png' alt='Profile Pic'>
+                    <?php uploadImage(); ?>
+                    <?php findProfilePic(); ?>
+                    <img src='images/profilepictures/<?php echo $profilePicture; ?>' alt='Profile Pic'>
 		</a>
-		<button id='take-picture' type='edit' class='btn btn-default'>Take A New Profile Picture</button>
-		<form action='upload.php' method='post' enctype='multipart/form-data'>
-                    Select image to upload:
+                <p style="margin-bottom:2px;">Upload New Image:</p>
+		<form method='post' enctype='multipart/form-data'>
                     <input type='file' name='fileToUpload' id='fileToUpload'>
-                    <input type='submit' value='Upload Image' name='submit'>
+                    <input type='submit' style="color:black" value='Upload Image'>
 		</form>
-                <button class="btn btn-default" data-toggle="modal" data-target="#edit-account-modal" onclick="cleanForms()">Edit Account Information</button>
+                <button class="btn btn-default" style="margin-top:10px;" data-toggle="modal" data-target="#edit-account-modal" onclick="cleanForms()">Edit Account Information...</button>
             </div>
             <div class="col-md-6">
                 <h3>Betting History</h3>
@@ -52,10 +53,6 @@
                 <div class="modal-body">
                     <form id="edit-account-form" role="form" method="post">
                         <div class="form-group">
-                            <label for="username">Username:</label>
-                            <input type="text" id="username" name="username" class="form-control" maxlength="20">
-                        </div>
-                        <div class="form-group">
                             <label for="registration-email">Email:</label>
                             <input type="email" id="registration-email" name="email" class="form-control" maxlength="254">
                         </div>
@@ -75,7 +72,64 @@
                 </div>
             </div>
         </div>
-    </div>	
+    </div>
+    <?php if(isset($fileUploaded)) echo "<script>alert('{$echoString}')</script>"; ?>
 </body>
 </html>
- 
+
+<?php
+//Finds the user's profile picture that will be displayed on the page.
+function findProfilePic() {
+    foreach(glob('images/profilepictures/*.*') as $filename)
+	if(strpos($filename, $_SESSION['id'])) {
+            $a = explode("/", $filename);
+            $GLOBALS['profilePicture'] = $a[count($a)-1];
+	}
+    if(!isset($GLOBALS['profilePicture']))
+        $GLOBALS['profilePicture'] = "default.png";
+}
+
+//Run upon the submission of a new profile picture.
+function uploadImage() {
+    if(isset($_FILES["fileToUpload"]["name"]) && strlen($_FILES["fileToUpload"]["name"]) > 0) {
+    $target_dir = "images/profilepictures/";
+    $imageFileType = pathinfo($target_dir . basename($_FILES["fileToUpload"]["name"]), PATHINFO_EXTENSION);
+    $target_file = $target_dir . basename("{$_SESSION['id']}.{$imageFileType}");
+    $uploadOk = 1;
+    
+    $echoString = "";
+    // Check if image file is a actual image or fake image
+    if(isset($_POST["submit"])) {
+        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+        if($check !== false) {
+            $echoString .= "File is an image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            $echoString .= "File is not an image.";
+            $uploadOk = 0;
+        }
+    }
+    //Check file size
+    if ($_FILES["fileToUpload"]["size"] > 500000) {
+        $echoString .= "File is too large.";
+        $uploadOk = 0;
+    }
+    //Allow certain file formats
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+    && $imageFileType != "gif" ) {
+        $echoString .= "Only JPG, JPEG, PNG & GIF files are allowed.";
+        $uploadOk = 0;
+    }
+    //Check if $uploadOk is set to 0 by an error
+    if ($uploadOk != 0) {
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+            $echoString .= "The image has been uploaded.";
+        } else {
+            $echoString .= "There was an error uploading your file.";
+        }
+    }
+    $GLOBALS['echoString'] = $echoString;
+    $GLOBALS['fileUploaded'] = true;
+    }
+}
+?>

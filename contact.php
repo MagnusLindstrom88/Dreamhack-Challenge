@@ -28,7 +28,7 @@
   };
 </script>
 <!-- Contains code to validate data sent with the contact form. Passes the data on to the server if the validation is passed. -->
-<script src="scripts/form_validation.js"></script>
+<script src="scripts/contact_form_validation.js"></script>
 
 </head>
 <body>
@@ -59,7 +59,7 @@
                             <form id="contact-form" role="form" method="post">
                                 <div class="form-group">
                                     <label for="name">Name:</label>
-                                    <input type="text" id="name" name="username" class="form-control" value="<?php if(isset($_SESSION['username'])) { echo $_SESSION['username']; }?>">
+                                    <input type="text" id="name" name="username" class="form-control" value="<?php if(isset($_SESSION['username'])) echo $_SESSION['username']; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="contact-email">Email:</label>
@@ -73,7 +73,7 @@
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" onclick="validateForm();">Submit</button>
+                            <button type="button" class="btn btn-primary" onclick="validateForm()">Send</button>
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                         </div>
                     </div>

@@ -13,7 +13,7 @@
         <?php require_once 'template/header&navbar.php'; ?>
         
         <div id="section-image-container">
-            <img id="section-logo" src="images/hots38.png" alt="Starcraft 2 logotype."/>
+            <img id="section-logo" src="images/sc2logo.png" alt="Starcraft 2 logotype."/>
         </div>
         
         <!--Content columns.-->
@@ -48,9 +48,9 @@
                 <div class="row match-row">
                     <?php generateBoxes(); ?>
                 </div>
-                <h2 style="margin-top: 30px;">Bracket</h2>
+                <h2 style="margin-top:30px;">Bracket</h2>
                 <p>Proin dictum, tortor at porta malesuada, enim nulla maximus felis, ornare eleifend mauris tellus et dui.</p>
-                <div class="row" style="margin-bottom: 30px;">
+                <div class="row" style="margin-bottom:30px;">
                     <div class="col-md-4">
                         <p>Quarter</p>
                         <button class="btn btn-lg btn-success btn-block">Kvarts-match</button>

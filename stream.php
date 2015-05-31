@@ -118,7 +118,7 @@ function sendMessage() {
     xmlHttp.onload = function() {
 	if(xmlHttp.responseText === "failed") alert("You must be logged in to chat.");
     }
-    xmlHttp.open("POST", "scripts/chat.php");
+    xmlHttp.open("POST", "scripts/insert_chat_message.php");
     xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlHttp.send("message="+message+"&game="+game+"&bettedteam="+bettedTeam);
 }

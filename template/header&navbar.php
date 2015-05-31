@@ -41,7 +41,7 @@
             echo '<ul class="nav navbar-nav navbar-right">';
             if(isset($_SESSION['username'])) echo
             '<li><p class="navbar-text">Welcome, '.$_SESSION['username'].'</p></li>
-            <li><a href="mypages.php"><span class="glyphicon glyphicon-user"></span> My Pages</a></li>
+            <li><a href="myaccount.php"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
             <li><a href="javascript:logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>';
             else echo 
             '<li><a href="#" data-toggle="modal" data-target="#login-modal" onclick="cleanForms()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -126,7 +126,7 @@
 
 <!-- Code to handle menu highlighting. -->
 <script>
-    //Get name of the current page and compare it to the href attributes of the left menu fields. Highlights the field that matches.
+    //Get name of the current page's name and compare it to the href attributes of the left menu fields. Highlights the field that matches.
     var pageName = document.URL.split("/");
     pageName = pageName[pageName.length-1];
     var links = $("#menu-fields a");
@@ -164,9 +164,3 @@
 
 <!-- sdasd -->
 <script src="scripts/bet_functions.js"></script>
-
-<!-- sdasd -->
-<script src="scripts/make_bet.php"></script>
-
-<!-- sdasd -->
-<script src="scripts/checkbet.php"></script>

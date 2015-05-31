@@ -35,7 +35,7 @@ function validateForm() {
             alert(xmlHttp.responseText);
             if(xmlHttp.responseText.search("successful") !== -1) {location.reload();}
         }
-        xmlHttp.open("POST", "scripts/submit.php");
+        xmlHttp.open("POST", "scripts/send_mail.php");
         xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
         xmlHttp.send("name="+name.value+"&email="+email.value+"&message="+message.value+"&g-recaptcha-response="+captcha);
     }

@@ -41,7 +41,7 @@
             echo '<ul class="nav navbar-nav navbar-right">';
             if(isset($_SESSION['username'])) echo
             '<li><p class="navbar-text">Welcome, '.$_SESSION['username'].'</p></li>
-            <li><a href="mypages.php"><span class="glyphicon glyphicon-user"></span> My Pages</a></li>
+            <li><a href="myaccount.php"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
             <li><a href="javascript:logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>';
             else echo 
             '<li><a href="#" data-toggle="modal" data-target="#login-modal" onclick="cleanForms()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -166,10 +166,3 @@
 
 <!-- sdasd -->
 <script src="scripts/bet_functions.js"></script>
-
-<!-- sdasd -->
-<script src="scripts/make_bet.php"></script>
-
-<!-- sdasd -->
-<script src="scripts/checkbet.php"></script>
-
