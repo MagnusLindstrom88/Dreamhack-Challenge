@@ -62,8 +62,6 @@
         <?php require_once 'template/footer.php'; ?>
     </div>
 </body>
-</html>
-
 
 <script>
   var recaptcha1;
@@ -85,3 +83,7 @@
 
 <!-- Contains code to validate data sent with the contact form. Passes the data on to the server if the validation is passed. -->
 <script src="scripts/form_validation.js"></script>
+
+</html>
+
+
