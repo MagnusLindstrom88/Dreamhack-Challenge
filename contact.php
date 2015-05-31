@@ -27,6 +27,8 @@
     });
   };
 </script>
+<!-- Contains code to validate data sent with the contact form. Passes the data on to the server if the validation is passed. -->
+<script src="scripts/form_validation.js"></script>
 
 </head>
 <body>
@@ -84,8 +86,7 @@
 
 
 
-<!-- Contains code to validate data sent with the contact form. Passes the data on to the server if the validation is passed. -->
-<script src="scripts/form_validation.js"></script>
+
 
 </html>
 
