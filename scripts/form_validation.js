@@ -24,7 +24,7 @@ function validateForm() {
         error.className = "error-message captcha-error";
         error.style.color = "red";
         error.appendChild(document.createTextNode("This box has to be checked."));
-        document.getElementById("contact-form").insertBefore(error, document.getElementsByClassName("g-recaptcha")[0]);
+        document.getElementById("contact-form").insertBefore(error, document.getElementsByid("recaptcha2")[0]);
     }
     
     var xmlHttp = new XMLHttpRequest();
