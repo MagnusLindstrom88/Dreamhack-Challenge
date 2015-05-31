@@ -3,7 +3,7 @@ session_start();
 	
 
 	if(isset($_POST['submit'])){
-		$target_dir = 'uploads/';
+		$target_dir = 'images/profile_pic';
 		$target_file = $target_dir . basename($_FILES['fileToUpload']['name']);
 		$uploadOk = 1;
 		$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -53,7 +53,7 @@ session_start();
 	if ($filename != NULL) {
 		$image = 'profile_pic';
 	} else {
-		$image = 'nopic.jpg';
+		$image = 'image/logo.png';
 	}
 			
 	
