@@ -53,7 +53,7 @@ session_start();
 	if ($filename != NULL) {
 		$image = 'profile_pic';
 	} else {
-		$image = 'image/logo.png';
+		$image = 'images/logo.png';
 	}
 			
 	
