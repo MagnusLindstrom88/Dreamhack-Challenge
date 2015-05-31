@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require_once 'template/head.php'; ?>
+    <?php require_once 'template/contact_head.php'; ?>
     <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
     <style>
         #contact-heading {margin-bottom: 20px;}
@@ -64,7 +64,7 @@
 </body>
 </html>
 
-<script src="https://www.google.com/recaptcha/api.js?onload=multipleCaptcha&render=explicit" async defer></script>
+
 <script>
   var recaptcha1;
   var recaptcha2;
