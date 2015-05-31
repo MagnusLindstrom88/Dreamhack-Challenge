@@ -1,6 +1,6 @@
 <?php
 require_once '../init.php';
-if(isset($_POST['email'])) {
+if(isset($_POST['name'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
     $message = $_POST['message'];
