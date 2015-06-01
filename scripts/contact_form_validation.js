@@ -1,4 +1,5 @@
 function validateForm() {
+    alert("Hello world");
     //Get the contact input elements.
     var name = document.getElementById("name");
     var email = document.getElementById("contact-email");
