@@ -10,7 +10,7 @@
         </br>
             <div class='row'>
             <?php
-                $directory = "images/";
+                $directory = "images/profilepictures/";
                 $images = glob($directory . "*.*");
                 
                 foreach($images as $image){
@@ -24,5 +24,7 @@
             </div>    
         </div>
     </div>
+    </br>
+    <?php require_once 'template/footer.php'; ?>
 </body>
 </html>
