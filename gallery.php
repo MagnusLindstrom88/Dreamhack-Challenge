@@ -10,7 +10,7 @@
         </br>
             <div class='row'>
             <?php
-                $directory = "images/profilepictures/";
+                $directory = "images/";
                 $images = glob($directory . "*.*");
                 
                 foreach($images as $image){
