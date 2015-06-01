@@ -7,56 +7,21 @@
     <div id="wrapper">
         <?php require_once 'template/contact_header&navbar.php'; ?>
         <div class="container">
-            <div class="row">
-              <div class="col-lg-4 col-sm-6 col-xs-12">
-                  <a href="#">
-                       <img src="http://placehold.it/800x600" class="thumbnail img-responsive">
-                  </a>
-              </div>
-               <div class="col-lg-4 col-sm-6 col-xs-12">
-                  <a href="#">
-                       <img src="http://placehold.it/800x600" class="thumbnail img-responsive">
-                  </a>
-              </div>
-               <div class="col-lg-4 col-sm-6 col-xs-12">
-                  <a href="#">
-                       <img src="http://placehold.it/800x600" class="thumbnail img-responsive">
-                  </a>
-              </div>
-               <div class="col-lg-4 col-sm-6 col-xs-12">
-                  <a href="#">
-                       <img src="http://placehold.it/800x600" class="thumbnail img-responsive">
-                  </a>
-              </div>
-               <div class="col-lg-4 col-sm-6 col-xs-12">
-                  <a href="#">
-                       <img src="http://placehold.it/800x600" class="thumbnail img-responsive">
-                  </a>
-              </div>
-               <div class="col-lg-4 col-sm-6 col-xs-12">
-                  <a href="#">
-                       <img src="http://placehold.it/800x600" class="thumbnail img-responsive">
-                  </a>
-              </div>
-               <div class="col-lg-4 col-sm-6 col-xs-12">
-                  <a href="#">
-                       <img src="http://placehold.it/800x600" class="thumbnail img-responsive">
-                  </a>
-              </div>
-               <div class="col-lg-4 col-sm-6 col-xs-12">
-                  <a href="#">
-                       <img src="http://placehold.it/800x600" class="thumbnail img-responsive">
-                  </a>
-              </div>
-               <div class="col-lg-4 col-sm-6 col-xs-12">
-                  <a href="#">
-                       <img src="http://placehold.it/800x600" class="thumbnail img-responsive">
-                  </a>
+        <div class="row">
+        <?php
+            $directory = "images/profile_pic";
+            $images = glob($directory . "*.jpg" AND $director . "*.png");
+            
+            foreach($images as $image){
+                echo "
+                        <div class="col-lg-4 col-sm-6 col-xs-12">
+                            <img src='$image' class='thumbnail img-responsive'>
+                        </div>
+                    ";
+            }?>
         </div>
-      </div>
-    </div>
+        </div>
         <?php require_once 'template/footer.php'; ?>
     </div>
-
 </body>
 </html>
