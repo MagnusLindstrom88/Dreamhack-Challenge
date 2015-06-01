@@ -8,9 +8,8 @@
         <?php require_once 'template/contact_header&navbar.php'; ?>
         <div class="container">
         </br>
-            <div class='row'>
             <?php
-            $count=0;
+            $count=4;
                 foreach(glob("images/*.*") as $image){
                     $count+=1;
                     if($count==4){
@@ -29,7 +28,6 @@
                              ";
                     }
                 }?>
-            </div>    
         </div>
     </div>
 </body>
