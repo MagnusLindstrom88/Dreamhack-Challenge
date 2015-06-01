@@ -30,7 +30,7 @@
 		    </div>
 		    <div class="col-md-6">
 			<h3>Betting History</h3>
-			 <div class="col-md-6">
+			 <div class="col-md-3">
         		 	<h3>Starcraft II</h3>
                 		<div class="row match-row">
                     			<?php 
