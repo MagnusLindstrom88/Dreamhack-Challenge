@@ -29,6 +29,11 @@
                  <h1>Welcome!</h1>
                  <p>Welcome to DreamHack Challenge! This is an interactive meeting place for gamers and e-sport enthusiasts. Follow the Dreamhack event from here, watch livestreams and place bets. Enjoy!</p>
                  <a href="#">Learn More</a>
+                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuDivider">
+  Learn More
+  <li role="presentation" class="divider"></li>
+  Text typ
+</ul>
             </div>
         </div>
         
@@ -36,7 +41,6 @@
         <div id="content">
             <div class="container">
                 <h2>Our Supported Games</h2>
-                <p>pellentesque.</p>
                 <div class="row">
                     <div class="col-md-4">
                         <a href="csgo.php"><div class="thumbnail"><img src="images/csgothumbnail.jpg" alt="Counter Strike: Global Offensive thumbnail."/></div></a>
