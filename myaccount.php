@@ -41,7 +41,7 @@
         </div>
     </div>
     
-    <?php require_once 'template/footer.php'; ?>
+    
 
     <!--Edit Account Modal-->
     <div class="modal fade" id="edit-account-modal" tabindex="-1" role="dialog" aria-labelledby="editAccountHeading" aria-hidden="true">
@@ -74,6 +74,7 @@
             </div>
         </div>
     </div>
+    <?php require_once 'template/footer.php'; ?>
     <?php if(isset($fileUploaded)) echo "<script>alert('{$echoString}')</script>"; ?>
 </body>
 </html>
