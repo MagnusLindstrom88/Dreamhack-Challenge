@@ -16,7 +16,7 @@
                 foreach($images as $image){
                     echo "
                             <div class='col-md-3'>
-                                <img src='$image' class='thumbnail' style='border:1px solid red;'>
+                                <img src='$image' class='thumbnail' style='border:1px solid red; width:100px; height:100px;'>
                             </div>    
                             
                         ";
