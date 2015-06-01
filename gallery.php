@@ -9,7 +9,7 @@
         <div class="container">
         <div class="row">
         <?php
-            $directory = "images/profile_pic";
+            $directory = "images/profilepictures";
             $images = glob($directory . "*.jpg" AND $director . "*.png");
             
             foreach($images as $image){
