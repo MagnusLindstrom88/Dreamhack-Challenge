@@ -16,7 +16,7 @@ function createErrorMessage(inputElement, message) {
 
 //Removes errors related to an input element when it gets focused.
 function removeErrorsOnFocus() {
-    var inputElements = $("#registration-form input, #login-form input, #contact-form input");
+    var inputElements = $("#registration-form input, #login-form input, #contact-form input, #contact-form textarea");
     inputElements.each(function() {
         this.onfocus = function() {
             this.parentNode.getElementsByClassName("error-message")[0].remove();
@@ -33,6 +33,7 @@ function cleanForms() {
     $("#login-form input").each(function() {this.value = "";});
     $("#registration-form input").each(function() {this.value = "";});
     $("#contact-form input").each(function() {this.value = "";});
+    $("#contact-form textarea").each(function() {this.value = "";});
     $(".error-message").remove();
     $(".form-group .glyphicon").remove();
     $(".form-group").each(function() {this.className = "form-group";})
