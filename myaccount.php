@@ -29,13 +29,13 @@
             <div class="col-md-6">
                 <h3>Betting History</h3>
                 <ul class="list-group">
-                    <a href="#" class="list-group-item list-group-item-success">Dapibus ac facilisis in</a> 
-                    <a href="#" class="list-group-item list-group-item-danger">Vestibulum at eros</a>
-                    <a href="#" class="list-group-item list-group-item-success">Dapibus ac facilisis in</a>
-                    <a href="#" class="list-group-item list-group-item-success">Dapibus ac facilisis in</a>
-                    <a href="#" class="list-group-item list-group-item-success">Dapibus ac facilisis in</a>
-                    <a href="#" class="list-group-item list-group-item-danger">Vestibulum at eros</a>
-                    <a href="#" class="list-group-item list-group-item-danger">Vestibulum at eros</a>
+                    <a href="#" class="list-group-item list-group-item-success">You won!</a> 
+                    <a href="#" class="list-group-item list-group-item-danger">You lost</a>
+                    <a href="#" class="list-group-item list-group-item-success">You won!</a>
+                    <a href="#" class="list-group-item list-group-item-success">You won!</a>
+                    <a href="#" class="list-group-item list-group-item-success">You won!</a>
+                    <a href="#" class="list-group-item list-group-item-danger">You lost</a>
+                    <a href="#" class="list-group-item list-group-item-danger">You lost</a>
                 </ul>
             </div>
         </div>
