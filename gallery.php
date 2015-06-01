@@ -8,21 +8,21 @@
         <?php require_once 'template/contact_header&navbar.php'; ?>
         <div class="container">
         </br>
+            <div class='row'>
             <?php
                 $directory = "images/";
                 $images = glob($directory . "*.*");
                 
                 foreach($images as $image){
                     echo "
-                            <div class='row'>
-                                <div class='col-lg-3 col-md-4 col-xs-6 thumb'>
-                                    <img src='$image' class='img-responsive' height='40' widht='40'>
-                                </div>    
-                            </div>
+                            <div class='col-md-3'>
+                                <img src='$image' class='thumbnail' style='border:1px solid red;'>
+                            </div>    
+                            
                         ";
                 }?>
+            </div>    
         </div>
     </div>
-    <?php require_once 'template/footer.php'; ?>
 </body>
 </html>
