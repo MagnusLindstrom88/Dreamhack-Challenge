@@ -173,8 +173,7 @@ function initialize() {
 	    break;
 	case "Dota2":
 	    $game = "Dota 2";
-	    $GLOBALS['stream'] = "imaqtpie";
-	    //$GLOBALS['stream'] = "ti5yasha";
+	    $GLOBALS['stream'] = "ti5yasha";
 	    break;
 	case "SC2":
 	    $game = "Starcraft II";
