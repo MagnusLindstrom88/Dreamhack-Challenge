@@ -11,7 +11,7 @@
         </br>
             <?php
                 $directory = "images/";
-                $images = glob($directory . "*.png" AND $directory. "*.jpg");
+                $images = glob($directory . "*.png" OR $directory. "*.jpg");
                 
                 foreach($images as $image){
                     echo "
