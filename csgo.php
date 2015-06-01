@@ -52,7 +52,7 @@
                 <p>Complete match bracket.</p>
                 <div class="row" style="margin-bottom: 30px;">
                     <div class="col-md-4">
-                        <p>Quarter</p>
+                        <p><b>Quarter</b></p>
                         <button class="btn btn-lg btn-primary btn-block">Kvarts-match</button>
                         <button class="btn btn-lg btn-primary btn-block">Kvarts-match</button>
                         <button class="btn btn-lg btn-primary btn-block">Kvarts-match</button>
