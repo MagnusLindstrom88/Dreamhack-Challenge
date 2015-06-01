@@ -76,7 +76,7 @@ Beneath each team there is a bet button which you can press on and your betting 
 Our main focus is about Dreamhack and E-sports events, we created a free betting and streaming site for you people to join to watch free livestream and free betting to win fine prizes.
 
 <li style="color: white;"><b><i>Created February 2015</i></b></li>
-<li style="color: white;"><b><i>Lanchued Juny 2015<i></b></li>
+<li style="color: white;"><b><i>Launched Juny 2015<i></b></li>
 </br>
 <p style="color: white; "> We are constantly developing the website to make it more accessible, more functions for the users.</p>
 </div>
