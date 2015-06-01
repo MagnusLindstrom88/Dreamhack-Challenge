@@ -10,38 +10,41 @@
 <body>
     <?php require_once 'template/header&navbar.php'; ?>
     
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-		<h3 id='profilepic'>Profile Picture</h3>
-		<a href='#' class='thumbnail' style="width:inherit;">
-                    <?php uploadImage(); ?>
-                    <?php findProfilePic(); ?>
-                    <img src='images/profilepictures/<?php echo $profilePicture; ?>' alt='Profile Pic'>
-		</a>
-                <p style="margin-bottom:2px;">Upload New Image:</p>
-		<form method='post' enctype='multipart/form-data'>
-                    <input type='file' name='fileToUpload' id='fileToUpload'>
-                    <input type='submit' style="color:black" value='Upload Image'>
-		</form>
-                <button class="btn btn-default" style="margin-top:10px;" data-toggle="modal" data-target="#edit-account-modal" onclick="cleanForms()">Edit Account Information...</button>
-            </div>
-            <div class="col-md-6">
-                <h3>Betting History</h3>
-                <ul class="list-group">
-                    <a href="#" class="list-group-item list-group-item-success">You won!</a> 
-                    <a href="#" class="list-group-item list-group-item-danger">You lost</a>
-                    <a href="#" class="list-group-item list-group-item-success">You won!</a>
-                    <a href="#" class="list-group-item list-group-item-success">You won!</a>
-                    <a href="#" class="list-group-item list-group-item-success">You won!</a>
-                    <a href="#" class="list-group-item list-group-item-danger">You lost</a>
-                    <a href="#" class="list-group-item list-group-item-danger">You lost</a>
-                </ul>
-            </div>
-        </div>
+    <div id="wrapper">
+	<div class="container">
+	    <div id="content">
+		<div class="row">
+		    <div class="col-md-6">
+			<h3 id='profilepic'>Profile Picture</h3>
+			<a href='#' class='thumbnail' style="width:inherit;">
+			    <?php uploadImage(); ?>
+			    <?php findProfilePic(); ?>
+			    <img src='images/profilepictures/<?php echo $profilePicture; ?>' alt='Profile Pic'>
+			</a>
+			<p style="margin-bottom:2px;">Upload New Image:</p>
+			<form method='post' enctype='multipart/form-data'>
+			    <input type='file' name='fileToUpload' id='fileToUpload'>
+			    <input type='submit' style="color:black" value='Upload Image'>
+			</form>
+			<button class="btn btn-default" style="margin-top:10px;" data-toggle="modal" data-target="#edit-account-modal" onclick="cleanForms()">Edit Account Information...</button>
+		    </div>
+		    <div class="col-md-6">
+			<h3>Betting History</h3>
+			<ul class="list-group">
+			    <a href="#" class="list-group-item list-group-item-success">You won!</a> 
+			    <a href="#" class="list-group-item list-group-item-danger">You lost</a>
+			    <a href="#" class="list-group-item list-group-item-success">You won!</a>
+			    <a href="#" class="list-group-item list-group-item-success">You won!</a>
+			    <a href="#" class="list-group-item list-group-item-success">You won!</a>
+			    <a href="#" class="list-group-item list-group-item-danger">You lost</a>
+			    <a href="#" class="list-group-item list-group-item-danger">You lost</a>
+			</ul>
+		    </div>
+		</div>
+	    </div>
+	</div>
+	<?php require_once 'template/footer.php'; ?>
     </div>
-    
-    
 
     <!--Edit Account Modal-->
     <div class="modal fade" id="edit-account-modal" tabindex="-1" role="dialog" aria-labelledby="editAccountHeading" aria-hidden="true">
@@ -74,7 +77,6 @@
             </div>
         </div>
     </div>
-    <?php require_once 'template/footer.php'; ?>
     <?php if(isset($fileUploaded)) echo "<script>alert('{$echoString}')</script>"; ?>
 </body>
 </html>
