@@ -47,9 +47,7 @@
                 		</br>
                 		<h3>CS:GO</h3>
                 		<div class="row match-row">
-                			<?php 
-						$game='CS:GO';
-						require_once 'matchhistory.php'; ?>
+                			<?php generateBoxesAccount(); ?>
                 		</div>
              		</div>
         	</div>
