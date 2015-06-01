@@ -33,9 +33,7 @@
     Learn More
     <span class="caret"></span>
   </button>
-  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-    <p>Hej och kul hoppas detta funkar</p>
-  </ul>
+  <li role="presentation"><p role="menuitem" tabindex="-1">Text här</p></li>
 </div>
         </div>
         
