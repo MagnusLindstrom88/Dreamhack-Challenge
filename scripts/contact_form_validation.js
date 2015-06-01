@@ -1,7 +1,6 @@
 function validateForm() {
-    alert("Hello world");
-    //Get the contact input elements.
-    var name = document.getElementById("name");
+    //Get the registration input elements.
+    var username = document.getElementById("name");
     var email = document.getElementById("contact-email");
     var message = document.getElementById("message");
     var captcha = grecaptcha.getResponse("recaptcha2");
@@ -11,7 +10,13 @@ function validateForm() {
     for(var i=0; i<textFields.length; i++)
         if (textFields[i].value.length === 0)
             createErrorMessage(textFields[i], "cannot be empty.");
-                
+            
+    //Check if the name contains illegal characters.
+    var illegalChars = /\W/;  //Allow letters, numbers, and underscores
+    if (illegalChars.test(name.value)) {
+        createErrorMessage(name, "contains illegal characters.");
+    }
+    
     //Check if the email address is incorrectly formatted or contains illegal characters.
     var emailFilter = /^[^@]+@[^@.]+\.[^@]*\w\w$/;
     var illegalChars = /[\(\)\<\>\,\;\:\\\"\[\]]/;

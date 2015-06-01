@@ -77,9 +77,10 @@
         <?php require_once 'template/footer.php'; ?>
     </div>
 
+
+</body>
     <!-- Contains code to validate data sent with the contact form. Passes the data on to the server if the validation is passed. -->
     <script src="scripts/contact_form_validation.js"></script>
-</body>
 </html>
 
 
