@@ -1,7 +1,7 @@
 <?php
 function generateBoxesAccount() {
     global $db;
-    $match = $db->query("SELECT * FROM matches WHERE game="$game");
+    $match = $db->query("SELECT * FROM matches WHERE game=$game);
     foreach($matches as $row) {
         $teams = $db->query("SELECT * FROM bets WHERE user_id={$_SESSION['id']}")->fetchAll(PDO::FETCH_ASSOC);
         $buttonClass0 = "btn btn-info";
