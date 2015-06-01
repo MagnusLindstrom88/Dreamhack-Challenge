@@ -8,6 +8,7 @@
         <?php require_once 'template/contact_header&navbar.php'; ?>
         <div class="container">
         <div class="row">
+        </br>
         <?php
             $directory = "images/profilepictures/";
             $images = glob($directory . "*.png");
