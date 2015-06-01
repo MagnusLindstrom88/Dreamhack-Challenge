@@ -53,11 +53,12 @@
                 		</div>
              		</div>
         	</div>
+        	<?php require_once 'template/footer.php'; ?>
     		</div>
            </div>
 	</div>
     </div>
-	<?php require_once 'template/footer.php'; ?>
+	
     </div>
 
     <!--Edit Account Modal-->
