@@ -16,7 +16,7 @@
                     if($count==4){
                         $count = 0;
                         echo "
-                                <div class='row'>
+                                <div class='row'></div>
                              ";
                     }
                     echo "
