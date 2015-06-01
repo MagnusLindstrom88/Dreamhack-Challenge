@@ -60,14 +60,14 @@
                         
                     </div>
                     <div class="col-md-4">
-                        <p>Semi</p>
+                        <p><b>Semi<b/></p>
                         
                         <button class="btn btn-lg btn-warning btn-block">Semi-match</button>
                         <button class="btn btn-lg btn-warning btn-block">Semi-match</button>
                        
                     </div>
                     <div class="col-md-4">
-                        <p>Final</p>
+                        <p><b>Final<b/></p>
                         <button class="btn btn-lg btn-danger btn-block">Final-match</button>
                     </div>
                 </div>
