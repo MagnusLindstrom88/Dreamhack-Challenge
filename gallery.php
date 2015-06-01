@@ -9,7 +9,7 @@
         <div class="container">
         </br>
             <?php
-            $count=4;
+            $count=3;
                 foreach(glob("images/*.*") as $image){
                     $count+=1;
                     if($count==4){
