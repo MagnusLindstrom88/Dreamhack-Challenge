@@ -61,28 +61,26 @@
 				<li style="color: white;"><b><i>Create account</i></b></li>
 				<li style="color: white;"><b><i>Create profile</i></b></li>
 
-</br>
-<p style="color: white; "> After this steps you will be able to choose which game you like to watch and bet on.
-You simply press on the button "Games" and choose the type of game you like to watch, and then you have several of teams you can bet on.
-Beneath each team there is a bet button which you can press on and your betting will be applied.
-</p>
+		</br>
+				<p style="color: white; "> After this steps you will be able to choose which game you like to watch and bet on.
+					You simply press on the button "Games" and choose the type of game you like to watch, and then you have several of teams you can bet on.
+					Beneath each team there is a bet button which you can press on and your betting will be applied.
+				</p>
 
 </div>
 <div class="col-md-4">
 <div class="thumbnail"><img src="images/dh3.jpg" alt="#"></div>
 
-<h3 style="color: white; ">Company Info</h3>
-<p style="color: white; "> We were founded 2015 in Sweden Stockholm, created by students at Stockholm Universitet.
+<h3 style="color: white;">Company Info</h3>
+<p style="color: white;"> We were founded 2015 in Sweden Stockholm, created by students at Stockholm Universitet.
 Our main focus is about Dreamhack and E-sports events, we created a free betting and streaming site for you people to join to watch free livestream and free betting to win fine prizes.
 
 <li style="color: white;"><b><i>Created February 2015</i></b></li>
-<li style="color: white;"><b><i>Launched Juny 2015<i></b></li>
+<li style="color: white;"><b><i>Lanchued Juny 2015</i></b></li>
 </br>
-<p style="color: white; "> We are constantly developing the website to make it more accessible, more functions for the users.</p>
+<p style="color: white;"> We are constantly developing the website to make it more accessible, more functions for the users.</p>
 </div>
-</div>
-</div>
-</div>
+
 		
 <?php require_once 'template/footer.php'; ?>
 
