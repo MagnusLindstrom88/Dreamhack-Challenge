@@ -36,7 +36,7 @@
         <div id="content">
             <div class="container">
                 <h2>Our Supported Games</h2>
-                <p>Fusce consequat mauris sed nisi dignissim, eu sagittis odio pellentesque.</p>
+                <p>pellentesque.</p>
                 <div class="row">
                     <div class="col-md-4">
                         <a href="csgo.php"><div class="thumbnail"><img src="images/csgothumbnail.jpg" alt="Counter Strike: Global Offensive thumbnail."/></div></a>
