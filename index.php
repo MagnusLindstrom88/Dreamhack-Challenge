@@ -3,6 +3,14 @@
 <head>
     <?php require_once 'template/head.php'; ?>
     <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("p").toggle();
+    });
+});
+</script>
     <style>
         .jumbotron {
             background-image: url(images/jumbotron.jpg);
@@ -29,11 +37,13 @@
                  <h1>Welcome!</h1>
                  <p>Welcome to DreamHack Challenge! This is an interactive meeting place for gamers and e-sport enthusiasts. Follow the Dreamhack event from here, watch livestreams and place bets. Enjoy!</p>
                  
+<button>Toggle</button>
+
+<p>This is a paragraph with little content.</p>
+<p>This is another small paragraph.</p>
+
 </div>
-            <a data-dropdown="drop2" aria-controls="drop2" aria-expanded="false">Has Content Dropdown</a>
-<div id="drop2" data-dropdown-content class="f-dropdown content" aria-hidden="true" tabindex="-1">
-  <p>Some text that people will think is awesome! Some text that people will think is awesome! Some text that people will think is awesome!</p>
-        </div>
+           
         
         <!--Content columns.-->
         <div id="content">
