@@ -24,8 +24,7 @@
         });
       };
     </script>
-    <!-- Contains code to validate data sent with the contact form. Passes the data on to the server if the validation is passed. -->
-    <script src="scripts/contact_form_validation.js"></script>
+
 </head>
 <body>
     <div id="wrapper">
@@ -48,7 +47,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="cleanForms()"><span aria-hidden="true">&times;</span></button>
                             <h4 id="contactHeading" class="modal-title">Contact us</h4>
                         </div>
                         <div class="modal-body">
@@ -70,7 +69,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary" onclick="validateForm()">Send</button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="cleanForms()">Cancel</button>
                         </div>
                     </div>
                 </div>
@@ -78,9 +77,10 @@
         </div>
         <?php require_once 'template/footer.php'; ?>
     </div>
+
+    <!-- Contains code to validate data sent with the contact form. Passes the data on to the server if the validation is passed. -->
+    <script src="scripts/contact_form_validation.js"></script>
 </body>
-
-
 </html>
 
 
