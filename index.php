@@ -27,7 +27,7 @@
         <div class="jumbotron">
             <div class="container">
                  <h1>Welcome!</h1>
-                 <p>Welcome to DreamHack Challenge! This is an interactive meeting place for gamers and e-sport enthusiasts. Follow the Dreamhack event from here, watch livestreams and place bets. Enjoy!</p>
+                 <p>Welcome to DreamHack Challenge. This is an interactive meeting place for gamers and e-sport enthusiasts. Follow the Dreamhack event from here, watch livestreams and place bets. Enjoy!</p>
                  <a href="#">Learn More</a>
             </div>
         </div>
@@ -36,7 +36,7 @@
         <div id="content">
             <div class="container">
                 <h2>Our Supported Games</h2>
-                <p>Fusce consequat mauris sed nisi dignissim, eu sagittis odio pellentesque.</p>
+                <p>Welcome to our supported games, click on the icons below to place your bets and watch the streamed matches.</p>
                 <div class="row">
                     <div class="col-md-4">
                         <a href="csgo.php"><div class="thumbnail"><img src="images/csgothumbnail.jpg" alt="Counter Strike: Global Offensive thumbnail."/></div></a>
