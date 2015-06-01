@@ -28,12 +28,11 @@
             <div class="container">
                  <h1>Welcome!</h1>
                  <p>Welcome to DreamHack Challenge! This is an interactive meeting place for gamers and e-sport enthusiasts. Follow the Dreamhack event from here, watch livestreams and place bets. Enjoy!</p>
-                 <a href="#">Learn More</a>
-                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuDivider">
-  Learn More
-  <li role="presentation" class="divider"></li>
-  Text typ
-</ul>
+                 <div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+    Learn More
+    <span class="caret"></span>
+  </button>
             </div>
         </div>
         
