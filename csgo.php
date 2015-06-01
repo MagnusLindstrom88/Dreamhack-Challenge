@@ -48,8 +48,8 @@
                 <div class="row match-row">
                     <?php generateBoxes(); ?>
                 </div>
-                <h2 style="margin-top: 30px;">Bracket</h2>
-                <p>Proin dictum, tortor at porta malesuada, enim nulla maximus felis, ornare eleifend mauris tellus et dui.</p>
+                <h2 style="margin-top: 30px;">Contest Overview</h2>
+                <p>Complete match bracket.</p>
                 <div class="row" style="margin-bottom: 30px;">
                     <div class="col-md-4">
                         <p>Quarter</p>
