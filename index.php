@@ -28,10 +28,11 @@
             <div class="container">
                  <h1>Welcome!</h1>
                  <p>Welcome to DreamHack Challenge! This is an interactive meeting place for gamers and e-sport enthusiasts. Follow the Dreamhack event from here, watch livestreams and place bets. Enjoy!</p>
-                 <a data-dropdown="drop2" aria-controls="drop2" aria-expanded="false">Has Content Dropdown</a>
+                 
+</div>
+            <a data-dropdown="drop2" aria-controls="drop2" aria-expanded="false">Has Content Dropdown</a>
 <div id="drop2" data-dropdown-content class="f-dropdown content" aria-hidden="true" tabindex="-1">
   <p>Some text that people will think is awesome! Some text that people will think is awesome! Some text that people will think is awesome!</p>
-</div>
         </div>
         
         <!--Content columns.-->
