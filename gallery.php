@@ -15,8 +15,8 @@
                 
                 foreach($images as $image){
                     echo "
-                            <div class='col-lg-4 col-sm-6 col-xs-12'>
-                                <img src='$image' class='thumbnail' style='width:inherit;'>
+                            <div class='col-lg-3 col-md-4 col-xs-6 thumb'>
+                                <img src='$image' class='img-responsive'>
                             </div
                         ";
                 }?>
