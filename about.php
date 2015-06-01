@@ -36,7 +36,7 @@
 
 	<div class="row">
 		<div class="col-md-4">
-		<div class="thumbnail"><img src="images/sport.jpg" alt="Counter Strike: Global Offensive thumbnail."></div>
+		<div class="thumbnail"><img src="images/dh2.jpg" alt="Counter Strike: Global Offensive thumbnail."></div>
 			<h3 style="color: white; ">What is DreamhackChallenge?</h3>
 				<p style="color: white; ">Dreamhackchallenge is a website where you and your friends can check out the livestream and bet on games for free to win great prizes.
 					There are opportunities to watch various live stream on different games such as:
@@ -69,7 +69,7 @@ Beneath each team there is a bet button which you can press on and your betting 
 
 </div>
 <div class="col-md-4">
-<div class="thumbnail"><img src="images/dh2.jpg" alt="#"></div>
+<div class="thumbnail"><img src="images/dh3.jpg" alt="#"></div>
 
 <h3 style="color: white; ">Company Info</h3>
 <p style="color: white; "> We were founded 2015 in Sweden Stockholm, created by students at Stockholm Universitet.
