@@ -9,17 +9,17 @@
         <div class="container">
         <div class="row">
         </br>
+            <div class='col-lg-3 col-md-4 col-xs-6 thumb'>
             <?php
                 $directory = "images/";
                 $images = glob($directory . "*.*");
                 
                 foreach($images as $image){
                     echo "
-                            <div class='col-lg-3 col-md-4 col-xs-6 thumb'>
-                                <img src='$image' class='img-responsive'>
-                            </div
+                            <img src='$image' class='img-responsive' height='40' widht='40'>
                         ";
                 }?>
+             </div>    
         </div>
         </div>
     </div>
