@@ -28,11 +28,15 @@
             <div class="container">
                  <h1>Welcome!</h1>
                  <p>Welcome to DreamHack Challenge! This is an interactive meeting place for gamers and e-sport enthusiasts. Follow the Dreamhack event from here, watch livestreams and place bets. Enjoy!</p>
+<<<<<<< HEAD
                  <div class="dropdown">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
     Learn More
     <span class="caret"></span>
   </button>
+=======
+                 <a href="#">Learn More</a>
+>>>>>>> 425d004928e3bb4e259b01c49acf5ea77a355c40
             </div>
         </div>
         
@@ -40,6 +44,7 @@
         <div id="content">
             <div class="container">
                 <h2>Our Supported Games</h2>
+                <p>Welcome to our supported games, feel free to place a bet and enjoy!</p>
                 <div class="row">
                     <div class="col-md-4">
                         <a href="csgo.php"><div class="thumbnail"><img src="images/csgothumbnail.jpg" alt="Counter Strike: Global Offensive thumbnail."/></div></a>
