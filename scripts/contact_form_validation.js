@@ -1,28 +1,26 @@
 function validateForm() {
-    //Get the registration input elements.
-    var username = document.getElementById("name");
+    alert("Hello world1");
+    //Get the contact input elements.
+    var name = document.getElementById("name");
     var email = document.getElementById("contact-email");
     var message = document.getElementById("message");
     var captcha = grecaptcha.getResponse("recaptcha2");
     var textFields = [name, email, message];  //Put data into an array to enable iteration.
     
+    alert("Hello world2");
     //Check for empty text fields.
     for(var i=0; i<textFields.length; i++)
         if (textFields[i].value.length === 0)
             createErrorMessage(textFields[i], "cannot be empty.");
-            
-    //Check if the name contains illegal characters.
-    var illegalChars = /\W/;  //Allow letters, numbers, and underscores
-    if (illegalChars.test(name.value)) {
-        createErrorMessage(name, "contains illegal characters.");
-    }
     
+    alert("Hello world3");            
     //Check if the email address is incorrectly formatted or contains illegal characters.
     var emailFilter = /^[^@]+@[^@.]+\.[^@]*\w\w$/;
     var illegalChars = /[\(\)\<\>\,\;\:\\\"\[\]]/;
     if(email.value.length > 0 && (!emailFilter.test(email.value) || email.value.match(illegalChars)))
         createErrorMessage(email, "invalid email address.");
     
+    alert("Hello world4");
     //Check if the captcha was passed.
     if ($(".captcha-error").size() != 0) $(".captcha-error").remove();
     if(captcha.length === 0 && $(".captcha-error").size() === 0) {
@@ -32,7 +30,7 @@ function validateForm() {
         error.appendChild(document.createTextNode("This box has to be checked."));
         document.getElementById("contact-form").insertBefore(error, document.getElementsByClassName("g-recaptcha")[0]);
     }
-    
+    alert("Hello world5");
     var xmlHttp = new XMLHttpRequest();
     //Check if the validation was passed.
     if($("#contact-form .error-message").size() === 0) {
