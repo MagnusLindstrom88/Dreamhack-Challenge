@@ -30,19 +30,33 @@
 		    </div>
 		    <div class="col-md-6">
 			<h3>Betting History</h3>
-			<ul class="list-group">
-			    <a href="#" class="list-group-item list-group-item-success">You won!</a> 
-			    <a href="#" class="list-group-item list-group-item-danger">You lost</a>
-			    <a href="#" class="list-group-item list-group-item-success">You won!</a>
-			    <a href="#" class="list-group-item list-group-item-success">You won!</a>
-			    <a href="#" class="list-group-item list-group-item-success">You won!</a>
-			    <a href="#" class="list-group-item list-group-item-danger">You lost</a>
-			    <a href="#" class="list-group-item list-group-item-danger">You lost</a>
-			</ul>
-		    </div>
-		</div>
-	    </div>
+			 <div class="col-md-6">
+        		 	<h3>Starcraft II</h3>
+                		<div class="row match-row">
+                    			<?php 
+						$game='StarcraftII';
+						require_once 'matchhistory.php'; ?>
+                		</div>
+                		</br>
+                		<h3>Dota 2</h3>
+                		<div class="row match-row">
+                			<?php 
+						$game='Dota2';
+						require_once 'matchhistory.php'; ?>
+                		</div>
+                		</br>
+                		<h3>CS:GO</h3>
+                		<div class="row match-row">
+                			<?php 
+						$game='CS:GO';
+						require_once 'matchhistory.php'; ?>
+                		</div>
+             		</div>
+        	</div>
+    		</div>
+           </div>
 	</div>
+    </div>
 	<?php require_once 'template/footer.php'; ?>
     </div>
 
