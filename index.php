@@ -28,7 +28,7 @@
             <div class="container">
                  <h1>Welcome!</h1>
                  <p>Welcome to DreamHack Challenge! This is an interactive meeting place for gamers and e-sport enthusiasts. Follow the Dreamhack event from here, watch livestreams and place bets. Enjoy!</p>
-                 <a href="#">Learn More</a>
+                 <a href="about.php">Learn More</a>
             </div>
         </div>
         
