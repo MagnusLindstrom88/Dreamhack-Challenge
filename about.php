@@ -37,8 +37,8 @@
 	<div class="row">
 		<div class="col-md-4">
 		<div class="thumbnail"><img src="images/dh4.jpg" alt="Counter Strike: Global Offensive thumbnail."></div>
-			<h3 style="color: white; ">What is DreamhackChallenge?</h3>
-				<p style="color: white; ">Dreamhackchallenge is a website where you and your friends can check out the livestream and bet on games for free to win great prizes.
+			<h3 style="color: white; ">What is Dreamhack Challenge?</h3>
+				<p style="color: white; ">Dreamhack Challenge is a website where you and your friends can check out the livestream and bet on games for free to win great prizes.
 					There are opportunities to watch various live stream on different games such as:
 				<li style="color: white;"> CS:GO</li>
 				<li style="color: white;"> DOTA2</li>
@@ -57,7 +57,7 @@
 		<div class="thumbnail"><img src="images/kugg.jpg" alt="Esport"></div>
 
 				<h3 style="color: white; ">How does it work?</h3>
-				<p style="color: white; "> With Dreamhackchallenge there are a few steps that has to de done, then you will be able to start betting and watch livestream.
+				<p style="color: white; "> With Dreamhack Challenge there are a few steps that has to de done, then you will be able to start betting and watch livestream.
 				<li style="color: white;"><b><i>Create account</i></b></li>
 				<li style="color: white;"><b><i>Create profile</i></b></li>
 
