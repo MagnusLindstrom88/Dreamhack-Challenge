@@ -9,17 +9,17 @@
         <div class="container">
         <div class="row">
         </br>
-        <?php
-            $directory = "images/";
-            $images = glob($directory . "*.png");
-            
-            foreach($images as $image){
-                echo "
-                        <div class='col-lg-3 col-sm-6 col-xs-12'>
+            <div class='col-lg-3 col-sm-6 col-xs-12'>
+            <?php
+                $directory = "images/";
+                $images = glob($directory . "*.png");
+                
+                foreach($images as $image){
+                    echo "
                             <img src='$image' class='thumbnail img-responsive'>
-                        </div>
-                    ";
-            }?>
+                        ";
+                }?>
+            </div>
         </div>
         </div>
         <?php require_once 'template/footer.php'; ?>
