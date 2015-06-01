@@ -155,7 +155,22 @@ function uploadImage() {
 
 function generateBoxesAccount() {
     global $db;
-    $matches = $db->query("SELECT * FROM matches WHERE game='Dota2'");
+    /*$matches = $db->query("SELECT * FROM matches WHERE game='Dota2'");*/
+    $matches = $db->prepare("SELECT * FROM matches game=?");
+    $matches->execute(array($_GET['game']));
+    $matches = $matches->fetchAll(PDO::FETCH_ASSOC);
+    
+    switch($_GET['game']) {
+	case "CS:GO":
+	    $game = "CS:GO";
+	    break;
+	case "Dota2":
+	    $game = "Dota 2";
+	    break;
+	case "SC2":
+	    $game = "Starcraft II";
+	    break;
+    }
     foreach($matches as $row) {
     	$teams = $db->query("SELECT * FROM teams WHERE id={$row['team0']} OR id={$row['team1']}")->fetchAll(PDO::FETCH_ASSOC);
         /*$teams = $db->query("SELECT * FROM bets WHERE user_id={$_SESSION['id']}")->fetchAll(PDO::FETCH_ASSOC);*/
