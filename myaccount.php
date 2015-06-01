@@ -154,7 +154,7 @@ function uploadImage() {
 
 function generateBoxesAccount() {
     global $db;
-    $matches = $db->query("SELECT * FROM matches WHERE game=$game");
+    $matches = $db->query("SELECT * FROM matches WHERE game='Dota2'");
     foreach($matches as $row) {
         $teams = $db->query("SELECT * FROM bets WHERE user_id={$_SESSION['id']}")->fetchAll(PDO::FETCH_ASSOC);
         $buttonClass0 = "btn btn-info";
@@ -198,7 +198,7 @@ function generateBoxesAccount() {
                 <div class='match-header'>
                     <p>{$teams[0]['name']} VS {$teams[1]['name']}</p>
                 </div>
-                <div class='match-logos-account'>
+                <div class='match-logos'>
                     <img class='team-logo' src='images/teamlogos/{$teams[0]['abbreviation']}.png' alt=\"{$teams[0]['name']}'s logotype.\"/>
                     <img class='versus' src='images/vs.png' alt='Versus.'/>
                     <img class='team-logo' src='images/teamlogos/{$teams[1]['abbreviation']}.png' alt=\"{$teams[1]['name']}'s logotype.\"/>
