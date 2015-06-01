@@ -36,7 +36,7 @@
 
 	<div class="row">
 		<div class="col-md-4">
-		<div class="thumbnail"><img src="images/dh2.jpg" alt="Counter Strike: Global Offensive thumbnail."></div>
+		<div class="thumbnail"><img src="images/dh4.jpg" alt="Counter Strike: Global Offensive thumbnail."></div>
 			<h3 style="color: white; ">What is DreamhackChallenge?</h3>
 				<p style="color: white; ">Dreamhackchallenge is a website where you and your friends can check out the livestream and bet on games for free to win great prizes.
 					There are opportunities to watch various live stream on different games such as:
@@ -78,14 +78,13 @@ Our main focus is about Dreamhack and E-sports events, we created a free betting
 <li style="color: white;"><b><i>Created February 2015</i></b></li>
 <li style="color: white;"><b><i>Lanchued Juny 2015<i></b></li>
 </br>
-<p style="color: white; "> We are constantly developing the website to make it more accessible, more functions for the users.
-</p>
+<p style="color: white; "> We are constantly developing the website to make it more accessible, more functions for the users.</p>
 </div>
 </div>
 </div>
 </div>
-
+		
 <?php require_once 'template/footer.php'; ?>
-</div>
+
 </body>
 </html>
