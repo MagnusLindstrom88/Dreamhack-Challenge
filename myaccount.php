@@ -47,7 +47,9 @@
                 		</br>
                 		<h3>CS:GO</h3>
                 		<div class="row match-row">
-                			<?php generateBoxesAccount(); ?>
+                			<?php 
+                				$game='CS:GO';
+                				generateBoxesAccount(); ?>
                 		</div>
              		</div>
         	</div>
@@ -152,7 +154,7 @@ function uploadImage() {
 
 function generateBoxesAccount() {
     global $db;
-    $match = $db->query("SELECT * FROM matches WHERE game='Dota2'");
+    $matches = $db->query("SELECT * FROM matches WHERE game='Dota2'");
     foreach($matches as $row) {
         $teams = $db->query("SELECT * FROM bets WHERE user_id={$_SESSION['id']}")->fetchAll(PDO::FETCH_ASSOC);
         $buttonClass0 = "btn btn-info";
