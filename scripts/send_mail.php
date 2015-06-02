@@ -1,6 +1,5 @@
 <?php
 require_once '../init.php';
-    echo "Hello world1";
     
     $name = $_POST['name'];
     $email = $_POST['email'];
@@ -31,6 +30,7 @@ require_once '../init.php';
     //If the verification of the captcha was successful.
     if($result['success']) {
 
+        echo "hello world";
         mail($to, $subject, $body, $from)
 
         echo "Thank you! Your message has been received.";

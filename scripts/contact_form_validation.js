@@ -31,10 +31,12 @@ function validateForm() {
     var xmlHttp = new XMLHttpRequest();
     //Check if the validation was passed.
     if($("#contact-form .error-message").size() === 0) {
-
+        alert("hello world1");
         xmlHttp.open("POST", "scripts/send_mail.php");
         xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
         xmlHttp.send("name="+name.value+"&email="+email.value+"&message="+message.value+"&g-recaptcha-response="+captcha);
+        alert("hello world2");
+
     }
     else removeErrorsOnFocus();
 }
