@@ -45,14 +45,15 @@
 			$conn->close();
 			?> 
 
-        </div>      	
+        </div>   
+          <?php require_once 'template/footer.php'; 
+    // echo "MatchID : " . $row['matchid']. " - UserID : " . $row['userid']. " - Game : " . $row['game']. "<br>";
+  ?>
   </div>
 
 
 </body>
-  <?php require_once 'template/footer.php'; 
-    // echo "MatchID : " . $row['matchid']. " - UserID : " . $row['userid']. " - Game : " . $row['game']. "<br>";
-  ?>
+
 </html>
 
 <?php
