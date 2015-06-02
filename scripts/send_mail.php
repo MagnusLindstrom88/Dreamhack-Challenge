@@ -1,6 +1,6 @@
 <?php
 require_once '../init.php';
-if(isset($_POST['email'])) {
+
     $name = $_POST['name'];
     $email = $_POST['email'];
     $message = $_POST['message'];
@@ -25,6 +25,8 @@ if(isset($_POST['email'])) {
     $result = file_get_contents($url, false, $context);
     $result = json_decode($result, true);
     
+
+
     //If the verification of the captcha was successful.
     if($result['success']) {
 
@@ -33,5 +35,5 @@ if(isset($_POST['email'])) {
         echo "Thank you! Your message has been received.";
     }
     else echo "Failed to submit, please try again.";
-}
+
 
