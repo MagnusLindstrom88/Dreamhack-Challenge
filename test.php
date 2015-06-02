@@ -37,7 +37,7 @@
 			
 			if ($result->num_rows > 0) {
 			    while($row = $result->fetch_assoc()) {
-			       createBox();
+			       createBox("Dota2");
 			    }
 			} else {
 			    echo "0 results";
@@ -54,9 +54,9 @@
 </html>
 
 <?php
-function createBox() {
+function createBox($game) {
     global $db;
-    $matches = $db->query("SELECT * FROM matches WHERE winner='undecided' AND game='CS:GO'");
+    $matches = $db->query("SELECT * FROM matches WHERE winner='undecided' AND game='".$game."'");
     foreach($matches as $row) {
         $teams = $db->query("SELECT * FROM teams WHERE id={$row['team0']} OR id={$row['team1']}")->fetchAll(PDO::FETCH_ASSOC);
         $buttonClass0 = "btn btn-info";
