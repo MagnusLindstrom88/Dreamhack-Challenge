@@ -93,7 +93,9 @@
 			</br>
 			<p class="p1"> We are constantly developing the website to make it more accessible, more functions for the users.</p>
 			<br>
-			<p class="p1">Feel free to contact us at this<a href="contact.php"><button type="button" class="btn btn-primary" style="margin-left: 10px; position: auto;"> page</button></a></p>
+			<p class="p1">Feel free to contact us at this <a href="contact.php" class="btn btn-primary btn">
+          <span class="glyphicon glyphicon-envelope"></span> page 
+        </a>
 			</div>
 	</div>
 		
