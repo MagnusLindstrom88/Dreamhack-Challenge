@@ -38,7 +38,7 @@
 			 <div class="col-md-12">
         		 	<h3>Starcraft II</h3>
                 		<div class="row match-row">
-                    		    <?php generateBoxesAccount('Starcraft'); ?>
+                    		    <?php generateBoxesAccount('StarcraftII'); ?>
                 		</div>
                 		<br>
                 		<h3>Dota 2</h3>
