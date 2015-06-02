@@ -11,7 +11,7 @@
     <?php require_once 'template/header&navbar.php'; ?>
     <div id="wrapper">
 	<div class="container">
-						generateBoxesAccount(); ?>
+			<?php generateBoxesAccount(); ?>
            </div>      	
         
   </div>
