@@ -107,7 +107,7 @@ function findProfilePic() {
             $GLOBALS['profilePicture'] = $a[count($a)-1];
 	}
     if(!isset($GLOBALS['profilePicture']))
-        $GLOBALS['profilePicture'] = "default.png";
+        $GLOBALS['profilePicture'] = "../default.png";
 }
 
 //Run upon the submission of a new profile picture.
