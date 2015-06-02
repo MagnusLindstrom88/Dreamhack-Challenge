@@ -39,19 +39,19 @@
         		 	<h3>Starcraft II</h3>
                 		<div class="row match-row">
                     			<?php 
-						generateBoxesAccount(); ?>
+						generateBoxesAccount('Starcraft'); ?>
                 		</div>
                 		</br>
                 		<h3>Dota 2</h3>
                 		<div class="row match-row">
                 			<?php 
-						generateBoxesAccount(); ?>
+						generateBoxesAccount('Dota2'); ?>
                 		</div>
                 		</br>
                 		<h3>CS:GO</h3>
                 		<div class="row match-row">
                 			<?php 
-                				generateBoxesAccount(); ?>
+                				generateBoxesAccount('CS:GO'); ?>
                 		</div>
              		</div>
         	</div>
@@ -155,18 +155,10 @@ function uploadImage() {
 }
 
 
-function generateBoxesAccount() {
+function generateBoxesAccount($game) {
     global $db;
-   /* $matches = $db->query("SELECT * FROM matches, bets, users WHERE game={$game} AND matches.id=bets.match_id AND bets.user_id=users.{$_SESSION['id']}");*/
-   $sql = "SELECT *
-				FROM matches, bets, users
-				WHERE matches.id = bets.match_id
-				AND bets.user_id = users.id
-				AND matches.game = 'CS:GO'
-				";
-				
-   $result = $conn->query($sql);
-    foreach($result as $row) {
+   $matches = $db->query("SELECT * FROM matches, bets, users WHERE game={$game} AND matches.id=bets.match_id AND bets.user_id=users.{$_SESSION['id']}");
+    foreach($matches as $row) {
     	$teams = $db->query("SELECT * FROM teams WHERE (teams.id={$row['team0']} OR teams.id={$row['team1']}")->fetchALL(PDO::FETCH_ASSOC);
         $buttonClass0 = "btn btn-info";
         $buttonClass1 = "btn btn-info";
