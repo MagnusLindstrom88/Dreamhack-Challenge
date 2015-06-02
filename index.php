@@ -40,13 +40,13 @@
                 <p>Welcome to our supported games, click on the icons below to place your bets and watch the streamed matches.</p>
                 <div class="row">
                     <div class="col-md-4">
-                        <a href="csgo.php"><div class="thumbnail"><img src="images/csgothumbnail.jpg" alt="Counter Strike: Global Offensive thumbnail."/></div></a>
+                        <a href="game.php?game=CS:GO"><div class="thumbnail"><img src="images/csgothumbnail.jpg" alt="Counter Strike: Global Offensive thumbnail."/></div></a>
                     </div>
                     <div class="col-md-4">
-                        <a href="dota2.php"><div class="thumbnail"><img src="images/dota2thumbnail.jpg" alt="Dota 2 thumbnail."/></div></a>
+                        <a href="game.php?game=Dota2"><div class="thumbnail"><img src="images/dota2thumbnail.jpg" alt="Dota 2 thumbnail."/></div></a>
                     </div>
                     <div class="col-md-4">
-                        <a href="starcraft2.php"><div class="thumbnail"><img src="images/starcraft2thumbnail.jpg" alt="Starcraft 2 thumbnail."/></div></a>
+                        <a href="game.php?game=SC2"><div class="thumbnail"><img src="images/starcraft2thumbnail.jpg" alt="Starcraft 2 thumbnail."/></div></a>
                     </div>
                 </div>
             </div>

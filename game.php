@@ -2,18 +2,14 @@
 <html lang="en">
 <head>
     <?php require_once 'template/head.php'; ?>
-    <style>
-        #section-image-container {
-            background-image: url(images/csgobackground.jpg);
-        }
-    </style>
 </head>
+<?php initialize(); ?>
 <body>
     <div id="wrapper">
         <?php require_once 'template/header&navbar.php'; ?>
         
-        <div id="section-image-container">
-            <img id="section-logo" src="images/csgologo.png" alt="Counter Strike: Global Offensive logotype."/>
+        <div id="section-image-container" style="background-image: url(images/<?php echo $images; ?>background.jpg);">
+            <img id="section-logo" src="images/<?php echo $images; ?>logo.png" alt="Counter Strike: Global Offensive logotype."/>
         </div>
         
         <!--Content columns.-->
@@ -28,7 +24,7 @@
                     </button>
                     <!--The brand on the leftmost side.-->
                     <div class="navbar-header">
-                        <a class="navbar-brand">CS:GO</a>
+                        <a class="navbar-brand"><?php echo $game; ?></a>
                     </div>
         
                     <!--The menu fields. Will be collapsed on small screens.-->
@@ -36,7 +32,7 @@
                         <!--Fields on the left.-->
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="#">Matches</a></li>
-                            <li><a href="stream.php?game=CS:GO">Stream</a></li>
+                            <li><a href="stream.php?game=<?php echo $_GET['game']; ?>">Stream</a></li>
                         </ul>
                     </div>
                 </div>
@@ -105,10 +101,30 @@
 </html>
 
 <?php
+function initialize() {
+    switch($_GET['game']) {
+	case "CS:GO":
+	    $GLOBALS['game'] = "CS:GO";
+            $GLOBALS['dbGame'] = "CS:GO";
+            $GLOBALS['images'] = "csgo";
+	    break;
+	case "Dota2":
+	    $GLOBALS['game'] = "Dota 2";
+            $GLOBALS['dbGame'] = "Dota2";
+            $GLOBALS['images'] = "dota2";
+	    break;
+	case "SC2":
+	    $GLOBALS['game'] = "Starcraft II";
+            $GLOBALS['dbGame'] = "SC2";
+            $GLOBALS['images'] = "sc2";
+	    break;
+    }
+}
+
 //Generate a box for each upcoming match for this game in the database.
 function generateBoxes() {
-    global $db;
-    $matches = $db->query("SELECT * FROM matches WHERE winner='undecided' AND game='CS:GO'");
+    global $db, $dbGame;
+    $matches = $db->query("SELECT * FROM matches WHERE winner='undecided' AND game='{$dbGame}'");
     foreach($matches as $row) {
         $teams = $db->query("SELECT * FROM teams WHERE id={$row['team0']} OR id={$row['team1']}")->fetchAll(PDO::FETCH_ASSOC);
         $buttonClass0 = "btn btn-info";

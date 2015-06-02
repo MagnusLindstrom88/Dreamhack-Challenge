@@ -187,7 +187,6 @@ function generateBoxesAccount($game) {
 
 //Outputs the modal HTML code on the page if the user is not logged in with Facebook.
 function createModal() {
-    echo "hello";
     //Edit Account Modal
     echo "
     <div class='modal fade' id='edit-account-modal' tabindex='-1' role='dialog' aria-labelledby='editAccountHeading' aria-hidden='true'>
@@ -201,20 +200,20 @@ function createModal() {
                     <form id='edit-account-form' role='form' method='post'>
                         <div class='form-group'>
                             <label for='registration-email'>Email:</label>
-                            <input type='email' id='registration-email' name='email' class='form-control' maxlength='254'>
+                            <input type='email' id='registration-email' name='email' class='form-control' value='{$_SESSION['email']}' maxlength='254'>
                         </div>
                         <div class='form-group'>
-                            <label for='registration-password'>Password:</label>
+                            <label for='registration-password'>New Password:</label>
                             <input type='password' id='registration-password' name='password' class='form-control' maxlength='255'>
                         </div>
                         <div class='form-group'>
-                            <label for='confirm-password'>Confirm Password:</label>
+                            <label for='confirm-password'>Old Password:</label>
                             <input type='password' id='confirm-password' name='confirm-password' class='form-control' maxlength='255'>
                         </div>
                     </form>
                 </div>
                 <div class='modal-footer'>
-                    <button type='button' class='btn btn-primary' onclick='validateRegistration();'>Confirm</button>
+                    <button type='button' class='btn btn-primary' onclick='validateRegistration();'>Save</button>
                     <button type='button' class='btn btn-default' data-dismiss='modal'>Cancel</button>
                 </div>
             </div>

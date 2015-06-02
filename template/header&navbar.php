@@ -27,9 +27,9 @@
                 <li class="dropdown" id="game-list">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Games<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="csgo.php">Counter-Strike: Global Offensive</a></li>
-                        <li><a href="dota2.php">Dota 2</a></li>
-                        <li><a href="starcraft2.php">Starcraft II</a></li>
+                        <li><a href="game.php?game=CS:GO">Counter-Strike: Global Offensive</a></li>
+                        <li><a href="game.php?game=Dota2">Dota 2</a></li>
+                        <li><a href="game.php?game=SC2">Starcraft II</a></li>
                     </ul>
                 </li>
                 <li><a href="faq.php">FAQ</a></li>
