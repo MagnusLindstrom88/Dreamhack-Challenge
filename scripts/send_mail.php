@@ -30,8 +30,7 @@ $result = json_decode($result, true);
 //If the verification of the captcha was successful.
 if($result['success']) {
 
-    echo "hello world";
-    mail($to, $subject, $body, $from)
+    mail($to, $subject, $body, $from);
 
     echo "Thank you! Your message has been received.";
 }
