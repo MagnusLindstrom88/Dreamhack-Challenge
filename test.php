@@ -37,7 +37,7 @@
 			
 			if ($result->num_rows > 0) {
 			    while($row = $result->fetch_assoc()) {
-			        echo "id: " . $row["users.id"]. " - Name: " . $row["matches.id"]."<br>";
+			        echo "id: " . $row['users.id']. " - Name: " . $row['matches.id']."<br>";
 			    }
 			} else {
 			    echo "0 results";
