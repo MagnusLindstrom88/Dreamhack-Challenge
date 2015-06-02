@@ -160,11 +160,12 @@ function generateBoxesAccount($game) {
     $matches = $db->query("SELECT * FROM matches WHERE winner='undecided' AND game='CS:GO'");
    /*$matches = $db->query("SELECT * FROM matches, bets, users WHERE game={$game} AND matches.id=bets.match_id AND bets.user_id=users.{$_SESSION['id']}");*/
     foreach($matches as $row) {
-    	$teams = $db->query("SELECT * FROM teams WHERE (teams.id={$row['team0']} OR teams.id={$row['team1']}")->fetchALL(PDO::FETCH_ASSOC);
+        $teams = $db->query("SELECT * FROM teams WHERE id={$row['team0']} OR id={$row['team1']}")->fetchAll(PDO::FETCH_ASSOC);
         $buttonClass0 = "btn btn-info";
         $buttonClass1 = "btn btn-info";
         $matchBoxClass = "match-box upcoming";
-
+        
+        //Checks if the user already has a bet for this match and in that case colors the appropriate button.
         if(isset($_SESSION['id'])) {
             $bet = $db->query("SELECT * FROM bets WHERE user_id={$_SESSION['id']} AND match_id={$row['id']} AND (team_id={$teams[0]['id']} OR team_id={$teams[1]['id']})");
         
@@ -177,12 +178,14 @@ function generateBoxesAccount($game) {
             }
         }
         
+        //Style buttons as disabled if the match in ongoing.
         if($row['ongoing']) {
             $matchBoxClass .= "match-box";
             $buttonClass0 .= " disabled";
             $buttonClass1 .= " disabled";
         }
         
+        //Calculate time remaining if not ongoing.
         $timeClass = "";
         if(!$row['ongoing']) {
             $seconds = strtotime($row['played_at']) - time();
@@ -195,12 +198,12 @@ function generateBoxesAccount($game) {
             $timeRemaining = "Time left: $hours:$minutes:$seconds";
         }
         else $timeRemaining = "<strong>Ongoing</strong>";
-        if($teams)
         echo
         "
         <div class='col-md-3 col-sm-6'>
             <div class='{$matchBoxClass}' id='{$row['id']}'>
                 <div class='match-header'>
+                    <h4>Quarter-Finals</h4>
                     <p>{$teams[0]['name']} VS {$teams[1]['name']}</p>
                 </div>
                 <div class='match-logos'>
