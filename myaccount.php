@@ -157,8 +157,7 @@ function uploadImage() {
 
 function generateBoxesAccount($game) {
     global $db;
-    $matches = $db->query("SELECT * FROM matches WHERE winner='undecided' AND game='CS:GO'");
-   /*$matches = $db->query("SELECT * FROM matches, bets, users WHERE game={$game} AND matches.id=bets.match_id AND bets.user_id=users.{$_SESSION['id']}");*/
+    $matches = $db->query("SELECT * FROM matches, bets, users WHERE game={$game} AND matches.id=bets.match_id AND bets.user_id=users.{$_SESSION['id']}");
     foreach($matches as $row) {
         $teams = $db->query("SELECT * FROM teams WHERE id={$row['team0']} OR id={$row['team1']}")->fetchAll(PDO::FETCH_ASSOC);
         $buttonClass0 = "btn btn-info";
