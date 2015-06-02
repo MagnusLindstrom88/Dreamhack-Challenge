@@ -14,7 +14,7 @@
                     
                     echo "
                         <div class='col-md-3 col-sm-6'>
-                            <img src='$image' class='thumbnail img-responsive' style='border:1px solid red; width:250px; height:250px;'>
+                            <img src='$image' class='thumbnail img-responsive'>
                         </div> 
                          ";
                     $counter++;
@@ -24,7 +24,7 @@
                         $counter = 0;
                     }
                 }
-                ?>
+            ?>
         </div>
     </div>
 </body>
