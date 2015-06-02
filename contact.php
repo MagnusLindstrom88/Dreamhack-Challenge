@@ -41,7 +41,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="contact-email">Email:</label>
-                                    <input type="email" id="contact-email" name="email" placeholder="example@domain.com" class="form-control" maxlength="254">
+                                    <input type="email" id="contact-email" name="email" placeholder="example@domain.com" class="form-control" maxlength="254" value="<?php if(isset($_SESSION['email'])) echo $_SESSION['email']; ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="message">Message:</label>
