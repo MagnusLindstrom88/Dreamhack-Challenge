@@ -37,7 +37,7 @@
         <div id="content">
             <div class="container">
                 <h2>Our Supported Games</h2>
-                <p>Welcome to our supported games, click on the icons below to place your bets and watch the streamed matches.</p>
+                <p>Click on one of the images below to place your bets and watch the streamed matches.</p>
                 <div class="row">
                     <div class="col-md-4">
                         <a href="game.php?game=CS:GO"><div class="thumbnail"><img src="images/csgothumbnail.jpg" alt="Counter Strike: Global Offensive thumbnail."/></div></a>

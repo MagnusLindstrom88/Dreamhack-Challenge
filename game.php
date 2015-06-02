@@ -49,22 +49,18 @@
                 <div class="row" style="margin-bottom: 30px;">
                     <div class="col-md-4">
                         <p><b>Quarter</b></p>
-                        <button class="btn btn-lg btn-primary btn-block">Kvarts-match</button>
-                        <button class="btn btn-lg btn-primary btn-block">Kvarts-match</button>
-                        <button class="btn btn-lg btn-primary btn-block">Kvarts-match</button>
-                        <button class="btn btn-lg btn-primary btn-block">Kvarts-match</button>
-                        
+                        <?php generateBracket(); ?>
                     </div>
                     <div class="col-md-4">
                         <p><b>Semi<b/></p>
                         
-                        <button class="btn btn-lg btn-warning btn-block">Semi-match</button>
-                        <button class="btn btn-lg btn-warning btn-block">Semi-match</button>
+                        <button class="btn btn-lg btn-warning btn-block">TBD</button>
+                        <button class="btn btn-lg btn-warning btn-block">TBD</button>
                        
                     </div>
                     <div class="col-md-4">
                         <p><b>Final<b/></p>
-                        <button class="btn btn-lg btn-danger btn-block">Final-match</button>
+                        <button class="btn btn-lg btn-danger btn-block">TBD</button>
                     </div>
                 </div>
             </div>
@@ -124,12 +120,17 @@ function initialize() {
 //Generate a box for each upcoming match for this game in the database.
 function generateBoxes() {
     global $db, $dbGame;
+    $a = array(8);
+    $counter = 0;
     $matches = $db->query("SELECT * FROM matches WHERE winner='undecided' AND game='{$dbGame}'");
     foreach($matches as $row) {
         $teams = $db->query("SELECT * FROM teams WHERE id={$row['team0']} OR id={$row['team1']}")->fetchAll(PDO::FETCH_ASSOC);
         $buttonClass0 = "btn btn-info";
         $buttonClass1 = "btn btn-info";
         $matchBoxClass = "match-box upcoming";
+        
+        $a[$counter++] = $teams[0]['name'];
+        $a[$counter++] = $teams[1]['name'];
         
         //Checks if the user already has a bet for this match and in that case colors the appropriate button.
         if(isset($_SESSION['id'])) {
@@ -183,6 +184,20 @@ function generateBoxes() {
                 <p class='counter' style='margin-top: 10px;'>{$timeRemaining}</p>
             </div>
         </div>
+        ";
+    }
+    $GLOBALS['teams'] = $a;
+}
+
+function generateBracket() {
+    global $teams;
+    $counter = 0;
+    for($i=0;$i<count($teams)/2;$i++) {
+        echo "
+            <button class='btn btn-lg btn-primary btn-block'>
+            <p style='border-bottom: 1px solid black;margin:0;padding-bottom:5px;'>{$teams[$counter++]}</p>
+            <p style=';margin:0;margin-top:5px;'>{$teams[$counter++]}</p>
+            </button>
         ";
     }
 }
