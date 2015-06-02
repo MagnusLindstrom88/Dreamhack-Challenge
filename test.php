@@ -26,7 +26,7 @@
 			    die("Connection failed: " . $conn->connect_error);
 			}
 			
-			$sql = "SELECT users.id, matches.id
+			$sql = "SELECT users.id
 				FROM matches, bets, users
 				WHERE matches.id = bets.match_id
 				AND bets.user_id = users.id
@@ -37,7 +37,7 @@
 			
 			if ($result->num_rows > 0) {
 			    while($row = $result->fetch_assoc()) {
-			        echo "id: " . $row['users.id']. " - Name: " . $row['matches.id']."<br>";
+			        echo "id: " . $row['users.id']. "<br>";
 			    }
 			} else {
 			    echo "0 results";
