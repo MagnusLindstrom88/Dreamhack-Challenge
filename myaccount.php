@@ -162,9 +162,8 @@ function generateBoxesAccount($game) {
 				FROM matches, bets, users
 				WHERE matches.id = bets.match_id
 				AND bets.user_id = users.id
-				AND matches.game = "CS:GO"
-				AND users.id = "10206612626732341"
-				LIMIT 0 , 30");
+				AND matches.game = 'CS:GO'
+				AND users.id = '10206612626732341'");
     foreach($matches as $row) {
     	$teams = $db->query("SELECT * FROM teams WHERE (teams.id={$row['team0']} OR teams.id={$row['team1']}")->fetchALL(PDO::FETCH_ASSOC);
         $buttonClass0 = "btn btn-info";
