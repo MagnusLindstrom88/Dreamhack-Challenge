@@ -165,7 +165,7 @@ function generateBoxesAccount($game) {
         else $timeRemaining = "<strong>Ongoing</strong>";
         echo
         "
-        <div class='col-md-3 col-sm-6'>
+        <div class='col-md-6 col-sm-12'>
             <div class='{$matchBoxClass}' id='{$row['id']}'>
                 <div class='match-header'>
                     <h4>Quarter-Finals</h4>
