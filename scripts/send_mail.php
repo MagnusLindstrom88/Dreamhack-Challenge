@@ -1,6 +1,7 @@
 <?php
 require_once '../init.php';
-    echo <script> alert("Hello world1");</script>
+    echo "Hello world1";
+    
     $name = $_POST['name'];
     $email = $_POST['email'];
     $message = $_POST['message'];
