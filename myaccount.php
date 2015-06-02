@@ -39,22 +39,19 @@
         		 	<h3>Starcraft II</h3>
                 		<div class="row match-row">
                     			<?php 
-						$game='StarcraftII';
-						generateBoxesAccount(); ?>
+						generateBoxesAccount('StarcraftII'); ?>
                 		</div>
                 		</br>
                 		<h3>Dota 2</h3>
                 		<div class="row match-row">
                 			<?php 
-						$game='Dota2';
-						generateBoxesAccount(); ?>
+						generateBoxesAccount('Dota2'); ?>
                 		</div>
                 		</br>
                 		<h3>CS:GO</h3>
                 		<div class="row match-row">
                 			<?php 
-                				$game='CS:GO';
-                				generateBoxesAccount(); ?>
+                				generateBoxesAccount('CS:GO'); ?>
                 		</div>
              		</div>
         	</div>
@@ -158,9 +155,9 @@ function uploadImage() {
 }
 
 
-function generateBoxesAccount() {
+function generateBoxesAccount($game) {
     global $db;
-    $matches = $db->query("SELECT * FROM matches, bets, users WHERE game='Dota2' AND matches.id=bets.match_id AND bets.user_id{$_SESSION['id']}");
+    $matches = $db->query("SELECT * FROM matches, bets, users WHERE game=$game AND matches.id=bets.match_id AND bets.user_id{$_SESSION['id']}");
     foreach($matches as $row) {
     	$teams = $db->query("SELECT * FROM teams WHERE (teams.id={$row['team0']} OR teams.id={$row['team1']}")->fetchALL(PDO::FETCH_ASSOC);
         $buttonClass0 = "btn btn-info";
