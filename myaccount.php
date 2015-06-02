@@ -157,26 +157,7 @@ function uploadImage() {
 
 function generateBoxesAccount($game) {
     global $db;
-    $servername = "mysql.dsv.su.se";
-			$username = "sewa2700";
-			$password = "eequishusaiz";
-			$dbname = "sewa2700";
-			
-			// Create connection
-			$conn = new mysqli($servername, $username, $password, $dbname);
-			// Check connection
-			if ($conn->connect_error) {
-			    die("Connection failed: " . $conn->connect_error);
-			}
-    /*$matches = $db->query("SELECT * FROM matches, bets, users WHERE game='Dota2' AND matches.id=bets.match_id AND bets.user_id=users.{$_SESSION['id']}");*/
-    $sql = "SELECT users.id AS usersid
-				FROM matches, bets, users
-				WHERE matches.id = bets.match_id
-				AND bets.user_id = users.id
-				AND matches.game = 'CS:GO'
-				";
-				
-    $result = $conn->query($sql);
+    $matches = $db->query("SELECT * FROM matches, bets, users WHERE game='Dota2' AND matches.id=bets.match_id AND bets.user_id=users.{$_SESSION['id']}");
     foreach($result as $row) {
         $teams = $db->query("SELECT * FROM teams WHERE id={$row['team0']} OR id={$row['team1']}")->fetchAll(PDO::FETCH_ASSOC);
         $buttonClass0 = "btn btn-info";
