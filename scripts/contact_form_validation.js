@@ -4,7 +4,7 @@ function validateForm() {
     var name = document.getElementById("name");
     var email = document.getElementById("contact-email");
     var message = document.getElementById("message");
-    var captcha = grecaptcha.getResponse("recaptcha2");
+    var captcha = grecaptcha.getResponse();
     var textFields = [name, email, message];  //Put data into an array to enable iteration.
     
     alert("Hello world2");
