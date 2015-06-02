@@ -1,33 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php require_once 'template/contact_head.php'; ?>
+    <?php require_once 'template/head.php'; ?>
     <style>
         #contact-modal {color: black;}
         #contact-heading {margin-bottom: 20px;}
         #message {resize: none;}
     </style>
-    <script>
-      var recaptcha1;
-      var recaptcha2;
-      var multipleCaptcha = function() {
-        //Render the recaptcha1 on the element with ID "recaptcha1"
-        recaptcha1 = grecaptcha.render('recaptcha1', {
-          'sitekey' : '6LfzwQYTAAAAAGRb0kllCxB2qV3Jh-qPRcsU806x', 
-          'theme' : 'light'
-        });
-        
-        //Render the recaptcha2 on the element with ID "recaptcha2"
-        recaptcha2 = grecaptcha.render('recaptcha2', {
-          'sitekey' : '6LfzwQYTAAAAAGRb0kllCxB2qV3Jh-qPRcsU806x', 
-          'theme' : 'light'
-        });
-      };
-    </script>
+
 </head>
 <body>
     <div id="wrapper">
-        <?php require_once 'template/contact_header&navbar.php'; ?>
+        <?php require_once 'template/header&navbar.php'; ?>
         <div class="container">
             
             <h1 id="contact-heading">Contact information</h1>
@@ -76,7 +60,6 @@
         </div>
         <?php require_once 'template/footer.php'; ?>
     </div>
-
 
 </body>
     <!-- Contains code to validate data sent with the contact form. Passes the data on to the server if the validation is passed. -->

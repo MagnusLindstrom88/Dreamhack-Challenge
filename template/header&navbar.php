@@ -113,7 +113,7 @@
             <div class="checkbox">
                 <label><input type="checkbox" id="tos-checkbox"> I accept the <a href="#">terms of service</a>.</label>
             </div>
-            <div class="g-recaptcha" data-sitekey="6LfzwQYTAAAAAGRb0kllCxB2qV3Jh-qPRcsU806x"></div>
+            <div id="recaptcha1"></div>
         </form>
       </div>
       <div class="modal-footer">
@@ -126,7 +126,7 @@
 
 <!-- Code to handle menu highlighting. -->
 <script>
-    //Get name of the current page's name and compare it to the href attributes of the left menu fields. Highlights the field that matches.
+    //Get name of the current page and compare it to the href attributes of the left menu fields. Highlights the field that matches.
     var pageName = document.URL.split("/");
     pageName = pageName[pageName.length-1];
     var links = $("#menu-fields a");
@@ -151,6 +151,25 @@
         xmlHttp.open("GET", "scripts/login&registration/logout.php");
         xmlHttp.send();
     }
+</script>
+
+<!-- Needed to make it possible to have multiple recaptchas on the contact page. -->
+<script>
+  var recaptcha1;
+  var recaptcha2;
+  var multipleCaptcha = function() {
+    //Render the recaptcha1 on the element with ID "recaptcha1"
+    recaptcha1 = grecaptcha.render('recaptcha1', {
+      'sitekey' : '6LfzwQYTAAAAAGRb0kllCxB2qV3Jh-qPRcsU806x', 
+      'theme' : 'light'
+    });
+    
+    //Render the recaptcha2 on the element with ID "recaptcha2"
+    recaptcha2 = grecaptcha.render('recaptcha2', {
+      'sitekey' : '6LfzwQYTAAAAAGRb0kllCxB2qV3Jh-qPRcsU806x', 
+      'theme' : 'light'
+    });
+  };
 </script>
 
 <!-- Contains some functions related to the creation and removal of error messages. Used by both the login- and registration validation scripts. -->
