@@ -55,7 +55,7 @@
 
 <?php
 function createBox() {
-
+	echo "test";
     foreach($result as $row) {
         $teams = $db->query("SELECT * FROM teams WHERE id={$row['team0']} OR id={$row['team1']}")->fetchAll(PDO::FETCH_ASSOC);
         $buttonClass0 = "btn btn-info";
