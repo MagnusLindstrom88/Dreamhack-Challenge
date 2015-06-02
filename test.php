@@ -48,10 +48,11 @@
         </div>      	
   </div>
 
-  // echo "MatchID : " . $row['matchid']. " - UserID : " . $row['userid']. " - Game : " . $row['game']. "<br>";
-  ?>
+
 </body>
   <?php require_once 'template/footer.php'; 
+    // echo "MatchID : " . $row['matchid']. " - UserID : " . $row['userid']. " - Game : " . $row['game']. "<br>";
+  ?>
 </html>
 
 <?php
