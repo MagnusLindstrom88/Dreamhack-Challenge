@@ -26,18 +26,19 @@
 			    die("Connection failed: " . $conn->connect_error);
 			}
 			
-			$sql = "SELECT users.id AS usersid
+			$sql = "SELECT users.id AS userid, matches.id AS matchid, matches.game AS game
 				FROM matches, bets, users
 				WHERE matches.id = bets.match_id
 				AND bets.user_id = users.id
 				AND matches.game = 'CS:GO'
+				AND users.id ='$_SESSION['id']
 				";
 				
 			$result = $conn->query($sql);
 			
 			if ($result->num_rows > 0) {
 			    while($row = $result->fetch_assoc()) {
-			        echo "id: " . $row['usersid']. "<br>";
+			        echo "MatchID : " . $row['matchid']. " - UserID : " . $row['userid']. " - Game : " . $row['game']. "<br>";
 			    }
 			} else {
 			    echo "0 results";
