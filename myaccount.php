@@ -155,11 +155,9 @@ function uploadImage() {
 
 function generateBoxesAccount() {
     global $db;
-    $matches = $db->query("SELECT * FROM matches WHERE game='Dota2'");
+    $matches = $db->query("SELECT * FROM matches, bets, user WHERE game='Dota2' AND matches.id=bets.match_id AND bets.user_id=users.id");
     foreach($matches as $row) {
-    	$teams = $db->query("SELECT * FROM teams, bets, matches WHERE (teams.id={$row['team0']} OR teams.id={$row['team1']}) 
-					AND matches.id=match_id 
-					AND bets.user_id={$_SESSION['id']}")->fetchALL(PDO::FETCH_ASSOC);
+    	$teams = $db->query("SELECT * FROM teams WHERE (teams.id={$row['team0']} OR teams.id={$row['team1']})->fetchALL(PDO::FETCH_ASSOC);
     	/*$teams = $db->query("SELECT * FROM teams WHERE id={$row['team0']} OR id={$row['team1']}")->fetchAll(PDO::FETCH_ASSOC);*/
         /*$teams = $db->query("SELECT * FROM bets WHERE user_id={$_SESSION['id']}")->fetchAll(PDO::FETCH_ASSOC);*/
         $buttonClass0 = "btn btn-info";
@@ -196,6 +194,7 @@ function generateBoxesAccount() {
             $timeRemaining = "Time left: $hours:$minutes:$seconds";
         }
         else $timeRemaining = "<strong>Ongoing</strong>";
+        if($teams)
         echo
         "
         <div class='col-md-3 col-sm-6'>
