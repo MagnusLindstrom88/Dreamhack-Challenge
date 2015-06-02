@@ -27,15 +27,15 @@ function validateForm() {
         error.appendChild(document.createTextNode("This box has to be checked."));
         document.getElementById("contact-form").insertBefore(error, document.getElementsByClassName("g-recaptcha")[0]);
     }
-    
+    alert("hello world1");
     var xmlHttp = new XMLHttpRequest();
     //Check if the validation was passed.
     if($("#contact-form .error-message").size() === 0) {
-        alert("hello world1");
+        alert("hello world2");
         xmlHttp.open("POST", "scripts/send_mail.php");
         xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
         xmlHttp.send("name="+name.value+"&email="+email.value+"&message="+message.value+"&g-recaptcha-response="+captcha);
-        alert("hello world2");
+        alert("hello world3");
 
     }
     else removeErrorsOnFocus();
