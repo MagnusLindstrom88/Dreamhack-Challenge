@@ -26,7 +26,7 @@
 			    die("Connection failed: " . $conn->connect_error);
 			}
 			
-			$sql = "SELECT *
+			$sql = "SELECT users.id, matches.id
 				FROM matches, bets, users
 				WHERE matches.id = bets.match_id
 				AND bets.user_id = users.id
