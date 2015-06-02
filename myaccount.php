@@ -4,7 +4,7 @@
     <?php require_once 'template/head.php'; ?>
     <?php if(!isset($_SESSION['id'])) header("location: index.php"); ?>
     <style>
-        #edit-account-modal {color: black;}
+        #edit-account-modal {color: black;} 
     </style>
 </head>
 <body>
