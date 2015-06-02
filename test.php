@@ -55,11 +55,53 @@
 
 <?php
 function createBox() {
+    global $db;
+    $matches = $db->query("SELECT * FROM matches WHERE winner='undecided' AND game='CS:GO'");
+    foreach($matches as $row) {
+        $teams = $db->query("SELECT * FROM teams WHERE id={$row['team0']} OR id={$row['team1']}")->fetchAll(PDO::FETCH_ASSOC);
+        $buttonClass0 = "btn btn-info";
+        $buttonClass1 = "btn btn-info";
+        $matchBoxClass = "match-box upcoming";
+        
+        //Checks if the user already has a bet for this match and in that case colors the appropriate button.
+        if(isset($_SESSION['id'])) {
+            $bet = $db->query("SELECT * FROM bets WHERE user_id={$_SESSION['id']} AND match_id={$row['id']} AND (team_id={$teams[0]['id']} OR team_id={$teams[1]['id']})");
+        
+            if($bet->rowCount() > 0) {
+                $bet = $bet->fetchAll(PDO::FETCH_ASSOC);
+                if($bet[0]['team_id'] === $teams[0]['id'])
+                    $buttonClass0 = str_replace("btn-info", "btn-success", $buttonClass0);
+                else if($bet[0]['team_id'] === $teams[1]['id'])
+                    $buttonClass1 = str_replace("btn-info", "btn-success", $buttonClass1);
+            }
+        }
+        
+        //Style buttons as disabled if the match in ongoing.
+        if($row['ongoing']) {
+            $matchBoxClass .= "match-box";
+            $buttonClass0 .= " disabled";
+            $buttonClass1 .= " disabled";
+        }
+        
+        //Calculate time remaining if not ongoing.
+        $timeClass = "";
+        if(!$row['ongoing']) {
+            $seconds = strtotime($row['played_at']) - time();
+            $hours = floor($seconds / 3600);
+            $seconds %= 3600;
+            $minutes = floor($seconds / 60);
+            if(strlen($minutes) === 1) $minutes = "0".$minutes;
+            $seconds %= 60;
+            if(strlen($seconds) === 1) $seconds = "0".$seconds;
+            $timeRemaining = "Time left: $hours:$minutes:$seconds";
+        }
+        else $timeRemaining = "<strong>Ongoing</strong>";
         echo
         "
         <div class='col-md-3 col-sm-6'>
-            <div class='{$matchBoxClass}' id='{$row['matchid']}'>
+            <div class='{$matchBoxClass}' id='{$row['id']}'>
                 <div class='match-header'>
+                    <h4>Quarter-Finals</h4>
                     <p>{$teams[0]['name']} VS {$teams[1]['name']}</p>
                 </div>
                 <div class='match-logos'>
@@ -73,5 +115,6 @@ function createBox() {
             </div>
         </div>
         ";
+    }
 }
 ?>
