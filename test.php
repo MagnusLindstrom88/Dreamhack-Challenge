@@ -37,7 +37,7 @@
 			
 			if ($result->num_rows > 0) {
 			    while($row = $result->fetch_assoc()) {
-			       createBox("Dota2");
+			       createBox("SC2");
 			    }
 			} else {
 			    echo "0 results";
