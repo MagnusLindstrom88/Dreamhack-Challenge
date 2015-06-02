@@ -17,7 +17,7 @@
                     echo "
                         <div class='col-md-3 col-sm-6'>
                             <img src='$image' class='thumbnail img-responsive' style='margin-bottom:5px;'>
-                            <p style='text-align:center;'>{$username[0]['username']}</p>
+                            <p style='text-align:center;font-weight:bold;'>{$username[0]['username']}</p>
                         </div> 
                          ";
                     $counter++;

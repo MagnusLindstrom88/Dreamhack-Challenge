@@ -15,5 +15,5 @@ else $data = $ps2->fetchAll(PDO::FETCH_ASSOC);
 if($data[0]['password'] === crypt($password, $data[0]['password'])) {
     $_SESSION['id'] = $data[0]['id'];
     $_SESSION['username'] = $data[0]['username'];
-    $_SESSION['profile_pic'] = $data[0]['profile_pic'];
+    $_SESSION['email'] = $data[0]['email'];
 }

@@ -38,20 +38,17 @@
 			 <div class="col-md-12">
         		 	<h3>Starcraft II</h3>
                 		<div class="row match-row">
-                    			<?php 
-						generateBoxesAccount('Starcraft'); ?>
+                    		    <?php generateBoxesAccount('Starcraft'); ?>
                 		</div>
-                		</br>
+                		<br>
                 		<h3>Dota 2</h3>
                 		<div class="row match-row">
-                			<?php 
-						generateBoxesAccount('Dota2'); ?>
+                		    <?php generateBoxesAccount('Dota2'); ?>
                 		</div>
-                		</br>
+                		<br>
                 		<h3>CS:GO</h3>
                 		<div class="row match-row">
-                			<?php 
-                				generateBoxesAccount('CS:GO'); ?>
+                		    <?php generateBoxesAccount('CS:GO'); ?>
                 		</div>
              		</div>
         	</div>
@@ -60,41 +57,10 @@
            </div>
 	</div>
     </div>
-	
-    </div>
-
-    <!--Edit Account Modal-->
-    <div class="modal fade" id="edit-account-modal" tabindex="-1" role="dialog" aria-labelledby="editAccountHeading" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 id="registrationHeading" class="modal-title">Edit Account Information</h4>
-                </div>
-                <div class="modal-body">
-                    <form id="edit-account-form" role="form" method="post">
-                        <div class="form-group">
-                            <label for="registration-email">Email:</label>
-                            <input type="email" id="registration-email" name="email" class="form-control" maxlength="254">
-                        </div>
-                        <div class="form-group">
-                            <label for="registration-password">Password:</label>
-                            <input type="password" id="registration-password" name="password" class="form-control" maxlength="255">
-                        </div>
-                        <div class="form-group">
-                            <label for="confirm-password">Confirm Password:</label>
-                            <input type="password" id="confirm-password" name="confirm-password" class="form-control" maxlength="255">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" onclick="validateRegistration();">Confirm</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <?php if(isset($fileUploaded)) echo "<script>alert('{$echoString}')</script>"; ?>
+    <?php
+    if(isset($_SESSION['email'])) createModal();  //Create modal if not a Facebook user.
+    if(isset($fileUploaded)) echo "<script>alert('{$echoString}')</script>";
+    ?>
 </body>
 </html>
 
@@ -156,9 +122,9 @@ function uploadImage() {
 
 
 function generateBoxesAccount($game) {
-    global $db;
-    $matches = $db->query("SELECT * FROM matches, bets, users WHERE game={$game} AND matches.id=bets.match_id AND bets.user_id=users.{$_SESSION['id']}");
-    foreach($result as $row) {
+    /*global $db;
+    $matches = $db->query("SELECT * FROM matches, bets, users WHERE game='{$game}' AND matches.id=bets.match_id AND bets.user_id={$_SESSION['id']}");
+    foreach($matches as $row) {
         $teams = $db->query("SELECT * FROM teams WHERE id={$row['team0']} OR id={$row['team1']}")->fetchAll(PDO::FETCH_ASSOC);
         $buttonClass0 = "btn btn-info";
         $buttonClass1 = "btn btn-info";
@@ -216,6 +182,43 @@ function generateBoxesAccount($game) {
             </div>
         </div>
         ";
-    }
+    }*/
+}
+
+//Outputs the modal HTML code on the page if the user is not logged in with Facebook.
+function createModal() {
+    echo "hello";
+    //Edit Account Modal
+    echo "
+    <div class='modal fade' id='edit-account-modal' tabindex='-1' role='dialog' aria-labelledby='editAccountHeading' aria-hidden='true'>
+        <div class='modal-dialog'>
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                    <h4 id='registrationHeading' class='modal-title'>Edit Account Information</h4>
+                </div>
+                <div class='modal-body'>
+                    <form id='edit-account-form' role='form' method='post'>
+                        <div class='form-group'>
+                            <label for='registration-email'>Email:</label>
+                            <input type='email' id='registration-email' name='email' class='form-control' maxlength='254'>
+                        </div>
+                        <div class='form-group'>
+                            <label for='registration-password'>Password:</label>
+                            <input type='password' id='registration-password' name='password' class='form-control' maxlength='255'>
+                        </div>
+                        <div class='form-group'>
+                            <label for='confirm-password'>Confirm Password:</label>
+                            <input type='password' id='confirm-password' name='confirm-password' class='form-control' maxlength='255'>
+                        </div>
+                    </form>
+                </div>
+                <div class='modal-footer'>
+                    <button type='button' class='btn btn-primary' onclick='validateRegistration();'>Confirm</button>
+                    <button type='button' class='btn btn-default' data-dismiss='modal'>Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>";
 }
 ?>

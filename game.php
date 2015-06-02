@@ -8,7 +8,6 @@
         }
     </style>
 </head>
-<?php initialize(); ?>
 <body>
     <div id="wrapper">
         <?php require_once 'template/header&navbar.php'; ?>
@@ -106,10 +105,6 @@
 </html>
 
 <?php
-function initialize() {
-    
-}
-
 //Generate a box for each upcoming match for this game in the database.
 function generateBoxes() {
     global $db;
