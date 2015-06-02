@@ -31,7 +31,8 @@ function validateForm() {
     var xmlHttp = new XMLHttpRequest();
     //Check if the validation was passed.
     if($("#contact-form .error-message").size() === 0) {
-        
+        //Use AJAX to handle the registration server-side without reloading the page.
+        location.reload();
         xmlHttp.open("POST", "scripts/send_mail.php");
         xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
         xmlHttp.send("name="+name.value+"&email="+email.value+"&message="+message.value+"&g-recaptcha-response="+captcha);
