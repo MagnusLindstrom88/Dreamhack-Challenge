@@ -26,7 +26,12 @@
 			    <input type='file' name='fileToUpload' id='fileToUpload'>
 			    <input type='submit' style="color:black" value='Upload Image'>
 			</form>
-			<button class="btn btn-default" style="margin-top:10px;" data-toggle="modal" data-target="#edit-account-modal" onclick="cleanForms()">Edit Account Information...</button>
+			<?php
+                            //Do not show "Edit Account Information" button to Facebook users.
+                            $result = $db->query("SELECT password FROM users WHERE id={$_SESSION['id']}")->fetchAll(PDO::FETCH_ASSOC);
+                            if($result[0]['password'] !== null)
+                                echo "<button class='btn btn-default' style='margin-top:10px;' data-toggle='modal' data-target='#edit-account-modal' onclick='cleanForms()'>Edit Account Information...</button>";
+                        ?>
 		    </div>
 		    <div class="col-md-6">
 			<h3>Betting History</h3>
