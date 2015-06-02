@@ -158,8 +158,6 @@ function generateBoxesAccount() {
     $matches = $db->query("SELECT * FROM matches, bets, user WHERE game='Dota2' AND matches.id=bets.match_id AND bets.user_id=users.id");
     foreach($matches as $row) {
     	$teams = $db->query("SELECT * FROM teams WHERE (teams.id={$row['team0']} OR teams.id={$row['team1']})->fetchALL(PDO::FETCH_ASSOC);
-    	/*$teams = $db->query("SELECT * FROM teams WHERE id={$row['team0']} OR id={$row['team1']}")->fetchAll(PDO::FETCH_ASSOC);*/
-        /*$teams = $db->query("SELECT * FROM bets WHERE user_id={$_SESSION['id']}")->fetchAll(PDO::FETCH_ASSOC);*/
         $buttonClass0 = "btn btn-info";
         $buttonClass1 = "btn btn-info";
         $matchBoxClass = "match-box-account";
