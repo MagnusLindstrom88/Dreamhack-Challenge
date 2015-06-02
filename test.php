@@ -30,7 +30,6 @@
 				FROM matches, bets, users
 				WHERE matches.id = bets.match_id
 				AND bets.user_id = users.id
-				AND matches.game = 'CS:GO'
 				AND users.id ='".$_SESSION['id']."'
 				";
 				
