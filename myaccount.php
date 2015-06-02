@@ -161,7 +161,7 @@ function generateBoxesAccount() {
         /*$teams = $db->query("SELECT * FROM bets WHERE user_id={$_SESSION['id']}")->fetchAll(PDO::FETCH_ASSOC);*/
         $buttonClass0 = "btn btn-info";
         $buttonClass1 = "btn btn-info";
-        $matchBoxClass = "match-box upcoming";
+        $matchBoxClass = "match-box-account";
 
         if(isset($_SESSION['id'])) {
             $bet = $db->query("SELECT * FROM bets WHERE user_id={$_SESSION['id']} AND match_id={$row['id']} AND (team_id={$teams[0]['id']} OR team_id={$teams[1]['id']})");
