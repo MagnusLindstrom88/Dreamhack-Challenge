@@ -11,6 +11,7 @@
     <?php require_once 'template/header&navbar.php'; ?>
     <div id="wrapper">
 	<div class="container">
+	<?php
 	global $db;
 	$matches = $db->query(	"SELECT *
 				FROM matches, bets, users
@@ -22,6 +23,7 @@
     	foreach($matches as $row) {
      		echo $row[users.id];
 	}
+	?>
         </div>      	
   </div>
   <?php require_once 'template/footer.php'; ?>
