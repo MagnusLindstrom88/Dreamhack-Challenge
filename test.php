@@ -12,8 +12,7 @@
     <div id="wrapper">
 	<div class="container">
 			<?php generateBoxesAccount(); ?>
-           </div>      	
-        
+        </div>      	
   </div>
   <?php require_once 'template/footer.php'; ?>
 </body>
@@ -30,7 +29,7 @@ function generateBoxesAccount() {
 				AND users.id = "10206612626732341"
 				LIMIT 0 , 30");
     foreach($matches as $row) {
-     echo $row;
+     echo $row[users.id];
     }
 }
 ?>
