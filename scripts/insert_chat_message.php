@@ -5,7 +5,7 @@ if(isset($_SESSION['username'])) {
     $message = trim($_POST['message']);
     if(strlen($message) > 0) {
         $message = htmlspecialchars($message);
-        if(file_exists("images/profilepictures/{$_SESSION['id']}.jpg"))
+        if(file_exists("../images/profilepictures/{$_SESSION['id']}.jpg"))
             $profilePic = "<img src='images/profilepictures/{$_SESSION['id']}.jpg' style='width:20px;margin-right:2px;'>";
         
         $teamicon = "";
