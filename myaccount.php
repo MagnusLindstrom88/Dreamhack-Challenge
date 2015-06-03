@@ -65,6 +65,29 @@
     if(isset($fileUploaded)) echo "<script>alert('{$echoString}')</script>";
     ?>
 </body>
+<script>
+    setInterval(updateCounters, 1000);
+    function updateCounters() {
+        var matchBoxes = $(".upcoming");
+        queryString = "";
+        matchBoxes.each(function() {
+            queryString += "-"+this.getAttribute("id");
+        });
+        queryString = queryString.slice(1);
+        
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.onload = function() {
+            var updatedCounters = xmlHttp.responseText.split("_");
+            var counter = 0;
+            matchBoxes.each(function() {
+                this.querySelector(".counter").innerHTML = updatedCounters[counter];
+                counter++;
+            });
+        }
+        xmlHttp.open("GET", "scripts/get_time_left.php?matches="+queryString);
+        xmlHttp.send();
+    }
+</script>
 </html>
 
 <?php

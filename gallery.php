@@ -16,7 +16,7 @@
                     
                     echo "
                         <div class='col-md-3 col-sm-6'>
-                            <img src='$image' class='thumbnail img-responsive' style='margin-bottom:5px;'>
+                            <img src='$image' class='thumbnail img-responsive' style='margin-bottom:5px; height:300px; width:300px;' >
                             <p style='text-align:center;font-weight:bold;'>{$username[0]['username']}</p>
                         </div> 
                          ";
