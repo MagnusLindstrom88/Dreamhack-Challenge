@@ -139,9 +139,10 @@ function generateBoxesAccount($game) {
             if($bet->rowCount() > 0) {
                 $bet = $bet->fetchAll(PDO::FETCH_ASSOC);
                 if($bet[0]['team_id'] === $teams[0]['id'])
-                    $buttonClass0 = str_replace("btn-info", "btn-success", $buttonClass0);
+                    $buttonClass0 = "btn-success";
                 else if($bet[0]['team_id'] === $teams[1]['id'])
-                    $buttonClass1 = str_replace("btn-info", "btn-success", $buttonClass1);
+                    //$buttonClass1 = str_replace("btn-info", "btn-success", $buttonClass1);
+                    $buttonClass1 = "btn-success";
             }
         }
         
