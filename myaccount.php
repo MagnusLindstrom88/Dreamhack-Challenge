@@ -4,7 +4,10 @@
     <?php require_once 'template/head.php'; ?>
     <?php if(!isset($_SESSION['id'])) header("location: index.php"); ?>
     <style>
-        #edit-account-modal {color: black;} 
+        #edit-account-modal {color: black;}
+        .match-logos {height: 50px;}
+        .team-logo {width: 30px;}
+        .versus {width:15px;}
     </style>
 </head>
 <body>
@@ -166,13 +169,13 @@ function generateBoxesAccount($game) {
         "
         <div class='col-md-6 col-sm-12'>
             <div class='{$matchBoxClass}' id='{$row['id']}'>
-                <div class='match-header-account'>
+                <div class='match-header'>
                     <p>{$teams[0]['name']} VS {$teams[1]['name']}</p>
                 </div>
-                <div class='match-logos-account'>
-                    <img class='team-logo-account' src='images/teamlogos/{$teams[0]['abbreviation']}.png' alt=\"{$teams[0]['name']}'s logotype.\"/>
-                    <img class='versus-account' src='images/vs.png' alt='Versus.'/>
-                    <img class='team-logo-account' src='images/teamlogos/{$teams[1]['abbreviation']}.png' alt=\"{$teams[1]['name']}'s logotype.\"/>
+                <div class='match-logos'>
+                    <img class='team-logo' src='images/teamlogos/{$teams[0]['abbreviation']}.png' alt=\"{$teams[0]['name']}'s logotype.\"/>
+                    <img class='versus' src='images/vs.png' alt='Versus.'/>
+                    <img class='team-logo' src='images/teamlogos/{$teams[1]['abbreviation']}.png' alt=\"{$teams[1]['name']}'s logotype.\"/>
                 </div>
                 <button class='{$buttonClass0}' id='{$teams[0]['id']}' onclick='makeBet(this)' style='margin-right: 5px;'>Bet {$teams[0]['abbreviation']}</button>
                 <button class='{$buttonClass1}' id='{$teams[1]['id']}' onclick='makeBet(this)' style='margin-left: 5px;'>Bet {$teams[1]['abbreviation']}</button>
