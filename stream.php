@@ -169,7 +169,7 @@ function initialize() {
     switch($_GET['game']) {
 	case "CS:GO":
 	    $game = "CS:GO";
-	    $GLOBALS['stream'] = "fragbitelive";
+	    $GLOBALS['stream'] = "meclipse";
 	    break;
 	case "Dota2":
 	    $game = "Dota 2";
