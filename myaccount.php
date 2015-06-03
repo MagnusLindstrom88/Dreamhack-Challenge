@@ -37,7 +37,7 @@
                         ?>
 		    </div>
 		    <div class="col-md-6">
-			<h3>Betting History</h3>
+			<h3>Betting History - 0 Points</h3>
 			 <div class="col-md-12">
         		 	<h3>Starcraft II</h3>
                 		<div class="row match-row">
@@ -192,7 +192,7 @@ function generateBoxesAccount($game) {
         "
         <div class='col-md-6 col-sm-12'>
             <div class='{$matchBoxClass}' id='{$row['id']}'>
-                <div class='match-header'>
+                <div class='match-header' style='margin-top:8px;'>
                     <p>{$teams[0]['name']} VS {$teams[1]['name']}</p>
                 </div>
                 <div class='match-logos'>
