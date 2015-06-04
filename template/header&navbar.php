@@ -82,44 +82,13 @@ if(!isset($_SESSION['id'])) generateModals();
     function logout() {
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.onload = function() {location.reload()}
-        xmlHttp.open("GET", "scripts/login&registration/logout.php");
+        xmlHttp.open('GET', 'scripts/login&registration/logout.php');
         xmlHttp.send();
     }
 </script>
 
-<!-- Needed to make it possible to have multiple recaptchas on the contact page. -->
-<script>
-  var recaptcha1;
-  var recaptcha2;
-  var multipleCaptcha = function() {
-    //Render the recaptcha1 on the element with ID "recaptcha1"
-    recaptcha1 = grecaptcha.render('recaptcha1', {
-      'sitekey' : '6LfzwQYTAAAAAGRb0kllCxB2qV3Jh-qPRcsU806x', 
-      'theme' : 'light'
-    });
-    
-    //Render the recaptcha2 on the element with ID "recaptcha2"
-    recaptcha2 = grecaptcha.render('recaptcha2', {
-      'sitekey' : '6LfzwQYTAAAAAGRb0kllCxB2qV3Jh-qPRcsU806x', 
-      'theme' : 'light'
-    });
-  };
-</script>
-
-<!-- Contains some functions related to the creation and removal of error messages. Used by both the login- and registration validation scripts. -->
-<script src="scripts/login&registration/error_functions.js"></script>
-
-<!-- Contains code to validate data sent with the login form. Passes the data on to the server if the validation is passed. -->
-<script src="scripts/login&registration/login_validation.js"></script>
-
-<!-- Contains code to validate data sent with the registration form. Passes the data on to the server if the validation is passed. -->
-<script src="scripts/login&registration/registration_validation.js"></script>
-
-<!-- sdasd -->
-<script src="scripts/bet_functions.js"></script>
-
 <?php
-//Creates the login- and registration modals. Only called if the user is not logged in.
+//Creates the login- and registration modals, and links to the scripts that provide their functionality. Only called if the user is not logged in.
 function generateModals() {
     echo "
         <!--Login Modal-->
@@ -193,6 +162,30 @@ function generateModals() {
             </div>
           </div>
         </div>
+        
+        <!-- Render captcha. -->
+        <script>
+          var recaptcha1;
+          var multipleCaptcha = function() {
+            //Render the recaptcha1 on the element with ID recaptcha1'
+            recaptcha1 = grecaptcha.render('recaptcha1', {
+              'sitekey' : '6LfzwQYTAAAAAGRb0kllCxB2qV3Jh-qPRcsU806x', 
+              'theme' : 'light'
+            });
+          };
+        </script>
+        
+        <!-- Contains some functions related to the creation and removal of error messages. Used by both the login- and registration validation scripts. -->
+        <script src='scripts/error_functions.js'></script>
+        
+        <!-- Contains code to validate data sent with the login form. Passes the data on to the server if the validation is passed. -->
+        <script src='scripts/login&registration/login_validation.js'></script>
+        
+        <!-- Contains code to validate data sent with the registration form. Passes the data on to the server if the validation is passed. -->
+        <script src='scripts/login&registration/registration_validation.js'></script>
+        
+        <!-- Contains a function that will make an AJAX request when a bet is made. -->
+        <script src='scripts/make_bet.js'></script>
     ";
 }
 ?>

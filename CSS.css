@@ -10,8 +10,13 @@ header {
 }
 #header-wrapper {background-color: #242424;}
 
-#navbar {margin-bottom: 0px;}
-#login-modal, #registration-modal {color: black;}
+#navbar {
+    margin-bottom: 0px;
+}
+
+#login-modal, #registration-modal {
+    color: black;
+}
 
 #content {
     height: 100%;
@@ -35,8 +40,7 @@ footer {
     position:relative;
 }
 
-
-/*--FOR GAME SECTIONS--*/
+/* Used by game.php and myaccount.php */
 #section-image-container {background-size: 100% 100%;}
 #section-logo {
     display:block;

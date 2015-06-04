@@ -7,7 +7,6 @@
         #contact-heading {margin-bottom: 20px;}
         #message {resize: none;}
     </style>
-
 </head>
 <body>
     <div id="wrapper">
@@ -25,7 +24,6 @@
             </div>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#contact-modal" data-whatever="">Send us a message</button>
 
-            
             <div class="modal fade" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="contactHeading" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -62,6 +60,21 @@
     </div>
 
 </body>
+    <!-- Needed to make it possible to have multiple recaptchas on one page. -->
+    <script>
+      var recaptcha2;
+      var multipleCaptcha = function() {
+        //Render the recaptcha2 on the element with ID "recaptcha2"
+        recaptcha2 = grecaptcha.render('recaptcha2', {
+          'sitekey' : '6LfzwQYTAAAAAGRb0kllCxB2qV3Jh-qPRcsU806x', 
+          'theme' : 'light'
+        });
+      };
+    </script>
+    
+    <!-- Contains functions used by the contact form validation script. -->
+    <script src='scripts/error_functions.js'></script>
+    
     <!-- Contains code to validate data sent with the contact form. Passes the data on to the server if the validation is passed. -->
     <script src="scripts/contact_form_validation.js"></script>
 </html>
