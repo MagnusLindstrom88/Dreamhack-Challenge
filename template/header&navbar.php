@@ -53,77 +53,10 @@
     </div>
 </nav>
 
-<!--Login Modal-->
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="loginHeading" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 id="loginHeading" class="modal-title">Login</h4>
-      </div>
-      <div class="modal-body">
-        <form id="login-form" role="form" method="post" action="scripts/login.php">
-            <div class="form-group">
-                <label for="login-email">Email or Username:</label>
-                <input type="email" id="login-email" name="email" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="login-password">Password:</label>
-                <input type="password" id="login-password" name="password" class="form-control">
-            </div>
-            <div class="checkbox">
-            <label><input type="checkbox"> Remember me</label>
-            </div>
-        </form>
-        <p><a href="scripts/login&registration/login_facebook.php"><img src="images/loginfacebook.png" alt="Facebook login button."></a></p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" onclick="validateLogin()">Login</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--Registration Modal-->
-<div class="modal fade" id="registration-modal" tabindex="-1" role="dialog" aria-labelledby="registrationHeading" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 id="registrationHeading" class="modal-title">Register</h4>
-      </div>
-      <div class="modal-body">
-        <form id="registration-form" role="form" method="post">
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" class="form-control" maxlength="20">
-            </div>
-            <div class="form-group">
-                <label for="registration-email">Email:</label>
-                <input type="email" id="registration-email" name="email" class="form-control" maxlength="254">
-            </div>
-            <div class="form-group">
-                <label for="registration-password">Password:</label>
-                <input type="password" id="registration-password" name="password" class="form-control" maxlength="255">
-            </div>
-            <div class="form-group">
-                <label for="confirm-password">Confirm Password:</label>
-                <input type="password" id="confirm-password" name="confirm-password" class="form-control" maxlength="255">
-            </div>
-            <div class="checkbox">
-                <label><input type="checkbox" id="tos-checkbox"> I accept the <a href="#">terms of service</a>.</label>
-            </div>
-            <div id="recaptcha1"></div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" onclick="validateRegistration();">Register</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-      </div>
-    </div>
-  </div>
-</div>
+<?php
+//Creates the login- and registration modals. Only called if the user is not logged in.
+if(!isset($_SESSION['id'])) generateModals();
+?>
 
 <!-- Code to handle menu highlighting. -->
 <script>
@@ -184,3 +117,82 @@
 
 <!-- sdasd -->
 <script src="scripts/bet_functions.js"></script>
+
+<?php
+//Creates the login- and registration modals. Only called if the user is not logged in.
+function generateModals() {
+    echo "
+        <!--Login Modal-->
+        <div class='modal fade' id='login-modal' tabindex='-1' role='dialog' aria-labelledby='loginHeading' aria-hidden='true'>
+          <div class='modal-dialog'>
+            <div class='modal-content'>
+              <div class='modal-header'>
+                <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                <h4 id='loginHeading' class='modal-title'>Login</h4>
+              </div>
+              <div class='modal-body'>
+                <form id='login-form' role='form' method='post' action='scripts/login.php'>
+                    <div class='form-group'>
+                        <label for='login-email'>Email or Username:</label>
+                        <input type='email' id='login-email' name='email' class='form-control'>
+                    </div>
+                    <div class='form-group'>
+                        <label for='login-password'>Password:</label>
+                        <input type='password' id='login-password' name='password' class='form-control'>
+                    </div>
+                    <div class='checkbox'>
+                    <label><input type='checkbox'> Remember me</label>
+                    </div>
+                </form>
+                <p><a href='scripts/login&registration/login_facebook.php'><img src='images/loginfacebook.png' alt='Facebook login button.'></a></p>
+              </div>
+              <div class='modal-footer'>
+                <button type='button' class='btn btn-primary' onclick='validateLogin()'>Login</button>
+                <button type='button' class='btn btn-default' data-dismiss='modal'>Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!--Registration Modal-->
+        <div class='modal fade' id='registration-modal' tabindex='-1' role='dialog' aria-labelledby='registrationHeading' aria-hidden='true'>
+          <div class='modal-dialog'>
+            <div class='modal-content'>
+              <div class='modal-header'>
+                <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+                <h4 id='registrationHeading' class='modal-title'>Register</h4>
+              </div>
+              <div class='modal-body'>
+                <form id='registration-form' role='form' method='post'>
+                    <div class='form-group'>
+                        <label for='username'>Username:</label>
+                        <input type='text' id='username' name='username' class='form-control' maxlength='20'>
+                    </div>
+                    <div class='form-group'>
+                        <label for='registration-email'>Email:</label>
+                        <input type='email' id='registration-email' name='email' class='form-control' maxlength='254'>
+                    </div>
+                    <div class='form-group'>
+                        <label for='registration-password'>Password:</label>
+                        <input type='password' id='registration-password' name='password' class='form-control' maxlength='255'>
+                    </div>
+                    <div class='form-group'>
+                        <label for='confirm-password'>Confirm Password:</label>
+                        <input type='password' id='confirm-password' name='confirm-password' class='form-control' maxlength='255'>
+                    </div>
+                    <div class='checkbox'>
+                        <label><input type='checkbox' id='tos-checkbox'> I accept the <a href='#'>terms of service</a>.</label>
+                    </div>
+                    <div id='recaptcha1'></div>
+                </form>
+              </div>
+              <div class='modal-footer'>
+                <button type='button' class='btn btn-primary' onclick='validateRegistration();'>Register</button>
+                <button type='button' class='btn btn-default' data-dismiss='modal'>Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    ";
+}
+?>
