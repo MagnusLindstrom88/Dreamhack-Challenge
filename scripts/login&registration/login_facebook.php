@@ -24,9 +24,12 @@ if(isset($session)) {
     $_SESSION['username'] = $graphObject->getProperty('name');  //Get Facebook full name.
     
     //Insert the user into the database if they're not already there.
-    $user = $db->query("SELECT * FROM users WHERE id={$_SESSION['id']}");
-    if($user->rowCount() === 0)
-        $db->query("INSERT INTO users (id, username) VALUES ({$_SESSION['id']}, '{$_SESSION['username']}')");
+    $ps = $db->prepare("SELECT * FROM users WHERE id=?");
+    $ps->execute(array($_SESSION['id']));
+    if($ps->rowCount() === 0) {
+        $ps = $db->prepare("INSERT INTO users (id, username) VALUES (?, ?)");
+        $ps->execute(array($_SESSION['id'], $_SESSION['username']));
+    }
     
     header("Location: ../../index.php");
 }

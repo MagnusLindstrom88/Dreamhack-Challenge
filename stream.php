@@ -183,7 +183,10 @@ function initialize() {
     
     //Check if there's an ongoing match for this stream page.
     if(count($match) === 1) {
-	$teams = $db->query("SELECT * FROM teams WHERE id={$match[0]['team0']} OR id={$match[0]['team1']}")->fetchAll(PDO::FETCH_ASSOC);
+	$teams = $db->prepare("SELECT * FROM teams WHERE id=? OR id=?");
+	$teams->execute(array($match[0]['team0'], $match[0]['team1']));
+	$teams = $teams->fetchAll(PDO::FETCH_ASSOC);
+	
 	$GLOBALS['heading'] = "{$game} - {$teams[0]['name']} VS {$teams[1]['name']}";
 	$GLOBALS['information'] = "This is a very good match.";
     }
@@ -191,7 +194,11 @@ function initialize() {
 	$match = $db->prepare("SELECT * FROM matches WHERE played_at=(SELECT MIN(played_at) FROM matches WHERE game=?) AND game=?");
 	$match->execute(array($_GET['game'], $_GET['game']));
 	$match = $match->fetchAll(PDO::FETCH_ASSOC);
-	$teams = $db->query("SELECT * FROM teams WHERE id={$match[0]['team0']} OR id={$match[0]['team1']}")->fetchAll(PDO::FETCH_ASSOC);
+	
+	$teams = $db->prepare("SELECT * FROM teams WHERE id=? OR id=?");
+	$teams->execute(array($match[0]['team0'], $match[0]['team1']));
+	$teams = $teams->fetchAll(PDO::FETCH_ASSOC);
+	
 	$GLOBALS['heading'] = "{$game} - Stream Offline";
 	$GLOBALS['information'] = "The stream is currently offline. Next up is {$teams[0]['name']} versus {$teams[1]['name']}, please come back later.";
     }

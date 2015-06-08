@@ -1,13 +1,12 @@
 <?php
 require_once 'init.php';
 
-$ids = explode("-", $_GET['matches']);
-$sqlString = "";
-foreach($ids as $x) $sqlString .= "{$x},";
-$sqlString = substr($sqlString, 0, -1);
+$ids = explode("-", $_POST['matches']);
 
-$results = $db->query("SELECT played_at FROM matches WHERE id IN ({$sqlString})");
+$results = $db->prepare(sprintf("SELECT played_at FROM matches WHERE id IN (%s)", implode(",", array_fill(0, count($ids), "?"))));
+$results->execute($ids);
 $returnString = "";
+
 foreach($results as $row) $returnString .= "_".timeLeft($row['played_at']);
 $returnString = substr($returnString, 1);
 

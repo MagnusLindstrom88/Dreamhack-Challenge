@@ -87,6 +87,9 @@ if(!isset($_SESSION['id'])) generateModals();
     }
 </script>
 
+<!-- Contains a function that will make an AJAX request when a bet is made. -->
+<script src='scripts/make_bet.js'></script>
+
 <?php
 //Creates the login- and registration modals, and links to the scripts that provide their functionality. Only called if the user is not logged in.
 function generateModals() {
@@ -183,9 +186,6 @@ function generateModals() {
         
         <!-- Contains code to validate data sent with the registration form. Passes the data on to the server if the validation is passed. -->
         <script src='scripts/login&registration/registration_validation.js'></script>
-        
-        <!-- Contains a function that will make an AJAX request when a bet is made. -->
-        <script src='scripts/make_bet.js'></script>
     ";
 }
 ?>

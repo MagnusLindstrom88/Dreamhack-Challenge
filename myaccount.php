@@ -31,7 +31,9 @@
 			</form>
 			<?php
                             //Do not show "Edit Account Information" button to Facebook users.
-                            $result = $db->query("SELECT password FROM users WHERE id={$_SESSION['id']}")->fetchAll(PDO::FETCH_ASSOC);
+                            $result = $db->prepare("SELECT password FROM users WHERE id=?");
+                            $result->execute(array($_SESSION['id']));
+                            $result = $result->fetchAll(PDO::FETCH_ASSOC);
                             if($result[0]['password'] !== null)
                                 echo "<button class='btn btn-default' style='margin-top:10px;' data-toggle='modal' data-target='#edit-account-modal' onclick='cleanForms()'>Edit Account Information...</button>";
                         ?>
@@ -65,6 +67,7 @@
     if(isset($fileUploaded)) echo "<script>alert('{$echoString}')</script>";
     ?>
 </body>
+
 <script>
     setInterval(updateCounters, 1000);
     function updateCounters() {
@@ -149,16 +152,19 @@ function uploadImage() {
 
 function generateBoxesAccount($game) {
     global $db;
-    $matches = $db->query("SELECT * FROM matches WHERE game='$game' AND id IN (SELECT match_id FROM bets WHERE user_id={$_SESSION['id']})");
+    $matches = $db->prepare("SELECT * FROM matches WHERE game=? AND id IN (SELECT match_id FROM bets WHERE user_id=?)");
+    $matches->execute(array($game, $_SESSION['id']));
     foreach($matches as $row) {
-        $teams = $db->query("SELECT * FROM teams WHERE id={$row['team0']} OR id={$row['team1']}")->fetchAll(PDO::FETCH_ASSOC);
+        $teams = $db->prepare("SELECT * FROM teams WHERE id=? OR id=?");
+        $teams->execute(array($row['team0'], $row['team1']));
+        $teams = $teams->fetchAll(PDO::FETCH_ASSOC);
         $buttonClass0 = "btn btn-info";
         $buttonClass1 = "btn btn-info";
         $matchBoxClass = "match-box upcoming";
         
         if(isset($_SESSION['id'])) {
-            $bet = $db->query("SELECT * FROM bets WHERE user_id={$_SESSION['id']} AND match_id={$row['id']} AND (team_id={$teams[0]['id']} OR team_id={$teams[1]['id']})");
-        
+            $bet = $db->prepare("SELECT * FROM bets WHERE user_id=? AND match_id=? AND (team_id=? OR team_id=?)");
+            $bet->execute(array($_SESSION['id'], $row['id'], $teams[0]['id'], $teams[1]['id']));
             if($bet->rowCount() > 0) {
                 $bet = $bet->fetchAll(PDO::FETCH_ASSOC);
                 if($bet[0]['team_id'] === $teams[0]['id'])

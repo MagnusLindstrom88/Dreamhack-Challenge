@@ -25,15 +25,9 @@ $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 $result = json_decode($result, true);
 
-
-
 //If the verification of the captcha was successful.
 if($result['success']) {
-
     mail($to, $subject, $body, $from);
-
     echo "Thank you! Your message has been received.";
 }
 else echo "Failed to submit, please try again.";
-
-

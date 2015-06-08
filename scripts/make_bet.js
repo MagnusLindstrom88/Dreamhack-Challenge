@@ -1,14 +1,14 @@
-//Skickar data till för att registrera bets och ändrar färgen på knappen som trycktes.
+//Called when a betting button is clicked.
 function makeBet(btn){
-    var jax = new XMLHttpRequest();
     var team = btn.getAttribute("id");
     var match = btn.parentNode.getAttribute("id");
     
-    jax.open("POST", "scripts/make_bet.php", true)
-    jax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("POST", "scripts/make_bet.php", true)
+    xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     
-    jax.onload = function() {
-        var return_data = jax.responseText;
+    xmlHttp.onload = function() {
+        var return_data = xmlHttp.responseText;
         
         if (return_data === "a")
           $(btn).removeClass().addClass("btn btn-info");
@@ -17,5 +17,5 @@ function makeBet(btn){
         if (return_data === "x")
             alert("You must be logged in to make a bet.");
     }
-    jax.send("team="+team+"&match="+match);
+    xmlHttp.send("team="+team+"&match="+match);
 }

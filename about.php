@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 	<?php require_once 'template/head.php'; ?>
-	<link href="http://s3.amazonaws.com/codecademy-cont…/…/ltp/css/shift.css" rel="stylesheet">
 	<style>
 		.jumbotron {
 			background-image: url(images/jumbotron.jpg);
@@ -15,7 +14,7 @@
 			font-weight: bold;
 		}
 		.jumbotron a {
-			color: ‪#‎00b0ff‬;
+			color: #‎00b0ff‬;
 			font-size: 20px;
 			font-weight: bold;
 		}

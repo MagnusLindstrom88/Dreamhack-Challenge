@@ -90,8 +90,9 @@
                 counter++;
             });
         }
-        xmlHttp.open("GET", "scripts/get_time_left.php?matches="+queryString);
-        xmlHttp.send();
+        xmlHttp.open("POST", "scripts/get_time_left.php");
+        xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlHttp.send("matches="+queryString);
     }
 </script>
 </html>
@@ -122,9 +123,12 @@ function generateBoxes() {
     global $db, $dbGame;
     $a = array(8);
     $counter = 0;
-    $matches = $db->query("SELECT * FROM matches WHERE winner='undecided' AND game='{$dbGame}'");
+    $matches = $db->prepare("SELECT * FROM matches WHERE winner='undecided' AND game=?");
+    $matches->execute(array($dbGame));
     foreach($matches as $row) {
-        $teams = $db->query("SELECT * FROM teams WHERE id={$row['team0']} OR id={$row['team1']}")->fetchAll(PDO::FETCH_ASSOC);
+        $teams = $db->prepare("SELECT * FROM teams WHERE id=? OR id=?");
+        $teams->execute(array($row['team0'], $row['team1']));
+        $teams = $teams->fetchAll(PDO::FETCH_ASSOC);
         $buttonClass0 = "btn btn-info";
         $buttonClass1 = "btn btn-info";
         $matchBoxClass = "match-box upcoming";
@@ -134,8 +138,8 @@ function generateBoxes() {
         
         //Checks if the user already has a bet for this match and in that case colors the appropriate button.
         if(isset($_SESSION['id'])) {
-            $bet = $db->query("SELECT * FROM bets WHERE user_id={$_SESSION['id']} AND match_id={$row['id']} AND (team_id={$teams[0]['id']} OR team_id={$teams[1]['id']})");
-        
+            $bet = $db->prepare("SELECT * FROM bets WHERE user_id=? AND match_id=? AND (team_id=? OR team_id=?)");
+            $bet->execute(array($_SESSION['id'], $row['id'], $teams[0]['id'], $teams[1]['id']));
             if($bet->rowCount() > 0) {
                 $bet = $bet->fetchAll(PDO::FETCH_ASSOC);
                 if($bet[0]['team_id'] === $teams[0]['id'])
@@ -192,7 +196,7 @@ function generateBoxes() {
 function generateBracket() {
     global $teams;
     $counter = 0;
-    for($i=0;$i<count($teams)/2;$i++) {
+    for($i=0; $i < count($teams)/2; $i++) {
         echo "
             <button class='btn btn-lg btn-primary btn-block'>
             <p style='border-bottom: 1px solid black;margin:0;padding-bottom:5px;'>{$teams[$counter++]}</p>
