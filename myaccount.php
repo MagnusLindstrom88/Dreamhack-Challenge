@@ -87,8 +87,9 @@
                 counter++;
             });
         }
-        xmlHttp.open("GET", "scripts/get_time_left.php?matches="+queryString);
-        xmlHttp.send();
+        xmlHttp.open("POST", "scripts/get_time_left.php");
+        xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlHttp.send("matches="+queryString);
     }
 </script>
 </html>
