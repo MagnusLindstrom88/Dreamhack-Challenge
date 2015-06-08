@@ -39,7 +39,7 @@
                         ?>
 		    </div>
 		    <div class="col-md-6">
-			<h3>Betting History - 0 Points</h3>
+			<h3>Betting History - <?php echoPoints(); ?> Points</h3>
 			 <div class="col-md-12">
         		 	<h3>Starcraft II</h3>
                 		<div class="row match-row">
@@ -95,6 +95,13 @@
 </html>
 
 <?php
+function echoPoints() {
+    global $db;
+    $ps = $db->prepare("SELECT points FROM users WHERE id=?");
+    $ps->execute(array($_SESSION['id']));
+    echo $ps->fetchAll(PDO::FETCH_ASSOC)[0]['points'];
+}
+
 //Finds the user's profile picture that will be displayed on the page.
 function findProfilePic() {
     foreach(glob('images/profilepictures/*.*') as $filename)
@@ -195,6 +202,7 @@ function generateBoxesAccount($game) {
             $timeRemaining = "Time left: $hours:$minutes:$seconds";
         }
         else $timeRemaining = "<strong>Ongoing</strong>";
+        
         echo
         "
         <div class='col-md-6 col-sm-12'>
