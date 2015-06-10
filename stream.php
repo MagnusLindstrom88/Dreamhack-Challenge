@@ -19,7 +19,7 @@
 	    height: 75%;
 	    line-height: 25px;
 	    border-bottom: 1px solid #676461;
-	    overflow-y: scroll;
+	    overflow-y: auto;
 	    color: #f7f7f7;
 	}
 	#chat-input-field {
