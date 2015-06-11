@@ -1,3 +1,3 @@
 <footer>
-    <p>&copy; Copyright DreamHack Challenge AB</p>
+    <p>Copyright (&copy;) 2015 DreamHack Challenge AB. All rights reserved. </p>
 </footer>
